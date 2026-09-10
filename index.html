@@ -552,7 +552,104 @@
       table.governance-table th { background: #f1f5f9; color: #000; }
       table.governance-table td { color: #000; }
     }
-  </style>
+  
+    /* ==========================================================================
+       FLOWCHART STYLES (RESPONSIVE NODE CARDS & CONNECTORS)
+       ========================================================================== */
+    .tier-section-flowchart {
+      margin-bottom: 24px;
+    }
+    .flowchart-wrapper {
+      background: rgba(11, 19, 43, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .flowchart-header-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flowchart-steps-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      position: relative;
+    }
+    .flow-step-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(71, 85, 105, 0.6);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: var(--transition);
+    }
+    .flow-step-card:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.2);
+    }
+    .flow-step-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .flow-step-num {
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: #38bdf8;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.05em;
+    }
+    .flow-step-role {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #f59e0b;
+    }
+    .flow-step-name {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
+    .flow-step-action {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      white-space: pre-line;
+    }
+    .flow-step-form {
+      font-size: 0.72rem;
+      font-family: monospace;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .flow-step-gate {
+      font-size: 0.72rem;
+      color: #fca5a5;
+      border-top: 1px dashed rgba(239, 68, 68, 0.3);
+      padding-top: 6px;
+    }
+
+</style>
 </head>
 <body>
 
@@ -631,6 +728,7 @@
 
     <!-- Tier Filter Pills -->
     <div class="tier-filter-bar">
+      <button class="tier-pill" onclick="filterTier('flowchart', this)">🔄 端到端作業流程圖</button>
       <button class="tier-pill active" onclick="filterTier('all', this)">📑 顯示全階層規範</button>
       <button class="tier-pill" onclick="filterTier('tier1', this)">🏛️ 一階：治理準則 (Policies)</button>
       <button class="tier-pill" onclick="filterTier('tier2', this)">📜 二階：管理辦法 (Standards)</button>
@@ -662,6 +760,111 @@
 
         <div class="cycle-goal-box">
           <strong>🎯 手遊業務循環目標：</strong> 規範 App Store / Google Play 雙平台、官方直營第三方金流儲值、虛擬道具定價公示、惡意退款封號與 IFRS 15 虛寶消耗遞延收入認列，杜絕盜刷弊端與財務失真。
+        </div>
+
+        <!-- Flowchart Block for cycle-1 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 手遊雙平台儲值、金流對帳、退款阻斷與 IFRS 15 遞延收入端到端流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">全球玩家 / 終端設備</span>
+                  </div>
+                  <div class="flow-step-name">遊戲內購發起</div>
+                  <div class="flow-step-action">玩家於遊戲內點選商品，透過 Apple App Store、Google Play 或官方 APK (MyCard/Stripe) 發起儲值請求。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 雙平台交易 Token</div>
+                  <div class="flow-step-gate">🛡️ 內控點：檢查商品定價與合法購買額度</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">雙平台金流閘道</span>
+                  </div>
+                  <div class="flow-step-name">金流扣款與驗簽</div>
+                  <div class="flow-step-action">雙平台或第三方金流完成扣款，發送加密 Server-to-Server Webhook 驗證回執 (Receipt Verification)。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 官方加密收據 (Receipt)</div>
+                  <div class="flow-step-gate">🛡️ 內控點：非官方收據自動攔截 (防偽造外掛)</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">遊戲伺服端 (Game Server)</span>
+                  </div>
+                  <div class="flow-step-name">驗簽發貨與即時寫庫</div>
+                  <div class="flow-step-action">伺服器驗簽無誤，即時將虛擬代幣/道具派發至玩家角色，並寫入 Order DB 訂單資料庫。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-SAL-01 發貨成功日誌</div>
+                  <div class="flow-step-gate">🛡️ 內控點：訂單序號唯一性校驗 (防重放攻擊)</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">客服 / 資安系統</span>
+                  </div>
+                  <div class="flow-step-name">即時退款監控 (Refund)</div>
+                  <div class="flow-step-action">【判定分支】：是否發生玩家惡意刷退 (Chargeback)?
+• 否 ➔ 正常結算流轉。
+• 是 ➔ 觸發自動扣回虛寶；代幣不足扣至負數並永久封號。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-SAL-04 違規扣寶封號單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：異常退款 48 小時未補儲強制停權</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">大數據與會計部</span>
+                  </div>
+                  <div class="flow-step-name">IFRS 15 遞延收入結算</div>
+                  <div class="flow-step-action">大數據引擎追蹤付費代幣實際消耗：消耗型道具即時認列營收；耐久型外觀依預期生命週期分期攤銷。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-SAL-03 遞延收入結算表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：未耗用代幣 100% 認列為合約負債</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">財務部 / 出納</span>
+                  </div>
+                  <div class="flow-step-name">雙平台分成收匯沖銷</div>
+                  <div class="flow-step-action">次月收受 Apple/Google 外幣電匯入帳（扣除 15%~30% 平台抽成），會計進行外銷零稅率申報與總帳沖銷。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-SAL-06 外銷零稅率清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：銀行電匯水單與後台淨流水 100% 勾稽</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <!-- Tier 1 Block -->
@@ -867,6 +1070,109 @@
 
         <div class="cycle-goal-box">
           <strong>🎯 手遊業務循環目標：</strong> 規範雲端算力與 CDN (AWS/GCP/MongoDB Atlas)、遊戲美術/音樂外包製作、發行買量投放 (UA) 與引擎工具授權採購，落實三單比對與著作權買斷，防止版權侵權與假量浪費。
+        </div>
+
+        <!-- Flowchart Block for cycle-2 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 手遊雲端算力、美術外包著作權買斷與廣告買量 (UA) 請採驗付流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">需求單位 (主美/SRE/營運)</span>
+                  </div>
+                  <div class="flow-step-name">需求提出與預算審核</div>
+                  <div class="flow-step-action">提報 2D/3D 美術外包、AWS/GCP 雲端伺服器擴容或廣告買量需求，檢附 SOW 或規格書。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-01 請購單 (PR)</div>
+                  <div class="flow-step-gate">🛡️ 內控點：ERP 自動勾稽當季專案預算餘額</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">獨立採購部</span>
+                  </div>
+                  <div class="flow-step-name">AVL詢價與三家比價</div>
+                  <div class="flow-step-action">自合格供應商名冊 (AVL) 挑選廠商發送 RFQ 詢價，收受報價並編制比價表，協商最優付款條件。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-03 比價議價記錄表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：落實貨比三家，單一來源需總經理特簽</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">法務部 暨 採購部</span>
+                  </div>
+                  <div class="flow-step-name">簽約下單 (IP買斷)</div>
+                  <div class="flow-step-action">核發採購單 (PO)，美術外包強制簽署《無抄襲侵權切結書》並約定著作財產權 100% 轉讓盛欣網絡。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-02 外包合約 / PO</div>
+                  <div class="flow-step-gate">🛡️ 內控點：合約必須包含原始原始碼/分層源檔交付</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">主美 / 架構師 / 營運</span>
+                  </div>
+                  <div class="flow-step-name">分層源檔與成效驗收</div>
+                  <div class="flow-step-action">美術驗收分層 PSD/FBX 檔；雲端比對真實 Console 流量；買量廣告以 AppsFlyer 剔除作弊假量後驗收。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-06 數位資產驗收單 GRN</div>
+                  <div class="flow-step-gate">🛡️ 內控點：DevSecOps 弱點掃描 Critical=0</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">會計部</span>
+                  </div>
+                  <div class="flow-step-name">★ 三單比對 (Three-Way Match)</div>
+                  <div class="flow-step-action">核對【PO 採購單】＝【GRN 驗收單】＝【Vendor Invoice 外部發票】，數量、單價與條件完全吻合。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-08 會計應付憑單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：三單不符系統自動阻斷立帳</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">財務長 暨 出納</span>
+                  </div>
+                  <div class="flow-step-name">網銀雙人授權放款</div>
+                  <div class="flow-step-action">依約定付款天期（月結45天），出納編制網銀批次檔 (Maker)，財務長插 Token 審查放行 (Checker)。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PUR-09 網銀電匯放行回執</div>
+                  <div class="flow-step-gate">🛡️ 內控點：出納與會計做帳權限嚴格隔離</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <!-- Tier 1 Block -->
@@ -1088,6 +1394,109 @@
           <strong>🎯 手遊業務循環目標：</strong> 規範遊戲企劃 (GDD)、敏捷開發 (Sprint)、數值平衡審查、QA 雙平台真機測試、CI/CD 自動打包與線上熱更新 (Hotfix)，確保版本品質與 100% Zero Outage 穩定運營。
         </div>
 
+        <!-- Flowchart Block for cycle-3 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 手遊敏捷研發 (Sprint)、數值平衡、QA真機測試與版本交付流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">製作人 暨 主企劃</span>
+                  </div>
+                  <div class="flow-step-name">企劃設計書 (GDD) 審定</div>
+                  <div class="flow-step-action">依產品 Roadmap 撰寫系統玩法邏輯、UI 流程與功能規則，召開跨組評審會議簽署確認。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PRD-01 遊戲企劃設計書 GDD</div>
+                  <div class="flow-step-gate">🛡️ 內控點：商業邏輯與技術可行性前置審查</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">數值策劃組</span>
+                  </div>
+                  <div class="flow-step-name">數值模型與經濟平衡審查</div>
+                  <div class="flow-step-action">建立產出消耗閉環模型，透過蒙地卡羅模擬玩家獲取與消耗曲線，評估抽卡期望值與防通貨膨脹。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PRD-02 數值平衡評審表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁未經審批之暗改機率或戰鬥崩潰</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">研發工程師 (Client/Server)</span>
+                  </div>
+                  <div class="flow-step-name">敏捷衝刺 (Sprint) 開發</div>
+                  <div class="flow-step-action">依工單進行代碼編寫，提交前通過 Peer Review 雙人代碼審查，每日觸發夜間自動化構建 (Nightly Build)。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PRD-03 Sprint 交付驗收表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：程式碼強制關聯 Jira 工單與 Git Review</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">QA 測試工程師</span>
+                  </div>
+                  <div class="flow-step-name">全面測試與真機矩陣驗收</div>
+                  <div class="flow-step-action">真機測試機庫 (Device Farm) 執行 Top 50 主流手機適配、壓力測試與外掛滲透測試，出具測試報告。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PRD-04 QA 測試總結報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：發布門檻：Blocker / Critical Bug 必須為 0</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">專案製作人 暨 技術總監</span>
+                  </div>
+                  <div class="flow-step-name">雙平台提審與發布核簽</div>
+                  <div class="flow-step-action">簽署版本發布單，提審 Apple App Store / Google Play，設定階梯式灰度發布 (1% ➔ 5% ➔ 100%)。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-PRD-07 版本發布審核單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：崩潰率 Crash Rate 必須 < 0.1%</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">LiveOps 營運 暨 SRE</span>
+                  </div>
+                  <div class="flow-step-name">線上版本生效與熱更 (Hotfix)</div>
+                  <div class="flow-step-action">線上版本正式發行，CDN 資源預熱；若發生嚴重線上缺陷，15 分鐘內觸發自動回滾或沙盒熱更新。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 線上熱更日誌與回滾報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：100% Zero Outage 零停機維運承諾</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <!-- Tier 1 Block -->
         <div class="tier-block tier-section-tier1">
           <div class="tier-header">🏛️ 一階：治理準則 (Governance Policies) <span style="font-size:0.75rem; color:var(--accent-amber); font-weight:700;">[董事會核定層級]</span></div>
@@ -1291,6 +1700,111 @@
 
         <div class="cycle-goal-box">
           <strong>🎯 手遊業務循環目標：</strong> 規範遊戲研發工程師、主美、企劃、測試與營運人員之招募任用、工時 Timesheet 研發分攤、專案里程碑分紅、遊戲流水獎金發放與智財權讓與，防範核心代碼外洩與舞弊。
+        </div>
+
+        <!-- Flowchart Block for cycle-4 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 手遊研發人才甄選、專案工時 (Timesheet)、流水獎金與離職權限撤銷流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">用人主管 暨 人資部</span>
+                  </div>
+                  <div class="flow-step-name">人才甄選與代碼原創審查</div>
+                  <div class="flow-step-action">工程師實施白板編程測試；美術設計審核原創作品集並進行上機測驗，杜絕曾涉盜用代碼前科人員。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-02 技術面試評核表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：經歷背景查核 (Reference Check) 100% 合格</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">新進員工 暨 法務</span>
+                  </div>
+                  <div class="flow-step-name">全員簽署智財讓與及 NDA</div>
+                  <div class="flow-step-action">報到當日全員簽署《著作財產權全面讓與協議書》、《營業秘密保密合約 (NDA)》與競業禁止條款。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-03 著作財產權讓與合約</div>
+                  <div class="flow-step-gate">🛡️ 內控點：在職與職務產出智財權 100% 歸屬公司</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">研發人員 (工程/美術/企劃)</span>
+                  </div>
+                  <div class="flow-step-name">每週專案工時 (Timesheet) 填報</div>
+                  <div class="flow-step-action">每週五填報各遊戲專案實際投入時數（精確至 0.5 小時），專案製作人週一核實審簽。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-04 專案研發工時表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：工時作為 IAS 38 研發費用資本化法定依據</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">財務部 暨 薪酬委員會</span>
+                  </div>
+                  <div class="flow-step-name">里程碑獎金與流水抽成分紅</div>
+                  <div class="flow-step-action">【判定分支】：是否達成專案 Milestone 或淨流水利潤目標?
+• 是 ➔ 提報獎金池分配名冊，核發分紅。
+• 否 ➔ 正常核發月薪。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-05 專案流水抽成分紅表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：分紅獎金必須由薪酬委員會審查核決</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">出納 暨 人資部</span>
+                  </div>
+                  <div class="flow-step-name">薪資總表覆核與加密撥款</div>
+                  <div class="flow-step-action">人資計算月薪與法定扣繳，財務長覆核無誤後，每月 5 日透過企業網銀專屬薪轉通道撥款並發送加密薪資條。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-06 月度薪資計算總冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：人事主檔維護與款項發放嚴格分立</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">IT 部門 暨 總務部</span>
+                  </div>
+                  <div class="flow-step-name">離職代碼移交與權限即時註銷</div>
+                  <div class="flow-step-action">員工離職當日完成 Git/P4 代碼 Commit/Push，IT 自動化排程於 18:00 前即時註銷所有倉庫與 VPN 存取權限。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-HR-07 離職資安註銷清單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：離職日當天所有代碼與雲端權限 100% 收回</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <!-- Tier 1 Block -->
@@ -1498,6 +2012,109 @@
           <strong>🎯 手遊業務循環目標：</strong> 規範全球雙平台外幣營收匯回、海外代理發行保證金 (MG) 資金監管、遠期外匯避險、銀行融資授信與印鑑管理，確保企業流動性無虞並防範匯兌損失。
         </div>
 
+        <!-- Flowchart Block for cycle-5 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 全球雙平台多幣別資金調度、海外發行保證金 (MG) 與避險流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">財務部資金調度員</span>
+                  </div>
+                  <div class="flow-step-name">多幣別資金收支預估</div>
+                  <div class="flow-step-action">每週滾動預估未來四週 Apple/Google 雙平台美元 (USD)、日圓 (JPY) 匯入時程與伺服器外幣支出。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-01 全球資金調度表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：保持法定 3 個月營運安全現金水位</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">商務部 暨 財務部</span>
+                  </div>
+                  <div class="flow-step-name">海外遊戲發行保證金 (MG) 監管</div>
+                  <div class="flow-step-action">收受海外代理發行商電匯之 Minimum Guarantee (MG)，專戶存管列為合約負債，按月依淨流水對沖認列營收。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-02 海外發行MG管制卡</div>
+                  <div class="flow-step-gate">🛡️ 內控點：MG 沖抵必須比對代理商實際營運月報</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">財務長 暨 交易員</span>
+                  </div>
+                  <div class="flow-step-name">遠期外匯 (Forward) 避險決策</div>
+                  <div class="flow-step-action">評估匯率波動風險，依實際外幣應收帳款部位擬定遠期外匯避險契約，報請總經理與董事長核准後下單。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-03 遠期外匯避險申請單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁投機性交易，避險名目本金不得超額</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">專責交割會計 (獨立)</span>
+                  </div>
+                  <div class="flow-step-name">外匯交割與公允價值評價</div>
+                  <div class="flow-step-action">獨立核對銀行交易確認書，辦理外幣交割結匯；每月月底依市場匯率計提未實現外幣評價損益。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-04 衍生性商品部位損益表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：下單交易員與交割會計人員嚴格分立</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">監印人員 (總務/財務)</span>
+                  </div>
+                  <div class="flow-step-name">公司大小章調用與用印備查</div>
+                  <div class="flow-step-action">對外簽署發行合約或銀行融資文件，填寫申請單，經權限主管核決後由兩人分別持大章與小章加蓋並登記。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-05 印鑑調用申請單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：公司大章與負責人私章強制分由兩人保管</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">會計部 (非出納)</span>
+                  </div>
+                  <div class="flow-step-name">全球銀行存款調節表編制</div>
+                  <div class="flow-step-action">每月 5 日前取得境內外銀行月度對帳單，逐筆核對總帳紀錄與跨國電匯未達帳項，編制調節表由財務長簽核。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FIN-07 銀行存款餘額調節表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：調節表必須由非出納人員獨立編制</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <!-- Tier 1 Block -->
         <div class="tier-block tier-section-tier1">
           <div class="tier-header">🏛️ 一階：治理準則 (Governance Policies) <span style="font-size:0.75rem; color:var(--accent-amber); font-weight:700;">[董事會核定層級]</span></div>
@@ -1692,6 +2309,111 @@
 
         <div class="cycle-goal-box">
           <strong>🎯 手遊業務循環目標：</strong> 規範遊戲研發工作室 (Studio) 股權收購、知名動漫/影視 IP 授權引進評估、轉投資團隊監理與遊戲版權商譽減損測試，確保策略投資效益與股東價值。
+        </div>
+
+        <!-- Flowchart Block for cycle-6 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 外部遊戲工作室併購、IP 授權引進評估與無形資產減損流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">投資專案小組</span>
+                  </div>
+                  <div class="flow-step-name">標的篩選與收購可行性立項</div>
+                  <div class="flow-step-action">篩選具備自研潛力之獨立遊戲工作室或評估國際動漫/影視 IP 授權改編手遊之市場規模與預期 LTV/ROI。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-01 工作室收購可行性報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：策略契合度與財務回收週期試算</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">技術專家 暨 律師/會計師</span>
+                  </div>
+                  <div class="flow-step-name">原始碼技術 (Code DD) 與財務查核</div>
+                  <div class="flow-step-action">執行代碼架構審查 (Code Review)，檢驗引擎穩定度與開源協議合規性；查核財務稅務與勞動合約完整性。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-02 技術代碼實地查核表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：排查代碼侵權、後門與重大安全架構缺陷</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">外部獨立鑑價機構</span>
+                  </div>
+                  <div class="flow-step-name">公允價值合理性意見取得</div>
+                  <div class="flow-step-action">達到法定重大門檻之投資或重大 IP 授權合約，委請外部獨立評價師/會計師出具價格公允合理性意見書。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-04 專家公允價值評價報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：排除關係人利益輸送與不合理高估估值</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">審計委員會 暨 董事會</span>
+                  </div>
+                  <div class="flow-step-name">重大投資審議與決議</div>
+                  <div class="flow-step-action">送交審委會全體獨董過半數同意，提報董事會決議通過；於法定 2 個營業日內於公開資訊觀測站申報重大訊息。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-05 董事會投資決議議事錄</div>
+                  <div class="flow-step-gate">🛡️ 內控點：重大訊息於 2 日內依法發布揭露</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">法務 暨 出納</span>
+                  </div>
+                  <div class="flow-step-name">簽約交割與股權憑證入庫</div>
+                  <div class="flow-step-action">簽署 SPA 股權買賣合約或 IP 授權合約，出納執行跨境電匯交割，股票憑證或授權證書由金庫保險箱雙人共管。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-06 股權憑證入庫保管單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：憑證保管人雙人簽核，嚴禁單人提領</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">投後管理小組 暨 財務部</span>
+                  </div>
+                  <div class="flow-step-name">被投團隊營運監理與減損測試</div>
+                  <div class="flow-step-action">【判定分支】：被投資工作室進度嚴重落後或留存率低迷?
+• 是 ➔ 委任會計師執行無形資產減損測試，認列損失。
+• 否 ➔ 正常併表監理。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-INV-08 遊戲版權減損測試表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：每年年底強制執行商譽與遊戲 IP 減損評估</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <!-- Tier 1 Block -->
@@ -1906,6 +2628,109 @@
           <strong>🎯 手遊業務循環目標：</strong> 手遊公司雖無實體廠房重機具，但擁有大量高階開發工作站、繪圖板與上百支 iOS/Android 真機測試機庫 (Device Farm)；規範其採購驗收、條碼貼標、防外流借還與盤點除帳。
         </div>
 
+        <!-- Flowchart Block for cycle-7 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 高階開發工作站、專業繪圖板與真機測試機庫 (Device Farm) 管制流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">研發專案組 (程式/美術/QA)</span>
+                  </div>
+                  <div class="flow-step-name">研發設備資本支出 (CAPEX) 申請</div>
+                  <div class="flow-step-action">依專案算力與渲染需求提出高階 Mac Studio、RTX 繪圖工作站、Wacom 液晶繪圖板或測試機請購。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-01 研發設備申請表 CAPEX</div>
+                  <div class="flow-step-gate">🛡️ 內控點：核對年度 CAPEX 資本支出預算額度</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">採購部 暨 IT 工程部</span>
+                  </div>
+                  <div class="flow-step-name">詢比議價、發單與設備驗收</div>
+                  <div class="flow-step-action">採購部詢價下單；設備到貨由 IT 檢驗出廠序號 (SN/MAC)，開機測試並安裝防毒 EDR 與 MDM 管制軟體。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-02 資訊設備驗收交接單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：全體電腦設備強制安裝端點加密與防外流</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">總務財產管理員</span>
+                  </div>
+                  <div class="flow-step-name">防撕毀 QR-Code 貼標與建檔</div>
+                  <div class="flow-step-action">於實體機身顯眼處黏貼防撕毀條碼標籤，於 ERP 系統建立固定資產卡，設定耐用年限 3 年按月提列折舊。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-03 固定資產系統主檔卡</div>
+                  <div class="flow-step-gate">🛡️ 內控點：資產卡完整登載保管人工號與所在網段</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">QA 機庫專責管理員</span>
+                  </div>
+                  <div class="flow-step-name">真機測試機庫 (Device Farm) 管制</div>
+                  <div class="flow-step-action">上百支 iOS/Android 各型號手機與平板列冊專櫃鎖管；工程師登記借還；未上市保密機型嚴禁攜出公司。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-04 測試機庫借還登記表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：每週五實體盤查，逾期未還系統告警</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">總務部 暨 財務部 (監盤)</span>
+                  </div>
+                  <div class="flow-step-name">年度研發設備 100% 實體盤點</div>
+                  <div class="flow-step-action">每年第四季由財務會同總務持條碼機至各研發座位實體掃描盤點，查明閒置設備與損壞狀況，產出盤盈虧報告。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-06 研發設備盤點清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：盤點由財務與內稽獨立監盤，保管人不得自簽</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">IT 部門 暨 會計部</span>
+                  </div>
+                  <div class="flow-step-name">損壞報廢鑑定與硬碟消磁除帳</div>
+                  <div class="flow-step-action">淘汰報廢之電腦主機，硬碟必須由 IT 執行實體物理消磁破碎，拍照存證後由會計部執行固定資產報廢除帳。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-FA-07 設備報廢暨硬碟消磁證明</div>
+                  <div class="flow-step-gate">🛡️ 內控點：未附硬碟消磁與銷毀照片嚴禁除帳</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <!-- Tier 1 Block -->
         <div class="tier-block tier-section-tier1">
           <div class="tier-header">🏛️ 一階：治理準則 (Governance Policies) <span style="font-size:0.75rem; color:var(--accent-amber); font-weight:700;">[董事會核定層級]</span></div>
@@ -2111,6 +2936,109 @@
           <strong>🎯 手遊業務循環目標：</strong> 規範新遊戲綠燈立項 (Greenlight)、核心玩法原型驗證 (PoC)、遊戲引擎底層研發、軟體著作權商標全球註冊與研發支出資本化 (IAS 38)，保護原創遊戲智財權。
         </div>
 
+        <!-- Flowchart Block for cycle-8 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> 新遊戲綠燈立項 (Greenlight)、核心玩法原型、著作權商標與資本化流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">遊戲製作人 / 企劃團隊</span>
+                  </div>
+                  <div class="flow-step-name">新遊戲提案 (Pitch Day) 與 PoC 原型</div>
+                  <div class="flow-step-action">企劃組提出遊戲概念，製作可遊玩之核心玩法原型 (Playable Prototype PoC)，驗證操作手感與核心循環。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-01 綠燈立項提案書 Pitch</div>
+                  <div class="flow-step-gate">🛡️ 內控點：進行小規模核心用戶體驗盲測</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">研發評審委員會 (綠燈審查)</span>
+                  </div>
+                  <div class="flow-step-name">綠燈立項 (Greenlight) 評選</div>
+                  <div class="flow-step-action">總經理、技術副總、主美與主企劃審定玩法新穎度、次日留存預估 (D1>45%) 與技術壁壘，核發研發預算。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-02 核心玩法 PoC 評估報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：評審通過正式編列專案研發代號與預算</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">專案組 暨 外部專家</span>
+                  </div>
+                  <div class="flow-step-name">研發階段里程碑審查 (Gate 1~4)</div>
+                  <div class="flow-step-action">依序通過 Alpha (全系統整合)、Beta (萬人壓測)、Soft Launch (海外吸量與留存測算)，出具審查紀錄。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-03 研發里程碑審查查核表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：各階段指標未達標者強制重構或停損止血</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">法務智財組</span>
+                  </div>
+                  <div class="flow-step-name">軟體著作權與角色商標全球註冊</div>
+                  <div class="flow-step-action">遊戲全球首發前，將原始碼、遊戲名稱、Icon 與原創角色外觀向台美日韓歐等官方專利商標局送件註冊。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-04 軟體著作權與商標管制卡</div>
+                  <div class="flow-step-gate">🛡️ 內控點：上線前完成全球核心市場商標防禦佈局</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">技術架構師</span>
+                  </div>
+                  <div class="flow-step-name">第三方開源軟體 (SBOM) 合規審查</div>
+                  <div class="flow-step-action">透過自動化工具掃描引擎外掛與 GitHub 依賴庫，阻斷包含 GPL/AGPL 強傳染性開源協議之代碼併入核心倉庫。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-05 第三方開源 SBOM 檢驗表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：防止商業原始碼被迫開源之重大合規風險</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">會計主管 暨 研發副總</span>
+                  </div>
+                  <div class="flow-step-name">遊戲開發費用期末資本化 (IAS 38)</div>
+                  <div class="flow-step-action">逐月檢核 Timesheet 研發薪資與外包費；通過可行性審查之開發支出轉列「無形資產」，正式發行後依年限攤銷。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-RD-06 研發費用資本化檢核表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴格符合 IAS 38 軟體開發資本化六大要件</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <!-- Tier 1 Block -->
         <div class="tier-block tier-section-tier1">
           <div class="tier-header">🏛️ 一階：治理準則 (Governance Policies) <span style="font-size:0.75rem; color:var(--accent-amber); font-weight:700;">[董事會核定層級]</span></div>
@@ -2314,6 +3242,109 @@
 
         <div class="cycle-goal-box">
           <strong>🎯 手遊業務循環目標：</strong> 規範遊戲伺服器即時維運 (GameOps)、全球多區 Kubernetes (GKE) 架構、GM 特權虛寶管制、遊戲防外掛防竄改 (Anti-Cheat)、DDoS 清洗與資料庫 100% Zero Outage 災備。
+        </div>
+
+        <!-- Flowchart Block for cycle-9 -->
+        <div class="tier-block tier-section-flowchart">
+          <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
+          <div class="flowchart-wrapper">
+            <div class="flowchart-header-title">
+              <span>📌</span> GameOps 零停機營運、多雲 GKE 微服務、GM特權虛寶管制與反作弊流程圖
+            </div>
+            <div class="flowchart-steps-row">
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 01</span>
+                    <span class="flow-step-role">SRE 團隊 / DevOps</span>
+                  </div>
+                  <div class="flow-step-name">全球多區 GKE 容器化部署</div>
+                  <div class="flow-step-action">遊戲伺服器微服務透過 Kubernetes 跨多雲多區部署，整合全球玩家匹配 (Matchmaking) 與自動彈性擴縮容。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 基礎架構代碼 (IaC Terraform)</div>
+                  <div class="flow-step-gate">🛡️ 內控點：生產環境與開發環境實體/邏輯徹底隔離</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 02</span>
+                    <span class="flow-step-role">遊戲客服 (GM) / 營運</span>
+                  </div>
+                  <div class="flow-step-name">GM 後台特權虛寶發放審批</div>
+                  <div class="flow-step-action">因伺服器維護補償或客訴處理需發放道具，必須線上填單經營運總監核准，始得由 GM 工具派發至指定 UID。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-IT-01 GM 虛寶發放專簽單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁私下透過後台產生儲值代幣</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 03</span>
+                    <span class="flow-step-role">資安稽核員 (獨立)</span>
+                  </div>
+                  <div class="flow-step-name">GM 後台特權操作日誌全鏈路審查</div>
+                  <div class="flow-step-action">GM 後台所有操作（封號、解封、修改屬性、發放虛寶）強制記錄於不可篡改日誌庫，每週由稽核員逐筆對帳。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-IT-02 GM 操作日誌審查清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：日誌側錄保留至少 7 年，嚴禁管理員自改</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 04</span>
+                    <span class="flow-step-role">變更審查委員會 (CAB) 暨 SRE</span>
+                  </div>
+                  <div class="flow-step-name">開服合服與停機維護變更 (RFC)</div>
+                  <div class="flow-step-action">新服開啟、合服 (Merge Server) 或伺服器升級，填報 RFC 申請單，執行資料庫快照 (Snapshot) 後離峰發布。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-IT-03 伺服器變更申請單 RFC</div>
+                  <div class="flow-step-gate">🛡️ 內控點：變更必須附帶 15 分鐘回滾方案 (Rollback)</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">資料庫管理員 (DBA)</span>
+                  </div>
+                  <div class="flow-step-name">MongoDB Atlas 實時備份與災備演練</div>
+                  <div class="flow-step-action">遊戲核心資料庫開啟跨區 Replica Set 與持續性 Oplog 增量備份，每年第四季實施跨雲實兵災難復原演練。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-IT-05 資料庫備份與災備演練報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：RPO 恢復點目標 < 5分鐘，RTO < 30分鐘</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">反作弊安全中心 (SOC)</span>
+                  </div>
+                  <div class="flow-step-name">反外掛 (Anti-Cheat) 偵測與批量封號</div>
+                  <div class="flow-step-action">客戶端 SDK 與伺服端雙重校驗戰鬥數值；偵測到記憶體修改、變速齒輪或異常封包，系統自動觸發批量封號並公告。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 FM-IT-06 惡意作弊調查與封號管制表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：作弊外掛 24 小時內逆向分析特徵碼入庫</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <!-- Tier 1 Block -->
@@ -2545,7 +3576,7 @@
       document.querySelectorAll('.tier-pill').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
 
-      const allTiers = ['tier1', 'tier2', 'tier3', 'tier4', 'sod'];
+      const allTiers = ['flowchart', 'tier1', 'tier2', 'tier3', 'tier4', 'sod'];
       allTiers.forEach(t => {
         const els = document.querySelectorAll('.tier-section-' + t);
         els.forEach(el => {
