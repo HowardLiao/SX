@@ -705,6 +705,7 @@
       <!-- Scrollable Cycle Tabs -->
       <ul class="cycle-nav-scroll" id="cycle-nav-list">
         <li><button class="cycle-nav-btn active" onclick="jumpToCycle('all', this)">🌐 全部循環 (9)</button></li>
+        <li><button class="cycle-nav-btn special-ai-btn" onclick="jumpToCycle('ai-transformation', this)" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(16, 185, 129, 0.2) 100%); border-color: #38bdf8; color: #38bdf8; box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);">🤖 專題：AI 工具導入與九大循環流程變革</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-1', this)">🎴 01. 銷貨及收款循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-2', this)">🎪 02. 採購及付款循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-3', this)">🕹️ 03. 研發製作與版本交付循環</button></li>
@@ -785,6 +786,7 @@
     <div class="tier-filter-bar">
       <button class="tier-pill active" onclick="filterTier('all', this)">📑 顯示全階層規範</button>
       <button class="tier-pill" onclick="filterTier('flowchart', this)">🔄 核心端到端流程圖</button>
+      <button class="tier-pill" onclick="jumpToCycle('ai-transformation', document.querySelector('.special-ai-btn'))" style="border-color:#38bdf8; color:#38bdf8;">🤖 AI 賦能與流程變革專題</button>
       <button class="tier-pill" onclick="filterTier('tier1', this)">🏛️ 一階：治理準則 (Policies)</button>
       <button class="tier-pill" onclick="filterTier('tier2', this)">📜 二階：管理辦法 (Standards)</button>
       <button class="tier-pill" onclick="filterTier('tier3', this)">⚙️ 三階：SOP程序 (Procedures)</button>
@@ -794,6 +796,184 @@
 
     <!-- 9 Cycles Main Containers -->
     <div id="cycles-container">
+
+      <!-- ========================================================================= -->
+      <!-- DEDICATED TAB / SECTION: AI TRANSFORMATION & WORKFLOW RESTRUCTURING -->
+      <!-- ========================================================================= -->
+      <section id="ai-transformation" class="cycle-card" style="border: 2px solid #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.25); background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(2, 6, 23, 0.95) 100%); scroll-margin-top: 130px;">
+        
+        <div class="cycle-header" style="border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
+          <div class="cycle-title-area">
+            <div class="cycle-num-badge" style="background: linear-gradient(135deg, #0284c7 0%, #10b981 100%); font-size: 1.5rem;">🤖</div>
+            <div>
+              <div class="cycle-name-zh" style="background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                專題研究：AI 工具導入對《鬥陣歡樂城》各循環流程之根本性重構與質變分析
+              </div>
+              <div class="cycle-name-en">AI-Augmented Internal Control, AIOps, Anti-Collusion & LiveOps Transformation</div>
+              <span class="cycle-dept-tag" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+                🏛️ 適用全組織：推廣部門 ＆ 營運部門 ＆ 研發中心 ＆ 財務部 ＆ 內部稽核室
+              </span>
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:#38bdf8; background:rgba(2,132,199,0.2); padding:6px 14px; border-radius:20px; border:1px solid #38bdf8; font-weight:800;">
+            對齊 ISO 42001 (AIMS) 人工智慧治理體系
+          </div>
+        </div>
+
+        <div class="cycle-goal-box" style="border-left-color: #10b981;">
+          <strong>🎯 專題核心主旨：</strong><br>
+          當生成式 AI（LLM）、機器學習預測模型與自主 AI Agent 深度融入盛欣網絡《鬥陣歡樂城》之營運架構後，<strong>不再只是「每個階段多了一個工具」，而是整個工作流的重構</strong>。許多原本必須序列（Sequential）執行、依賴大量人工肉眼比對（T+1 或月底結算）的步驟，演變為<strong>「毫秒級並行（Parallel）、即時自癒、預測性風控與人機協同 (Human-in-the-Loop)」</strong>之閉環。徹底根除內鬼私印房卡、人工抓作弊漏報、外包侵權及資金調度誤差。
+        </div>
+
+        <!-- Four Key AI Impact Metrics Bento Grid -->
+        <div class="metrics-grid" style="margin-bottom: 24px;">
+          <div class="metric-card" style="border-top: 3px solid #38bdf8;">
+            <div class="metric-num" style="background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">+90% 效率</div>
+            <div class="metric-label">金流自動勾稽與 IFRS 15</div>
+            <div class="metric-desc">銀行水單與進卡申請毫秒級自動核銷，每小時動態計算全服萬桌開桌耗卡率，營收結轉零誤差。</div>
+          </div>
+          <div class="metric-card" style="border-top: 3px solid #10b981;">
+            <div class="metric-num" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">-30% TCO</div>
+            <div class="metric-label">多雲架構與伺服器成本</div>
+            <div class="metric-desc">AIOps 結合歷史假日開桌數據，預測伺服器尖離峰需求，自動彈性擴縮 Kubernetes (GKE) 資源。</div>
+          </div>
+          <div class="metric-card" style="border-top: 3px solid #f59e0b;">
+            <div class="metric-num" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">0% 舞弊</div>
+            <div class="metric-label">防私印房卡與外包侵權</div>
+            <div class="metric-desc">AMS 特權後台異常行為 100ms 觸發 Kill Switch 阻斷；視覺 AI 全網比對外包美術素材，杜絕抄襲。</div>
+          </div>
+          <div class="metric-card" style="border-top: 3px solid #a855f7;">
+            <div class="metric-num" style="background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">100% 零停機</div>
+            <div class="metric-label">Zero Outage 實時自癒</div>
+            <div class="metric-desc">MongoDB Atlas 實時備份防掉單；AI 毫秒級識別慢速 DDoS 攻擊與反作弊批量封號，保障公平競技。</div>
+          </div>
+        </div>
+
+        <!-- Deep Dive: Two Core Departments AI Transformation -->
+        <div class="tier-block">
+          <div class="tier-header" style="color: #38bdf8;">🏛️ 核心主幹部門的 AI 質變：推廣部門 ＆ 營運部門</div>
+          <div class="pillars-grid" style="margin-bottom: 20px;">
+            
+            <!-- Promotion Dept AI Card -->
+            <div class="pillar-card" style="border: 1px solid rgba(245, 158, 11, 0.4); background: rgba(15, 23, 42, 0.95);">
+              <div class="pillar-header" style="color:#f59e0b;">
+                <span>🎯</span> 推廣部門 (Agency Promotion) 之 AI 變革
+              </div>
+              <ul style="padding-left: 18px; font-size: 0.84rem; color: #cbd5e1; line-height: 1.7;">
+                <li><strong>代理商智慧畫像與自動徵信 Agent：</strong> 整合工商登記、社群社團活躍度與代理人信譽，AI 5 分鐘內產出《代理商加盟評鑑書》，精準給予建議進卡階梯與保證金門檻。</li>
+                <li><strong>反賭博與反洗錢 (AML) 智慧探針：</strong> NLP 自然語言模型即時監控代理商對外宣傳群組，自動識別「下注、輸贏結算、現金回購」等敏感詞，提早預警並啟動資格撤銷，築牢法律防火牆。</li>
+                <li><strong>代理商返利虛假流量清洗 Agent：</strong> 智能分析俱樂部開桌局數，自動識別「腳本機器人掛機刷局」刷返點套利行為，剔除作弊假量後精準核發真實佣金，杜絕公司推廣預算浪費。</li>
+                <li><strong>線下賽事與 KOL 智慧成效歸因：</strong> 透過 AI 自動追蹤各地區麻將錦標賽與實況主帶來的實際新增俱樂部數與開桌率，動態計算推廣 ROI。</li>
+              </ul>
+            </div>
+
+            <!-- Operations Dept AI Card -->
+            <div class="pillar-card" style="border: 1px solid rgba(56, 189, 248, 0.4); background: rgba(15, 23, 42, 0.95);">
+              <div class="pillar-header" style="color:#38bdf8;">
+                <span>⚙️</span> 營運部門 (LiveOps & AMS) 之 AI 變革
+              </div>
+              <ul style="padding-left: 18px; font-size: 0.84rem; color: #cbd5e1; line-height: 1.7;">
+                <li><strong>AI 深度神經網路防夥牌引擎 (Deep Anti-Collusion)：</strong> 超越單純同 IP/GPS 限制，深度學習分析打牌決策樹（如：異常拆聽、故意放水給特定人碰牌、勝率偏離常態 3 個標準差），即時扣留結算並自動調取錄像供人工複核。</li>
+                <li><strong>AMS 代理後台「防私印房卡」行為分析 (UEBA & Kill Switch)：</strong> 監控管理員操作，凡出現「深夜異常登入」、「批量大額劃撥」或「未關聯財務放行 Token」，系統於 100 毫秒內直接觸發 Kill Switch 凍結劃撥並推播告警。</li>
+                <li><strong>24/7 AI 智慧客服與掉單自癒 Agent：</strong> 自動化解答 85% 儲值未到帳、開桌規則與帳號登入問題，3 秒內即時排查遊戲日誌並補償發貨，大幅縮減人工客服夜班負擔。</li>
+                <li><strong>AIOps 全球萬桌微服務自癒 (Zero Outage)：</strong> 實時監測全服 WebSocket 延遲與資料庫讀寫，在春節等開桌尖峰前自動動態擴容 (Auto-scaling)，保障 100% 零當機。</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Full Comprehensive 9 Cycles Before vs After Table -->
+        <div class="tier-block">
+          <div class="tier-header" style="color: #10b981;">📊 九大交易循環傳統模式 vs AI 工具導入後革命性變化全景對照表</div>
+          <div class="forms-table-wrapper">
+            <table class="governance-table">
+              <thead>
+                <tr>
+                  <th style="width: 150px;">交易循環與主責</th>
+                  <th style="width: 280px;">傳統內部控制作業模式 (Before)</th>
+                  <th>🤖 AI 工具導入後的革命性變化 (After)</th>
+                  <th style="width: 180px;">關鍵效益與痛點修復</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 800; color: #38bdf8;">01. 銷貨及收款<br><span style="font-size:0.72rem; color:var(--text-muted);">推廣部/營運部/財務</span></td>
+                  <td>• 財務人工比對銀行水單與進卡申請。<br>• 月底手動拉 Excel 用複雜公式推算 IFRS 15 房卡開桌消耗與遞延收入。<br>• 惡意退款需客服手動查單封號。</td>
+                  <td><strong>1. 智能金流勾稽 Agent：</strong> 代理商電匯入帳日誌自動與進卡單 100ms 內勾稽放行。<br><strong>2. IFRS 15 動態精算模型：</strong> 實時追蹤全服萬桌開桌耗卡速率，每小時自動結轉營業收入與合約負債。<br><strong>3. 惡意退款即時自癒：</strong> 接獲退款 Webhook，AI 立即精準扣回對應俱樂部房卡並凍結異常帳號。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 對帳效率提升 90%<br>• 營收結轉零誤差<br>• 惡意退款損失 -95%</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #f59e0b;">02. 採購及付款<br><span style="font-size:0.72rem; color:var(--text-muted);">推廣部/營運部/採購</span></td>
+                  <td>• 採購人工尋商詢比價，易有串標風險。<br>• 牌桌 2D/3D 美術外包需人工肉眼排查有無抄襲競品素材。<br>• 代理商返利需人工作表核算。</td>
+                  <td><strong>1. 視覺侵權比對 AI (Vision Plagiarism)：</strong> 外包交稿時，AI 全網比對競品棋牌素材，阻斷抄襲素材入庫。<br><strong>2. 代理商返利防刷 Agent：</strong> 自動識別腳本刷局假量，剔除虛假開桌後自動核發真實返利。<br><strong>3. FinOps 雲端調優：</strong> AI 預測開桌尖離峰，自動縮減閒置伺服器。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 外包侵權風險 0%<br>• 剔除假量返利浪費<br>• 雲端持有成本 -30%</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #a855f7;">03. 研發製作<br><span style="font-size:0.72rem; color:var(--text-muted);">研發技術部/QA/營運</span></td>
+                  <td>• 數值企劃人工計算番型勝率，耗時數週且易遺漏死鎖。<br>• QA 人工手動測試斷線重連。<br>• 代碼安全高度仰賴資深工程師肉眼 Review。</td>
+                  <td><strong>1. AI for SDLC 極致左移：</strong> AI 自動生成麻將百萬局蒙地卡羅模擬測試，10分鐘內找出戰鬥數值死鎖。<br><strong>2. 智能模糊測試 (Smart Fuzzing)：</strong> AI 自動構造畸形封包，挖掘斷線重連崩潰 Bug。<br><strong>3. 代碼弱點自動修復 PR：</strong> 發現弱點 AI 自動提發修復代碼並附回歸測試。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 研發前導時間 -40%<br>• 缺陷逃逸率降低 35%<br>• 100% 零死鎖保障</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #ec4899;">04. 薪工循環<br><span style="font-size:0.72rem; color:var(--text-muted);">人資部/推廣部/營運</span></td>
+                  <td>• 客服處理掉單與規則諮詢需大量大夜輪班人力，回覆慢。<br>• 推廣提成手工計算易引發算錯爭議。<br>• 研發工時手工填報 Timesheet 不精確。</td>
+                  <td><strong>1. 24/7 AI 智慧客服 Agent：</strong> 自動化解答 85% 開桌與掉單諮詢，3秒內響應，重大爭議才轉人工。<br><strong>2. 智能提成引擎：</strong> 自動勾稽 AMS 淨入帳流水，精確計算推廣提成並扣除爭議壞帳。<br><strong>3. Git/Jira 工時自動歸因：</strong> 從 Commit 紀錄精準計算 IAS 38 研發資本化工時。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 客服人力成本 -60%<br>• 客服響應速度提升至3秒<br>• 提成爭議降至 0</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #38bdf8;">05. 融資循環<br><span style="font-size:0.72rem; color:var(--text-muted);">財務部/推廣部/總務</span></td>
+                  <td>• 財務憑經驗預估連假進卡量，易產生資金閒置或短缺。<br>• 印鑑用印人工登記容易漏記。</td>
+                  <td><strong>1. 預測性現金流模型 (Predictive Cash Flow)：</strong> 結合歷史春節旺季與推廣排程，精準預測代理商進卡資金高峰。<br><strong>2. 智慧合約比對與用印電子軌跡：</strong> AI 比對紙本合約與用印簽呈，差異 1 個字自動警示並阻斷用印。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 資金調度準確率 98%<br>• 杜絕私自用印風險<br>• 加盟押金專戶零挪用</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #10b981;">06. 投資循環<br><span style="font-size:0.72rem; color:var(--text-muted);">投資會/推廣部/財務</span></td>
+                  <td>• 收購棋牌團隊需派駐工程師手動查核幾十萬行代碼 (Code DD)，耗時數月。</td>
+                  <td><strong>1. 智能代碼實地查核 Agent (AI Code DD)：</strong> 數分鐘內完成整包 Unity/Server 原始碼掃描，標記架構債、開源 GPL 風險與私服暗門。<br><strong>2. 投後營運預測與減損預警：</strong> 持續監控被投團隊俱樂部開桌活躍度，低於標準自動產出減損測試建議。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 代碼查核縮短至數天<br>• 杜絕買到換皮侵權代碼<br>• 投後減損提早預警</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #f59e0b;">07. 固定資產<br><span style="font-size:0.72rem; color:var(--text-muted);">總務部/推廣部/IT</span></td>
+                  <td>• 每年盤點人工拿紙本到各部門逐一對照序號，耗時數日。<br>• 伺服器硬碟損壞事後才報修更換。</td>
+                  <td><strong>1. 行動端視覺辨識快速盤點：</strong> 總務持手機掃描設備，AI 影像識別設備狀態與所在網段，1 秒自動對帳。<br><strong>2. 預測性硬體維護 (Predictive Maintenance)：</strong> AIOps 監控工作站硬碟指標，在損壞前 7 天自動警報更換。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 盤點時間縮短 80%<br>• 消除研發工作站突然當機<br>• 報廢硬碟消磁 100% 留痕</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #a855f7;">08. 研究發展<br><span style="font-size:0.72rem; color:var(--text-muted);">研發中心/營運部/法務</span></td>
+                  <td>• 專利檢索需人工翻閱專利公報，易撞車或被競品告侵權。<br>• 開源代碼合規手動檢查容易遺漏。</td>
+                  <td><strong>1. 智慧專利分析與 FTO 檢索 Agent：</strong> 全網比對專利庫，為新棋牌玩法自動產出「專利侵權迴避 (Workaround) 建議」。<br><strong>2. SBOM 自動化合規閘道：</strong> 在 CI/CD 構建時自動攔截包含病毒式開源條款的依賴套件。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 專利申請通過率提升<br>• 消除源碼被迫開源風險<br>• IAS 38 資本化精準對齊</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; color: #38bdf8;">09. 電腦資訊 ITGC<br><span style="font-size:0.72rem; color:var(--text-muted);">資安中心/營運部/內稽</span></td>
+                  <td>• 伺服器當機靠玩家投訴才發現。<br>• 內稽每週人工抽查 AMS 操作日誌，難以察覺微小盜印行為。</td>
+                  <td><strong>1. AIOps 智能自癒運維 (Zero Outage)：</strong> 監控全服萬桌延遲，高併發瓶頸前自動進行動態擴容。<br><strong>2. 零信任異常操作獵捕模型：</strong> 24 小時監控全服房卡總量平衡（生成房卡＝儲值＋存量），有 1 張誤差立即觸發 Kill Switch 凍結劃撥。<br><strong>3. 智慧 DDoS 清洗：</strong> 毫秒級識別慢速攻擊 (Slowloris)，動態切換高防線路。</td>
+                  <td style="color: #34d399; font-weight: 700;">• 達成 100% 零停機<br>• 房卡內部虛增盜印 0%<br>• 抵禦 1Tbps+ 大規模攻擊</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- AI Governance Guardrails & Human-in-the-Loop -->
+        <div class="tier-block">
+          <div class="tier-header" style="color: #f43f5e;">🛡️ 盛欣網絡《鬥陣歡樂城》AI 治理底座與 人機協同 (Human-in-the-Loop) 規範</div>
+          <div class="sod-box" style="background: rgba(244, 63, 94, 0.08); border-color: rgba(244, 63, 94, 0.35); color: #fecdd3; padding: 18px 22px;">
+            <div style="font-weight: 800; font-size: 1rem; margin-bottom: 10px; color: #fda4af;">
+              ⚠️ 內部控制最高原則：AI 賦能防護，人類專家最終核決 (No Blackbox Governance)
+            </div>
+            依據 <strong>ISO/IEC 42001 (AIMS) 人工智慧管理系統</strong> 與 <strong>NIST AI RMF</strong> 規範，盛欣網絡確立三大核心治理戒律：
+            <ol style="padding-left: 20px; margin-top: 8px; line-height: 1.8;">
+              <li><strong>重大處分權嚴格保留給人類主管 (Human-in-the-Loop)：</strong> AI 抓夥牌作弊、惡意刷退或代理商異常轉卡，系統僅執行「前置標記、扣留牌局結算與臨時保護性凍結」；最終「永久封號、沒收保證金或終止代理資格」，必須由營運總監與法務主管線上聯簽核決。</li>
+              <li><strong>決策可追溯性與可解釋性 (Explainability & Audit Trail)：</strong> 每一項 AI 輔助生成的對帳清冊、防夥牌判決依據與代碼弱點審查，背後均完整保留原始 Prompt、演算法特徵權重與推導日誌，保存至少 7 年供內部稽核室與會計師隨時穿行抽核。</li>
+              <li><strong>緊急阻斷與手動接管機制 (Kill Switch & Fail-Safe)：</strong> 當 AI 模型發生漂移 (Model Drift) 或誤報率飆高時，授權 CISO 於 60 秒內啟動硬體級 Kill Switch 斷開 AI 自主決策，全系統自動無縫切換回傳統人工核決與靜態規則防線。</li>
+            </ol>
+          </div>
+        </div>
+
+      </section>
+
 
       <!-- ========================================================================= -->
       <!-- CYCLE 01: 銷貨及收款循環 (代理商房卡批銷、俱樂部進卡、返利折讓與遞延收入) -->
