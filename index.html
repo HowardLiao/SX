@@ -662,7 +662,10 @@
     }
 
     @media (max-width: 480px) {
-      .search-wrapper { display: none; }
+      .search-wrapper { width: 140px !important; }
+      .search-wrapper input { width: 100% !important; font-size: 0.76rem !important; padding: 6px 26px 6px 28px !important; }
+      .search-wrapper input:focus { width: 180px !important; }
+      .header-actions .btn-action { display: none; }
     }
 
     /* Print styling */
@@ -675,7 +678,172 @@
       table.governance-table th { background: #f1f5f9; color: #000; }
       table.governance-table td { color: #000; }
     }
-  </style>
+  
+    /* ==========================================================================
+       ENTERPRISE SPOTLIGHT SEARCH STYLES
+       ========================================================================== */
+    .search-wrapper {
+      position: relative;
+      display: flex !important;
+      align-items: center;
+    }
+    .search-clear-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #cbd5e1;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .search-clear-btn:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+    .search-dropdown-panel {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 460px;
+      max-width: 92vw;
+      max-height: 520px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid #38bdf8;
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(20px);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: fadeInSearch 0.2s ease-out;
+    }
+    @keyframes fadeInSearch {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-dropdown-header {
+      padding: 12px 16px;
+      background: rgba(30, 41, 59, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .search-shortcut-hint {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .search-dropdown-list {
+      padding: 6px 0;
+      overflow-y: auto;
+      max-height: 440px;
+      scrollbar-width: thin;
+    }
+    .search-result-item {
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: all 0.2s ease;
+    }
+    .search-result-item:hover, .search-result-item.selected {
+      background: rgba(56, 189, 248, 0.15);
+      border-left: 4px solid #38bdf8;
+      padding-left: 14px;
+    }
+    .search-item-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+    }
+    .search-badge {
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+    }
+    .badge-form { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-sop { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-policy { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-flowchart { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-sod { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .search-item-cycle {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+    .search-item-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .search-item-snippet {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    /* In-page Active Search Banner */
+    .search-active-banner {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(16, 185, 129, 0.2) 100%);
+      border: 1px solid #38bdf8;
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      margin: 16px 0 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-clear-search-pill {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-clear-search-pill:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    /* Target Highlighting Animation */
+    @keyframes pulseTargetHighlight {
+      0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.9); transform: scale(1); }
+      30% { box-shadow: 0 0 30px 8px rgba(56, 189, 248, 0.7); transform: scale(1.02); }
+      100% { box-shadow: none; transform: scale(1); }
+    }
+    .search-target-highlight {
+      animation: pulseTargetHighlight 2.5s ease-out !important;
+      border-color: #38bdf8 !important;
+      background: rgba(56, 189, 248, 0.12) !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -695,7 +863,19 @@
         <div class="header-actions">
           <div class="search-wrapper">
             <span class="search-icon">🔍</span>
-            <input type="text" id="global-search-input" placeholder="搜尋房卡、代理商、AMS、返利、開桌..." oninput="handleSearch(this.value)">
+            <input type="text" id="global-search-input" placeholder="搜尋房卡、AMS、返利、SOP、表單... (按 / 鍵)" autocomplete="off" oninput="handleSearchInput(this.value)" onfocus="handleSearchFocus()" onkeydown="handleSearchKeydown(event)">
+            <button id="search-clear-btn" class="search-clear-btn" onclick="clearSearch()" title="清除搜尋" style="display:none;">✕</button>
+            
+            <!-- Real-time Spotlight Search Results Dropdown -->
+            <div id="search-dropdown-panel" class="search-dropdown-panel" style="display:none;">
+              <div class="search-dropdown-header">
+                <span id="search-results-count">🔍 請輸入搜尋關鍵字</span>
+                <span class="search-shortcut-hint">ESC 關閉</span>
+              </div>
+              <div id="search-dropdown-list" class="search-dropdown-list">
+                <!-- Dynamically filled with matching items -->
+              </div>
+            </div>
           </div>
           <button class="btn-action" onclick="expandAllCards()">📂 展開全覽</button>
           <button class="btn-action" onclick="window.print()">🖨️ 列印/匯出</button>
@@ -795,6 +975,14 @@
     </div>
 
     <!-- 9 Cycles Main Containers -->
+        <!-- Search Active Banner -->
+    <div id="search-active-banner" class="search-active-banner" style="display:none;">
+      <div>
+        <span>🔍 目前搜尋關鍵字：<strong id="search-keyword-display" style="color:#38bdf8;"></strong>（共篩選出 <strong id="search-total-badge" style="color:#10b981;">0</strong> 個相符項目）</span>
+      </div>
+      <button class="btn-clear-search-pill" onclick="clearSearch()">✕ 清除搜尋恢復全部</button>
+    </div>
+
     <div id="cycles-container">
 
       <!-- ========================================================================= -->
@@ -3764,25 +3952,303 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Real-time Global Search across all content
-    function handleSearch(keyword) {
-      const q = keyword.trim().toLowerCase();
-      const cards = document.querySelectorAll('.cycle-card');
+    // =========================================================================
+    // HIGH-PERFORMANCE SPOTLIGHT SEARCH ENGINE
+    // =========================================================================
+    let searchIndex = [];
+    let activeDropdownIndex = -1;
+
+    // Build In-Memory Search Index after DOM is ready
+    function buildSearchIndex() {
+      searchIndex = [];
+
+      // 1. Index all Forms (Tier 4)
+      document.querySelectorAll('.governance-table tbody tr').forEach(tr => {
+        const codeEl = tr.querySelector('.form-id-badge');
+        const nameEl = tr.querySelector('td:nth-child(2)');
+        const descEl = tr.querySelector('td:nth-child(3)');
+        const cycleCard = tr.closest('.cycle-card');
+        const cycleName = cycleCard ? cycleCard.querySelector('.cycle-name-zh').textContent : '';
+
+        if (codeEl && nameEl) {
+          searchIndex.push({
+            type: 'form',
+            typeLabel: '📋 表單憑證',
+            badgeClass: 'badge-form',
+            code: codeEl.textContent.trim(),
+            title: nameEl.textContent.trim(),
+            desc: descEl ? descEl.textContent.trim() : '',
+            cycleId: cycleCard ? cycleCard.id : '',
+            cycleName: cycleName.trim(),
+            targetElement: tr
+          });
+        }
+      });
+
+      // 2. Index all SOPs (Tier 3)
+      document.querySelectorAll('.sop-card').forEach(sop => {
+        const titleEl = sop.querySelector('.sop-title');
+        const stepsEl = sop.querySelector('.sop-steps');
+        const cycleCard = sop.closest('.cycle-card');
+        const cycleName = cycleCard ? cycleCard.querySelector('.cycle-name-zh').textContent : '';
+
+        if (titleEl) {
+          searchIndex.push({
+            type: 'sop',
+            typeLabel: '⚙️ SOP流程',
+            badgeClass: 'badge-sop',
+            code: titleEl.textContent.split('：')[0].replace('▶', '').trim(),
+            title: titleEl.textContent.replace('▶', '').trim(),
+            desc: stepsEl ? stepsEl.textContent.trim().slice(0, 140) + '...' : '',
+            cycleId: cycleCard ? cycleCard.id : '',
+            cycleName: cycleName.trim(),
+            targetElement: sop
+          });
+        }
+      });
+
+      // 3. Index all Policies & Standards (Tier 1 & 2)
+      document.querySelectorAll('.policy-box').forEach(pb => {
+        const codeEl = pb.querySelector('.policy-code');
+        const titleEl = pb.querySelector('.policy-title');
+        const descEl = pb.querySelector('.policy-desc');
+        const cycleCard = pb.closest('.cycle-card');
+        const cycleName = cycleCard ? cycleCard.querySelector('.cycle-name-zh').textContent : '';
+
+        if (titleEl) {
+          searchIndex.push({
+            type: 'policy',
+            typeLabel: '🏛️ 準則辦法',
+            badgeClass: 'badge-policy',
+            code: codeEl ? codeEl.textContent.trim() : '規範',
+            title: titleEl.textContent.trim(),
+            desc: descEl ? descEl.textContent.trim() : '',
+            cycleId: cycleCard ? cycleCard.id : '',
+            cycleName: cycleName.trim(),
+            targetElement: pb
+          });
+        }
+      });
+
+      // 4. Index Flowchart Steps
+      document.querySelectorAll('.flow-step-card').forEach(fc => {
+        const numEl = fc.querySelector('.flow-step-num');
+        const roleEl = fc.querySelector('.flow-step-role');
+        const nameEl = fc.querySelector('.flow-step-name');
+        const actionEl = fc.querySelector('.flow-step-action');
+        const cycleCard = fc.closest('.cycle-card');
+        const cycleName = cycleCard ? cycleCard.querySelector('.cycle-name-zh').textContent : '';
+
+        if (nameEl) {
+          searchIndex.push({
+            type: 'flowchart',
+            typeLabel: '🔄 流程節點',
+            badgeClass: 'badge-flowchart',
+            code: (numEl ? numEl.textContent.trim() : '') + ' ' + (roleEl ? roleEl.textContent.trim() : ''),
+            title: nameEl.textContent.trim(),
+            desc: actionEl ? actionEl.textContent.trim().slice(0, 120) : '',
+            cycleId: cycleCard ? cycleCard.id : '',
+            cycleName: cycleName.trim(),
+            targetElement: fc
+          });
+        }
+      });
+
+      // 5. Index SoD Rules
+      document.querySelectorAll('.sod-box').forEach(sb => {
+        const cycleCard = sb.closest('.cycle-card');
+        const cycleName = cycleCard ? cycleCard.querySelector('.cycle-name-zh').textContent : '';
+
+        searchIndex.push({
+          type: 'sod',
+          typeLabel: '🛡️ 內控防弊',
+          badgeClass: 'badge-sod',
+          code: 'SoD 規定',
+          title: '內部控制防弊關鍵點與職責分離',
+          desc: sb.textContent.replace('🛡️', '').trim().slice(0, 140) + '...',
+          cycleId: cycleCard ? cycleCard.id : '',
+          cycleName: cycleName.trim(),
+          targetElement: sb
+        });
+      });
+
+      console.log('Search Index Built Successfully. Total Items:', searchIndex.length);
+    }
+
+    // Handle Search Input Real-Time
+    function handleSearchInput(val) {
+      const q = val.trim().toLowerCase();
+      const clearBtn = document.getElementById('search-clear-btn');
+      const dropdown = document.getElementById('search-dropdown-panel');
+      const list = document.getElementById('search-dropdown-list');
+      const countEl = document.getElementById('search-results-count');
+      const banner = document.getElementById('search-active-banner');
+      const keywordDisp = document.getElementById('search-keyword-display');
+      const totalBadge = document.getElementById('search-total-badge');
 
       if (!q) {
-        cards.forEach(c => c.style.display = 'block');
+        clearBtn.style.display = 'none';
+        dropdown.style.display = 'none';
+        banner.style.display = 'none';
+        document.querySelectorAll('.cycle-card').forEach(c => c.style.display = 'block');
         return;
       }
 
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(q)) {
+      clearBtn.style.display = 'flex';
+      dropdown.style.display = 'flex';
+
+      // Perform matching
+      const matches = searchIndex.filter(item => {
+        return item.code.toLowerCase().includes(q) ||
+               item.title.toLowerCase().includes(q) ||
+               item.desc.toLowerCase().includes(q) ||
+               item.cycleName.toLowerCase().includes(q);
+      });
+
+      countEl.textContent = `🎯 找到 ${matches.length} 筆「${q}」相符項目`;
+      list.innerHTML = '';
+
+      if (matches.length === 0) {
+        list.innerHTML = `
+          <div style="padding: 24px 16px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+            <div>😕 未找到完全相符的項目</div>
+            <div style="font-size: 0.75rem; margin-top: 6px; color: var(--text-dim);">
+              建議嘗試搜尋：<a href="javascript:void(0)" onclick="quickSearch('房卡')" style="color:#38bdf8;">房卡</a>、
+              <a href="javascript:void(0)" onclick="quickSearch('AMS')" style="color:#38bdf8;">AMS</a>、
+              <a href="javascript:void(0)" onclick="quickSearch('返利')" style="color:#38bdf8;">返利</a>、
+              <a href="javascript:void(0)" onclick="quickSearch('SOP')" style="color:#38bdf8;">SOP</a>、
+              <a href="javascript:void(0)" onclick="quickSearch('FM-SAL')" style="color:#38bdf8;">FM-SAL</a>
+            </div>
+          </div>
+        `;
+      } else {
+        // Show up to 20 results in dropdown
+        matches.slice(0, 25).forEach((item, idx) => {
+          const div = document.createElement('div');
+          div.className = 'search-result-item';
+          div.innerHTML = `
+            <div class="search-item-meta">
+              <span class="search-badge ${item.badgeClass}">${item.typeLabel}</span>
+              <span class="search-item-cycle">${item.cycleName}</span>
+            </div>
+            <div class="search-item-title">${highlightKeyword(item.code + ' ' + item.title, q)}</div>
+            <div class="search-item-snippet">${highlightKeyword(item.desc, q)}</div>
+          `;
+          div.onclick = () => selectSearchResult(item);
+          list.appendChild(div);
+        });
+      }
+
+      // Also filter in-page cards and update top banner
+      banner.style.display = 'flex';
+      keywordDisp.textContent = q;
+      totalBadge.textContent = matches.length;
+
+      const matchedCycleIds = new Set(matches.map(m => m.cycleId));
+      document.querySelectorAll('.cycle-card').forEach(card => {
+        if (matchedCycleIds.has(card.id) || card.textContent.toLowerCase().includes(q)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
         }
       });
     }
+
+    function highlightKeyword(text, kw) {
+      if (!kw || !text) return text;
+      const regex = new RegExp(`(${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      return text.replace(regex, '<mark style="background:rgba(56,189,248,0.3); color:#38bdf8; font-weight:800; padding:0 2px; border-radius:2px;">$1</mark>');
+    }
+
+    // Select a search result and jump directly to it
+    function selectSearchResult(item) {
+      document.getElementById('search-dropdown-panel').style.display = 'none';
+
+      // Ensure the cycle card is visible
+      const cycleCard = document.getElementById(item.cycleId);
+      if (cycleCard) {
+        cycleCard.style.display = 'block';
+      }
+
+      // Ensure tier blocks are visible
+      document.querySelectorAll('.tier-block').forEach(tb => tb.style.display = 'block');
+
+      // Scroll target element into view
+      if (item.targetElement) {
+        item.targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Remove prior highlights and apply animated glow
+        document.querySelectorAll('.search-target-highlight').forEach(el => el.classList.remove('search-target-highlight'));
+        item.targetElement.classList.add('search-target-highlight');
+        
+        setTimeout(() => {
+          item.targetElement.classList.remove('search-target-highlight');
+        }, 3000);
+      }
+    }
+
+    // Quick search helper
+    function quickSearch(word) {
+      const input = document.getElementById('global-search-input');
+      input.value = word;
+      handleSearchInput(word);
+      input.focus();
+    }
+
+    // Clear search
+    function clearSearch() {
+      const input = document.getElementById('global-search-input');
+      input.value = '';
+      document.getElementById('search-clear-btn').style.display = 'none';
+      document.getElementById('search-dropdown-panel').style.display = 'none';
+      document.getElementById('search-active-banner').style.display = 'none';
+      document.querySelectorAll('.cycle-card').forEach(c => c.style.display = 'block');
+      document.querySelectorAll('.cycle-nav-btn').forEach(b => b.classList.toggle('active', b.textContent.includes('全部')));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleSearchFocus() {
+      const input = document.getElementById('global-search-input');
+      if (input.value.trim()) {
+        document.getElementById('search-dropdown-panel').style.display = 'flex';
+      }
+    }
+
+    function handleSearchKeydown(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('search-dropdown-panel').style.display = 'none';
+        document.getElementById('global-search-input').blur();
+      }
+    }
+
+    // Global keyboard shortcut '/' to focus search
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        const input = document.getElementById('global-search-input');
+        input.focus();
+        input.select();
+      }
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', (e) => {
+      const wrapper = document.querySelector('.search-wrapper');
+      if (wrapper && !wrapper.contains(e.target)) {
+        const dropdown = document.getElementById('search-dropdown-panel');
+        if (dropdown) dropdown.style.display = 'none';
+      }
+    });
+
+    // Initialize search index on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', () => {
+      buildSearchIndex();
+    });
+    // In case already loaded:
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      setTimeout(buildSearchIndex, 200);
+    }
+
   </script>
 </body>
 </html>
