@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>盛欣網絡股份有限公司 | 手機遊戲研發與全球營運九大交易循環四階內部控制治理全景手冊</title>
+  <title>盛欣網絡股份有限公司 | 《鬥陣歡樂城》代理商房卡與俱樂部營運 內部控制九大循環四階治理手冊</title>
   <style>
     :root {
       --bg-base: #020617;
@@ -51,7 +51,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(2, 6, 23, 0.92);
+      background: rgba(2, 6, 23, 0.94);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
       padding: 12px 0 8px 0;
@@ -85,7 +85,7 @@
     }
 
     .brand-title {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       font-weight: 800;
       color: var(--text-main);
       letter-spacing: -0.02em;
@@ -119,13 +119,13 @@
       font-size: 0.85rem;
       padding: 8px 12px 8px 34px;
       border-radius: 20px;
-      width: 240px;
+      width: 250px;
       transition: var(--transition);
     }
 
     .search-wrapper input:focus {
       outline: none;
-      width: 300px;
+      width: 320px;
       border-color: var(--primary-light);
       box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
     }
@@ -268,8 +268,30 @@
     .hero-subtitle {
       font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 1020px;
+      max-width: 1060px;
       line-height: 1.7;
+    }
+
+    /* Two Pillars Section */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .pillar-card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
     /* Metrics Bento Grid */
@@ -331,8 +353,8 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border-color);
       flex-wrap: wrap;
       gap: 12px;
@@ -356,7 +378,7 @@
       box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
     }
     .cycle-name-zh {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 900;
       color: var(--text-main);
       letter-spacing: -0.02em;
@@ -367,20 +389,31 @@
       font-weight: 700;
       letter-spacing: 0.04em;
     }
+    .cycle-dept-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
     .cycle-goal-box {
-      background: rgba(11, 19, 43, 0.8);
+      background: rgba(11, 19, 43, 0.85);
       border-left: 3px solid var(--primary-light);
       padding: 12px 18px;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       font-size: 0.88rem;
       color: #cbd5e1;
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     /* Tier Sections inside Cycle */
     .tier-block {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .tier-header {
       display: flex;
@@ -390,6 +423,95 @@
       font-weight: 800;
       color: var(--text-main);
       margin-bottom: 12px;
+    }
+
+    /* Flowchart Section Styles */
+    .flowchart-wrapper {
+      background: rgba(11, 19, 43, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .flowchart-header-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flowchart-steps-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .flow-step-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(71, 85, 105, 0.6);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .flow-step-card:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.2);
+    }
+    .flow-step-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .flow-step-num {
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: #38bdf8;
+      background: rgba(2, 132, 199, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.05em;
+    }
+    .flow-step-role {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #f59e0b;
+    }
+    .flow-step-name {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
+    .flow-step-action {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      white-space: pre-line;
+    }
+    .flow-step-form {
+      font-size: 0.72rem;
+      font-family: monospace;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .flow-step-gate {
+      font-size: 0.72rem;
+      color: #fca5a5;
+      border-top: 1px dashed rgba(239, 68, 68, 0.3);
+      padding-top: 6px;
     }
 
     /* Tier 1 & 2 Cards Grid */
@@ -524,6 +646,7 @@
     /* Mobile Adaptations */
     @media (max-width: 1024px) {
       .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillars-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -552,104 +675,7 @@
       table.governance-table th { background: #f1f5f9; color: #000; }
       table.governance-table td { color: #000; }
     }
-  
-    /* ==========================================================================
-       FLOWCHART STYLES (RESPONSIVE NODE CARDS & CONNECTORS)
-       ========================================================================== */
-    .tier-section-flowchart {
-      margin-bottom: 24px;
-    }
-    .flowchart-wrapper {
-      background: rgba(11, 19, 43, 0.7);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: var(--radius-md);
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
-    }
-    .flowchart-header-title {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #38bdf8;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .flowchart-steps-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      position: relative;
-    }
-    .flow-step-card {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(71, 85, 105, 0.6);
-      border-radius: var(--radius-sm);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      transition: var(--transition);
-    }
-    .flow-step-card:hover {
-      border-color: var(--primary-light);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.2);
-    }
-    .flow-step-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .flow-step-num {
-      font-size: 0.7rem;
-      font-weight: 900;
-      color: #38bdf8;
-      background: rgba(2, 132, 199, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 2px 8px;
-      border-radius: 12px;
-      letter-spacing: 0.05em;
-    }
-    .flow-step-role {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #f59e0b;
-    }
-    .flow-step-name {
-      font-size: 0.92rem;
-      font-weight: 800;
-      color: #f8fafc;
-      margin-bottom: 6px;
-    }
-    .flow-step-action {
-      font-size: 0.78rem;
-      color: #cbd5e1;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      white-space: pre-line;
-    }
-    .flow-step-form {
-      font-size: 0.72rem;
-      font-family: monospace;
-      color: #10b981;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      padding: 3px 6px;
-      border-radius: 4px;
-      margin-bottom: 6px;
-    }
-    .flow-step-gate {
-      font-size: 0.72rem;
-      color: #fca5a5;
-      border-top: 1px dashed rgba(239, 68, 68, 0.3);
-      padding-top: 6px;
-    }
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -661,15 +687,15 @@
           <span class="brand-logo">SX</span>
           <div>
             <div class="brand-title">盛欣網絡股份有限公司</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">跨國手遊研發與營運發行 內部控制九大交易循環四階治理全景手冊</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">《鬥陣歡樂城》代理商房卡與俱樂部營運 內部控制九大交易循環四階全景手冊</div>
           </div>
-          <span class="brand-badge">✓ 手遊產業專屬版</span>
+          <span class="brand-badge">✓ 棋牌代理商模式專屬版</span>
         </div>
 
         <div class="header-actions">
           <div class="search-wrapper">
             <span class="search-icon">🔍</span>
-            <input type="text" id="global-search-input" placeholder="搜尋雙平台金流、外包、QA、GameOps..." oninput="handleSearch(this.value)">
+            <input type="text" id="global-search-input" placeholder="搜尋房卡、代理商、AMS、返利、開桌..." oninput="handleSearch(this.value)">
           </div>
           <button class="btn-action" onclick="expandAllCards()">📂 展開全覽</button>
           <button class="btn-action" onclick="window.print()">🖨️ 列印/匯出</button>
@@ -679,13 +705,13 @@
       <!-- Scrollable Cycle Tabs -->
       <ul class="cycle-nav-scroll" id="cycle-nav-list">
         <li><button class="cycle-nav-btn active" onclick="jumpToCycle('all', this)">🌐 全部循環 (9)</button></li>
-        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-1', this)">💎 01. 銷貨及收款循環</button></li>
-        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-2', this)">🎨 02. 採購及付款循環</button></li>
+        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-1', this)">🎴 01. 銷貨及收款循環</button></li>
+        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-2', this)">🎪 02. 採購及付款循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-3', this)">🕹️ 03. 研發製作與版本交付循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-4', this)">👥 04. 薪工循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-5', this)">🏦 05. 融資循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-6', this)">🚀 06. 投資循環</button></li>
-        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-7', this)">💻 07. 固定資產循環</button></li>
+        <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-7', this)">🖥️ 07. 固定資產循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-8', this)">🔬 08. 研究發展循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-9', this)">🛡️ 09. 電腦化資訊系統處理循環</button></li>
       </ul>
@@ -696,40 +722,69 @@
 
     <!-- Hero Banner -->
     <div class="hero-banner">
-      <div class="hero-title">盛欣網絡 手機遊戲研發與全球營運 內部控制九大循環全景手冊</div>
+      <div class="hero-title">《鬥陣歡樂城》代理商房卡分銷與俱樂部營運 內部控制全景治理手冊</div>
       <div class="hero-subtitle">
-        本手冊專為跨國手機遊戲開發與發行公司量身定制。盛欣網絡無實體工廠重裝備製造，核心資產由軟體工程師、主美設計師、遊戲企劃、QA 測試與 LiveOps 營運工程師構成。我們將傳統生產循環徹底重組為「遊戲產品研發與版本發行營運循環」，並將雙平台 (App Store/Google Play) 課金分成、IFRS 15 虛寶消耗模型、美術外包著作權買斷、買量廣告歸因 (AppsFlyer) 與 GameOps 零停機即時維運全面納入內部控制與四階文件體系。
+        本手冊專門針對盛欣網絡旗艦休閒棋牌競技平台<strong>《鬥陣歡樂城》</strong>之商業模式全方位重構。平台以「俱樂部 (Club) 開桌」為核心玩法，核心商業變現透過<strong>「代理商多級分銷體系 ➔ 批發進卡/房卡儲值 ➔ 俱樂部內部消耗開桌」</strong>實現。手冊明確定義<strong>「推廣部門」</strong>（開拓代理商、加盟審查、階梯返利政策與社群公會輔導）與<strong>「營運部門」</strong>（AMS 代理後台維運、房卡庫存生成與劃撥管制、即時開桌對帳、防夥牌作弊與客訴仲裁）之核心權能與制衡機制，徹底落實四階文件治理。
+      </div>
+    </div>
+
+    <!-- Core Two Departments Deep Dive -->
+    <div class="pillars-grid">
+      <div class="pillar-card" style="border-top: 3px solid #f59e0b;">
+        <div class="pillar-header" style="color:#f59e0b;">
+          <span>🎯</span> 推廣部門 (Agency Promotion & Business Development)
+        </div>
+        <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+          <strong>核心職責：</strong><br>
+          1. <strong>代理商拓展與徵信：</strong> 負責各區總代理、俱樂部會長之招募、背景徵信與親簽《合規營運與嚴禁涉賭承諾書》。<br>
+          2. <strong>商務階梯政策：</strong> 擬定大額進卡折扣矩陣、月度消耗達標返利 (Rebate) 方案與大型公會激勵政策。<br>
+          3. <strong>賽事與線下活動：</strong> 籌辦區域實體麻將/棋牌聯賽，對接 KOL/網紅推廣合作與社群活動拉新。<br>
+          <span style="color:#fca5a5; font-weight:700;">★ 權限紅線：推廣人員嚴禁碰觸 AMS 後台房卡直接劃撥權限，亦嚴禁代收代理商款項。</span>
+        </div>
+      </div>
+
+      <div class="pillar-card" style="border-top: 3px solid #38bdf8;">
+        <div class="pillar-header" style="color:#38bdf8;">
+          <span>⚙️</span> 營運部門 (LiveOps, Club Governance & AMS Management)
+        </div>
+        <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+          <strong>核心職責：</strong><br>
+          1. <strong>AMS 後台與房卡管制：</strong> 專責管理代理商後台 (AMS)，嚴格依據財務放行單據執行俱樂部房卡注入，全鏈路日誌存證。<br>
+          2. <strong>即時開桌與消耗監控：</strong> 每日監控全服萬桌同時在線局數、房卡消耗速率 (Burn Rate) 與掉單排查。<br>
+          3. <strong>防夥牌作弊與仲裁：</strong> 執行同 IP / 同 GPS 距離防作弊檢測，審查異常勝率與戰績回放 (Replay)，維護公平競技。<br>
+          <span style="color:#fca5a5; font-weight:700;">★ 權限紅線：未見財務款項核訖通知前，系統與營運人員嚴禁私發任何測試卡或特權房卡。</span>
+        </div>
       </div>
     </div>
 
     <!-- Governance Metrics Bento Grid -->
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-num">手遊專屬 9 循環</div>
-        <div class="metric-label">告別傳統工廠製造框架</div>
-        <div class="metric-desc">涵蓋雙平台對帳、美術外包、遊戲里程碑 (Sprint) 與 GameOps 營運全流程。</div>
+        <div class="metric-num">代理商體系</div>
+        <div class="metric-label">俱樂部多級分銷閉環</div>
+        <div class="metric-desc">涵蓋總代、俱樂部、進卡階梯折讓、返利結算與防洗錢合規防火牆。</div>
       </div>
       <div class="metric-card">
-        <div class="metric-num">IFRS 15 虛寶模型</div>
-        <div class="metric-label">合約負債與遞延收入</div>
-        <div class="metric-desc">依玩家預期生命週期與消耗速度認列營收，精準防範退款 (Refund) 盜刷。</div>
+        <div class="metric-num">防私印房卡</div>
+        <div class="metric-label">AMS 劃撥全鏈路審計</div>
+        <div class="metric-desc">杜絕內部私增房卡 (Card Injection)，劃撥必須通過財務核銷與雙因子 MFA。</div>
       </div>
       <div class="metric-card">
-        <div class="metric-num">100% 智財買斷</div>
-        <div class="metric-label">美術與程式碼安全邊界</div>
-        <div class="metric-desc">外包合約著作權全數轉讓、無 AI 侵權切結；研發私有 Git 程式庫全鏈路 DLP 防護。</div>
+        <div class="metric-num">IFRS 15 遞延</div>
+        <div class="metric-label">開桌消耗模型結轉</div>
+        <div class="metric-desc">預售房卡全數列合約負債，依大數據實際開桌消耗對帳認列營收。</div>
       </div>
       <div class="metric-card">
-        <div class="metric-num">GameOps 零停機</div>
-        <div class="metric-label">全球微服務與防作弊</div>
-        <div class="metric-desc">Kubernetes 容器化灰度發布、MongoDB Atlas 即時備份、反外掛封號與 GM 特權日誌。</div>
+        <div class="metric-num">GLI-19 認證</div>
+        <div class="metric-label">國際 RNG 隨機公平發牌</div>
+        <div class="metric-desc">百萬局卡方隨機檢驗通過，同 IP/GPS 防夥牌作弊機制全天候監控。</div>
       </div>
     </div>
 
     <!-- Tier Filter Pills -->
     <div class="tier-filter-bar">
-      <button class="tier-pill" onclick="filterTier('flowchart', this)">🔄 端到端作業流程圖</button>
       <button class="tier-pill active" onclick="filterTier('all', this)">📑 顯示全階層規範</button>
+      <button class="tier-pill" onclick="filterTier('flowchart', this)">🔄 核心端到端流程圖</button>
       <button class="tier-pill" onclick="filterTier('tier1', this)">🏛️ 一階：治理準則 (Policies)</button>
       <button class="tier-pill" onclick="filterTier('tier2', this)">📜 二階：管理辦法 (Standards)</button>
       <button class="tier-pill" onclick="filterTier('tier3', this)">⚙️ 三階：SOP程序 (Procedures)</button>
@@ -741,7 +796,7 @@
     <div id="cycles-container">
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 01: 銷貨及收款循環 (雙平台、金流儲值與遞延收入) -->
+      <!-- CYCLE 01: 銷貨及收款循環 (代理商房卡批銷、俱樂部進卡、返利折讓與遞延收入) -->
       <!-- ========================================================================= -->
       <section id="cycle-1" class="cycle-card" data-cycle-num="01">
         
@@ -749,17 +804,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">01</div>
             <div>
-              <div class="cycle-name-zh">💎 銷貨及收款循環 (雙平台、金流儲值與遞延收入)</div>
-              <div class="cycle-name-en">Sales, IAP In-Game Revenue & Deferred Revenue Cycle</div>
+              <div class="cycle-name-zh">🎴 銷貨及收款循環 (代理商房卡批銷、俱樂部進卡、返利折讓與遞延收入)</div>
+              <div class="cycle-name-en">Agent Room-Card Sales, Club Wholesale, Rebates & Deferred Revenue Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：推廣部門 (主辦) ＆ 營運部門 (協辦) ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-01 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-01 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範 App Store / Google Play 雙平台、官方直營第三方金流儲值、虛擬道具定價公示、惡意退款封號與 IFRS 15 虛寶消耗遞延收入認列，杜絕盜刷弊端與財務失真。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》總代理/俱樂部代理商加盟徵信、大額批發進卡折扣階梯、AMS 代理後台房卡劃撥、代理商階梯返利結算、俱樂部開桌消耗與 IFRS 15 遞延收入認列；嚴禁代理商線下涉賭與反向兌現，維護合規防火牆。
         </div>
 
         <!-- Flowchart Block for cycle-1 -->
@@ -767,7 +823,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 手遊雙平台儲值、金流對帳、退款阻斷與 IFRS 15 遞延收入端到端流程圖
+              <span>📌</span> 《鬥陣歡樂城》代理商進卡申請、款項核銷、AMS房卡劃撥與開桌消耗對帳流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -775,14 +831,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 01</span>
-                    <span class="flow-step-role">全球玩家 / 終端設備</span>
+                    <span class="flow-step-role">代理商 / 俱樂部會長</span>
                   </div>
-                  <div class="flow-step-name">遊戲內購發起</div>
-                  <div class="flow-step-action">玩家於遊戲內點選商品，透過 Apple App Store、Google Play 或官方 APK (MyCard/Stripe) 發起儲值請求。</div>
+                  <div class="flow-step-name">提報批發購卡申請</div>
+                  <div class="flow-step-action">代理商於代理商管理系統 (AMS) 提交《房卡批發採購申請單》，載明進卡數量（如 10 萬張）、折讓等級與劃撥目標俱樂部 ID。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 雙平台交易 Token</div>
-                  <div class="flow-step-gate">🛡️ 內控點：檢查商品定價與合法購買額度</div>
+                  <div class="flow-step-form">📋 FM-SAL-01 代理商批發進卡申請單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：比對代理商加盟資格與授信預付款額度</div>
                 </div>
               </div>
 
@@ -790,14 +846,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">雙平台金流閘道</span>
+                    <span class="flow-step-role">推廣部門 (Promotion)</span>
                   </div>
-                  <div class="flow-step-name">金流扣款與驗簽</div>
-                  <div class="flow-step-action">雙平台或第三方金流完成扣款，發送加密 Server-to-Server Webhook 驗證回執 (Receipt Verification)。</div>
+                  <div class="flow-step-name">商務條件與折扣審查</div>
+                  <div class="flow-step-action">推廣部業務專員審核進卡階梯折扣（如達標享 1.5 折批發價或返利點數），確認符合代理政策，經推廣總監核簽後轉交財務部。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 官方加密收據 (Receipt)</div>
-                  <div class="flow-step-gate">🛡️ 內控點：非官方收據自動攔截 (防偽造外掛)</div>
+                  <div class="flow-step-form">📋 FM-SAL-02 代理商階梯返利核算表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁業務私自承諾政策外之超額折讓</div>
                 </div>
               </div>
 
@@ -805,14 +861,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">遊戲伺服端 (Game Server)</span>
+                    <span class="flow-step-role">財務部 (會計/出納)</span>
                   </div>
-                  <div class="flow-step-name">驗簽發貨與即時寫庫</div>
-                  <div class="flow-step-action">伺服器驗簽無誤，即時將虛擬代幣/道具派發至玩家角色，並寫入 Order DB 訂單資料庫。</div>
+                  <div class="flow-step-name">款項查驗與發票開立</div>
+                  <div class="flow-step-action">出納確認代理商銀行電匯或專屬虛擬帳號款項全額入帳，會計開立統一發票（品名：資訊服務費-房卡），於系統確認收款放行。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-SAL-01 發貨成功日誌</div>
-                  <div class="flow-step-gate">🛡️ 內控點：訂單序號唯一性校驗 (防重放攻擊)</div>
+                  <div class="flow-step-form">📋 FM-SAL-03 銀行匯款水單與發票聯</div>
+                  <div class="flow-step-gate">🛡️ 內控點：先收款後放卡（款項未入帳系統嚴格禁止劃撥）</div>
                 </div>
               </div>
 
@@ -820,16 +876,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">客服 / 資安系統</span>
+                    <span class="flow-step-role">營運部門 (Operations)</span>
                   </div>
-                  <div class="flow-step-name">即時退款監控 (Refund)</div>
-                  <div class="flow-step-action">【判定分支】：是否發生玩家惡意刷退 (Chargeback)?
-• 否 ➔ 正常結算流轉。
-• 是 ➔ 觸發自動扣回虛寶；代幣不足扣至負數並永久封號。</div>
+                  <div class="flow-step-name">AMS 代理系統房卡劃撥</div>
+                  <div class="flow-step-action">營運部後台管理員依財務核准指令，於 AMS 系統將對應數量之房卡/鑽石劃撥至該代理商俱樂部錢包，寫入不可篡改劃撥日誌。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-SAL-04 違規扣寶封號單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：異常退款 48 小時未補儲強制停權</div>
+                  <div class="flow-step-form">📋 FM-SAL-04 AMS 房卡充值劃撥日誌</div>
+                  <div class="flow-step-gate">🛡️ 內控點：劃撥數量與財務核准單據 100% 系統自動防呆</div>
                 </div>
               </div>
 
@@ -837,14 +891,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">大數據與會計部</span>
+                    <span class="flow-step-role">俱樂部玩家 / 遊戲伺服器</span>
                   </div>
-                  <div class="flow-step-name">IFRS 15 遞延收入結算</div>
-                  <div class="flow-step-action">大數據引擎追蹤付費代幣實際消耗：消耗型道具即時認列營收；耐久型外觀依預期生命週期分期攤銷。</div>
+                  <div class="flow-step-name">開房開桌與即時消耗</div>
+                  <div class="flow-step-action">俱樂部成員開立好友房（麻將/撲克），遊戲伺服端依每圈局數自動扣除房卡；即時產出局數戰績回放與房卡扣除日誌。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-SAL-03 遞延收入結算表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：未耗用代幣 100% 認列為合約負債</div>
+                  <div class="flow-step-form">📋 FM-SAL-05 遊戲開桌與房卡消耗日誌</div>
+                  <div class="flow-step-gate">🛡️ 內控點：扣卡異常與重複扣卡即時阻斷與告警</div>
                 </div>
               </div>
 
@@ -852,14 +906,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">財務部 / 出納</span>
+                    <span class="flow-step-role">財務部 暨 大數據團隊</span>
                   </div>
-                  <div class="flow-step-name">雙平台分成收匯沖銷</div>
-                  <div class="flow-step-action">次月收受 Apple/Google 外幣電匯入帳（扣除 15%~30% 平台抽成），會計進行外銷零稅率申報與總帳沖銷。</div>
+                  <div class="flow-step-name">IFRS 15 遞延收入結算</div>
+                  <div class="flow-step-action">大數據統計當月全服房卡實際開桌消耗總量，消耗部分自「合約負債（預收房卡款）」結轉為「營業收入」；未消耗存量續列遞延收入。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-SAL-06 外銷零稅率清冊</div>
-                  <div class="flow-step-gate">🛡️ 內控點：銀行電匯水單與後台淨流水 100% 勾稽</div>
+                  <div class="flow-step-form">📋 FM-SAL-06 房卡消耗與遞延收入表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴格禁止將未開桌消耗之預售房卡認列為收入</div>
                 </div>
               </div>
 
@@ -877,9 +931,9 @@
                 <span class="policy-code">SX-POL-SAL-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">遊戲虛擬寶物銷售、雙平台營收認列與遞延收入治理準則</div>
-              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、IFRS 15 客戶合約之收入、公平交易法轉蛋機率公示規範</div>
-              <div class="policy-desc">明定本公司手機遊戲內購（In-App Purchase, IAP）、官方 APK 第三方金流儲值之收入認列標準；落實虛擬代幣未耗用前作為「合約負債（遞延收入）」之會計處理；規範玩家退款即時阻斷機制。</div>
+              <div class="policy-title">《鬥陣歡樂城》代理商房卡批銷、營收認列與反賭博治理準則</div>
+              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、刑法第266/268條賭博罪防範、IFRS 15 客戶合約收入準則</div>
+              <div class="policy-desc">明定本公司《鬥陣歡樂城》為休閒娛樂棋牌平台，房卡僅為遊戲桌次服務費；嚴禁官方、推廣部與代理商從事任何代幣反向兌換現金 (Cash-out)；建立代理商嚴格准入、批發預收與合約負債遞延收入認列體系。</div>
             </div>
 
           </div>
@@ -893,19 +947,19 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-SAL-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 推廣總監核定</span>
               </div>
-              <div class="policy-title">App Store / Google Play 與第三方金流 (3rd Party) 對帳辦法</div>
-              <div class="policy-desc">規範雙平台月度拆帳清單 (Financial Reports) 與內部遊戲日誌之自動比對；扣除平台抽成 (15%~30%) 與金流手續費後，核算應收帳款淨額與收匯期限管制。</div>
+              <div class="policy-title">代理商 (Agent) 與俱樂部會長加盟審查、徵信與授權辦法</div>
+              <div class="policy-desc">由推廣部門主辦。新代理商必須填寫背景調查、簽署《合規營運與嚴禁涉賭切結書》；依保證金額度與月度保底進卡量劃分一級、二級代理與俱樂部等級。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-SAL-003</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">營運委員會核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">營運委員會 暨 財務長核定</span>
               </div>
-              <div class="policy-title">遊戲商城道具定價、轉蛋抽卡機率公示與虛擬幣合規辦法</div>
-              <div class="policy-desc">遊戲內商品定價由數值與營運團隊提出並經核決；付費抽卡與轉蛋機率必須經第三方代碼驗證並符合法定公示標準；嚴禁未授權虛寶暗改或特權帳號發放私賣。</div>
+              <div class="policy-title">房卡批發定價、大量進卡階梯折扣與返利政策辦法</div>
+              <div class="policy-desc">由營運部與推廣部共同制定。明確公佈各級進卡量之標準折讓比率矩陣與月度激勵返利點數；任何特案折讓必須經總經理特簽，嚴禁推廣人員私相授受。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -913,17 +967,17 @@
                 <span class="policy-code">SX-STD-SAL-004</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">玩家惡意退款 (Refund Abuse)、盜刷拒付與帳號封禁辦法</div>
-              <div class="policy-desc">建立雙平台即時退款 API 監聽；收到退款通知時，系統自動扣回等額付費虛擬幣或封鎖角色；負值帳號限期補儲，逾期強制永久凍結並提列壞帳損失。</div>
+              <div class="policy-title">AMS 代理商管理系統後台房卡劃撥與權限管制規範</div>
+              <div class="policy-desc">由營運部門專責執行。劃撥權限與推廣業務人員徹底隔離；系統必須強制雙因子認證 (MFA)；凡未經財務款項核認之劃撥請求，系統程式自動封鎖。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-SAL-005</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">法務風控部 暨 營運總監核定</span>
               </div>
-              <div class="policy-title">海外聯合營運與區域發行商 (Publisher) 分成結算辦法</div>
-              <div class="policy-desc">規範授權海外代理商每月營運報表審核、淨流水 (Net Revenue) 計算扣除項（通路費/稅費）、分成款對帳單確認與外匯水單收受沖銷程序。</div>
+              <div class="policy-title">俱樂部涉賭監控、異常大額轉卡與代理商資格撤銷辦法</div>
+              <div class="policy-desc">營運部監控異常集中轉卡與敏感字眼；若發現俱樂部有線下賭博洗錢行為，立即凍結俱樂部房卡資產、終止代理合約並通報法務追究責任。</div>
             </div>
 
           </div>
@@ -934,38 +988,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-SAL-01：遊戲雙平台 (iOS/Android) 每日儲值流水與後台日誌對帳程序</div>
+            <div class="sop-title"><span>▶</span> SOP-SAL-01：代理商加盟徵信、合約簽署與 AMS 帳號開通程序</div>
             <ol class="sop-steps">
-              <li>每日凌晨 02:00 排程自動拉取 Apple App Store、Google Play 及第三方金流後台訂單記錄。</li>
-              <li>比對遊戲伺服器訂單資料庫 (Order DB) 交易成功憑證，確認發貨成功 (Item Delivered)。</li>
-              <li>產出《每日金流對帳日報表》，單筆差異或掉單異常即時發出警報並由客服工程師介入排查。</li>
+              <li>推廣部業務人員拜訪潛在代理商，填寫《代理商徵信審查報告書》，查驗負責人身分與社群俱樂部規模。</li>
+              <li>法務部審查合約，強制代理商親簽《合規營運承諾書》（明令禁止從事幣商行為與現金回收）。</li>
+              <li>繳納代理加盟保證金或預付款後，由推廣總監簽核，營運部於 AMS 後台建立代理商與俱樂部專屬 ID。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-SAL-02：IFRS 15 虛擬寶物消耗模型與月結遞延收入結轉程序</div>
+            <div class="sop-title"><span>▶</span> SOP-SAL-02：批發進卡申請、財務對帳核款與發票開立程序</div>
             <ol class="sop-steps">
-              <li>大數據平台每日統計全服付費代幣（鑽石/點數）之實際消耗量與各項道具使用時長。</li>
-              <li>區分「消耗型虛寶」（如抽卡券、體力藥水，使用當下認列收入）與「耐久型虛寶」（如永久時裝、坐騎，按玩家預期生命週期攤銷）。</li>
-              <li>月底會計依精算模型產出《虛擬點數未耗用遞延收入明細表》，自動結轉應認列收入與合約負債。</li>
+              <li>代理商於系統填報進卡申請，推廣部核算符合本期折扣階梯後簽發《進卡審批單》。</li>
+              <li>代理商匯入指定公司帳戶，出納核對銀行水單金額無誤後，會計部於系統勾稽確認入帳。</li>
+              <li>會計部開立電子統一發票，ERP 自動將該筆款項認列為「預收房卡款（合約負債）」。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-SAL-03：即時退款監控、自動扣除遊戲幣與惡意玩家封號程序</div>
+            <div class="sop-title"><span>▶</span> SOP-SAL-03：營運部 AMS 房卡劃撥、配發確認與日誌存證程序</div>
             <ol class="sop-steps">
-              <li>系統監聽 Apple/Google Server-to-Server 拒付或退款事件 Webhook。</li>
-              <li>自動觸發遊戲帳號道具扣除：若付費代幣餘額不足扣抵，角色代幣呈現負數。</li>
-              <li>客服系統發送遊戲內警告信；若 48 小時內未補足或屬惡意刷退，系統自動執行帳號永久停權封鎖。</li>
+              <li>營運部專責後台管理員接獲財務收款放行通知，登入 AMS 系統執行劃撥指派。</li>
+              <li>輸入代理商俱樂部 ID、充值數量，系統彈出簡訊/TOTP 雙重認證，確認後執行點數注入。</li>
+              <li>系統自動發送充值成功通知予代理商，劃撥交易日誌即時寫入不可篡改稽核庫存檔。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-SAL-04：海外代理發行商月結對帳、發票開立與外匯收匯程序</div>
+            <div class="sop-title"><span>▶</span> SOP-SAL-04：每日俱樂部開桌消耗統計、IFRS 15 遞延收入結轉與對帳程序</div>
             <ol class="sop-steps">
-              <li>次月 5 日前收受海外代理發行商提報之營運月報 (Monthly Royalty Report)。</li>
-              <li>營運主管比對伺服器登入與儲值日誌無誤後簽認分成對帳單。</li>
-              <li>會計部開立外銷免稅發票，追蹤代理商於合約約定期限（如月結45天）內電匯外匯款項入帳。</li>
+              <li>每日凌晨 02:00 營運部後台自動跑批，統計全服各俱樂部開桌數與房卡消耗張數。</li>
+              <li>產出《每日房卡消耗日報表》，比對各代理商俱樂部結存數量，確保帳實完全相符。</li>
+              <li>月底會計部依大數據實際開桌消耗張數，自合約負債結轉為當期營業收入。</li>
             </ol>
           </div>
 
@@ -979,7 +1033,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -988,51 +1042,51 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-SAL-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">每日遊戲金流與發貨日對帳表</td>
-                  <td>通路別(iOS/Android/3rd)、儲值筆數、原始幣別、折合TWD、發貨成功率%、掉單追蹤單號</td>
+                  <td style="font-weight:700; color:#f8fafc;">代理商/俱樂部批發進卡申請單</td>
+                  <td>代理商編號、俱樂部ID、進卡數量、折讓等級、應付金額、推廣主管核簽</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-SAL-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲商城虛擬商品定價與轉蛋機率核決表</td>
-                  <td>商品ID、道具名稱、定價點數、抽卡機率%、數值策劃簽署、製作人/副總核准</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲生命週期加5年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-SAL-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">IFRS 15 虛擬點數未耗用遞延收入結轉表</td>
-                  <td>期初合約負債、本期儲值總額、本期消耗認列收入、期末未耗用遞延收入、會計主管覆核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定審計)</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-SAL-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">玩家惡意退款扣寶與違規停權處置紀錄表</td>
-                  <td>玩家UID、退款訂單號、退款金額、扣除虛寶數量、帳號處分狀態(凍結/永封)、客服簽章</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-SAL-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">海外聯運發行月度拆帳結算單 (Royalty Statement)</td>
-                  <td>發行商代碼、授權地區、總儲值流水(Gross)、通路費用扣除、淨分成金額、收匯核銷聯</td>
+                  <td style="font-weight:700; color:#f8fafc;">代理商徵信審查表與嚴禁涉賭合規切結書</td>
+                  <td>負責人身分證明、社群公會規模、切結嚴禁現金回購條款、推廣總監/法務簽認</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">合約終止後7年</td>
                 </tr>
 
                 <tr>
+                  <td><span class="form-id-badge">FM-SAL-03</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">代理商月度階梯返利結算清冊</td>
+                  <td>月度累計進卡總量、達標返利比率、應返贈點數/佣金、推廣部與財務部會簽</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
+                </tr>
+
+                <tr>
+                  <td><span class="form-id-badge">FM-SAL-04</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">AMS 後台房卡充值劃撥審批記錄表</td>
+                  <td>劃撥單號、財務對帳確認號、目標俱樂部ID、劃撥數量、營運操作人工號、時間戳記</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (系統稽核日誌)</td>
+                </tr>
+
+                <tr>
+                  <td><span class="form-id-badge">FM-SAL-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">每日俱樂部開桌場次與房卡消耗對帳報表</td>
+                  <td>日期、活躍俱樂部數、總開桌場次(麻將/撲克)、總消耗房卡數、平均單桌耗卡率</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
+                </tr>
+
+                <tr>
                   <td><span class="form-id-badge">FM-SAL-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">雙平台外銷零稅率證明清冊與電子發票開立清冊</td>
-                  <td>國稅局申報案號、Apple/Google入帳匯費、營業稅申報金額、銀行結匯水單編號</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
+                  <td style="font-weight:700; color:#f8fafc;">IFRS 15 房卡合約負債與遞延收入結算明細表</td>
+                  <td>期初預收房卡餘額、本期進卡款項、本期實際開桌消耗轉營收、期末遞延餘額、會計覆核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (審計法定底稿)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-SAL-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲虛擬虛寶序號 (CD-Key) 產製與發放管制表</td>
-                  <td>活動專案名稱、產製批號、序號數量、單一序號價值、兌換期限、營運主管特簽核准</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
+                  <td style="font-weight:700; color:#f8fafc;">異常轉卡告警與違規涉賭俱樂部處分簽單</td>
+                  <td>俱樂部ID、異常短時間大額轉移流水、調查結論、凍結房卡數量、終止代理合約簽核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">10年</td>
                 </tr>
 
               </tbody>
@@ -1043,15 +1097,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 遊戲數值企劃與商城營運人員嚴禁持有發送虛寶 (GM Tool) 權限；虛擬貨幣遞延收入模型由精算/會計獨立結算；惡意退款封號必須由系統自動化或客服主管獨立審定。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 開拓代理商之推廣部人員嚴禁持有 AMS 劃撥充值權限；負責劃撥之營運部人員嚴禁接觸收款金流；未見財務正式收款憑條前系統嚴格禁止任何房卡注入。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 02: 採購及付款循環 (雲端架構、美術外包與廣告買量) -->
+      <!-- CYCLE 02: 採購及付款循環 (推廣活動賽事、美術音樂外包、雲端與代理返點) -->
       <!-- ========================================================================= -->
       <section id="cycle-2" class="cycle-card" data-cycle-num="02">
         
@@ -1059,17 +1113,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">02</div>
             <div>
-              <div class="cycle-name-zh">🎨 採購及付款循環 (雲端架構、美術外包與廣告買量)</div>
-              <div class="cycle-name-en">Procurement, Cloud Infra, Art Outsourcing & UA Cycle</div>
+              <div class="cycle-name-zh">🎪 採購及付款循環 (推廣活動賽事、美術音樂外包、雲端與代理返點)</div>
+              <div class="cycle-name-en">Procurement, Promo Events, Art Outsourcing, Cloud & Agent Rebates Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：推廣部門 (線下賽事/行銷) ＆ 營運部門 (雲端/外包) ＆ 採購部 ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-02 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-02 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範雲端算力與 CDN (AWS/GCP/MongoDB Atlas)、遊戲美術/音樂外包製作、發行買量投放 (UA) 與引擎工具授權採購，落實三單比對與著作權買斷，防止版權侵權與假量浪費。
+          <strong>🎯 業務循環治理目標：</strong> 規範推廣部門線下棋牌賽事活動採購、KOL/主播推廣合作、棋牌 2D/3D 特效與語音配音外包、高併發實時連線伺服器與代理商佣金返點核銷，落實三單比對與反舞弊。
         </div>
 
         <!-- Flowchart Block for cycle-2 -->
@@ -1077,7 +1132,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 手遊雲端算力、美術外包著作權買斷與廣告買量 (UA) 請採驗付流程圖
+              <span>📌</span> 推廣活動賽事、棋牌美術外包、雲端高併發與代理商月度返點流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -1085,14 +1140,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 01</span>
-                    <span class="flow-step-role">需求單位 (主美/SRE/營運)</span>
+                    <span class="flow-step-role">推廣部 / 營運部</span>
                   </div>
-                  <div class="flow-step-name">需求提出與預算審核</div>
-                  <div class="flow-step-action">提報 2D/3D 美術外包、AWS/GCP 雲端伺服器擴容或廣告買量需求，檢附 SOW 或規格書。</div>
+                  <div class="flow-step-name">活動賽事或外包請購</div>
+                  <div class="flow-step-action">提報區域實體棋牌聯賽、網紅主播推廣合約、牌桌 3D 美術特效或方言語音包外包請購需求 (PR)，附 SOW 與預算。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-01 請購單 (PR)</div>
-                  <div class="flow-step-gate">🛡️ 內控點：ERP 自動勾稽當季專案預算餘額</div>
+                  <div class="flow-step-form">📋 FM-PUR-01 推廣活動請購單 PR</div>
+                  <div class="flow-step-gate">🛡️ 內控點：ERP 自動檢核當季推廣預算額度</div>
                 </div>
               </div>
 
@@ -1102,12 +1157,12 @@
                     <span class="flow-step-num">STEP 02</span>
                     <span class="flow-step-role">獨立採購部</span>
                   </div>
-                  <div class="flow-step-name">AVL詢價與三家比價</div>
-                  <div class="flow-step-action">自合格供應商名冊 (AVL) 挑選廠商發送 RFQ 詢價，收受報價並編制比價表，協商最優付款條件。</div>
+                  <div class="flow-step-name">AVL 詢價與三家比價</div>
+                  <div class="flow-step-action">自合格供應商名冊 (AVL) 挑選廠商發送 RFQ 詢價，評估執行力、報價、交期與付款條件，編制《比價議價記錄表》。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-03 比價議價記錄表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：落實貨比三家，單一來源需總經理特簽</div>
+                  <div class="flow-step-form">📋 FM-PUR-02 比價議價記錄表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：落實三家比價，單一來源需總經理特簽</div>
                 </div>
               </div>
 
@@ -1117,12 +1172,12 @@
                     <span class="flow-step-num">STEP 03</span>
                     <span class="flow-step-role">法務部 暨 採購部</span>
                   </div>
-                  <div class="flow-step-name">簽約下單 (IP買斷)</div>
-                  <div class="flow-step-action">核發採購單 (PO)，美術外包強制簽署《無抄襲侵權切結書》並約定著作財產權 100% 轉讓盛欣網絡。</div>
+                  <div class="flow-step-name">簽約下單 (著作權買斷)</div>
+                  <div class="flow-step-action">核發採購單 (PO)，美術外包強制簽署《著作財產權 100% 轉讓協議》與無抄襲切結書；約定分層源檔 (PSD/FBX) 交付。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-02 外包合約 / PO</div>
-                  <div class="flow-step-gate">🛡️ 內控點：合約必須包含原始原始碼/分層源檔交付</div>
+                  <div class="flow-step-form">📋 FM-PUR-03 外包/採購單 PO</div>
+                  <div class="flow-step-gate">🛡️ 內控點：著作人格權約定不得對公司行使</div>
                 </div>
               </div>
 
@@ -1130,14 +1185,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">主美 / 架構師 / 營運</span>
+                    <span class="flow-step-role">主美 / 營運總監</span>
                   </div>
-                  <div class="flow-step-name">分層源檔與成效驗收</div>
-                  <div class="flow-step-action">美術驗收分層 PSD/FBX 檔；雲端比對真實 Console 流量；買量廣告以 AppsFlyer 剔除作弊假量後驗收。</div>
+                  <div class="flow-step-name">分層源檔與賽事驗收</div>
+                  <div class="flow-step-action">主美檢驗牌面與動畫源檔；總務清點賽事獎品禮券；營運部依技術標準簽發《數位資產/活動驗收證明單 (GRN)》。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-06 數位資產驗收單 GRN</div>
-                  <div class="flow-step-gate">🛡️ 內控點：DevSecOps 弱點掃描 Critical=0</div>
+                  <div class="flow-step-form">📋 FM-PUR-04 驗收合格單 GRN</div>
+                  <div class="flow-step-gate">🛡️ 內控點：無侵權審定合格，素材入庫 Perforce</div>
                 </div>
               </div>
 
@@ -1145,14 +1200,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">會計部</span>
+                    <span class="flow-step-role">推廣部 ＆ 營運部</span>
                   </div>
-                  <div class="flow-step-name">★ 三單比對 (Three-Way Match)</div>
-                  <div class="flow-step-action">核對【PO 採購單】＝【GRN 驗收單】＝【Vendor Invoice 外部發票】，數量、單價與條件完全吻合。</div>
+                  <div class="flow-step-name">代理商返點核算與對帳</div>
+                  <div class="flow-step-action">次月依 AMS 俱樂部實際耗卡淨額試算代理商返利點數與佣金，剔除作弊虛假局數，產出返點清冊送財務審查。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-08 會計應付憑單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：三單不符系統自動阻斷立帳</div>
+                  <div class="flow-step-form">📋 FM-PUR-05 代理商返利核發清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：返利發放必須取得合法扣繳發票憑單</div>
                 </div>
               </div>
 
@@ -1160,14 +1215,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">財務長 暨 出納</span>
+                    <span class="flow-step-role">會計部 ＆ 出納</span>
                   </div>
-                  <div class="flow-step-name">網銀雙人授權放款</div>
-                  <div class="flow-step-action">依約定付款天期（月結45天），出納編制網銀批次檔 (Maker)，財務長插 Token 審查放行 (Checker)。</div>
+                  <div class="flow-step-name">★ 三單比對與網銀放款</div>
+                  <div class="flow-step-action">會計核對【PO 採購單】＝【GRN 驗收單】＝【外部發票/憑證】無誤立帳；出納網銀編制批次 (Maker)，財務長插 Token 授權放款 (Checker)。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PUR-09 網銀電匯放行回執</div>
-                  <div class="flow-step-gate">🛡️ 內控點：出納與會計做帳權限嚴格隔離</div>
+                  <div class="flow-step-form">📋 FM-PUR-07 會計應付憑單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：三單不符系統自動鎖定禁止付款</div>
                 </div>
               </div>
 
@@ -1185,9 +1240,9 @@
                 <span class="policy-code">SX-POL-PUR-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">手遊研發營運採購、雲端資源與外包製作內部控制準則</div>
-              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、《著作權法》著作財產權歸屬條款、反貪腐誠信規範</div>
-              <div class="policy-desc">明定美術外包產權 100% 歸屬盛欣網絡且嚴禁抄襲侵權；規範廣告買量反作弊 (Anti-Fraud) 查驗機制；規範雲端算力 FinOps 成本效益管控與三單比對。</div>
+              <div class="policy-title">營運與推廣採購、外包製作與代理商返點內部控制準則</div>
+              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、《所得稅法》佣金扣繳規定、反貪腐誠信經營守則</div>
+              <div class="policy-desc">規範推廣活動場地租賃、實體賽事獎品採購、網紅主播代言合約；美術外包版權 100% 買斷；代理商佣金與月度返點必須憑真實業績對帳單與合法扣繳憑證始得發放。</div>
             </div>
 
           </div>
@@ -1201,28 +1256,28 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PUR-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 營運委員會核定</span>
               </div>
-              <div class="policy-title">遊戲美術、配音 (CV) 與音樂音效外包評鑑辦法</div>
-              <div class="policy-desc">外包工作室必須提供作品集、資安保密協定 (NDA) 與無 AI/無抄襲侵權切結書；嚴格落實三家比價；合約必須載明原始設計圖檔 (PSD/FBX/Spine) 交付及智慧財產權完全買斷。</div>
+              <div class="policy-title">推廣部線下賽事活動、廣告製作與行銷外包採購辦法</div>
+              <div class="policy-desc">推廣活動費用 5 萬元以上一律實施三家比價；賽事獎品（如 3C 禮券/獎盃）必須由總務專人驗收保管，實施專人簽收領用清冊。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PUR-003</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">營運副總 暨 財務長核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">數位廣告買量投放 (User Acquisition, UA) 預算與歸因審核辦法</div>
-              <div class="policy-desc">買量投放（Google Ads, Meta, TikTok, Unity Ads）必須事前評估目標獲客成本 (CPI) 與回收率 (ROAS)；成效驗收必須以第三方歸因工具 (AppsFlyer/Adjust) 扣除刷量假量後計算結算。</div>
+              <div class="policy-title">棋牌 2D/3D 美術特效、方言語音包 (CV) 外包管理辦法</div>
+              <div class="policy-desc">外包麻將胡牌特效、牌桌 3D 渲染、台語/國語/客語配音必須簽署著作權完全轉讓契約；交付分層原始檔案，由主美嚴格驗收無抄襲侵權。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PUR-004</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 財務長核定</span>
               </div>
-              <div class="policy-title">多雲基礎架構 (AWS/GCP)、CDN 與大數據資料庫採購規範</div>
-              <div class="policy-desc">遊戲伺服器主機與資料庫採購必須檢附容量規劃 (Capacity Plan) 與負載估算；合約必須包含 99.99% SLA 補償條款；每月執行雲端成本分析 (FinOps) 壓降無效開銷。</div>
+              <div class="policy-title">代理商月度推廣佣金與業績返點結算核銷辦法</div>
+              <div class="policy-desc">依據推廣政策核算各級代理商之開桌達成返點；必須核對 AMS 後台真實消耗數據；代理商請領佣金必須提供合法統一發票或個人勞務報酬單供依法扣繳申報。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -1230,8 +1285,8 @@
                 <span class="policy-code">SX-STD-PUR-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">外包專案與服務採購核銷及三單比對 (PO＝GRN＝Invoice) 辦法</div>
-              <div class="policy-desc">會計部核付外包款項前，必須確認採購單 (PO)、主美/技術主管簽署之驗收合格單 (GRN) 及合法發票三者完全吻合；付款強制透過網銀雙人授權。</div>
+              <div class="policy-title">高併發低延遲遊戲雲端伺服器 (WebSocket/IDC) 採購規範</div>
+              <div class="policy-desc">棋牌即時對弈伺服器與防 DDoS 高防 IP 採購，必須檢附伺服器容量與最高同時在線 (PCU) 評估報告，合約載明 99.99% SLA 連線可用率標準。</div>
             </div>
 
           </div>
@@ -1242,38 +1297,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PUR-01：外包需求發起、著作權條款審核與請購程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PUR-01：推廣賽事活動與行銷專案請購、比價與立項程序</div>
             <ol class="sop-steps">
-              <li>主美/企劃主管填寫《外包採購請購單 (PR)》，詳列風格規範 (Style Guide) 與交付清單。</li>
-              <li>法務審查外包委託合約，確保著作人格權不得行使、著作財產權 100% 轉讓盛欣網絡。</li>
-              <li>財務部核對專案預算額度後，依核決權限辦法 (DOA) 簽核放行轉採購部。</li>
+              <li>推廣部編擬《賽事活動企劃與請購單 (PR)》，載明活動預期效益與參賽人次目標。</li>
+              <li>採購部針對活動執行商、贈品供應商執行三家詢價與比價，編制《比價議價記錄表》。</li>
+              <li>依 DOA 核決簽核後發放採購單 (PO)，活動禮券贈品進庫由總務清點列冊。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PUR-02：外包工作室三家比價、測試稿審定與下單簽約程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PUR-02：棋牌美術外包、音樂音效驗收與著作權買斷程序</div>
             <ol class="sop-steps">
-              <li>採購部向三家合格外包團隊發送 RFQ 詢價單，要求提供測試稿（付費或試畫）與時程報價。</li>
-              <li>編制《比價議價記錄表》，評估畫風契合度、報價與交付週期，核定最優得標廠商。</li>
-              <li>雙方簽署附帶《無侵權保證切結書》之採購單 (PO) 與商務合約。</li>
+              <li>外包工作室交付麻將牌面、牌桌 UI、Spine 動畫與音效源檔。</li>
+              <li>專案主美逐項執行像素級風格檢視與無侵權審定，確認交付物符合技術規範。</li>
+              <li>線上簽發《數位美術資產驗收單 (GRN)》，資產入庫 Perforce 私有資產庫。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PUR-03：美術資產分層驗收、原始碼審查與驗收證明 (GRN) 程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PUR-03：代理商推廣返點核算、三方交叉對帳與審批程序</div>
             <ol class="sop-steps">
-              <li>廠商交付分層源檔（含高模、貼圖、骨骼動畫檔、原創聲明），由專案主美進行像素級檢驗。</li>
-              <li>確認無拼接盜圖或未授權素材後，上傳至私有數位資產庫 (Perforce/Git LFS)。</li>
-              <li>主美與專案製作人於線上系統簽署《數位資產驗收合格證明單 (GRN)》。</li>
+              <li>次月 3 日推廣部由 AMS 導出各代理商俱樂部實際房卡消耗淨額，試算應發返利金額。</li>
+              <li>營運部稽核人員覆核開桌局數真實性，剔除刷局虛假帳號，簽署確認返點金額。</li>
+              <li>代理商開立合法發票或扣繳憑單送達財務部，財務長簽核後排定發放。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PUR-04：買量投放成效驗收、第三方歸因比對與廣告費結算程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PUR-04：三單比對、應付傳票編制與網銀雙人授權放款程序</div>
             <ol class="sop-steps">
-              <li>投放團隊依核准預算執行買量，每日監控廣告後台花費與點擊轉化。</li>
-              <li>月底以第三方歸因系統 (AppsFlyer) 後台數據為準，剔除異常設備與作弊點擊 (Click Injection)。</li>
-              <li>核定實際有效安裝數 (Installs) 並比對廣告商 Invoice，產出驗收報告轉會計付款。</li>
+              <li>會計部核對【PO 採購單】＝【GRN 驗收合格單】＝【外部發票/憑證】，金額單價 100% 勾稽吻合。</li>
+              <li>編制《會計應付憑單 (AP Voucher)》，排定到期付款日。</li>
+              <li>付款日出納於網銀編制付款批次 (Maker)，財務長持實體 Token 授權放行 (Checker)。</li>
             </ol>
           </div>
 
@@ -1287,7 +1342,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -1296,64 +1351,57 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-PUR-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲專案請購單 (PR - 雲端/外包/廣告/軟體)</td>
-                  <td>請購號、所屬遊戲代號、請購類別(美術/廣告/伺服器)、預算科目、預期完成里程碑</td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣活動與專案採購請購單 (PR)</td>
+                  <td>請購部門(推廣/營運)、活動代號、採購項目(場地/獎品/KOL)、預算金額、推廣主管簽核</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PUR-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">美術/音效外包委託合約 (含著作權買斷與保密條款)</td>
-                  <td>交付規格清單、驗收修改次數上限、著作財產權轉讓條款、侵權懲罰性賠償約定</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
+                  <td style="font-weight:700; color:#f8fafc;">線下賽事比價議價記錄表 (附三家報價)</td>
+                  <td>廠商名稱、活動統包初次報價、議定單價、付款條件比較、推薦得標理由、DOA簽核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PUR-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">外包工作室比價議價記錄表 (附作品集評分)</td>
-                  <td>三家廠商報價、畫風品質評分、技術交付能力評估、推薦得標理由、主管簽核</td>
+                  <td style="font-weight:700; color:#f8fafc;">正式採購合約單 (PO - 賽事/外包/軟體)</td>
+                  <td>PO單號、廠商統編、交付清冊、智慧財產權轉讓條款、罰則標準、雙方用印</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PUR-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">正式採購單 (PO - 外包/軟體/硬體)</td>
-                  <td>PO單號、對應PR號、廠商統編、交付分期里程碑、付款條件(驗收後月結45天)</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-PUR-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">買量廣告投放專案立項核決表</td>
-                  <td>投放遊戲、渠道(Google/Meta/TikTok)、預算上限、目標CPI預算、預估ROAS標準</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-PUR-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">美術/數位資產分層驗收合格單 (GRN)</td>
-                  <td>交付檔案清冊、無抄襲審定勾選、Perforce版本號、主美簽名、專案製作人簽認</td>
+                  <td style="font-weight:700; color:#f8fafc;">棋牌美術與方言音效資產驗收證明單 (GRN)</td>
+                  <td>交付素材清單(2D立繪/3D模型/語音包)、版權查驗合格勾選、Perforce版本號、主美簽名</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-PUR-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">廣告買量數據驗收報告書 (附第三方歸因報表)</td>
-                  <td>渠道帳單花費、AppsFlyer有效安裝數、實際CPI、作弊過濾比率%、營運總監簽印</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
+                  <td><span class="form-id-badge">FM-PUR-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">代理商月度推廣返利/佣金核發申請清冊</td>
+                  <td>代理商ID、俱樂部名稱、當月有效耗卡數、返點比率%、應付佣金、扣繳稅額、推廣/營運會簽</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定薪資佣金憑證)</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-PUR-08</span></td>
+                  <td><span class="form-id-badge">FM-PUR-06</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣賽事贈品點交與得獎玩家簽收名冊</td>
+                  <td>活動名稱、贈品清單(iPhone/禮券)、中獎玩家UID、身分證影本、所得申報收據簽認</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (稅務查核憑證)</td>
+                </tr>
+
+                <tr>
+                  <td><span class="form-id-badge">FM-PUR-07</span></td>
                   <td style="font-weight:700; color:#f8fafc;">會計應付憑單 (AP Voucher - 三單比對勾稽)</td>
                   <td>傳票號、對應PO號、對應GRN號、發票號碼、借貸會計分錄、三單比對核定章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-PUR-09</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">網銀付款批次清冊與電匯放行憑證</td>
-                  <td>付款批號、受款戶名、銀行帳號、外幣匯率、出納簽核、財務長放行序號</td>
+                  <td><span class="form-id-badge">FM-PUR-08</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">網銀批次付款清冊與電匯放行回執聯</td>
+                  <td>付款批號、受款戶名、銀行帳號、支付金額、出納簽章、財務長放行流水序號</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定憑證)</td>
                 </tr>
 
@@ -1365,15 +1413,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 提報外包需求之主美或企劃嚴禁自行決定得標廠商；廣告投放人員嚴禁兼任買量數據驗收審核；會計做帳人員嚴禁持有出納網銀放款 Token。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 負責拓展代理商之推廣人員嚴禁兼任返利金額之計算與核銷；採購人員嚴禁兼任賽事活動與外包成果驗收；會計做帳人嚴禁持有出納網銀放款 Token。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 03: 研發製作與版本交付循環 (取代傳統生產循環) -->
+      <!-- CYCLE 03: 研發製作與版本交付循環 (棋牌引擎、AMS 後台與防作弊系統) -->
       <!-- ========================================================================= -->
       <section id="cycle-3" class="cycle-card" data-cycle-num="03">
         
@@ -1381,17 +1429,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">03</div>
             <div>
-              <div class="cycle-name-zh">🕹️ 研發製作與版本交付循環 (取代傳統生產循環)</div>
-              <div class="cycle-name-en">Game Production, Agile Sprint & LiveOps Delivery Cycle</div>
+              <div class="cycle-name-zh">🕹️ 研發製作與版本交付循環 (棋牌引擎、AMS 後台與防作弊系統)</div>
+              <div class="cycle-name-en">Game Engine, AMS System & Anti-Collusion Delivery Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：研發技術部 (主辦) ＆ 營運部門 (AMS/防作弊) ＆ 品管測試部 (QA)</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-03 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-03 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範遊戲企劃 (GDD)、敏捷開發 (Sprint)、數值平衡審查、QA 雙平台真機測試、CI/CD 自動打包與線上熱更新 (Hotfix)，確保版本品質與 100% Zero Outage 穩定運營。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》核心棋牌算法、國際 RNG 洗牌認證 (GLI-19)、代理商管理系統 (AMS) 研發、防夥牌作弊 (同 IP/同 GPS 限制)、QA 真機測試與線上熱更新，確保遊戲公平性與零當機。
         </div>
 
         <!-- Flowchart Block for cycle-3 -->
@@ -1399,7 +1448,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 手遊敏捷研發 (Sprint)、數值平衡、QA真機測試與版本交付流程圖
+              <span>📌</span> 棋牌規則企劃、隨機發牌 (RNG) 驗證、AMS 後台研發與防作弊交付流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -1407,14 +1456,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 01</span>
-                    <span class="flow-step-role">製作人 暨 主企劃</span>
+                    <span class="flow-step-role">主企劃 暨 數值組</span>
                   </div>
-                  <div class="flow-step-name">企劃設計書 (GDD) 審定</div>
-                  <div class="flow-step-action">依產品 Roadmap 撰寫系統玩法邏輯、UI 流程與功能規則，召開跨組評審會議簽署確認。</div>
+                  <div class="flow-step-name">玩法規則設計 (GDD)</div>
+                  <div class="flow-step-action">撰寫台灣16張麻將、鬥地主、德州撲克等玩法設計書，定義算番公式、胡牌判定演算法與超時託管處置邏輯。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PRD-01 遊戲企劃設計書 GDD</div>
-                  <div class="flow-step-gate">🛡️ 內控點：商業邏輯與技術可行性前置審查</div>
+                  <div class="flow-step-form">📋 FM-PRD-01 棋牌玩法企劃書 GDD</div>
+                  <div class="flow-step-gate">🛡️ 內控點：玩法新穎度與數值防通貨膨脹前置審查</div>
                 </div>
               </div>
 
@@ -1422,14 +1471,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">數值策劃組</span>
+                    <span class="flow-step-role">研發部 (演算法工程)</span>
                   </div>
-                  <div class="flow-step-name">數值模型與經濟平衡審查</div>
-                  <div class="flow-step-action">建立產出消耗閉環模型，透過蒙地卡羅模擬玩家獲取與消耗曲線，評估抽卡期望值與防通貨膨脹。</div>
+                  <div class="flow-step-name">隨機數 (RNG) 算法認證</div>
+                  <div class="flow-step-action">採用密碼學級 CSPRNG 洗牌演算法；送交國際獨立第三方實驗室（如 GLI）執行百萬局隨機發牌卡方檢驗，取得認證。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PRD-02 數值平衡評審表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：嚴禁未經審批之暗改機率或戰鬥崩潰</div>
+                  <div class="flow-step-form">📋 FM-PRD-02 國際 RNG 公平性檢驗報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁內部留存任何操控牌局之暗門</div>
                 </div>
               </div>
 
@@ -1437,14 +1486,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">研發工程師 (Client/Server)</span>
+                    <span class="flow-step-role">研發技術中心</span>
                   </div>
-                  <div class="flow-step-name">敏捷衝刺 (Sprint) 開發</div>
-                  <div class="flow-step-action">依工單進行代碼編寫，提交前通過 Peer Review 雙人代碼審查，每日觸發夜間自動化構建 (Nightly Build)。</div>
+                  <div class="flow-step-name">AMS 後台與防作弊衝刺</div>
+                  <div class="flow-step-action">依推廣與營運需求敏捷開發 AMS 代理後台功能；研發同 IP / 同 GPS 防夥牌模組；提交代碼進行雙人審查 (Peer Review)。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PRD-03 Sprint 交付驗收表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：程式碼強制關聯 Jira 工單與 Git Review</div>
+                  <div class="flow-step-form">📋 FM-PRD-04 AMS 代理系統版本單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：強制通過 DevSecOps 靜態安全掃描</div>
                 </div>
               </div>
 
@@ -1454,12 +1503,12 @@
                     <span class="flow-step-num">STEP 04</span>
                     <span class="flow-step-role">QA 測試工程師</span>
                   </div>
-                  <div class="flow-step-name">全面測試與真機矩陣驗收</div>
-                  <div class="flow-step-action">真機測試機庫 (Device Farm) 執行 Top 50 主流手機適配、壓力測試與外掛滲透測試，出具測試報告。</div>
+                  <div class="flow-step-name">弱網壓測與防夥牌測試</div>
+                  <div class="flow-step-action">模擬 4 人同 IP / 偽造 GPS 訊號測試防作弊阻斷；執行弱網 (2G/3G) 斷線重連與萬桌同時在線高併發壓力測試。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PRD-04 QA 測試總結報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：發布門檻：Blocker / Critical Bug 必須為 0</div>
+                  <div class="flow-step-form">📋 FM-PRD-03 防夥牌反作弊測試報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：Blocker / Critical Bug 必須為零</div>
                 </div>
               </div>
 
@@ -1467,14 +1516,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">專案製作人 暨 技術總監</span>
+                    <span class="flow-step-role">製作人 暨 技術總監</span>
                   </div>
-                  <div class="flow-step-name">雙平台提審與發布核簽</div>
-                  <div class="flow-step-action">簽署版本發布單，提審 Apple App Store / Google Play，設定階梯式灰度發布 (1% ➔ 5% ➔ 100%)。</div>
+                  <div class="flow-step-name">版本發布與熱更審批</div>
+                  <div class="flow-step-action">確認 QA 測試報告與代碼 Review 完備，簽署發布審核單；排定離峰時段透過 Kubernetes 執行滾動更新 (Rolling Update)。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-PRD-07 版本發布審核單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：崩潰率 Crash Rate 必須 < 0.1%</div>
+                  <div class="flow-step-form">📋 FM-PRD-06 版本發布申請單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：線上牌桌維持 100% 零停機連線</div>
                 </div>
               </div>
 
@@ -1482,14 +1531,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">LiveOps 營運 暨 SRE</span>
+                    <span class="flow-step-role">營運部門 暨 SRE</span>
                   </div>
-                  <div class="flow-step-name">線上版本生效與熱更 (Hotfix)</div>
-                  <div class="flow-step-action">線上版本正式發行，CDN 資源預熱；若發生嚴重線上缺陷，15 分鐘內觸發自動回滾或沙盒熱更新。</div>
+                  <div class="flow-step-name">在線監控與熱更回滾</div>
+                  <div class="flow-step-action">即時監控全服萬桌開局延遲；若發現算番重大異常，10 分鐘內啟動自動回滾並退還牌局房卡，發布遊戲內公告。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 線上熱更日誌與回滾報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：100% Zero Outage 零停機維運承諾</div>
+                  <div class="flow-step-form">📋 熱更日誌與回滾處理單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：100% Zero Outage 服務可用率</div>
                 </div>
               </div>
 
@@ -1507,9 +1556,9 @@
                 <span class="policy-code">SX-POL-PRD-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">手遊產品研發製作、版本發布與 LiveOps 營運治理準則</div>
-              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》、ISO 9001 品質管理、敏捷軟體工程治理標準</div>
-              <div class="policy-desc">本循環全權取代傳統工廠之實體生產循環。確立以「專案里程碑 (Milestone)」與「敏捷衝刺 (Sprint)」為核心的數位製造體系，規範版本上線前嚴格測試關卡與熱更防退機制。</div>
+              <div class="policy-title">棋牌遊戲研發、隨機數 (RNG) 公平性與版本發布治理準則</div>
+              <div class="policy-law"><strong>法規母法：</strong>《證券交易法》、國際 GLI-19 遊戲軟體標準、ISO 9001 品質管理標準</div>
+              <div class="policy-desc">明定棋牌隨機發牌算法 (RNG) 必須通過國際權威機構認證，嚴禁任何操控牌局結果之內部後門；規範 AMS 代理後台代碼安全與版本發布前 Blocker Bug 歸零門檻。</div>
             </div>
 
           </div>
@@ -1523,28 +1572,28 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PRD-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">製作人 暨 研發副總核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">專案製作人 暨 技術副總核定</span>
               </div>
-              <div class="policy-title">遊戲企劃設計書 (GDD) 與數值模型審查辦法</div>
-              <div class="policy-desc">新玩法與系統開發前必須產出完整 GDD；數值策劃必須經過蒙地卡羅模擬與產出消耗閉環模型驗證，杜絕遊戲內通貨膨脹與重大戰鬥失衡 Bug。</div>
+              <div class="policy-title">棋牌規則企劃設計書 (GDD) 與牌型算法驗證辦法</div>
+              <div class="policy-desc">規範台灣16張麻將、鬥地主、德州撲克等玩法邏輯設計書；發牌與聽牌判定算法必須經過極限單元測試與百萬局自動化無死鎖模擬。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PRD-003</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">研發副總核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">技術副總核定</span>
               </div>
-              <div class="policy-title">敏捷研發工單管理與程式碼版本整合 (Git/P4) 規範</div>
-              <div class="policy-desc">所有需求拆解為 Jira/ClickUp 工單；程式碼提交必須強制關聯工單 ID 並通過至少一名資深工程師代碼審查 (Pull Request Review)；每日執行自動化夜間構建 (Nightly Build)。</div>
+              <div class="policy-title">防作弊 (Anti-Collusion) 與防夥牌算法工程規範</div>
+              <div class="policy-desc">研發強制內建防夥牌機制：同一牌桌玩家同 IP / 距離小於 500 公尺 (GPS) 自動禁止同桌；後台自動偵測異常讓牌與異常勝率，並自動觸發錄像回放審查。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-PRD-004</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">技術總監核定</span>
               </div>
-              <div class="policy-title">遊戲品質確保 (QA)、相容性測試與發布門檻標準</div>
-              <div class="policy-desc">規範功能測試、性能壓測（千人同屏 FPS 與記憶體洩漏）、iOS/Android 真機相容性矩陣（主流機型覆蓋率 >95%）；版本發布前嚴格落實「Blocker/Critical Bug 必須為零」門檻。</div>
+              <div class="policy-title">代理商管理系統 (AMS) 後台功能安全與代碼審查規範</div>
+              <div class="policy-desc">AMS 涉及大額房卡資產調度，所有後台 API 必須通過 DevSecOps 滲透測試與代碼 Peer Review；嚴禁任何免登入或未經授權的虛寶除錯接口 (Debug API) 留存正式版。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -1552,8 +1601,8 @@
                 <span class="policy-code">SX-STD-PRD-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">線上版本熱更新 (Hotfix) 與伺服器停機維護管理辦法</div>
-              <div class="policy-desc">規範 CDN 資源熱更新測試與 CDN 快取預熱機制；熱更代碼必須通過沙盒驗證；若發生嚴重線上事故，必須於 15 分鐘內執行灰度回滾 (Rollback) 並公告補償方案。</div>
+              <div class="policy-title">遊戲版本熱更新 (Hotfix)、牌桌即時修復與回滾管理辦法</div>
+              <div class="policy-desc">線上熱更必須具備灰度分批生效機制，熱更期間在局玩家遊戲不受中斷；若發生算分嚴重異常 Bug，必須於 10 分鐘內啟動自動回滾並全服退還本局房卡。</div>
             </div>
 
           </div>
@@ -1564,38 +1613,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PRD-01：版本需求排程 (Sprint Planning)、工單拆解與派工程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PRD-01：棋牌玩法企劃 (GDD) 審查與隨機發牌 (RNG) 演算法驗證程序</div>
             <ol class="sop-steps">
-              <li>製作人與主企劃依產品 Roadmap 制定 Sprint 目標，召開版本排程會議。</li>
-              <li>拆解客戶端程式、伺服端邏輯、2D/3D 美術資源與數值設定至工單系統。</li>
-              <li>評定工時點數 (Story Points) 並指派負責工程師，鎖定版本交付驗收里程碑。</li>
+              <li>主企劃撰寫《棋牌玩法設計書 (GDD)》，定義算番規則、特殊牌型判定與斷線重連超時處置。</li>
+              <li>工程團隊開發洗牌發牌核心模組，採用密碼學級 CSPRNG 隨機演算法。</li>
+              <li>送交獨立實驗室（如 GLI）執行百萬局隨機性統計檢驗，取得《RNG 公平性認證證書》。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PRD-02：代碼合併審查 (PR Review)、CI/CD 自動打包與產出構建程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PRD-02：AMS 代理系統功能衝刺 (Sprint)、代碼審查與 CI/CD 構建程序</div>
             <ol class="sop-steps">
-              <li>工程師完成開發後發起 Pull Request，CI 自動執行單元測試與靜態代碼掃描。</li>
-              <li>指派獨立資深架構師進行 Peer Review，確認無記憶體洩漏與邏輯漏洞後始得 Merge。</li>
-              <li>Build Server 自動產出 Unity/Unreal 客戶端安裝包 (IPA/APK) 與伺服器 Docker 鏡像。</li>
+              <li>依推廣部與營運部需求拆解 AMS 工單（如：俱樂部自建賽事功能、代理商多級分潤報表）。</li>
+              <li>開發完成發起 Pull Request，由架構師進行 Peer Review，確認無 SQL Injection 與越權漏洞。</li>
+              <li>CI/CD 自動打包產出發布鏡像與客戶端安裝包 (IPA/APK)，執行自動化回歸測試。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PRD-03：QA 黑白盒全面測試、真機矩陣壓測與簽發驗收程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PRD-03：QA 斷線重連、真機矩陣測試與防作弊驗收程序</div>
             <ol class="sop-steps">
-              <li>QA 團隊依測試案例執行功能驗收、新手引導流程、弱網環境與中斷測試。</li>
-              <li>真機測試機庫 (Device Farm) 執行 Top 50 主流設備相容性與發熱耗電測試。</li>
-              <li>執行伺服端壓力測試 (Stress Test) 確認承載達標，出具《QA 測試驗收合格報告書》。</li>
+              <li>QA 團隊執行極限弱網 (2G/3G)、斷線重連重進牌局與跨局金幣結算壓力測試。</li>
+              <li>模擬 4 人同 IP / 模擬偽造 GPS 訊號測試防夥牌攔截機制，確認系統能即時踢出同桌。</li>
+              <li>出具《QA 測試驗收合格報告》，確認無重大阻礙性 Bug。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-PRD-04：雙平台提審、灰度發布 (Canary) 與線上版本生效程序</div>
+            <div class="sop-title"><span>▶</span> SOP-PRD-04：雙平台提審、伺服器不停服熱更新與驗收生效程序</div>
             <ol class="sop-steps">
-              <li>填具《版本發布審核單》，經製作人、技術副總簽核後提交 Apple/Google 官方審查。</li>
-              <li>審查通過後，設定雙平台階梯式發布比例 (1% ➔ 5% ➔ 20% ➔ 100%)。</li>
-              <li>監控即時崩潰率 (Crash Rate < 0.1%) 與伺服器指標；若異常立即中止發布並滾回上一版本。</li>
+              <li>填寫《版本發布審批單》，經製作人、技術副總簽核後提交 Apple/Google 官方審批。</li>
+              <li>伺服器微服務透過 Kubernetes 執行滾動更新 (Rolling Update)，維持牌桌 100% 零中斷。</li>
+              <li>營運部與推廣部同步發送俱樂部遊戲內公告，並監控即時開桌數據。</li>
             </ol>
           </div>
 
@@ -1609,7 +1658,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -1618,50 +1667,43 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-PRD-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲企劃設計書 (Game Design Document, GDD)</td>
-                  <td>玩法系統名稱、介面UI流程圖、功能邏輯規則、例外處置、主企劃與主美簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲生命週期終止後3年</td>
+                  <td style="font-weight:700; color:#f8fafc;">棋牌玩法與規則企劃設計書 (GDD)</td>
+                  <td>玩法名稱(如:台灣16張麻將)、胡牌番型矩陣、計分規則、超時託管邏輯、製作人簽審</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲生命週期終止後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PRD-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">數值平衡模型與經濟產出評審表</td>
-                  <td>數值公式邏輯、產出與消耗平衡曲線、抽卡期望值、通貨膨脹模擬結果、數值主審簽字</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲生命週期加5年</td>
+                  <td style="font-weight:700; color:#f8fafc;">隨機發牌演算法 (RNG) 公平性檢驗報告書</td>
+                  <td>隨機數生成器演算法說明、百萬局發牌頻率卡方檢定數據、第三方實驗室認證章</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">永久保存 (法規必備)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PRD-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">Sprint 敏捷衝刺交付與里程碑簽核表</td>
-                  <td>Sprint版本號、計畫Story點數、實際完成點數、未完成工單遞延原因、技術主管簽認</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
+                  <td style="font-weight:700; color:#f8fafc;">防夥牌與反作弊邏輯檢驗測試報告</td>
+                  <td>同IP同桌阻斷測試、GPS距離偵測閾值測試、異常作弊牌局回放判定結果、QA主管簽章</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PRD-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">QA 測試驗收總結報告書 (Bug Matrix)</td>
-                  <td>測試版本號、測試案例執行總數、通過率、Bug清冊(Blocker:0/Critical:0)、QA主管簽核</td>
+                  <td style="font-weight:700; color:#f8fafc;">AMS 代理商系統版本功能驗收單</td>
+                  <td>新增代理後台功能清冊、資安滲透測試無重大弱點確認、推廣總監/營運總監聯合驗收</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-PRD-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">主流智慧型手機真機相容性測試清單</td>
-                  <td>測試設備型號(iPhone/Samsung/Xiaomi等)、OS版本、解析度適配、FPS流暢度、崩潰日誌</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-PRD-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">伺服器高併發負載與壓力測試報告書</td>
-                  <td>壓測場景、虛擬用戶併發數(CCU)、API響應延遲(P99)、伺服器CPU/Memory使用率</td>
+                  <td style="font-weight:700; color:#f8fafc;">QA 斷線重連與伺服器高併發壓測報告</td>
+                  <td>同時在線開桌數(Tables)、封包延遲延遲(P99<50ms)、斷線重進恢復率(100%)</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-PRD-07</span></td>
+                  <td><span class="form-id-badge">FM-PRD-06</span></td>
                   <td style="font-weight:700; color:#f8fafc;">遊戲版本發布/線上熱更申請單 (Release Ticket)</td>
-                  <td>發布版本號、發布說明(Release Notes)、熱更資源清單、回滾方案、專案製作人簽發</td>
+                  <td>更新版本號、影響俱樂部與牌桌清單、回滾Rollback腳本、專案製作人簽發</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
@@ -1673,15 +1715,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 開發工程師嚴禁兼任 QA 測試簽核人（不得自測自簽發布）；程式碼未經獨立 Peer Review 嚴禁合併至主分支；版本發布必須由專案製作人與技術總監共同核簽。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 遊戲開發工程師嚴禁兼任 QA 測試簽核人；核心 RNG 洗牌算法未經審委會與外部認證嚴禁擅改；版本發布必須由製作人與技術總監共同核簽。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 04: 薪工循環 (遊戲工程、美術與 LiveOps 研發人才) -->
+      <!-- CYCLE 04: 薪工循環 (推廣業務提成、營運客服與研發工程薪酬) -->
       <!-- ========================================================================= -->
       <section id="cycle-4" class="cycle-card" data-cycle-num="04">
         
@@ -1689,17 +1731,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">04</div>
             <div>
-              <div class="cycle-name-zh">👥 薪工循環 (遊戲工程、美術與 LiveOps 研發人才)</div>
-              <div class="cycle-name-en">Game Talent, R&D Engineering & Project Royalties Cycle</div>
+              <div class="cycle-name-zh">👥 薪工循環 (推廣業務提成、營運客服與研發工程薪酬)</div>
+              <div class="cycle-name-en">Promotion Commissions, LiveOps Support & Engineering Payroll Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：人資部 (主辦) ＆ 推廣部門 ＆ 營運部門 ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-04 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-04 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範遊戲研發工程師、主美、企劃、測試與營運人員之招募任用、工時 Timesheet 研發分攤、專案里程碑分紅、遊戲流水獎金發放與智財權讓與，防範核心代碼外洩與舞弊。
+          <strong>🎯 業務循環治理目標：</strong> 規範推廣部門代理商開拓獎金 (BD Commission)、俱樂部進卡流水抽成、營運客服 24/7 輪班津貼、研發工時 Timesheet 分攤與智財權歸屬，杜絕虛假代理商抽傭舞弊。
         </div>
 
         <!-- Flowchart Block for cycle-4 -->
@@ -1707,7 +1750,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 手遊研發人才甄選、專案工時 (Timesheet)、流水獎金與離職權限撤銷流程圖
+              <span>📌</span> 推廣業務提成、營運客服 24/7 輪班與研發專案工時薪酬流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -1717,12 +1760,12 @@
                     <span class="flow-step-num">STEP 01</span>
                     <span class="flow-step-role">用人主管 暨 人資部</span>
                   </div>
-                  <div class="flow-step-name">人才甄選與代碼原創審查</div>
-                  <div class="flow-step-action">工程師實施白板編程測試；美術設計審核原創作品集並進行上機測驗，杜絕曾涉盜用代碼前科人員。</div>
+                  <div class="flow-step-name">人才甄選與背景查核</div>
+                  <div class="flow-step-action">推廣業務考核管道拓展能力與合規意識；研發工程師實施白板編程測試，嚴禁曾有私設賭局或盜碼前科人員。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-02 技術面試評核表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：經歷背景查核 (Reference Check) 100% 合格</div>
+                  <div class="flow-step-form">📋 FM-HR-01 推廣與研發任用核薪單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：背景徵信 (Ref Check) 100% 合格</div>
                 </div>
               </div>
 
@@ -1733,11 +1776,11 @@
                     <span class="flow-step-role">新進員工 暨 法務</span>
                   </div>
                   <div class="flow-step-name">全員簽署智財讓與及 NDA</div>
-                  <div class="flow-step-action">報到當日全員簽署《著作財產權全面讓與協議書》、《營業秘密保密合約 (NDA)》與競業禁止條款。</div>
+                  <div class="flow-step-action">報到當日全員簽署《著作權讓與契約書》、《營業秘密保密合約 (NDA)》與《反舞弊廉潔切結書》，明定智財權 100% 歸屬公司。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-03 著作財產權讓與合約</div>
-                  <div class="flow-step-gate">🛡️ 內控點：在職與職務產出智財權 100% 歸屬公司</div>
+                  <div class="flow-step-form">📋 FM-HR-02 智財讓與合約 暨 NDA</div>
+                  <div class="flow-step-gate">🛡️ 內控點：離職 2 年內受嚴格競業禁止規範約束</div>
                 </div>
               </div>
 
@@ -1745,14 +1788,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">研發人員 (工程/美術/企劃)</span>
+                    <span class="flow-step-role">研發工程師 (全體)</span>
                   </div>
-                  <div class="flow-step-name">每週專案工時 (Timesheet) 填報</div>
-                  <div class="flow-step-action">每週五填報各遊戲專案實際投入時數（精確至 0.5 小時），專案製作人週一核實審簽。</div>
+                  <div class="flow-step-name">每週專案工時 (Timesheet)</div>
+                  <div class="flow-step-action">每週五填報各棋牌專案 (麻將/撲克/AMS) 實際研發工時，專案製作人週一審查，作為研發費用分攤與資本化依據。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-04 專案研發工時表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：工時作為 IAS 38 研發費用資本化法定依據</div>
+                  <div class="flow-step-form">📋 FM-HR-05 研發專案工時表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：工時作為 IAS 38 研發資本化法定底稿</div>
                 </div>
               </div>
 
@@ -1760,16 +1803,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">財務部 暨 薪酬委員會</span>
+                    <span class="flow-step-role">推廣總監 ＆ 財務部</span>
                   </div>
-                  <div class="flow-step-name">里程碑獎金與流水抽成分紅</div>
-                  <div class="flow-step-action">【判定分支】：是否達成專案 Milestone 或淨流水利潤目標?
-• 是 ➔ 提報獎金池分配名冊，核發分紅。
-• 否 ➔ 正常核發月薪。</div>
+                  <div class="flow-step-name">推廣業務提成審定</div>
+                  <div class="flow-step-action">每月 1 日自財務對帳單導出代理商實際入帳淨流水，依階梯核算提成；若代理商發生違規退款或壞帳，提成強制追回。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-05 專案流水抽成分紅表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：分紅獎金必須由薪酬委員會審查核決</div>
+                  <div class="flow-step-form">📋 FM-HR-03 推廣業務提成核算清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：未實際入帳之流水嚴禁計提提成</div>
                 </div>
               </div>
 
@@ -1779,11 +1820,11 @@
                     <span class="flow-step-num">STEP 05</span>
                     <span class="flow-step-role">出納 暨 人資部</span>
                   </div>
-                  <div class="flow-step-name">薪資總表覆核與加密撥款</div>
-                  <div class="flow-step-action">人資計算月薪與法定扣繳，財務長覆核無誤後，每月 5 日透過企業網銀專屬薪轉通道撥款並發送加密薪資條。</div>
+                  <div class="flow-step-name">薪資總表覆核與加密發放</div>
+                  <div class="flow-step-action">人資彙整底薪、客服 24/7 大夜輪班津貼與推廣提成，財務長覆核後，每月 5 日透過網銀薪轉通道撥款並發布加密薪資單。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-06 月度薪資計算總冊</div>
+                  <div class="flow-step-form">📋 FM-HR-06 月度薪資計算總清冊</div>
                   <div class="flow-step-gate">🛡️ 內控點：人事主檔維護與款項發放嚴格分立</div>
                 </div>
               </div>
@@ -1794,12 +1835,12 @@
                     <span class="flow-step-num">STEP 06</span>
                     <span class="flow-step-role">IT 部門 暨 總務部</span>
                   </div>
-                  <div class="flow-step-name">離職代碼移交與權限即時註銷</div>
-                  <div class="flow-step-action">員工離職當日完成 Git/P4 代碼 Commit/Push，IT 自動化排程於 18:00 前即時註銷所有倉庫與 VPN 存取權限。</div>
+                  <div class="flow-step-name">離職移交與 AMS/Git 停用</div>
+                  <div class="flow-step-action">推廣人員名下代理商由總監指派專人接管；研發代碼 Commit 封板；IT 自動化排程於離職日 18:00 前即時註銷所有權限。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-HR-07 離職資安註銷清單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：離職日當天所有代碼與雲端權限 100% 收回</div>
+                  <div class="flow-step-form">📋 FM-HR-07 離職移交與權限註銷單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：離職日當天所有代碼與代理後台權限 100% 收回</div>
                 </div>
               </div>
 
@@ -1817,9 +1858,9 @@
                 <span class="policy-code">SX-POL-HR-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">手遊研發核心人才治理、薪酬與智財權歸屬準則</div>
-              <div class="policy-law"><strong>法規母法：</strong>《勞動基準法》、《營業秘密法》、《著作權法》第11條受雇人著作財產權歸屬</div>
-              <div class="policy-desc">規範全體研發人員在職與離職期間之一切程式原始碼、數值公式、美術設計智財權 100% 歸屬本公司；規範核心人才競業禁止補償機制與專案利潤激勵分紅制度。</div>
+              <div class="policy-title">推廣業務激勵、營運客服與研發團隊薪酬治理準則</div>
+              <div class="policy-law"><strong>法規母法：</strong>《勞動基準法》、《營業秘密法》、《所得稅法》、薪資報酬委員會規程</div>
+              <div class="policy-desc">明定推廣人員業務提成計算基準（嚴禁未收款即發放提成）；營運客服值班補償機制；全員簽署智財讓與與嚴格營業秘密保護合約，離職即刻撤銷系統權限。</div>
             </div>
 
           </div>
@@ -1833,28 +1874,28 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-HR-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 薪酬委員會核定</span>
               </div>
-              <div class="policy-title">遊戲研發與美術專業人才甄選、核薪與作品審查辦法</div>
-              <div class="policy-desc">工程師必須經過實體代碼白板測試 (Coding Test)；美術人員必須提供原創作品集並通過筆試審定；嚴禁曾涉及原廠代碼盜用或侵權前科人員進用。</div>
+              <div class="policy-title">推廣部門代理商開拓提成與俱樂部流水獎金發放辦法</div>
+              <div class="policy-desc">規範推廣專員底薪與變動業績提成；提成必須以代理商「實際入帳並完成開桌消耗」之淨流水為計算基礎；若代理商涉及退款或壞帳，提成強制追回扣抵。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-HR-003</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 財務長核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">研發專案工時紀錄 (Timesheet) 與研發費用資本化分攤辦法</div>
-              <div class="policy-desc">研發工程師與美術人員每週必須詳實填報專案工時卡 (Timesheet)，作為各款遊戲研發專案成本歸屬與 IAS 38 軟體開發費用資本化認列之法定客觀憑證。</div>
+              <div class="policy-title">營運客服 (GM) 24/7 全天候排班、值班津貼與考核辦法</div>
+              <div class="policy-desc">規範棋牌即時客訴、儲值掉單與作弊申訴 24 小時輪班機制；明確夜班津貼、假日加班費計算標準；客訴處理時效與滿意度納入月度績效考核。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-HR-004</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">董事會 暨 薪酬委員會核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 財務長核定</span>
               </div>
-              <div class="policy-title">遊戲專案上線里程碑獎金與營運流水抽成激勵辦法</div>
-              <div class="policy-desc">明確規範遊戲專案通過 Alpha/Beta/上線等里程碑獎金池；遊戲商業化上線後，依實際淨流水提撥固定比例之專案利潤分紅，依貢獻權重公平發放。</div>
+              <div class="policy-title">研發工程與美術專案工時 (Timesheet) 填報與資本化辦法</div>
+              <div class="policy-desc">棋牌客戶端、伺服端及 AMS 後台工程師每週必須填報各模組專案工時，作為自研軟體資產費用分攤與 IAS 38 研發費用資本化認列之客觀依據。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -1862,8 +1903,8 @@
                 <span class="policy-code">SX-STD-HR-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">研發人員離職交接、代碼倉庫 (Git/P4) 即時註銷規範</div>
-              <div class="policy-desc">研發離職員工必須簽署《離職智財權確認書》；離職生效日當天 18:00 前，IT 部門必須透過自動化排程即時撤銷其 GitHub/GitLab、Perforce、VPN 與雲端存取權限。</div>
+              <div class="policy-title">全員智慧財產權歸屬、競業禁止與離職權限停用規範</div>
+              <div class="policy-desc">棋牌算法、數值平衡表、代理商名冊及客訴紀錄均屬本公司核心營業秘密；員工離職當日 18:00 前，IT 自動化停用其所有系統、AMS 及內部通訊權限。</div>
             </div>
 
           </div>
@@ -1874,38 +1915,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-HR-01：研發人才技術面試、背景查核與智財協議簽署程序</div>
+            <div class="sop-title"><span>▶</span> SOP-HR-01：推廣人員加盟徵信能力面試與誠信考核聘僱程序</div>
             <ol class="sop-steps">
-              <li>用人主管進行技術白板測試與作品集原創性查驗，填報《面試評核表》。</li>
-              <li>依薪資核決階梯核定聘僱條件，發出錄取通知 (Offer Letter)。</li>
-              <li>報到當日全員強制簽署《著作權讓與契約書》、《營業秘密保密合約 (NDA)》與《資訊安全規範遵循切結書》。</li>
+              <li>推廣主管面試業務人員，評估其棋牌管道資源與合規風控意識，嚴禁曾有私設賭局前科人員。</li>
+              <li>核定薪酬底薪與提成比率方案，報總經理核准後發放錄取通知書。</li>
+              <li>報到日簽署《著作權讓與契約書》、《營業秘密保密合約 (NDA)》與《反舞弊廉潔切結書》。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-HR-02：每週專案工時 (Timesheet) 填報、主管審簽與成本分攤程序</div>
+            <div class="sop-title"><span>▶</span> SOP-HR-02：推廣業務提成核算、壞帳扣除與主管覆核程序</div>
             <ol class="sop-steps">
-              <li>研發工程師每週五下班前於系統填報各遊戲專案投入工時比重（精確至 0.5 小時）。</li>
-              <li>專案製作人與技術總監於週一覆核工時合理性並線上核簽。</li>
-              <li>人資部月底彙整工時資料拋轉會計系統，執行各遊戲專案研發薪資成本分攤。</li>
+              <li>每月 1 日推廣部助理自財務與 AMS 導出各推廣員負責之代理商實際收款淨額。</li>
+              <li>核對有無違規爭議或刷退扣款，依階梯計算提成金額，填報《推廣業務提成申請清冊》。</li>
+              <li>送推廣總監、財務長及總經理核簽，併入當月薪資清冊發放。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-HR-03：專案里程碑達成審查、流水獎金試算與財務撥款程序</div>
+            <div class="sop-title"><span>▶</span> SOP-HR-03：薪資總表編制、所得扣繳與銀行加密撥款程序</div>
             <ol class="sop-steps">
-              <li>遊戲專案如期達成重大 Milestone，製作人提出《里程碑獎金發放申請表》。</li>
-              <li>財務部依後台實際營收淨流水核算專案分紅獎金池額度，確認利潤達成率。</li>
-              <li>提報薪酬委員會與總經理核定後，出納併同月薪透過銀行薪轉帳戶專屬加密發放。</li>
+              <li>人資專員彙整考勤打卡、客服輪班津貼與推廣提成，計算應發薪資與各項法定代扣稅費。</li>
+              <li>人資主管會同財務主管進行雙人交叉覆核，確認人數與總額異常波動分析。</li>
+              <li>每月 5 日透過企業網銀薪轉專屬通道撥款，發送個人加密電子薪資條。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-HR-04：離職業務交接、原始碼權限撤銷與合約義務履行程序</div>
+            <div class="sop-title"><span>▶</span> SOP-HR-04：推廣/研發人員離職業務移交與 AMS/Git 權限停用程序</div>
             <ol class="sop-steps">
-              <li>離職員工將未完工程工單與代碼註釋移交指定代理人，並完成 Commit/Push 封板。</li>
-              <li>IT 部門於系統確認該員無私自打包下載大型原始碼日誌，收回筆電並即刻註銷帳號。</li>
-              <li>人資會談宣讀競業禁止與營業秘密法定義務，結算離職當月薪酬。</li>
+              <li>推廣人員離職前，其名下所有對接代理商由推廣總監指派專人接管對接，更新代理後台歸屬。</li>
+              <li>研發人員完成代碼 Commit/Push 並簽署智財清單，總務收繳電腦與門禁卡。</li>
+              <li>IT 部門即刻於 SSO 後台註銷帳號，人資結算最後薪資離職手續。</li>
             </ol>
           </div>
 
@@ -1919,7 +1960,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -1928,50 +1969,50 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-HR-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲研發與設計人才增補申請表</td>
-                  <td>用人專案組、職稱(Client/Server/主美/企劃/QA)、員額預算內外、技能門檻、主管簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣與營運專業人才任用核薪單</td>
+                  <td>應徵職位(推廣業務/客服GM/Server工程師)、底薪待遇、提成考核公式、DOA簽核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">納入個人人事檔</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-HR-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">技術專業面試與代碼原創性查驗評核表</td>
-                  <td>白板編程成績、架構設計能力、作品集原創性查核結論、核定薪資結構、DOA簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">納入個人人事檔案</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-HR-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">著作財產權全面讓與協議書暨保密合約 (NDA)</td>
-                  <td>職務發明完全歸屬盛欣網絡條款、商業機密保護責任、違約處罰條款、員工親簽蓋章</td>
+                  <td style="font-weight:700; color:#f8fafc;">智慧財產權讓與合約、保密協議 (NDA) 暨廉潔切結書</td>
+                  <td>職務發明100%歸屬盛欣網絡、嚴禁私設賭場與私賣房卡承諾、違約責任、員工親簽蓋章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">在職期間永久 / 離職後10年</td>
                 </tr>
 
                 <tr>
+                  <td><span class="form-id-badge">FM-HR-03</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣業務月度代理商提成核算清冊</td>
+                  <td>推廣員工號、負責代理商代號、實際收款入帳金額、有效耗卡數、提成金額、扣繳稅額</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定薪資憑證)</td>
+                </tr>
+
+                <tr>
                   <td><span class="form-id-badge">FM-HR-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">專案研發工時週報表 (Timesheet)</td>
-                  <td>員工工號、專案代碼(如SX-Project-A)、各任務工時時數、工時合理性審查主管簽名</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (研發費用審計底稿)</td>
+                  <td style="font-weight:700; color:#f8fafc;">營運客服 24/7 輪班與大夜津貼審核表</td>
+                  <td>客服工號、輪班班次、大夜津貼時數、客訴處理案件數、客服主管審核簽印</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-HR-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲里程碑獎金與營運流水抽成核發申請單</td>
-                  <td>專案名稱、達成里程碑/當季淨流水總額、獎金池金額、成員分配名冊、總經理/薪酬會核簽</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
+                  <td style="font-weight:700; color:#f8fafc;">棋牌研發專案工時週報表 (Timesheet)</td>
+                  <td>研發工號、研發模組(棋牌引擎/AMS後台/防作弊)、投入工時時數、專案製作人審查簽署</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (研發費用審計底稿)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-HR-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">月度研發薪資計算明細清冊 (含各專案分攤)</td>
-                  <td>本薪、職務加給、專案獎金、勞健保自負額、代扣所得稅、各專案成本分攤金額</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定薪資冊)</td>
+                  <td style="font-weight:700; color:#f8fafc;">月度員工薪酬計算總明細冊 (Payroll Register)</td>
+                  <td>底薪、職務加給、推廣提成、輪班津貼、勞健保自負額、所得稅扣繳、實發薪資、財務長核簽</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定帳簿)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-HR-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">研發人員離職交接與資安權限註銷確認清單</td>
-                  <td>代碼倉庫(Git/P4)交接Commit ID、開發設備點交、帳號即時註銷時間戳記、IT主管簽署</td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣與研發人員離職移交及系統權限撤銷單</td>
+                  <td>對接代理商移交清單、代碼封板Commit ID、AMS/Git/VPN權限停用時間戳記、IT主管簽認</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">離職後7年</td>
                 </tr>
 
@@ -1983,15 +2024,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 人事基本資料維護者嚴禁兼任薪資撥款出納；專案工時填報必須由專案製作人獨立審定；研發員工離職代碼移交必須由技術總監會同 IT 獨立驗證。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 推廣人員嚴禁兼任提成核算與出納發放；提成發放必須以財務部實際入帳款項為依據；推廣離職員工之代理商移交必須由推廣總監親自指派接管。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 05: 融資循環 (多幣別資金調度、海外發行保證金與避險) -->
+      <!-- CYCLE 05: 融資循環 (代理商加盟押金專戶、資金調度與用印管制) -->
       <!-- ========================================================================= -->
       <section id="cycle-5" class="cycle-card" data-cycle-num="05">
         
@@ -1999,17 +2040,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">05</div>
             <div>
-              <div class="cycle-name-zh">🏦 融資循環 (多幣別資金調度、海外發行保證金與避險)</div>
-              <div class="cycle-name-en">Financing, Treasury, Overseas MG & FX Hedging Cycle</div>
+              <div class="cycle-name-zh">🏦 融資循環 (代理商加盟押金專戶、資金調度與用印管制)</div>
+              <div class="cycle-name-en">Agent Deposits, Treasury & Seal Governance Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：財務部 (主辦) ＆ 推廣部門 ＆ 行政總務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-05 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-05 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範全球雙平台外幣營收匯回、海外代理發行保證金 (MG) 資金監管、遠期外匯避險、銀行融資授信與印鑑管理，確保企業流動性無虞並防範匯兌損失。
+          <strong>🎯 業務循環治理目標：</strong> 規範代理商加盟履約押金專戶存管、預售房卡大額資金調度、銀行融資授信、公司大小章調用與銀行存款調節表編制，確保資金鏈安全並防範挪用加盟保證金。
         </div>
 
         <!-- Flowchart Block for cycle-5 -->
@@ -2017,7 +2059,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 全球雙平台多幣別資金調度、海外發行保證金 (MG) 與避險流程圖
+              <span>📌</span> 代理商加盟押金專戶、預收房卡資金調度、避險與印鑑管制流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -2027,12 +2069,12 @@
                     <span class="flow-step-num">STEP 01</span>
                     <span class="flow-step-role">財務部資金調度員</span>
                   </div>
-                  <div class="flow-step-name">多幣別資金收支預估</div>
-                  <div class="flow-step-action">每週滾動預估未來四週 Apple/Google 雙平台美元 (USD)、日圓 (JPY) 匯入時程與伺服器外幣支出。</div>
+                  <div class="flow-step-name">資金預估與流動性分析</div>
+                  <div class="flow-step-action">每週編制《現金流量預估週報》，統整各代理商進卡預收款、推廣賽事支出與伺服器費用，維持 3 個月營運安全水位。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FIN-01 全球資金調度表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：保持法定 3 個月營運安全現金水位</div>
+                  <div class="flow-step-form">📋 FM-FIN-02 現金流量預估週報</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁挪用加盟押金進行高風險投機</div>
                 </div>
               </div>
 
@@ -2040,14 +2082,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">商務部 暨 財務部</span>
+                    <span class="flow-step-role">推廣部 ＆ 財務部</span>
                   </div>
-                  <div class="flow-step-name">海外遊戲發行保證金 (MG) 監管</div>
-                  <div class="flow-step-action">收受海外代理發行商電匯之 Minimum Guarantee (MG)，專戶存管列為合約負債，按月依淨流水對沖認列營收。</div>
+                  <div class="flow-step-name">代理商加盟押金專戶存管</div>
+                  <div class="flow-step-action">代理商繳納履約保證金入指定專用帳戶，出納核對水單，會計立帳「存入保證金」；合約期滿無違約無息退還。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FIN-02 海外發行MG管制卡</div>
-                  <div class="flow-step-gate">🛡️ 內控點：MG 沖抵必須比對代理商實際營運月報</div>
+                  <div class="flow-step-form">📋 FM-FIN-01 代理商加盟保證金管制卡</div>
+                  <div class="flow-step-gate">🛡️ 內控點：保證金專戶資金動支必須經財務長核准</div>
                 </div>
               </div>
 
@@ -2055,14 +2097,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">財務長 暨 交易員</span>
+                    <span class="flow-step-role">總經理 暨 董事會</span>
                   </div>
-                  <div class="flow-step-name">遠期外匯 (Forward) 避險決策</div>
-                  <div class="flow-step-action">評估匯率波動風險，依實際外幣應收帳款部位擬定遠期外匯避險契約，報請總經理與董事長核准後下單。</div>
+                  <div class="flow-step-name">銀行融資授信與動撥</div>
+                  <div class="flow-step-action">若有營運資金週轉需求，擬定融資計畫書，在董事會核准額度內向銀行申請額度動撥；會計按月計提利息並按期還本。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FIN-03 遠期外匯避險申請單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：嚴禁投機性交易，避險名目本金不得超額</div>
+                  <div class="flow-step-form">📋 FM-FIN-03 銀行借款申請動撥書</div>
+                  <div class="flow-step-gate">🛡️ 內控點：融資總額度必須經董事會決議通過</div>
                 </div>
               </div>
 
@@ -2070,28 +2112,13 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">專責交割會計 (獨立)</span>
+                    <span class="flow-step-role">總務保管人 / 財務保管人</span>
                   </div>
-                  <div class="flow-step-name">外匯交割與公允價值評價</div>
-                  <div class="flow-step-action">獨立核對銀行交易確認書，辦理外幣交割結匯；每月月底依市場匯率計提未實現外幣評價損益。</div>
+                  <div class="flow-step-name">公司大小印分離用印</div>
+                  <div class="flow-step-action">對外簽署代理商授權合約或融資文件，填寫申請單，經權限主管核決後由兩人分別持大印與小章加蓋並登記備查。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FIN-04 衍生性商品部位損益表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：下單交易員與交割會計人員嚴格分立</div>
-                </div>
-              </div>
-
-              <div class="flow-step-card">
-                <div>
-                  <div class="flow-step-top">
-                    <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">監印人員 (總務/財務)</span>
-                  </div>
-                  <div class="flow-step-name">公司大小章調用與用印備查</div>
-                  <div class="flow-step-action">對外簽署發行合約或銀行融資文件，填寫申請單，經權限主管核決後由兩人分別持大章與小章加蓋並登記。</div>
-                </div>
-                <div>
-                  <div class="flow-step-form">📋 FM-FIN-05 印鑑調用申請單</div>
+                  <div class="flow-step-form">📋 FM-FIN-04 印鑑調用申請單</div>
                   <div class="flow-step-gate">🛡️ 內控點：公司大章與負責人私章強制分由兩人保管</div>
                 </div>
               </div>
@@ -2099,15 +2126,30 @@
               <div class="flow-step-card">
                 <div>
                   <div class="flow-step-top">
-                    <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">會計部 (非出納)</span>
+                    <span class="flow-step-num">STEP 05</span>
+                    <span class="flow-step-role">專責會計 (非出納)</span>
                   </div>
-                  <div class="flow-step-name">全球銀行存款調節表編制</div>
-                  <div class="flow-step-action">每月 5 日前取得境內外銀行月度對帳單，逐筆核對總帳紀錄與跨國電匯未達帳項，編制調節表由財務長簽核。</div>
+                  <div class="flow-step-name">銀行存款調節表編制</div>
+                  <div class="flow-step-action">次月 5 日前取得銀行對帳單，逐筆核對總帳紀錄、代理商匯款在途未達帳項，編制調節表由財務長簽核。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FIN-07 銀行存款餘額調節表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：調節表必須由非出納人員獨立編制</div>
+                  <div class="flow-step-form">📋 FM-FIN-06 銀行存款餘額調節表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：調節表必須由非出納之會計獨立編制</div>
+                </div>
+              </div>
+
+              <div class="flow-step-card">
+                <div>
+                  <div class="flow-step-top">
+                    <span class="flow-step-num">STEP 06</span>
+                    <span class="flow-step-role">推廣部 ＆ 會計部</span>
+                  </div>
+                  <div class="flow-step-name">合約終止退還保證金</div>
+                  <div class="flow-step-action">代理商合約終止，推廣部出具《無違約涉賭證明書》，確認無未結款項後，會計辦理電匯全額退還存入保證金。</div>
+                </div>
+                <div>
+                  <div class="flow-step-form">📋 保證金退還核准單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：退款必須取得推廣總監與法務雙簽</div>
                 </div>
               </div>
 
@@ -2125,9 +2167,9 @@
                 <span class="policy-code">SX-POL-FIN-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">資金貸與、背書保證、發行保證金與融資治理準則</div>
+              <div class="policy-title">代理商保證金管理、資金調度與融資內部控制準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第36條之1、《公開發行公司資金貸與及背書保證處理準則》</div>
-              <div class="policy-desc">規範本公司資金借貸、海外子公司背書保證限額；海外發行預付款 (MG) 之合約擔保條件；嚴格管控外匯衍生性商品避險交易，防範未經授權之金融投機。</div>
+              <div class="policy-desc">規範代理商繳納之加盟履約保證金必須以獨立專戶存管，嚴禁挪用於投機交易；規範銀行融資授信與對外背書保證審批權限；嚴格落實印鑑分離保管制度。</div>
             </div>
 
           </div>
@@ -2141,19 +2183,19 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-FIN-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 董事會授權</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 財務長核定</span>
               </div>
-              <div class="policy-title">海外發行代理保證金 (Minimum Guarantee) 資金監管辦法</div>
-              <div class="policy-desc">海外代理商支付之 MG 保證金必須專戶存管，按合約分期履約抵扣；重大代理發行若涉及本公司預付授權保證金，必須取得銀行履約保證函 (Bank Guarantee)。</div>
+              <div class="policy-title">代理商加盟履約保證金專戶存管與退回辦法</div>
+              <div class="policy-desc">推廣部簽訂代理合約收受之保證金，財務部必須立帳列為「存入保證金」；合約期滿終止且無違規涉賭或未結清欠款，依申請程序辦理全額無息退還。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-FIN-003</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">董事會核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 董事會授權</span>
               </div>
-              <div class="policy-title">全球多幣別外匯曝險評估與遠期外匯 (Forward) 避險辦法</div>
-              <div class="policy-desc">針對 Apple/Google 每月結算之大量美元 (USD)、日圓 (JPY) 進行匯率敏感度分析；僅得從事與實際營收部位等額之遠期外匯避險，定期評估公平價值與未實現損益。</div>
+              <div class="policy-title">短期資金調度、安全現金水位與銀行融資授信辦法</div>
+              <div class="policy-desc">每週滾動分析未來四週代理商進卡預收款與伺服器外包支出，維持至少 3 個月營運安全現金水位；銀行授權借款額度必須提報董事會決議通過。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -2161,8 +2203,8 @@
                 <span class="policy-code">SX-STD-FIN-004</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">公司印鑑章（大印/小印）與合約專用章保管辦法</div>
-              <div class="policy-desc">法人印章由行政總務主管保管，負責人私章由財務主管保管；每次用印必須檢附核決簽呈並於用印備查簿登記留痕，合約副本由法務部歸檔。</div>
+              <div class="policy-title">公司法人大印與負責人小章使用保管規範</div>
+              <div class="policy-desc">落實印章實體分離保管。公司大印由行政主管保管，法定代理人私章由財務主管保管；每次用印必須檢附已簽核公文並於用印備查簿登記留痕。</div>
             </div>
 
           </div>
@@ -2173,38 +2215,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FIN-01：全球雙平台資金收支預估與外幣調度程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FIN-01：代理商保證金收取入帳、專戶存管與退還程序</div>
             <ol class="sop-steps">
-              <li>財務部每週彙整全球雙平台與海外代理商預估入帳時程，編制現金流調度表。</li>
-              <li>評估伺服器雲端費用 (USD) 與本地營運支出需求，制定最佳結匯與換匯策略。</li>
-              <li>若有營運週轉借款需求，擬具評估報告提請董事會審議後向銀行申請動撥。</li>
+              <li>推廣部檢附審定合約，代理商將保證金電匯至公司專用保證金銀行帳戶。</li>
+              <li>出納核對入帳水單，會計開立保證金收據並認列「存入保證金」科目。</li>
+              <li>合約終止時，推廣部出具《無違約證明書》，會計扣除未結款項後辦理電匯退還。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FIN-02：海外遊戲發行預付款 (MG) 資金入帳與核銷程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FIN-02：現金流量週報編制、短期週轉評估與借款動撥程序</div>
             <ol class="sop-steps">
-              <li>收受海外發行商電匯之代理保證金 (MG)，出納核對水單並開立預收款收據。</li>
-              <li>會計認列「預收發行保證金（合約負債）」，不計入當期損益。</li>
-              <li>每月依海外代理商提報之實際營收拆帳月報，逐期沖銷保證金並認列營業收入。</li>
+              <li>財務部每週彙整代理商進卡金流與雲端外包支出，編制《現金流量預估週報》。</li>
+              <li>若有營運資金缺口，擬具借款申請報告，在董事會核准之銀行授權額度內申請動撥。</li>
+              <li>借款撥入後會計登錄總帳，按期核算利息並依約清償本息。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FIN-03：遠期外匯避險交易下單、交割確認與會計評價程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FIN-03：公司大小印調用申請、合約會簽與用印備查程序</div>
             <ol class="sop-steps">
-              <li>財務主管依外幣曝險金額擬訂避險交易單，呈報總經理與財務長核准。</li>
-              <li>經授權交易員向合作外匯銀行詢價並執行交易下單 (Forward Contract)。</li>
-              <li>交割確認人員（獨立於交易員之專責會計）核對銀行交易確認書並按月進行公允價值評價。</li>
+              <li>對外簽署代理合約、重大採購或融資合約，申請人填寫《印鑑調用申請單》。</li>
+              <li>法務與財務會簽確認內容無誤後，監印人員於指定欄位加蓋公司大章與負責人小章。</li>
+              <li>於《印鑑登記備查簿》記錄案號並留存印模，合約正本一份由法務歸檔保管。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FIN-04：跨國多銀行帳戶存款調節表編制與未達帳查核程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FIN-04：每月銀行存款調節表編制與未達帳查核程序</div>
             <ol class="sop-steps">
-              <li>次月 5 日前取得本地銀行與海外離岸帳戶之月度對帳單 (Bank Statement)。</li>
-              <li>由非出納之專責會計逐筆核對總帳紀錄、跨境手續費與電匯入帳項目。</li>
-              <li>編制《銀行存款調節表》，針對未達帳項查明原因並呈報財務長覆核。</li>
+              <li>次月 5 日前取得各銀行帳戶之月度對帳單 (Bank Statement)。</li>
+              <li>由非出納之專責會計逐筆核對總帳紀錄、代理商匯款在途未達帳項。</li>
+              <li>編制《銀行存款調節表》，查明未達帳原因並呈報財務長覆核。</li>
             </ol>
           </div>
 
@@ -2218,7 +2260,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2227,50 +2269,43 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-FIN-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">全球多幣別資金調度預估週報表</td>
-                  <td>各國帳戶餘額(USD/JPY/TWD)、預估未來四週雙平台分成匯入、預計雲端外包支出、流動性預警</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
+                  <td style="font-weight:700; color:#f8fafc;">代理商加盟保證金存管與退還管制卡</td>
+                  <td>代理商編號、合約起訖日、保證金金額、銀行收匯水單號、無違約退還簽核聯</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">退還後7年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FIN-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">海外遊戲發行保證金 (MG) 管制登記卡</td>
-                  <td>遊戲名稱、代理發行商、約定MG總額、已入帳保證金、已沖抵營收流水、剩餘保證金餘額</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">合約終止後7年</td>
+                  <td style="font-weight:700; color:#f8fafc;">現金流量預估週報與營運資金調度表</td>
+                  <td>各銀行現金餘額、預估代理商進卡款、預估外包與伺服器支出、淨現金流缺口分析</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FIN-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遠期外匯避險交易申請與核決單</td>
-                  <td>避險標的(雙平台應收帳款)、名目本金、約定匯率、到期結算日、交易目的說明、DOA簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
+                  <td style="font-weight:700; color:#f8fafc;">銀行借款申請動撥審查書</td>
+                  <td>授信銀行、核定借款額度、本次動撥額、利率條件、還款來源、DOA核決簽核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">清償後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FIN-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">衍生性金融商品交易部位日報與損益表</td>
-                  <td>交易合約編號、交易對手銀行、原始匯率、期末公允估值、未實現損益金額、停損警報</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-FIN-05</span></td>
                   <td style="font-weight:700; color:#f8fafc;">公司印鑑章（大印/小印）調用申請單</td>
-                  <td>申請日期、用印事由、合約文件名稱、受文單位、用印類別、法定核決簽署</td>
+                  <td>申請日期、用印文件名稱、對象代理商/廠商、用印類別、法定核准簽署</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-FIN-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">印鑑使用登記備查簿</td>
-                  <td>用印流水號、合約案號、監印人員簽名、領取人簽字、合約副本歸檔編號</td>
+                  <td><span class="form-id-badge">FM-FIN-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">公司印鑑使用登記備查簿</td>
+                  <td>用印流水序號、合約案號、監印人員簽名、領取人簽字、合約正本歸檔號</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-FIN-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">全球銀行帳戶存款餘額調節表 (各幣別)</td>
-                  <td>銀行帳面餘額、公司總帳餘額、在途結匯未達帳明細、匯差調節金額、會計/財務長簽章</td>
+                  <td><span class="form-id-badge">FM-FIN-06</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">銀行存款餘額調節表 (每月產出)</td>
+                  <td>銀行帳面餘額、公司總帳餘額、在途匯款未達帳清單、調節差額說明、會計/財務長簽認</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定帳簿)</td>
                 </tr>
 
@@ -2282,15 +2317,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 公司大印與負責人私章必須分由兩人保管；外匯避險交易員與交割會計人員嚴格分離；多國銀行存款調節表必須由非出納人員獨立編制。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 公司大印與負責人私章必須分由兩人保管；加盟保證金專戶動撥必須經財務長核准；銀行存款調節表必須由非出納之專責會計獨立編制。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 06: 投資循環 (遊戲研發工作室併購、IP 授權引進與股權投資) -->
+      <!-- CYCLE 06: 投資循環 (棋牌研發團隊收購、俱樂部生態扶持與減損) -->
       <!-- ========================================================================= -->
       <section id="cycle-6" class="cycle-card" data-cycle-num="06">
         
@@ -2298,17 +2333,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">06</div>
             <div>
-              <div class="cycle-name-zh">🚀 投資循環 (遊戲研發工作室併購、IP 授權引進與股權投資)</div>
-              <div class="cycle-name-en">Investment, Game Studio M&A & IP Licensing Cycle</div>
+              <div class="cycle-name-zh">🚀 投資循環 (棋牌研發團隊收購、俱樂部生態扶持與減損)</div>
+              <div class="cycle-name-en">Investment, Studio M&A & Club Ecosystem Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：投資評審委員會 (主辦) ＆ 推廣部門 ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-06 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-06 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範遊戲研發工作室 (Studio) 股權收購、知名動漫/影視 IP 授權引進評估、轉投資團隊監理與遊戲版權商譽減損測試，確保策略投資效益與股東價值。
+          <strong>🎯 業務循環治理目標：</strong> 規範地方棋牌團隊併購、優質大型俱樂部扶持基金投資、外部技術專利授權評估與期末無形資產減損測試，確保投資策略契合並維護股東權益。
         </div>
 
         <!-- Flowchart Block for cycle-6 -->
@@ -2316,7 +2352,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 外部遊戲工作室併購、IP 授權引進評估與無形資產減損流程圖
+              <span>📌</span> 地方棋牌研發團隊收購、大型俱樂部扶持基金與減損測試流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -2326,12 +2362,12 @@
                     <span class="flow-step-num">STEP 01</span>
                     <span class="flow-step-role">投資專案小組</span>
                   </div>
-                  <div class="flow-step-name">標的篩選與收購可行性立項</div>
-                  <div class="flow-step-action">篩選具備自研潛力之獨立遊戲工作室或評估國際動漫/影視 IP 授權改編手遊之市場規模與預期 LTV/ROI。</div>
+                  <div class="flow-step-name">標的篩選與投資可行性評估</div>
+                  <div class="flow-step-action">篩選具備地方玩法研發實力之獨立棋牌團隊或覆蓋全國 Top 5% 之優質俱樂部，出具策略併購與扶持提案書。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-01 工作室收購可行性報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：策略契合度與財務回收週期試算</div>
+                  <div class="flow-step-form">📋 FM-INV-01 棋牌工作室收購提案書</div>
+                  <div class="flow-step-gate">🛡️ 內控點：評估地方代理網絡與預期 IRR 回收期</div>
                 </div>
               </div>
 
@@ -2339,14 +2375,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">技術專家 暨 律師/會計師</span>
+                    <span class="flow-step-role">技術架構師 暨 律師</span>
                   </div>
-                  <div class="flow-step-name">原始碼技術 (Code DD) 與財務查核</div>
-                  <div class="flow-step-action">執行代碼架構審查 (Code Review)，檢驗引擎穩定度與開源協議合規性；查核財務稅務與勞動合約完整性。</div>
+                  <div class="flow-step-name">原始碼實地查核 (Code DD)</div>
+                  <div class="flow-step-action">執行代碼架構審查，檢驗洗牌 RNG 模組獨立性、排查是否有換皮抄襲代碼；律師查核核心成員競業協議完整性。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-02 技術代碼實地查核表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：排查代碼侵權、後門與重大安全架構缺陷</div>
+                  <div class="flow-step-form">📋 FM-INV-02 原始碼技術實地查核表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：排查侵權、安全漏洞與私服歷史紀錄</div>
                 </div>
               </div>
 
@@ -2356,12 +2392,12 @@
                     <span class="flow-step-num">STEP 03</span>
                     <span class="flow-step-role">外部獨立鑑價機構</span>
                   </div>
-                  <div class="flow-step-name">公允價值合理性意見取得</div>
-                  <div class="flow-step-action">達到法定重大門檻之投資或重大 IP 授權合約，委請外部獨立評價師/會計師出具價格公允合理性意見書。</div>
+                  <div class="flow-step-name">公允價格合理性意見</div>
+                  <div class="flow-step-action">達法定重大門檻之投資案，委請外部獨立會計師出具交易價格公允合理性意見書，杜絕關係人利益輸送。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-04 專家公允價值評價報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：排除關係人利益輸送與不合理高估估值</div>
+                  <div class="flow-step-form">📋 FM-INV-03 專家公允價值評價報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：排除不合常規交易與高估溢價風險</div>
                 </div>
               </div>
 
@@ -2369,14 +2405,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">審計委員會 暨 董事會</span>
+                    <span class="flow-step-role">審計委員會 ＆ 董事會</span>
                   </div>
-                  <div class="flow-step-name">重大投資審議與決議</div>
-                  <div class="flow-step-action">送交審委會全體獨董過半數同意，提報董事會決議通過；於法定 2 個營業日內於公開資訊觀測站申報重大訊息。</div>
+                  <div class="flow-step-name">重大投資審議與重訊申報</div>
+                  <div class="flow-step-action">送審委會全體獨董過半同意，提報董事會決議通過；於 2 個營業日內於公開資訊觀測站申報重大訊息。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-05 董事會投資決議議事錄</div>
-                  <div class="flow-step-gate">🛡️ 內控點：重大訊息於 2 日內依法發布揭露</div>
+                  <div class="flow-step-form">📋 FM-INV-04 董事會投資決議議事錄</div>
+                  <div class="flow-step-gate">🛡️ 內控點：法定重大訊息於 2 日內依法公告</div>
                 </div>
               </div>
 
@@ -2386,11 +2422,11 @@
                     <span class="flow-step-num">STEP 05</span>
                     <span class="flow-step-role">法務 暨 出納</span>
                   </div>
-                  <div class="flow-step-name">簽約交割與股權憑證入庫</div>
-                  <div class="flow-step-action">簽署 SPA 股權買賣合約或 IP 授權合約，出納執行跨境電匯交割，股票憑證或授權證書由金庫保險箱雙人共管。</div>
+                  <div class="flow-step-name">簽約交割與股權憑證共管</div>
+                  <div class="flow-step-action">簽署股權買賣合約 (SPA)，出納辦理款項電匯交割，股票憑證或投資協議正本由財務部金庫保險箱雙人共管入庫。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-06 股權憑證入庫保管單</div>
+                  <div class="flow-step-form">📋 FM-INV-05 股權憑證入庫保管單</div>
                   <div class="flow-step-gate">🛡️ 內控點：憑證保管人雙人簽核，嚴禁單人提領</div>
                 </div>
               </div>
@@ -2399,16 +2435,16 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">投後管理小組 暨 財務部</span>
+                    <span class="flow-step-role">財務部 暨 外部會計師</span>
                   </div>
-                  <div class="flow-step-name">被投團隊營運監理與減損測試</div>
-                  <div class="flow-step-action">【判定分支】：被投資工作室進度嚴重落後或留存率低迷?
-• 是 ➔ 委任會計師執行無形資產減損測試，認列損失。
+                  <div class="flow-step-name">投後監理與期末減損測試</div>
+                  <div class="flow-step-action">【判定分支】：被收購團隊開桌率嚴重衰退或代理商大量流失?
+• 是 ➔ 強制執行商譽與無形資產減損測試認列損失。
 • 否 ➔ 正常併表監理。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-INV-08 遊戲版權減損測試表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：每年年底強制執行商譽與遊戲 IP 減損評估</div>
+                  <div class="flow-step-form">📋 FM-INV-07 商譽無形資產減損表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：每年年底強制執行無形資產減損評估</div>
                 </div>
               </div>
 
@@ -2426,9 +2462,9 @@
                 <span class="policy-code">SX-POL-INV-001</span>
                 <span class="policy-level">董事會核定（股東會備查）</span>
               </div>
-              <div class="policy-title">遊戲產業策略併購、工作室投資與重大資產取得準則</div>
+              <div class="policy-title">遊戲產業策略投資、團隊併購與資產取得治理準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第36條之1、《公開發行公司取得或處分資產處理準則》</div>
-              <div class="policy-desc">規範本公司投資獨立遊戲工作室、引進國際重大 IP 之可行性分析、實地查核、外部專家價格合理性意見取得、董事會決議與重訊揭露程序。</div>
+              <div class="policy-desc">規範本公司投資獨立棋牌研發工作室、設立海外運營實體之可行性分析、實地查核、外部專家價格合理性意見取得、董事會決議與重訊申報程序。</div>
             </div>
 
           </div>
@@ -2444,8 +2480,8 @@
                 <span class="policy-code">SX-STD-INV-002</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">董事會核定</span>
               </div>
-              <div class="policy-title">外部遊戲研發團隊 (Studio) 投資與併購管理辦法</div>
-              <div class="policy-desc">規範工作室技術代碼、美術資產版權與核心團隊留任協議 (Earn-out) 實地查核；明定估值模型（以產品留存率、預估 LTV 與 IRR 為基礎）；投後整合 (PMI) 治理。</div>
+              <div class="policy-title">外部棋牌研發工作室股權投資與併購管理辦法</div>
+              <div class="policy-desc">規範被投資團隊之原始碼自主性查驗（防換皮侵權代碼）；明定估值模型（以活躍開桌數、代理商留存率與預估 IRR 為基礎）；核心團隊簽署 3 年留任與競業協議。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -2453,26 +2489,17 @@
                 <span class="policy-code">SX-STD-INV-003</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 董事會授權</span>
               </div>
-              <div class="policy-title">重大知名 IP (動漫/小說/影視) 授權合約與保證金評估辦法</div>
-              <div class="policy-desc">規範 IP 授權範圍（全球/區域、改編手遊類型、授權年限）；最低保證金 (MG) 與分成比率合理性試算；監修標準流程及違約條款法務審定。</div>
+              <div class="policy-title">大型俱樂部推廣扶持基金投資管理辦法</div>
+              <div class="policy-desc">由推廣部提報。針對全國月流水排名前 5% 之優質俱樂部，制定賽事贊助與硬體扶持基金；嚴格審查俱樂部合規性，防止扶持資金流入非法地下賭局。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-INV-004</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
-              </div>
-              <div class="policy-title">被投資研發工作室營運監理與里程碑考核辦法</div>
-              <div class="policy-desc">規範對被投資團隊之董事派任、每季研發進度考核（版本 Milestone）、每月財報收集與內部稽核室定期赴工作室查核原始碼健全性機制。</div>
-            </div>
-
-            <div class="policy-box" style="border-top: 2px solid var(--primary);">
-              <div class="policy-meta">
-                <span class="policy-code">SX-STD-INV-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 審計委員會核定</span>
               </div>
-              <div class="policy-title">遊戲版權、IP 授權金與無形資產公允價值評估及減損辦法</div>
-              <div class="policy-desc">若被投資工作室研發進度嚴重落後、留存率低迷或 IP 改編遊戲收益不如預期，每季末強制執行無形資產減損測試，並依法提列商譽與版權減損損失。</div>
+              <div class="policy-title">轉投資事業營運監理與遊戲版權期末減損辦法</div>
+              <div class="policy-desc">規範派任被投資工作室董監事職責；若收購之遊戲版本開桌率不如預期或代理商大量流失，每季末強制執行商譽與遊戲無形資產減損測試。</div>
             </div>
 
           </div>
@@ -2483,38 +2510,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-INV-01：遊戲工作室收購標的篩選、技術代碼與法律實地查核程序</div>
+            <div class="sop-title"><span>▶</span> SOP-INV-01：棋牌團隊收購提案、技術代碼 (Code DD) 實地查核程序</div>
             <ol class="sop-steps">
-              <li>投資專案小組出具《工作室收購提案書》，評估團隊研發實力與市場潛力。</li>
-              <li>委請技術專家執行代碼實地查核 (Code DD)，檢驗引擎架構與是否有侵權代碼。</li>
-              <li>委請會計師與律師查核財務稅務與勞動合約，編制綜合評估報告。</li>
+              <li>投資專案小組擬具《棋牌工作室收購提案書》，評估地方玩法覆蓋度與代理商網絡。</li>
+              <li>技術專家執行原始碼審查 (Code DD)，檢驗發牌演算法公平性與是否有第三方侵權模組。</li>
+              <li>律師查核核心成員競業禁止與勞動契約，編制實地查核總結報告。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-INV-02：重大知名 IP 引進可行性評估、合約監修與決策核准程序</div>
+            <div class="sop-title"><span>▶</span> SOP-INV-02：專家意見取得、審計委員會審查與董事會決議程序</div>
             <ol class="sop-steps">
-              <li>營運策劃小組提出 IP 改編手遊企劃，模擬玩家獲客成本與營收預測 (LTV 模型)。</li>
-              <li>法務審定 IP 授權合約條款（確保原廠監修時程上限與素材授權範圍）。</li>
-              <li>達重大標準者取得外部獨立專家價格合理性意見，提報審委會審查與董事會決議。</li>
+              <li>達法定重大門檻之投資案，委請外部獨立會計師出具交易價格合理性意見書。</li>
+              <li>送審計委員會全體獨立董事過半數同意，提報董事會全體董事三分之二出席核決。</li>
+              <li>決議後 2 個營業日內於公開資訊觀測站辦理法定重大訊息公告申報。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-INV-03：投資合約簽署、股款/授權金交割與憑證保管程序</div>
+            <div class="sop-title"><span>▶</span> SOP-INV-03：投資合約簽約、股款交割與股權憑證入庫保管程序</div>
             <ol class="sop-steps">
-              <li>完成股權買賣合約 (SPA) 或 IP 授權合約簽署，確認交割先決條件 (CP) 完全滿足。</li>
-              <li>會計部核對交割憑單，經財務長核准後由出納辦理跨境電匯款項支付。</li>
-              <li>取得實體股權憑證或 IP 官方原廠授權證書，由專責保險箱雙人入庫保管。</li>
+              <li>完成股權買賣合約 (SPA) 簽署，確認被收購團隊交割先決條件 (CP) 達成。</li>
+              <li>會計部核對交割單據，經財務長核准後由出納辦理跨境或本地電匯款項支付。</li>
+              <li>取得實體股票憑證或集保劃撥證明，由財務部金庫保險箱雙人共管入庫。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-INV-04：投後工作室研發進度監控與遊戲版權期末減損測試程序</div>
+            <div class="sop-title"><span>▶</span> SOP-INV-04：投後研發進度監理與商譽無形資產期末減損測試程序</div>
             <ol class="sop-steps">
-              <li>每月 10 日前追蹤被投資工作室之研發工期、燃盡圖 (Burndown Chart) 與營運財務。</li>
+              <li>每月 10 日前收集被投資團隊營運報表，追蹤活躍開桌數與房卡消耗達成率。</li>
               <li>派任之董事出席會議並於會後 3 日內回報重大決策事項紀錄。</li>
-              <li>年底由外部獨立評價機構執行商譽與遊戲 IP 減損測試，出具正式評價報告供會計查核。</li>
+              <li>年底委任獨立評價機構執行商譽減損測試，若出現減損跡象依法提列損失。</li>
             </ol>
           </div>
 
@@ -2528,7 +2555,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2537,57 +2564,50 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-INV-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲研發團隊收購可行性報告書 (Studio M&A Memo)</td>
-                  <td>工作室概況、核心團隊背景、在研遊戲代號、技術架構優勢、預估IRR/NPV、專案負責人</td>
+                  <td style="font-weight:700; color:#f8fafc;">棋牌研發工作室併購可行性評估報告</td>
+                  <td>標的工作室概況、核心玩法特色、覆蓋代理商數量、預估IRR/NPV、專案負責人</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-INV-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">軟體原始碼與美術版權技術實地查核表 (Technical DD)</td>
-                  <td>遊戲引擎版本、代碼模組化評級、資安弱點清單、開源授權衝突分析、架構師簽核</td>
+                  <td style="font-weight:700; color:#f8fafc;">棋牌原始碼與美術版權實地查核表 (Code DD)</td>
+                  <td>洗牌RNG模組審查、無換皮抄襲判定、資安漏洞掃描結果、架構師簽章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-INV-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">重大 IP 授權合約審查表 (含監修與保證金試算)</td>
-                  <td>IP名稱、原廠版權方、授權金MG總額、分成比例%、原廠監修SLA限制、董事會核決</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">合約終止後10年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-INV-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">獨立專家公允價值評價報告書 (Fairness Opinion)</td>
-                  <td>會計師/鑑價師姓名、估值方法論(收益折現法/市場乘數法)、合理價格區間、無利益衝突聲明</td>
+                  <td style="font-weight:700; color:#f8fafc;">獨立專家公允價值評價報告書</td>
+                  <td>會計師姓名、評價方法論(收益法/市場法)、合理價格區間、無利益衝突聲明</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-INV-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">董事會重大投資與 IP 引進決議議事錄</td>
-                  <td>案由條件、董事出席發言記錄、利益迴避董監事名冊、議事錄公證簽署、重大訊息申報聯</td>
+                  <td><span class="form-id-badge">FM-INV-04</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">董事會重大投資決議議事錄</td>
+                  <td>案由、決議條件、出席董監事發言記錄、利益迴避董監事名冊、重訊公告聯</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存 (法定檔案)</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-INV-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">股權憑證與重大 IP 原廠授權書入庫保管單</td>
-                  <td>股權/授權書編號、被投資主體、有效期限、保險箱保管號碼、保管主管雙人簽印</td>
+                  <td><span class="form-id-badge">FM-INV-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">股權憑證與重大投資合約入庫保管單</td>
+                  <td>股權編號、被投資主體、持股比率、保險箱編號、保管主管雙人簽印</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">投資處分後7年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-INV-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">被投資工作室研發里程碑進度追蹤月報表</td>
-                  <td>工作室名稱、當前版本進度、各階段留存率指標、財務損益、重大偏離警報、指派董事簽名</td>
+                  <td><span class="form-id-badge">FM-INV-06</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">被投資團隊開桌營運與財務監理月報</td>
+                  <td>活躍俱樂部數、月度開桌總局數、房卡消耗營收、損益表、指派董事簽名</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-INV-08</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲版權與無形資產減損測試分析表</td>
-                  <td>各遊戲無形資產帳面值、可回收金額折現估算、減損認列金額、會計師事務所查核簽章</td>
+                  <td><span class="form-id-badge">FM-INV-07</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">商譽與遊戲無形資產減損測試分析表</td>
+                  <td>無形資產帳面值、可回收金額現值折現估算、減損認列金額、會計師事務所查核章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
                 </tr>
 
@@ -2599,15 +2619,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 投資案提案人嚴禁兼任價格獨立專家審查；有價證券與原廠授權證書必須由專人雙人保管；遊戲專案收益評估與減損測試由財務部獨立執行。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 投資案提案人嚴禁兼任價格合理性獨立專家審查；股票有價證券由專人雙人共管；被投資團隊收益評估由財務部獨立執行。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 07: 固定資產循環 (高階研發設備、真機測試機庫與辦公設施) -->
+      <!-- CYCLE 07: 固定資產循環 (研發工作站、推廣展示機與辦公設備) -->
       <!-- ========================================================================= -->
       <section id="cycle-7" class="cycle-card" data-cycle-num="07">
         
@@ -2615,17 +2635,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">07</div>
             <div>
-              <div class="cycle-name-zh">💻 固定資產循環 (高階研發設備、真機測試機庫與辦公設施)</div>
-              <div class="cycle-name-en">Fixed Assets, High-End Workstations & Test Device Farm Cycle</div>
+              <div class="cycle-name-zh">🖥️ 固定資產循環 (研發工作站、推廣展示機與辦公設備)</div>
+              <div class="cycle-name-en">Fixed Assets, R&D Workstations & Promo Devices Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：總務財產部 (主辦) ＆ 推廣部門 (展示機) ＆ IT工程部 ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-07 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-07 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 手遊公司雖無實體廠房重機具，但擁有大量高階開發工作站、繪圖板與上百支 iOS/Android 真機測試機庫 (Device Farm)；規範其採購驗收、條碼貼標、防外流借還與盤點除帳。
+          <strong>🎯 業務循環治理目標：</strong> 規範研發高階工作站 (Mac Studio/PC)、推廣部門展示用平板/測試機、營運機房伺服器與辦公設施之採購驗收、條碼貼標、借還外流管制與報廢硬碟消磁。
         </div>
 
         <!-- Flowchart Block for cycle-7 -->
@@ -2633,7 +2654,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 高階開發工作站、專業繪圖板與真機測試機庫 (Device Farm) 管制流程圖
+              <span>📌</span> 研發高階工作站、推廣展示平板與辦公設備資產管制流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -2641,13 +2662,13 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 01</span>
-                    <span class="flow-step-role">研發專案組 (程式/美術/QA)</span>
+                    <span class="flow-step-role">推廣部 / 研發部</span>
                   </div>
-                  <div class="flow-step-name">研發設備資本支出 (CAPEX) 申請</div>
-                  <div class="flow-step-action">依專案算力與渲染需求提出高階 Mac Studio、RTX 繪圖工作站、Wacom 液晶繪圖板或測試機請購。</div>
+                  <div class="flow-step-name">設備資本支出 (CAPEX) 申請</div>
+                  <div class="flow-step-action">推廣專員申請拜訪代理商之展示平板，或研發部申請 3D 繪圖工作站，填報《設備申請表》，附專案規格需求。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FA-01 研發設備申請表 CAPEX</div>
+                  <div class="flow-step-form">📋 FM-FA-01 設備資本支出申請表</div>
                   <div class="flow-step-gate">🛡️ 內控點：核對年度 CAPEX 資本支出預算額度</div>
                 </div>
               </div>
@@ -2656,14 +2677,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">採購部 暨 IT 工程部</span>
+                    <span class="flow-step-role">採購部 ＆ IT 部門</span>
                   </div>
-                  <div class="flow-step-name">詢比議價、發單與設備驗收</div>
-                  <div class="flow-step-action">採購部詢價下單；設備到貨由 IT 檢驗出廠序號 (SN/MAC)，開機測試並安裝防毒 EDR 與 MDM 管制軟體。</div>
+                  <div class="flow-step-name">詢比議價、開箱驗收與防護</div>
+                  <div class="flow-step-action">採購部詢比議價發單；設備到貨由 IT 檢驗出廠序號 (SN/MAC)，開機安裝統一 EDR 防毒與行動設備管理 (MDM)。</div>
                 </div>
                 <div>
                   <div class="flow-step-form">📋 FM-FA-02 資訊設備驗收交接單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：全體電腦設備強制安裝端點加密與防外流</div>
+                  <div class="flow-step-gate">🛡️ 內控點：全體攜出設備強制啟用遠端資料抹除</div>
                 </div>
               </div>
 
@@ -2673,12 +2694,12 @@
                     <span class="flow-step-num">STEP 03</span>
                     <span class="flow-step-role">總務財產管理員</span>
                   </div>
-                  <div class="flow-step-name">防撕毀 QR-Code 貼標與建檔</div>
+                  <div class="flow-step-name">QR-Code 貼標與資產卡建檔</div>
                   <div class="flow-step-action">於實體機身顯眼處黏貼防撕毀條碼標籤，於 ERP 系統建立固定資產卡，設定耐用年限 3 年按月提列折舊。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FA-03 固定資產系統主檔卡</div>
-                  <div class="flow-step-gate">🛡️ 內控點：資產卡完整登載保管人工號與所在網段</div>
+                  <div class="flow-step-form">📋 FM-FA-03 固定資產系統卡</div>
+                  <div class="flow-step-gate">🛡️ 內控點：完整登載保管人工號與所在網段</div>
                 </div>
               </div>
 
@@ -2686,14 +2707,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">QA 機庫專責管理員</span>
+                    <span class="flow-step-role">推廣展示機專責管理員</span>
                   </div>
-                  <div class="flow-step-name">真機測試機庫 (Device Farm) 管制</div>
-                  <div class="flow-step-action">上百支 iOS/Android 各型號手機與平板列冊專櫃鎖管；工程師登記借還；未上市保密機型嚴禁攜出公司。</div>
+                  <div class="flow-step-name">展示設備外出借還登記</div>
+                  <div class="flow-step-action">推廣業務攜帶展示平板外出拜訪代理商，線上填單核准後出庫；設定最長外借 7 日，逾期系統自動催繳。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FA-04 測試機庫借還登記表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：每週五實體盤查，逾期未還系統告警</div>
+                  <div class="flow-step-form">📋 FM-FA-04 推廣展示機借還登記表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：每週五實體盤點，嚴禁私自滯留機外</div>
                 </div>
               </div>
 
@@ -2701,13 +2722,13 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">總務部 暨 財務部 (監盤)</span>
+                    <span class="flow-step-role">總務部 ＆ 財務部 (監盤)</span>
                   </div>
-                  <div class="flow-step-name">年度研發設備 100% 實體盤點</div>
-                  <div class="flow-step-action">每年第四季由財務會同總務持條碼機至各研發座位實體掃描盤點，查明閒置設備與損壞狀況，產出盤盈虧報告。</div>
+                  <div class="flow-step-name">年度設備 100% 實體盤點</div>
+                  <div class="flow-step-action">每年第四季由財務會同總務持條碼機至推廣、營運與研發部門逐項掃碼實盤 100%，產出盤盈虧報告。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FA-06 研發設備盤點清冊</div>
+                  <div class="flow-step-form">📋 FM-FA-05 資訊與推廣設備盤點清冊</div>
                   <div class="flow-step-gate">🛡️ 內控點：盤點由財務與內稽獨立監盤，保管人不得自簽</div>
                 </div>
               </div>
@@ -2716,14 +2737,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">IT 部門 暨 會計部</span>
+                    <span class="flow-step-role">IT 部門 ＆ 會計部</span>
                   </div>
-                  <div class="flow-step-name">損壞報廢鑑定與硬碟消磁除帳</div>
-                  <div class="flow-step-action">淘汰報廢之電腦主機，硬碟必須由 IT 執行實體物理消磁破碎，拍照存證後由會計部執行固定資產報廢除帳。</div>
+                  <div class="flow-step-name">報廢鑑定與硬碟消磁除帳</div>
+                  <div class="flow-step-action">淘汰報廢之電腦主機，硬碟必須由 IT 拆解送物理消磁機破碎，拍照存證後由會計部執行固定資產報廢除帳。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-FA-07 設備報廢暨硬碟消磁證明</div>
-                  <div class="flow-step-gate">🛡️ 內控點：未附硬碟消磁與銷毀照片嚴禁除帳</div>
+                  <div class="flow-step-form">📋 FM-FA-06 設備報廢暨硬碟消磁證明</div>
+                  <div class="flow-step-gate">🛡️ 內控點：未附硬碟消磁與銷毀照片嚴禁會計除帳</div>
                 </div>
               </div>
 
@@ -2741,9 +2762,9 @@
                 <span class="policy-code">SX-POL-FA-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">高階研發設備、測試機庫與資訊資產保全內部控制準則</div>
+              <div class="policy-title">研發硬體、推廣展示設備與資產保全治理準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》、IAS 16 不動產廠房及設備、《商業會計法》</div>
-              <div class="policy-desc">明定研發設備資本化門檻（單價新台幣 1 萬元以上且耐用年限 2 年以上強制資本化）；建立研發測試手機與高階繪圖工作站之實體保全防盜規範。</div>
+              <div class="policy-desc">明定單價新台幣 1 萬元以上且耐用年限 2 年以上者強制資本化；推廣部門外出展示機與研發高階工作站實施實體保全防盜與資安管制。</div>
             </div>
 
           </div>
@@ -2759,8 +2780,8 @@
                 <span class="policy-code">SX-STD-FA-002</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">研發高階工作站 (Mac/PC) 與專業繪圖板採購辦法</div>
-              <div class="policy-desc">規範 3D/程式/特效等高運算需求設備之規格審批標準；全面落實年度 CAPEX 預算控管；採購驗收後強制由 IT 部門配置統一端點安全管理 (EDR/MDM)。</div>
+              <div class="policy-title">研發高階電腦、推廣展示機與伺服器採購辦法</div>
+              <div class="policy-desc">落實年度 CAPEX 資本支出預算審查；推廣部申請展演用平板或研發部申請繪圖主機，必須檢附專案必要性說明，由 IT 部門統一配置安全軟體 (MDM)。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -2768,8 +2789,8 @@
                 <span class="policy-code">SX-STD-FA-003</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">iOS/Android 真機測試機庫 (Device Farm) 管理辦法</div>
-              <div class="policy-desc">測試機庫由 QA 專責保管，各型號手機與平板列冊管制；員工借用測試必須登記工號與歸還時間；嚴禁私自攜帶測試機離廠，未上市機型強制專櫃密碼鎖管。</div>
+              <div class="policy-title">推廣展示機庫與公用設備外借登記管制辦法</div>
+              <div class="policy-desc">推廣人員攜帶展示平板至線下推廣或拜訪代理商，必須線上填單登記；嚴禁私自帶離未報備設備；外出設備強制開啟遠端抹除與尋找定位功能。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -2777,8 +2798,8 @@
                 <span class="policy-code">SX-STD-FA-004</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">資訊硬體設備折舊、耐用年限與閒置減損評估辦法</div>
-              <div class="policy-desc">電腦工作站、伺服器主機與測試手機一律採平均法按 3 年提列折舊；損壞或因作業系統淘汰無法升級之設備，定期進行閒置減損評估。</div>
+              <div class="policy-title">資訊設備折舊、耐用年限與閒置減損評估辦法</div>
+              <div class="policy-desc">電腦主機、展示平板與辦公設備一律採平均法按 3 年提列折舊；損壞或因作業系統淘汰無法升級之設備，定期進行閒置減損評估。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -2786,8 +2807,8 @@
                 <span class="policy-code">SX-STD-FA-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">研發設備定期全面盤點、報廢除帳與硬碟消磁銷毀規範</div>
-              <div class="policy-desc">每年實施 100% 實體掃碼大盤點；報廢電腦硬碟與測試設備在除帳前，必須經過物理消磁破碎或資安抹除軟體銷毀，防止原始碼與商業機密外流。</div>
+              <div class="policy-title">設備定期全面盤點、報廢除帳與硬碟消磁規範</div>
+              <div class="policy-desc">每年第四季實施全公司 100% 條碼掃碼盤點；報廢電腦硬碟在會計除帳前，必須由 IT 執行物理消磁破碎，拍照存證防止棋牌源碼與代理商資料外洩。</div>
             </div>
 
           </div>
@@ -2798,38 +2819,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FA-01：研發硬體設備申請、CAPEX 預算核決與採購程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FA-01：硬體設備資本支出申請、效益評估與採購發單程序</div>
             <ol class="sop-steps">
-              <li>部門依研發專案需求填寫《高階研發硬體申請表》，說明專案規格需求。</li>
-              <li>IT 主管審查設備相容性，財務部核對資本支出 (CAPEX) 預算額度後簽核。</li>
-              <li>交由採購部辦理詢比議價，依採購規範發放採購單 (PO)。</li>
+              <li>推廣部或研發部填報《硬體設備申請表 (CAPEX)》，說明展示或研發規格需求。</li>
+              <li>IT 主管審查設備相容性，財務部核對資本支出年度預算額度後簽核。</li>
+              <li>交由採購部辦理詢比議價，依核決權限辦法 (DOA) 發放正式採購單 (PO)。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FA-02：設備到貨驗收、安裝防護 (MDM) 與財產標籤黏貼程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FA-02：設備到貨開箱驗收、安裝資安防護 (MDM) 與貼標建檔程序</div>
             <ol class="sop-steps">
-              <li>IT 工程師檢驗實體硬體型號與規格序號 (SN/MAC)，確認開機正常運作。</li>
-              <li>安裝公司資安防護軟體（EDR、硬碟加密 BitLocker/FileVault、MDM 控管）。</li>
-              <li>總務財產管理員於機身黏貼防偽 QR-Code 條碼標籤，於 ERP 系統建立固定資產卡。</li>
+              <li>IT 工程師檢驗設備品牌型號與序號 (SN/MAC)，開機測試正常運作。</li>
+              <li>安裝公司統一防毒軟體、硬碟加密 (BitLocker/FileVault) 及行動設備管制 (MDM)。</li>
+              <li>總務財產管理員於機身黏貼防撕毀條碼標籤，於 ERP 建立固定資產卡並設定 3 年折舊。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FA-03：真機測試機庫 (Device Farm) 登記借還與盤點管制程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FA-03：推廣展示平板外借出廠登記與歸還點收程序</div>
             <ol class="sop-steps">
-              <li>QA 或開發工程師於測試機庫管理系統線上登記借用型號與用途。</li>
-              <li>QA 管理員刷取手機條碼交付設備，系統記錄借出時間戳記與預定歸還日。</li>
-              <li>每週五下班前執行機庫實體清點；未歸還設備由系統發出逾期催還通報。</li>
+              <li>推廣專員因拜訪代理商需攜出平板，線上填報《推廣展示機借用單》。</li>
+              <li>主管核簽後由總務發放設備並刷條碼出庫；系統設定最長借用期限 7 日。</li>
+              <li>歸還時總務人員檢驗機身外觀無損壞後銷案；逾期未還系統自動通報推廣總監。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-FA-04：年度設備全面盤點、報廢判定與硬碟資料銷毀程序</div>
+            <div class="sop-title"><span>▶</span> SOP-FA-04：年度設備全面實體盤點、報廢鑑定與硬碟消磁程序</div>
             <ol class="sop-steps">
-              <li>總務與財務發布年度盤點計畫，持條碼掃描槍至各研發部門實體抽盤 100%。</li>
-              <li>損壞無修復價值之設備填具《報廢申請單》，由 IT 執行硬碟拆解消磁並出具消磁證明。</li>
-              <li>檢附銷毀照片與環保回收清單，經總經理核決後由會計部執行固定資產除帳。</li>
+              <li>總務與財務擬定盤點排程，持條碼機至推廣、營運與研發部門逐項掃碼實盤 100%。</li>
+              <li>淘汰報廢設備由 IT 拆解硬碟，送實體消磁機破碎，開具《硬碟消磁證明書》並拍照。</li>
+              <li>檢附證明照片經總經理核定後，由會計部正式辦理固定資產報廢除帳。</li>
             </ol>
           </div>
 
@@ -2843,7 +2864,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2852,49 +2873,42 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-FA-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">高階研發硬體設備申請表 (CAPEX Form)</td>
-                  <td>專案組別、設備類別(Mac/PC工作站/繪圖板/伺服器)、預算金額、專案製作人簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">設備除帳後5年</td>
+                  <td style="font-weight:700; color:#f8fafc;">硬體設備資本支出申請書 (CAPEX Form)</td>
+                  <td>申請部門(推廣/研發/營運)、設備名稱(工作站/展示平板)、預算金額、主管簽核</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">資產除帳後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FA-02</span></td>
                   <td style="font-weight:700; color:#f8fafc;">資訊設備開箱驗收與交接單</td>
-                  <td>採購單號、設備品牌型號、出廠序號(SN)、MAC位址、MDM安裝簽核、領用人簽章</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">設備除帳後5年</td>
+                  <td>採購單號、設備序號(SN)、MAC位址、MDM資安安裝確認、領用人簽章</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">資產除帳後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FA-03</span></td>
                   <td style="font-weight:700; color:#f8fafc;">固定資產系統卡 (Asset Card)</td>
-                  <td>財產編號、購置日期、取得原價、耐用年限(3年)、殘值、保管人工號、存放位置</td>
+                  <td>財產編號、購置日期、取得原價、耐用年限(3年)、殘值、保管人、存放位置</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">資產除帳後7年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-FA-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">真機測試機庫 (Device Farm) 借還登記表</td>
-                  <td>手機型號、OS版本、財產條碼、借用人、借用專案、借出時間、歸還驗收人簽字</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">3年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-FA-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">研發設備遠距工作攜出外借切結書</td>
-                  <td>攜出電腦序號、外借期間、資安防護條款(嚴禁外借他人/禁止拆機)、部門副總特批</td>
+                  <td style="font-weight:700; color:#f8fafc;">推廣展示設備借還登記與外借切結單</td>
+                  <td>展示機序號、借用人、拜訪代理商名稱、預定歸還日、外出防遺失承諾簽名</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">歸還後1年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-FA-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">年度研發設備實體盤點清冊與盤盈虧報告</td>
-                  <td>財產編號、保管人、實盤結果(正常/損壞/未在位)、盤盈虧差異分析、監盤人雙簽</td>
+                  <td><span class="form-id-badge">FM-FA-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">年度資訊與推廣設備盤點清冊</td>
+                  <td>財產編號、保管人工號、實盤狀態(正常/損壞/未在位)、盤盈虧差異分析、監盤人雙簽</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (審計底稿)</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-FA-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">資訊硬體報廢申請單暨硬碟消磁銷毀證明</td>
+                  <td><span class="form-id-badge">FM-FA-06</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">資訊設備報廢除帳單暨硬碟消磁銷毀證明</td>
                   <td>報廢編號、原購金額、未折減餘額、報廢判定理由、硬碟消磁照片、環保回收聯</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定憑證)</td>
                 </tr>
@@ -2907,15 +2921,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 設備保管人嚴禁兼任財產總帳會計；真機測試機庫必須由專人獨立列管借還；報廢設備未取得 IT 硬碟消磁證明前嚴禁會計除帳。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 設備實體保管人嚴禁兼任固定資產總帳會計；推廣外借機必須由總務專人列冊管理；報廢設備未取得 IT 硬碟消磁證明前嚴禁會計除帳。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 08: 研究發展循環 (遊戲引擎、核心玩法研發與商標專利保護) -->
+      <!-- CYCLE 08: 研究發展循環 (RNG 發牌算法專利、著作權與資本化) -->
       <!-- ========================================================================= -->
       <section id="cycle-8" class="cycle-card" data-cycle-num="08">
         
@@ -2923,17 +2937,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">08</div>
             <div>
-              <div class="cycle-name-zh">🔬 研究發展循環 (遊戲引擎、核心玩法研發與商標專利保護)</div>
-              <div class="cycle-name-en">Game R&D, Engine Tech, Gameplay IP & Copyright Cycle</div>
+              <div class="cycle-name-zh">🔬 研究發展循環 (RNG 發牌算法專利、著作權與資本化)</div>
+              <div class="cycle-name-en">RNG Algorithm Patents, Game Copyright & Capitalization Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：研發技術中心 (主辦) ＆ 營運部 ＆ 法務部 ＆ 財務部</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-08 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-08 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範新遊戲綠燈立項 (Greenlight)、核心玩法原型驗證 (PoC)、遊戲引擎底層研發、軟體著作權商標全球註冊與研發支出資本化 (IAS 38)，保護原創遊戲智財權。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》核心隨機洗牌演算法 (RNG) 研發、棋牌算番邏輯專利申請、軟體著作權商標全球註冊與自研遊戲費用資本化 (IAS 38)，構築核心技術壁壘。
         </div>
 
         <!-- Flowchart Block for cycle-8 -->
@@ -2941,7 +2956,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 新遊戲綠燈立項 (Greenlight)、核心玩法原型、著作權商標與資本化流程圖
+              <span>📌</span> 棋牌新玩法立項、RNG 隨機算法專利、著作權與資本化流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -2949,14 +2964,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 01</span>
-                    <span class="flow-step-role">遊戲製作人 / 企劃團隊</span>
+                    <span class="flow-step-role">研發技術部 ＆ 推廣部</span>
                   </div>
-                  <div class="flow-step-name">新遊戲提案 (Pitch Day) 與 PoC 原型</div>
-                  <div class="flow-step-action">企劃組提出遊戲概念，製作可遊玩之核心玩法原型 (Playable Prototype PoC)，驗證操作手感與核心循環。</div>
+                  <div class="flow-step-name">新棋牌模組立項提案</div>
+                  <div class="flow-step-action">研發部會同推廣部撰寫立項企劃，評估代理商俱樂部開桌需求，製作核心玩法 Demo 並完成 FTO 專利防侵權檢索。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-RD-01 綠燈立項提案書 Pitch</div>
-                  <div class="flow-step-gate">🛡️ 內控點：進行小規模核心用戶體驗盲測</div>
+                  <div class="flow-step-form">📋 FM-RD-01 新棋牌模組立項企劃書</div>
+                  <div class="flow-step-gate">🛡️ 內控點：確認市場需求與無侵權風險後正式立案</div>
                 </div>
               </div>
 
@@ -2964,14 +2979,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">研發評審委員會 (綠燈審查)</span>
+                    <span class="flow-step-role">研發工程師 (演算法)</span>
                   </div>
-                  <div class="flow-step-name">綠燈立項 (Greenlight) 評選</div>
-                  <div class="flow-step-action">總經理、技術副總、主美與主企劃審定玩法新穎度、次日留存預估 (D1>45%) 與技術壁壘，核發研發預算。</div>
+                  <div class="flow-step-name">演算法研發與不可篡改日誌</div>
+                  <div class="flow-step-action">編寫發牌演算法與算番邏輯，每日 Commit 附帶電子時間戳記；送交國際實驗室檢驗隨機性，出具公平性報告。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-RD-02 核心玩法 PoC 評估報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：評審通過正式編列專案研發代號與預算</div>
+                  <div class="flow-step-form">📋 FM-RD-03 電子時間戳記研發日誌</div>
+                  <div class="flow-step-gate">🛡️ 內控點：不可篡改電子紀錄作為專利優先權佐證</div>
                 </div>
               </div>
 
@@ -2979,14 +2994,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">專案組 暨 外部專家</span>
+                    <span class="flow-step-role">研發專案組</span>
                   </div>
-                  <div class="flow-step-name">研發階段里程碑審查 (Gate 1~4)</div>
-                  <div class="flow-step-action">依序通過 Alpha (全系統整合)、Beta (萬人壓測)、Soft Launch (海外吸量與留存測算)，出具審查紀錄。</div>
+                  <div class="flow-step-name">階段里程碑審查 (Gate 1~4)</div>
+                  <div class="flow-step-action">依序完成玩法單元測試、高併發壓測與封測數據驗收，確認牌局算番與斷線重連邏輯 100% 正確無死鎖。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-RD-03 研發里程碑審查查核表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：各階段指標未達標者強制重構或停損止血</div>
+                  <div class="flow-step-form">📋 研發里程碑審查報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：指標未達標者強制重構或停損</div>
                 </div>
               </div>
 
@@ -2996,12 +3011,12 @@
                     <span class="flow-step-num">STEP 04</span>
                     <span class="flow-step-role">法務智財組</span>
                   </div>
-                  <div class="flow-step-name">軟體著作權與角色商標全球註冊</div>
-                  <div class="flow-step-action">遊戲全球首發前，將原始碼、遊戲名稱、Icon 與原創角色外觀向台美日韓歐等官方專利商標局送件註冊。</div>
+                  <div class="flow-step-name">著作權登記與商標專利註冊</div>
+                  <div class="flow-step-action">「鬥陣歡樂城」主程式與 AMS 代碼向官方登記軟體著作權；商標於主要發行國送件註冊；防夥牌算法申請發明專利。</div>
                 </div>
                 <div>
                   <div class="flow-step-form">📋 FM-RD-04 軟體著作權與商標管制卡</div>
-                  <div class="flow-step-gate">🛡️ 內控點：上線前完成全球核心市場商標防禦佈局</div>
+                  <div class="flow-step-gate">🛡️ 內控點：首發前完成全球商標防禦佈局</div>
                 </div>
               </div>
 
@@ -3011,12 +3026,12 @@
                     <span class="flow-step-num">STEP 05</span>
                     <span class="flow-step-role">技術架構師</span>
                   </div>
-                  <div class="flow-step-name">第三方開源軟體 (SBOM) 合規審查</div>
-                  <div class="flow-step-action">透過自動化工具掃描引擎外掛與 GitHub 依賴庫，阻斷包含 GPL/AGPL 強傳染性開源協議之代碼併入核心倉庫。</div>
+                  <div class="flow-step-name">第三方開源 (SBOM) 合規審查</div>
+                  <div class="flow-step-action">掃描程式碼庫，阻斷包含 GPL/AGPL 強傳染性開源外掛併入核心引擎，防止商業原始碼被迫開源風險。</div>
                 </div>
                 <div>
                   <div class="flow-step-form">📋 FM-RD-05 第三方開源 SBOM 檢驗表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：防止商業原始碼被迫開源之重大合規風險</div>
+                  <div class="flow-step-gate">🛡️ 內控點：開源許可證 100% 商業安全合規</div>
                 </div>
               </div>
 
@@ -3024,14 +3039,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 06</span>
-                    <span class="flow-step-role">會計主管 暨 研發副總</span>
+                    <span class="flow-step-role">會計主管 ＆ 研發副總</span>
                   </div>
-                  <div class="flow-step-name">遊戲開發費用期末資本化 (IAS 38)</div>
-                  <div class="flow-step-action">逐月檢核 Timesheet 研發薪資與外包費；通過可行性審查之開發支出轉列「無形資產」，正式發行後依年限攤銷。</div>
+                  <div class="flow-step-name">自研遊戲費用資本化 (IAS 38)</div>
+                  <div class="flow-step-action">逐月核對 Timesheet 研發工時；符合 IAS 38 六大資本化標準之支出轉列「無形資產」，正式商用後按年攤銷。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-RD-06 研發費用資本化檢核表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：嚴格符合 IAS 38 軟體開發資本化六大要件</div>
+                  <div class="flow-step-form">📋 FM-RD-06 自研遊戲費用資本化表</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴格符合國際會計準則資本化條件</div>
                 </div>
               </div>
 
@@ -3049,9 +3064,9 @@
                 <span class="policy-code">SX-POL-RD-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">遊戲研發創新、軟體著作權與智慧財產權治理準則</div>
-              <div class="policy-law"><strong>法規母法：</strong>《營業秘密法》、《專利法》、《著作權法》、IAS 38 無形資產、ISO 56005 創新管理</div>
-              <div class="policy-desc">確立以原創遊戲 IP 與高併發網路架構為核心之研發策略；所有自研代碼、美術原創角色、遊戲商標依法在全球主要發行市場註冊保護；嚴格界定研發費用資本化法定條件。</div>
+              <div class="policy-title">棋牌研發創新、隨機演算法專利與智慧財產權治理準則</div>
+              <div class="policy-law"><strong>法規母法：</strong>《營業秘密法》、《專利法》、《著作權法》、IAS 38 無形資產、ISO 56005 創新智財管理</div>
+              <div class="policy-desc">確立以原創棋牌核心架構與高併發連線為研發方向；自研發牌算法、防作弊專利與遊戲商標依法在全球主要市場註冊；嚴格界定研發費用資本化法定條件。</div>
             </div>
 
           </div>
@@ -3065,10 +3080,10 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-RD-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 研發評審會核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 研發指導委員會核定</span>
               </div>
-              <div class="policy-title">新遊戲提案評選與綠燈立項審查辦法 (Greenlight Process)</div>
-              <div class="policy-desc">提案團隊必須出具商業營運企劃書與可遊玩核心玩法原型 (PoC)；評審會就玩法新穎度、預期留存率指標及技術可行性進行評選，核准後始得配置正式研發預算。</div>
+              <div class="policy-title">新棋牌玩法立項評審與可行性分析辦法</div>
+              <div class="policy-desc">研發團隊提報新玩法（如地方特色麻將/新撲克規則），必須經推廣部確認具有代理商開桌需求，並通過數學模型與專利檢索 (FTO) 評審後始得立案。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3076,8 +3091,8 @@
                 <span class="policy-code">SX-STD-RD-003</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">遊戲軟體著作權、角色美術商標與演算法專利保護辦法</div>
-              <div class="policy-desc">遊戲核心玩法與程式碼上線前強制完成軟體著作權登記；遊戲名稱、Icon、原創角色造型於全球主要市場（台美日韓歐）完成商標佈局註冊；防範競品換皮與盜版抄襲。</div>
+              <div class="policy-title">《鬥陣歡樂城》軟體著作權、遊戲商標與專利佈局辦法</div>
+              <div class="policy-desc">遊戲主程式、後台 AMS 原始碼強制登記軟體著作權；「鬥陣歡樂城」字樣、吉祥物圖案於各大發行市場註冊商標；核心防夥牌演算提出發明專利申請。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3085,8 +3100,8 @@
                 <span class="policy-code">SX-STD-RD-004</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">研發原始碼安全保密、防洩漏 (DLP) 與開源軟體合規辦法</div>
-              <div class="policy-desc">研發代碼託管於私有 Git 伺服器並實施雙人審查 (MR Review)；落實防資料外洩 (DLP) 限制原始碼下載；禁止引入強傳染性 GPL 開源協議套件，定期產出 SBOM 清單。</div>
+              <div class="policy-title">棋牌原始碼安全保密、防外流 (DLP) 與開源協議審查辦法</div>
+              <div class="policy-desc">研發代碼託管於公司私有 Git 伺服器並實施雙人審查 (MR Review)；落實防資料外洩 (DLP) 限制原始碼下載；禁止引入強傳染性 GPL 開源協議套件，定期產出 SBOM 清單。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3095,7 +3110,7 @@
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 審計委員會核定</span>
               </div>
               <div class="policy-title">遊戲研發支出資本化認列辦法 (IAS 38 軟體開發資本化)</div>
-              <div class="policy-desc">嚴格劃分「研究階段（費用化）」與「開發階段（資本化）」。僅當遊戲通過 Alpha 里程碑審查、技術可行性確立且未來營收效益高度確定時，後續開發支出始得資本化為無形資產。</div>
+              <div class="policy-desc">嚴格依據 IAS 38 規範，僅當新棋牌模組通過內部測試、取得 RNG 認證且技術可行性確立後，後續開發支出始得資本化為無形資產並按年攤銷。</div>
             </div>
 
           </div>
@@ -3106,38 +3121,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-RD-01：新遊戲綠燈立項 (Pitch Day)、原型 PoC 驗證與預算核准程序</div>
+            <div class="sop-title"><span>▶</span> SOP-RD-01：新棋牌模組立項提案、數學模型評審與專案核准程序</div>
             <ol class="sop-steps">
-              <li>企劃團隊撰寫《遊戲專案立項提案書》，製作核心戰鬥/玩法 PoC 原型 Demo。</li>
-              <li>召開綠燈審查會議 (Greenlight Meeting)，針對核心循環留存率與吸量測試評定等級。</li>
-              <li>通過審定後由總經理簽發立項核決，財務部建立專案研發成本代號並編列階段預算。</li>
+              <li>研發團隊會同推廣部撰寫《新玩法研發立項書》，評估代理商俱樂部需求與預估開桌營收。</li>
+              <li>數值團隊產出數學勝率模型與防作弊機制設計，完成 FTO 專利防侵權檢索。</li>
+              <li>經研發委員會審查通過，提報總經理核發研發預算並建立專案代碼。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-RD-02：研發里程碑階段審查 (Alpha ➔ Beta ➔ Soft Launch) 程序</div>
+            <div class="sop-title"><span>▶</span> SOP-RD-02：核心演算法研發、不可篡改研發日誌與國際驗證程序</div>
             <ol class="sop-steps">
-              <li>Alpha 審查：完成全系統核心功能整合，驗證系統框架穩定性與基本美術風格。</li>
-              <li>Closed Beta 審查：進行內部萬人壓力測試與數值平衡校正，驗證數值經濟模型。</li>
-              <li>Soft Launch 審查：於小規模海外市場（如澳加東南亞）進行留存率 (D1/D7/D30) 與付費率 (ARPPU) 驗收，出具《階段審查報告》。</li>
+              <li>工程師編寫核心隨機演算法，每日代碼 Commit 附帶電子時間戳記。</li>
+              <li>送交國際認證實驗室（如 GLI）執行洗牌發牌隨機性檢測，取得國際官方檢測合格報告書。</li>
+              <li>研發專案經理定期簽核電子研發日誌，作為未來專利申請之先發明佐證。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-RD-03：遊戲著作權登記、角色商標送件與侵權維權程序</div>
+            <div class="sop-title"><span>▶</span> SOP-RD-03：軟體著作權登記、商標送件與智財維權程序</div>
             <ol class="sop-steps">
-              <li>法務智財人員於遊戲全球首發前 6 個月，清點核心角色美術與商標標識。</li>
-              <li>委任專業專利商標代理人，向各國官方智慧財產局提交著作權與商標註冊申請。</li>
-              <li>市面上若發現換皮抄襲或盜用美術素材，發出警告函並啟動雙平台下架與侵權訴訟。</li>
+              <li>法務智財人員清點最新版遊戲客戶端與 AMS 後台原始碼，委請專利代理人向主管機關送件登記軟體著作權。</li>
+              <li>針對「鬥陣歡樂城」商標於主要發行國官方申請類別商標註冊。</li>
+              <li>市面上若發現盜版換皮或私服侵權，發出警告函並啟動雙平台下架投訴與司法訴訟。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-RD-04：遊戲研發支出期末資本化檢核與無形資產入帳程序</div>
+            <div class="sop-title"><span>▶</span> SOP-RD-04：研發工時檢核、IAS 38 資本化認列與無形資產登錄程序</div>
             <ol class="sop-steps">
-              <li>研發製作人會同會計主管，依 Timesheet 工時紀錄核算該專案直接研發人員薪酬。</li>
-              <li>逐項檢驗 IAS 38 六大資本化標準（確認技術可行、具備完成意圖、未來現金流預估）。</li>
-              <li>符合標準者將開發支出轉列「無形資產－自研遊戲軟體」，遊戲正式發行後依預期生命週期（如2-3年）平均攤銷。</li>
+              <li>研發製作人會同會計主管，依 Timesheet 工時紀錄核對研發工程師薪酬投入。</li>
+              <li>逐項檢驗 IAS 38 六大資本化法定標準，確認技術已達商業化開桌可行性。</li>
+              <li>符合標準之開發費用轉列「無形資產－自研遊戲軟體」，遊戲正式上線後依預期年限平均攤銷。</li>
             </ol>
           </div>
 
@@ -3151,7 +3166,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -3160,51 +3175,44 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">新遊戲專案綠燈立項企劃書 (Greenlight Pitch)</td>
-                  <td>專案代號、遊戲類型、核心玩法創新點、目標受眾、預估研發週期與預算、立項評審簽署</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲專案終止後5年</td>
+                  <td style="font-weight:700; color:#f8fafc;">新棋牌模組研發立項企劃書</td>
+                  <td>專案代號、玩法名稱、目標推廣代理商預估需求、研發工期、預算金額、核決簽署</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">專案終止後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">核心玩法原型 (PoC) 留存與吸量測試評估報告</td>
-                  <td>原型玩法說明、測試玩家樣本數、次日留存率(D1)指標、核心操作評分、評審結論</td>
+                  <td style="font-weight:700; color:#f8fafc;">專利防侵權檢索與分析報告 (FTO Report)</td>
+                  <td>棋牌演算法關鍵字、檢索專利庫範圍、潛在衝突專利分析、迴避設計方案、智財專員簽章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">永久保存</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲研發里程碑審查查核表 (Alpha/Beta/Soft Launch)</td>
-                  <td>審查里程碑、功能完整度%、Blocker Bug狀態、主美/主程式/主企劃/製作人聯合簽章</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">遊戲除役後5年</td>
+                  <td style="font-weight:700; color:#f8fafc;">電子時間戳記研發日誌 (不可篡改紀錄)</td>
+                  <td>研發工程師工號、技術演算法筆記、程式簽入Git Commit Hash、技術總監定期簽章</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">永久保存 (專利法庭證物)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">軟體著作權、商標與演算法專利註冊管制卡</td>
-                  <td>註冊國家、智財權類別、申請日、核准證號、商標圖樣/軟體名稱、專利有效期限</td>
+                  <td style="font-weight:700; color:#f8fafc;">軟體著作權、商標與演算法專利管制卡</td>
+                  <td>註冊國家、智財權類別、申請案號、核准證號、商標圖樣/軟體名稱、專利有效期限</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">智財權期滿後10年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-05</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">第三方開源軟體 (SBOM) 授權合規風險報告書</td>
-                  <td>引擎開源外掛、GitHub套件清單、授權協議(MIT/Apache/GPL)、合規審查人簽字</td>
+                  <td style="font-weight:700; color:#f8fafc;">第三方開源軟體 (SBOM) 授權合規審查表</td>
+                  <td>使用開源套件名稱、版本號、授權協議(MIT/Apache/GPL)、合規風險評級、架構師簽字</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">軟體除役後5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-RD-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">研發工時與費用資本化認列檢核表 (IAS 38 Compliance)</td>
-                  <td>專案代碼、技術可行性判定報告、資本化起算日、投入工時薪資總額、會計主管/研發副總聯簽</td>
+                  <td style="font-weight:700; color:#f8fafc;">自研遊戲費用資本化認列檢核表 (IAS 38)</td>
+                  <td>專案代碼、技術可行性判定報告、資本化起算日、投入薪資總額、會計主管/技術副總聯簽</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定帳簿)</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-RD-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">研發成果商業化上線移交營運 (LiveOps) 簽收單</td>
-                  <td>正式發行版本號、原始碼Git倉庫Tag、維運部署SOP清冊、營運總監簽收確認</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
                 </tr>
 
               </tbody>
@@ -3215,15 +3223,15 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 遊戲專案進度審查人（評審委員會）嚴禁兼任專案經辦工程師；研發支出資本化必須由技術副總與會計主管共同簽核，研發主管不得片面決定費用資本化。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 研發專案進度審核人嚴禁兼任專案經辦工程師；研發支出資本化必須由技術副總與會計主管共同簽核，研發部門不得擅自決定資本化金額。
           </div>
         </div>
 
       </section>
 
       <!-- ========================================================================= -->
-      <!-- CYCLE 09: 電腦化資訊系統處理循環 (GameOps、全球雲端架構與防作弊資安) -->
+      <!-- CYCLE 09: 電腦化資訊系統處理循環 (AMS 代理系統權限、房卡發放防弊與 GameOps) -->
       <!-- ========================================================================= -->
       <section id="cycle-9" class="cycle-card" data-cycle-num="09">
         
@@ -3231,17 +3239,18 @@
           <div class="cycle-title-area">
             <div class="cycle-num-badge">09</div>
             <div>
-              <div class="cycle-name-zh">🛡️ 電腦化資訊系統處理循環 (GameOps、全球雲端架構與防作弊資安)</div>
-              <div class="cycle-name-en">GameOps, Cloud Gaming Infrastructure & Anti-Cheat Cycle</div>
+              <div class="cycle-name-zh">🛡️ 電腦化資訊系統處理循環 (AMS 代理系統權限、房卡發放防弊與 GameOps)</div>
+              <div class="cycle-name-en">AMS Permissions, Card Injection Prevention & GameOps Cycle</div>
+              <span class="cycle-dept-tag">🏛️ 主責單位：資安維運中心 (主辦) ＆ 營運部門 ＆ 研發技術部 ＆ 內部稽核室</span>
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-GAME-09 | 盛欣網絡手遊內控標準
+            監管代碼：SX-DZ-09 | 鬥陣歡樂城內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 手遊業務循環目標：</strong> 規範遊戲伺服器即時維運 (GameOps)、全球多區 Kubernetes (GKE) 架構、GM 特權虛寶管制、遊戲防外掛防竄改 (Anti-Cheat)、DDoS 清洗與資料庫 100% Zero Outage 災備。
+          <strong>🎯 業務循環治理目標：</strong> 規範代理商管理系統 (AMS) 特權帳號管制、杜絕內部人員私自虛增/私印房卡 (Card Injection)、遊戲伺服器多區 Kubernetes 零停機營運、反外掛封號與高防抗 DDoS 清洗。
         </div>
 
         <!-- Flowchart Block for cycle-9 -->
@@ -3249,7 +3258,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> GameOps 零停機營運、多雲 GKE 微服務、GM特權虛寶管制與反作弊流程圖
+              <span>📌</span> AMS 代理系統權限管制、房卡發放防弊、反外掛與 Zero Outage 流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -3259,12 +3268,12 @@
                     <span class="flow-step-num">STEP 01</span>
                     <span class="flow-step-role">SRE 團隊 / DevOps</span>
                   </div>
-                  <div class="flow-step-name">全球多區 GKE 容器化部署</div>
-                  <div class="flow-step-action">遊戲伺服器微服務透過 Kubernetes 跨多雲多區部署，整合全球玩家匹配 (Matchmaking) 與自動彈性擴縮容。</div>
+                  <div class="flow-step-name">全球微服務多區容器化部署</div>
+                  <div class="flow-step-action">遊戲伺服器與 AMS 後台透過 Kubernetes 跨多區部署，生產與開發環境實體/邏輯徹底隔離，實現自動擴縮容。</div>
                 </div>
                 <div>
                   <div class="flow-step-form">📋 基礎架構代碼 (IaC Terraform)</div>
-                  <div class="flow-step-gate">🛡️ 內控點：生產環境與開發環境實體/邏輯徹底隔離</div>
+                  <div class="flow-step-gate">🛡️ 內控點：生產環境嚴禁開發人員直連寫入</div>
                 </div>
               </div>
 
@@ -3272,14 +3281,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 02</span>
-                    <span class="flow-step-role">遊戲客服 (GM) / 營運</span>
+                    <span class="flow-step-role">營運人員 / 代理管理員</span>
                   </div>
-                  <div class="flow-step-name">GM 後台特權虛寶發放審批</div>
-                  <div class="flow-step-action">因伺服器維護補償或客訴處理需發放道具，必須線上填單經營運總監核准，始得由 GM 工具派發至指定 UID。</div>
+                  <div class="flow-step-name">AMS 特權帳號申請與 MFA</div>
+                  <div class="flow-step-action">營運人員申請 AMS 後台帳號，由營運總監與資安主管核定角色權限，登入強制綁定個人手機 MFA 驗證碼。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-IT-01 GM 虛寶發放專簽單</div>
-                  <div class="flow-step-gate">🛡️ 內控點：嚴禁私下透過後台產生儲值代幣</div>
+                  <div class="flow-step-form">📋 FM-IT-01 AMS 代理系統權限申請單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：嚴禁私設未授權後台特權帳號</div>
                 </div>
               </div>
 
@@ -3287,14 +3296,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 03</span>
-                    <span class="flow-step-role">資安稽核員 (獨立)</span>
+                    <span class="flow-step-role">營運部 ＆ 財務部</span>
                   </div>
-                  <div class="flow-step-name">GM 後台特權操作日誌全鏈路審查</div>
-                  <div class="flow-step-action">GM 後台所有操作（封號、解封、修改屬性、發放虛寶）強制記錄於不可篡改日誌庫，每週由稽核員逐筆對帳。</div>
+                  <div class="flow-step-name">房卡劃撥防弊與雙重驗證</div>
+                  <div class="flow-step-action">任何向代理商俱樂部注入房卡之操作，系統必須驗證財務部收款放行憑證，並由操作人再次輸入個人安全 Token。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-IT-02 GM 操作日誌審查清冊</div>
-                  <div class="flow-step-gate">🛡️ 內控點：日誌側錄保留至少 7 年，嚴禁管理員自改</div>
+                  <div class="flow-step-form">📋 FM-IT-01 房卡劃撥審批專簽單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：未見財務確認憑證系統程式強制防呆鎖死</div>
                 </div>
               </div>
 
@@ -3302,14 +3311,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 04</span>
-                    <span class="flow-step-role">變更審查委員會 (CAB) 暨 SRE</span>
+                    <span class="flow-step-role">內部稽核室 (獨立)</span>
                   </div>
-                  <div class="flow-step-name">開服合服與停機維護變更 (RFC)</div>
-                  <div class="flow-step-action">新服開啟、合服 (Merge Server) 或伺服器升級，填報 RFC 申請單，執行資料庫快照 (Snapshot) 後離峰發布。</div>
+                  <div class="flow-step-name">AMS 特權日誌每週獨立審查</div>
+                  <div class="flow-step-action">AMS 後台所有劃撥、調額與封號指令強制寫入不可篡改日誌庫；內稽每週逐筆對核財務入帳，杜絕內部私印房卡。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-IT-03 伺服器變更申請單 RFC</div>
-                  <div class="flow-step-gate">🛡️ 內控點：變更必須附帶 15 分鐘回滾方案 (Rollback)</div>
+                  <div class="flow-step-form">📋 FM-IT-02 AMS 特權日誌審查清冊</div>
+                  <div class="flow-step-gate">🛡️ 內控點：日誌側錄保留 7 年，管理員嚴禁修改</div>
                 </div>
               </div>
 
@@ -3317,14 +3326,14 @@
                 <div>
                   <div class="flow-step-top">
                     <span class="flow-step-num">STEP 05</span>
-                    <span class="flow-step-role">資料庫管理員 (DBA)</span>
+                    <span class="flow-step-role">DBA ＆ SRE</span>
                   </div>
-                  <div class="flow-step-name">MongoDB Atlas 實時備份與災備演練</div>
-                  <div class="flow-step-action">遊戲核心資料庫開啟跨區 Replica Set 與持續性 Oplog 增量備份，每年第四季實施跨雲實兵災難復原演練。</div>
+                  <div class="flow-step-name">資料庫實時災備與開服合服</div>
+                  <div class="flow-step-action">MongoDB Atlas 啟用即時 Oplog 增量備份；新服開啟或合服 (RFC) 執行快照備份，每年第四季實兵跨雲演練。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-IT-05 資料庫備份與災備演練報告</div>
-                  <div class="flow-step-gate">🛡️ 內控點：RPO 恢復點目標 < 5分鐘，RTO < 30分鐘</div>
+                  <div class="flow-step-form">📋 FM-IT-04 資料庫備份與災備報告</div>
+                  <div class="flow-step-gate">🛡️ 內控點：RPO < 5分鐘，RTO < 30分鐘</div>
                 </div>
               </div>
 
@@ -3334,12 +3343,12 @@
                     <span class="flow-step-num">STEP 06</span>
                     <span class="flow-step-role">反作弊安全中心 (SOC)</span>
                   </div>
-                  <div class="flow-step-name">反外掛 (Anti-Cheat) 偵測與批量封號</div>
-                  <div class="flow-step-action">客戶端 SDK 與伺服端雙重校驗戰鬥數值；偵測到記憶體修改、變速齒輪或異常封包，系統自動觸發批量封號並公告。</div>
+                  <div class="flow-step-name">防外掛偵測、批量封號與抗D</div>
+                  <div class="flow-step-action">實時分析牌局異常封包與戰鬥邏輯；偵測到記憶體修改或夥牌作弊，系統自動批量封號，並由 Cloudflare 清洗 DDoS。</div>
                 </div>
                 <div>
-                  <div class="flow-step-form">📋 FM-IT-06 惡意作弊調查與封號管制表</div>
-                  <div class="flow-step-gate">🛡️ 內控點：作弊外掛 24 小時內逆向分析特徵碼入庫</div>
+                  <div class="flow-step-form">📋 FM-IT-05 夥牌作弊調查與封號處分單</div>
+                  <div class="flow-step-gate">🛡️ 內控點：100% Zero Outage 零停機營運保障</div>
                 </div>
               </div>
 
@@ -3357,9 +3366,9 @@
                 <span class="policy-code">SX-POL-IT-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">遊戲全域資安防護、GameOps 維運與防作弊治理準則</div>
+              <div class="policy-title">AMS 代理系統資安、防私發房卡與全域 GameOps 治理準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、ISO/IEC 27001 資安標準、ISO/IEC 42001 人工智慧治理標準</div>
-              <div class="policy-desc">明定本公司遊戲伺服器 100% Zero Outage 營運目標；確立開發環境與線上生產環境徹底隔離；規範 GM 管理員工具嚴格權限與不可篡改操作側錄日誌。</div>
+              <div class="policy-desc">明定《鬥陣歡樂城》伺服器 100% Zero Outage 維運承諾；確立開發環境與線上生產環境徹底物理隔離；建立「防私自印卡/虛增房卡」內部防弊紅線與全鏈路操作審計日誌。</div>
             </div>
 
           </div>
@@ -3373,10 +3382,10 @@
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
               <div class="policy-meta">
                 <span class="policy-code">SX-STD-IT-002</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
+                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 營運總監核定</span>
               </div>
-              <div class="policy-title">遊戲 GM 後台管理系統權限與虛寶發放管制辦法</div>
-              <div class="policy-desc">嚴格實施最小權限與雙因子認證 (MFA)；禁止任何人員私自透過 GM 工具產生儲值幣或高級虛寶；所有發放測試虛寶必須具備專案特簽並全鏈路記錄日誌。</div>
+              <div class="policy-title">AMS 代理後台權限劃分與房卡生成/劃撥特權審批辦法</div>
+              <div class="policy-desc">嚴格落實最小授權與多因子認證 (MFA)；嚴禁任何單一部門或個人擁有「單獨生成房卡並直接劃撥」之權限；所有生成與劃撥必須經財務款項核印，違者視為重大背信送辦。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3384,8 +3393,8 @@
                 <span class="policy-code">SX-STD-IT-003</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">技術副總核定</span>
               </div>
-              <div class="policy-title">遊戲伺服器多雲容器 (GKE) 開服、合服與部署維護辦法</div>
-              <div class="policy-desc">規範線上生產伺服器 (Prod) 之 Kubernetes 滾動發布流程；新服開啟與合服 (Merge Server) 必須附帶玩家資料完整性備份；停機更新必須提報變更審查委員會 (CAB)。</div>
+              <div class="policy-title">棋牌微服務伺服器容器化 (GKE) 發布與變更控制規範 (RFC)</div>
+              <div class="policy-desc">伺服器更新強制走 CI/CD 流水線；重大配置變更、開服合服必須填報變更申請單 (RFC) 並經變更審查委員會 (CAB) 審批；發布必須具備 10 分鐘自動回滾方案。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3393,8 +3402,8 @@
                 <span class="policy-code">SX-STD-IT-004</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">遊戲資料庫 (MongoDB Atlas) 實時備份與玩家資料回滾規範</div>
-              <div class="policy-desc">遊戲資料庫啟用即時 Oplog 增量備份與異雲 Cold Storage 備份；單一玩家資料回滾 (Rollback) 必須經主管授權並防止刷回檔複製道具漏洞。</div>
+              <div class="policy-title">遊戲資料庫 (MongoDB Atlas) 實時備份與災難復原規範 (BCP)</div>
+              <div class="policy-desc">棋牌局數戰績與玩家資產資料庫啟用即時 Oplog 增量備份與異雲 Cold Storage 存儲；每年第四季強制執行一次實體無預警災難復原演練，確保 RPO < 5分鐘、RTO < 30分鐘。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3402,17 +3411,8 @@
                 <span class="policy-code">SX-STD-IT-005</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">遊戲反作弊 (Anti-Cheat)、防記憶體修改與 DDoS 應變辦法</div>
-              <div class="policy-desc">客戶端強制整合反外掛 SDK（防封包篡改、防變速、防記憶體修改）；整合 Cloudflare/Akamai 邊緣抗 DDoS 清洗；偵測到異常外掛時系統自動批量封號列管。</div>
-            </div>
-
-            <div class="policy-box" style="border-top: 2px solid var(--primary);">
-              <div class="policy-meta">
-                <span class="policy-code">SX-STD-IT-006</span>
-                <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理 暨 AI治理委員會核定</span>
-              </div>
-              <div class="policy-title">遊戲 AI Agent (NPC對話/數值平衡/智慧客服) 治理規範</div>
-              <div class="policy-desc">依據 ISO 42001 規範遊戲內生成式 AI 與 AI Agent 應用；禁止 AI 產生違法、色情或暴力內容；建置 AI 自動審查機制與緊急斷開 (Kill Switch) 安全閘道。</div>
+              <div class="policy-title">棋牌防外掛 (Anti-Cheat)、防封包篡改與高防抗 DDoS 應變辦法</div>
+              <div class="policy-desc">客戶端強制整合反記憶體修改與封包防篡改 SDK；整合 Cloudflare/Akamai 邊緣抗 1Tbps+ DDoS 流量清洗；後台自動偵測作弊特徵並自動執行批量封號。</div>
             </div>
 
           </div>
@@ -3423,38 +3423,38 @@
           <div class="tier-header">⚙️ 三階：核心標準作業程序書 (SOP & Procedures) <span style="font-size:0.75rem; color:var(--accent-teal); font-weight:700;">[執行層級步驟]</span></div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-IT-01：GM 後台帳號申請、虛寶發放審批與操作日誌稽核程序</div>
+            <div class="sop-title"><span>▶</span> SOP-IT-01：AMS 後台特權帳號開通、房卡劃撥審查與日誌全鏈路存證程序</div>
             <ol class="sop-steps">
-              <li>客服或營運人員因處理客訴問題，需補發道具，填具《GM 道具發放申請單》。</li>
-              <li>營運經理依核決權限核准後，系統於 GM 後台派發指定 UID 並即時寫入不可篡改日誌。</li>
-              <li>內部稽核室與資安主管每週匯出《GM 操作日誌清冊》，逐筆比對簽呈，防範內部私自產幣。</li>
+              <li>營運人員因業務需要申請 AMS 特權帳號，由營運總監與資安主管核定最小角色權限。</li>
+              <li>任何房卡劃撥操作，系統必須驗證財務部收款放行 Token，並強制輸入個人 MFA 驗證碼。</li>
+              <li>系統自動產生不可篡改操作日誌（記錄操作者、時間、IP、目標俱樂部、數量），每週由內部稽核室逐筆覆核。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-IT-02：伺服器排程維護、開服合服 (Merge Server) 與變更控制程序</div>
+            <div class="sop-title"><span>▶</span> SOP-IT-02：伺服器停機更新、版本發布與變更審查委員會 (CAB) 程序</div>
             <ol class="sop-steps">
-              <li>營運團隊填寫《伺服器變更申請單 (RFC)》，召開變更審查會議 (CAB) 確認停機時窗。</li>
-              <li>合服前執行遊戲資料庫全量快照備份 (Snapshot)，確保同名角色與重疊公會處理規則正確。</li>
-              <li>SRE 團隊依部署腳本執行合服更新與驗證，確認玩家資料 100% 完整後開服生效。</li>
+              <li>技術團隊完成熱更測試，填寫《系統變更申請單 (RFC)》，檢附代碼 Review 與回滾腳本。</li>
+              <li>每週四召開 CAB 會議審定變更時窗，確認對在線牌桌之影響最小化。</li>
+              <li>SRE 團隊於離峰時段執行 Kubernetes 滾動發布，部署後執行功能煙霧測試 (Smoke Test)。</li>
             </ol>
           </div>
 
           <div class="sop-card">
             <div class="sop-title"><span>▶</span> SOP-IT-03：遊戲資料庫實時災備、跨雲還原演練與 Zero Outage 程序</div>
             <ol class="sop-steps">
-              <li>MongoDB Atlas 自動開啟跨區域多複本集 (Replica Set) 與持續性日誌備份。</li>
-              <li>監控系統每分鐘探測讀寫延遲；單一主節點故障時，系統於 3 秒內自動容錯移轉 (Failover)。</li>
-              <li>每年實施一次實體跨雲災難復原演練，由資安與稽核人員監盤確認 RTO < 10分鐘。</li>
+              <li>MongoDB Atlas 開啟跨區多節點 Replica Set，持續寫入增量日誌並加密同步至異雲備份庫。</li>
+              <li>監控中心 (SOC) 每分鐘探測讀寫延遲；單一節點異常系統於 3 秒內自動容錯移轉 (Failover)。</li>
+              <li>每年第四季由內部稽核人員實地監盤，執行無預警跨雲災難復原實兵抽測。</li>
             </ol>
           </div>
 
           <div class="sop-card">
-            <div class="sop-title"><span>▶</span> SOP-IT-04：外掛作弊監控、封包特徵比對、批量封號與資安事件應變程序</div>
+            <div class="sop-title"><span>▶</span> SOP-IT-04：夥牌作弊監控、異常封包分析、批量封號與資安應變程序</div>
             <ol class="sop-steps">
-              <li>伺服端邏輯驗證玩家移動速度、戰鬥傷害倍率；數值嚴重偏離自動觸發作弊告警。</li>
-              <li>資安工程師分析異常客戶端特徵碼，更新反外掛防護庫與特徵黑名單。</li>
-              <li>系統自動針對作弊玩家 UID 執行批量封號，並於遊戲官網發布公平競技懲處公告。</li>
+              <li>伺服端即時分析牌局輸贏比率；偵測到同桌疑似夥牌或外掛加速，自動扣留本局結算。</li>
+              <li>資安工程師調取局數完整操作錄像 (Replay Log) 進行鑑識，確認作弊行為屬實。</li>
+              <li>系統自動針對違規帳號執行永久封號，並沒收非法獲取之代幣，於遊戲官網發布公告。</li>
             </ol>
           </div>
 
@@ -3468,7 +3468,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:300px;">手遊業務表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -3477,58 +3477,44 @@
 
                 <tr>
                   <td><span class="form-id-badge">FM-IT-01</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲 GM 後台權限申請與虛寶發放專簽單</td>
-                  <td>申請人、目標玩家UID、發放道具名稱與數量、申請原由(補償/客訴/活動)、營運總監核准</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
+                  <td style="font-weight:700; color:#f8fafc;">AMS 代理系統後台權限申請與發卡審批單</td>
+                  <td>申請人、目標代理商/俱樂部ID、房卡數量、財務收款單號勾稽、營運總監/財務長聯簽</td>
+                  <td style="font-size:0.78rem; color:#94a3b8;">7年 (重大防弊憑證)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-IT-02</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">GM 後台特權操作日誌定期稽核覆核清冊</td>
-                  <td>操作時間戳記、GM帳號、被操作UID、指令內容(封號/踢下線/發道具)、稽核簽認章</td>
+                  <td style="font-weight:700; color:#f8fafc;">AMS 特權後台操作日誌定期稽核覆核清冊</td>
+                  <td>操作時間戳記、操作者帳號、指令名稱(劃撥/調額/改權限)、被操作俱樂部、稽核簽章</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年 (法定審計)</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-IT-03</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲伺服器停機維護與版本變更申請單 (RFC)</td>
-                  <td>RFC編號、維護遊戲名稱、影響伺服器分區、維護起訖時窗、發布內容、Rollback計畫</td>
+                  <td style="font-weight:700; color:#f8fafc;">伺服器停機維護與版本變更申請單 (RFC)</td>
+                  <td>RFC單號、維護遊戲分區、預估停機時窗、發布內容說明、回滾Rollback方案、CAB簽核</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
                   <td><span class="form-id-badge">FM-IT-04</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲開服/合服 (Merge Server) 評估與執行核簽單</td>
-                  <td>合服伺服器清單、活躍玩家數、合服經濟平衡分析、資料庫快照備份編號、技術主管簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-IT-05</span></td>
                   <td style="font-weight:700; color:#f8fafc;">遊戲資料庫即時備份檢核日誌與災備演練報告書</td>
                   <td>備份任務名稱、快照容量大小、SHA256校驗碼、演練RTO/RPO實測數據、資安主管簽認</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-IT-06</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">外掛作弊 (Cheat/Hack) 調查與批量封號處置管制表</td>
-                  <td>作弊特徵類型(加速/鎖血/修改封包)、受影響遊戲服、處分帳號清冊、封號期限(永久)</td>
+                  <td><span class="form-id-badge">FM-IT-05</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">夥牌作弊 (Collusion) 調查與批量封號處分單</td>
+                  <td>涉案玩家UID群、牌局Replay錄像編號、作弊行為特徵判定、處分狀態(永封)、營運長簽核</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">5年</td>
                 </tr>
 
                 <tr>
-                  <td><span class="form-id-badge">FM-IT-07</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲伺服器重大中斷事件 (P0/P1 Incident) 根因分析報告 (RCA)</td>
-                  <td>故障時間長度、受影響在線玩家數(CCU)、故障根本原因、修復措施、全服補償方案、總經理簽署</td>
+                  <td><span class="form-id-badge">FM-IT-06</span></td>
+                  <td style="font-weight:700; color:#f8fafc;">重大伺服器連線故障 (P0/P1 Incident) 根因分析報告 (RCA)</td>
+                  <td>故障時間長度、受影響在局玩家數、故障根本原因、修復措施、全服補償方案、總經理簽署</td>
                   <td style="font-size:0.78rem; color:#94a3b8;">7年</td>
-                </tr>
-
-                <tr>
-                  <td><span class="form-id-badge">FM-IT-08</span></td>
-                  <td style="font-weight:700; color:#f8fafc;">遊戲 AI Agent 與生成式內容安全審查表 (ISO 42001)</td>
-                  <td>AI應用模組(智能NPC/客服)、資料脫敏檢驗、敏感詞防禦測試、緊急阻斷(Kill Switch)簽核</td>
-                  <td style="font-size:0.78rem; color:#94a3b8;">模組退役後5年</td>
                 </tr>
 
               </tbody>
@@ -3539,8 +3525,8 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 手遊內部控制防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
-            ★ 遊戲客戶端/伺服端開發工程師嚴禁兼任線上正式生產環境 (Production) 管理員；GM 後台虛寶發放必須具備獨立核決且日誌自動存證；特權操作日誌嚴禁管理員自行修改。
+            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            ★ 軟體開發工程師嚴禁兼任線上正式生產環境 (Production) 管理員；嚴禁任何人員私自單獨劃撥房卡；AMS 特權日誌強制獨立存儲，管理員嚴禁自行刪改。
           </div>
         </div>
 
