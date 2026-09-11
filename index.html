@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>盛欣網絡股份有限公司 | 《鬥陣歡樂城》代理商房卡與俱樂部營運 內部控制九大循環四階治理手冊</title>
+  <title>盛欣網絡股份有限公司 | 《鬥陣江湖》代理商房卡與俱樂部營運 內部控制九大循環四階治理手冊</title>
   <style>
     :root {
-      --bg-base: #020617;
-      --bg-card: #0f172a;
-      --bg-card-hover: #1e293b;
-      --bg-input: #0b1329;
-      --border-color: rgba(226, 232, 240, 0.12);
-      --border-highlight: rgba(56, 189, 248, 0.35);
-      --primary: #0284c7;
-      --primary-light: #38bdf8;
-      --accent-teal: #10b981;
-      --accent-amber: #f59e0b;
-      --accent-rose: #f43f5e;
-      --accent-purple: #a855f7;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 18px;
-      --transition: all 0.25s ease-in-out;
+      --bg-base: #120a05;           /* 沉香木黑 / 深檀茶館底色 */
+      --bg-card: #1f130b;           /* 古雅紅木色 / 溫潤茶几底 */
+      --bg-card-hover: #2d1b10;     /* 亮檀木色 */
+      --bg-input: #170d07;          /* 墨硯深色 */
+      --border-color: rgba(217, 119, 6, 0.25); /* 暖銅古韻邊框 */
+      --border-highlight: #d97706;  /* 古法鎏金色高光 */
+      --primary: #c2410c;           /* 硃砂紅 (Vermilion) */
+      --primary-light: #f59e0b;     /* 暖琥珀金 (Amber Gold) */
+      --accent-gold: #fbbf24;       /* 璀璨金 */
+      --accent-teal: #10b981;       /* 青黛 / 竹青 (Jade Green) */
+      --accent-amber: #d97706;      /* 沉檀金 */
+      --accent-rose: #dc2626;       /* 硃砂印章紅 */
+      --accent-purple: #9333ea;     /* 紫雲氣 */
+      --text-main: #fdfbf7;         /* 暖月白 / 宣紙白 (溫潤柔和) */
+      --text-muted: #b5a695;        /* 墨香淡灰褐 */
+      --text-dim: #7c6d5e;          /* 枯木深褐 */
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.85);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -843,6 +844,156 @@
       background: rgba(56, 189, 248, 0.12) !important;
     }
 
+
+    /* ==========================================================================
+       TAIWANESE FOLK WUXIA & JIANGHU TEAHOUSE THEME OVERRIDES
+       ========================================================================== */
+    body {
+      background: radial-gradient(circle at 50% 0%, #1c0f08 0%, #120a05 100%) !important;
+    }
+    
+    .brand-logo {
+      background: linear-gradient(135deg, #c2410c 0%, #b45309 100%) !important;
+      color: #fdfbf7 !important;
+      border: 1px solid #f59e0b !important;
+      box-shadow: 0 0 14px rgba(217, 119, 6, 0.5) !important;
+      font-family: "PingFang TC", "Songti TC", serif !important;
+    }
+    .brand-badge {
+      background: rgba(220, 38, 38, 0.15) !important;
+      color: #f87171 !important;
+      border: 1px solid #dc2626 !important;
+      font-family: "PingFang TC", "Songti TC", serif !important;
+      letter-spacing: 0.5px;
+    }
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(38, 23, 15, 0.98) 0%, rgba(18, 10, 5, 0.95) 100%) !important;
+      border: 1px solid rgba(217, 119, 6, 0.35) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+    }
+    .hero-banner::before {
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%) !important;
+    }
+    .hero-title {
+      color: #fdfbf7 !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .cycle-card {
+      background: rgba(31, 19, 11, 0.92) !important;
+      border: 1px solid rgba(217, 119, 6, 0.22) !important;
+    }
+    .cycle-card:hover {
+      border-color: #f59e0b !important;
+      box-shadow: 0 12px 35px rgba(217, 119, 6, 0.18) !important;
+    }
+    .cycle-num-badge {
+      background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%) !important;
+      border: 1px solid #f59e0b !important;
+      box-shadow: 0 0 12px rgba(217, 119, 6, 0.4) !important;
+      color: #fdfbf7 !important;
+    }
+    .cycle-goal-box {
+      background: rgba(23, 13, 7, 0.9) !important;
+      border-left: 3px solid #f59e0b !important;
+      color: #e5d5c5 !important;
+    }
+    .flowchart-wrapper {
+      background: rgba(23, 13, 7, 0.85) !important;
+      border: 1px solid rgba(217, 119, 6, 0.3) !important;
+    }
+    .flowchart-header-title {
+      color: #f59e0b !important;
+    }
+    .flow-step-card {
+      background: rgba(38, 23, 15, 0.9) !important;
+      border: 1px solid rgba(217, 119, 6, 0.25) !important;
+    }
+    .flow-step-card:hover {
+      border-color: #f59e0b !important;
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.25) !important;
+    }
+    .flow-step-num {
+      background: rgba(194, 65, 12, 0.25) !important;
+      border: 1px solid #c2410c !important;
+      color: #f59e0b !important;
+    }
+    .flow-step-role {
+      color: #fbbf24 !important;
+    }
+    .flow-step-form {
+      background: rgba(16, 185, 129, 0.12) !important;
+      border: 1px solid rgba(16, 185, 129, 0.3) !important;
+      color: #34d399 !important;
+    }
+    .policy-box {
+      background: rgba(38, 23, 15, 0.6) !important;
+      border: 1px solid rgba(217, 119, 6, 0.2) !important;
+    }
+    .policy-box:hover {
+      background: rgba(38, 23, 15, 0.95) !important;
+      border-color: #f59e0b !important;
+    }
+    .policy-code {
+      color: #f59e0b !important;
+    }
+    .sop-card {
+      background: rgba(38, 23, 15, 0.8) !important;
+      border: 1px solid rgba(217, 119, 6, 0.22) !important;
+    }
+    .sop-title {
+      color: #f59e0b !important;
+    }
+    .forms-table-wrapper {
+      background: rgba(23, 13, 7, 0.8) !important;
+      border: 1px solid rgba(217, 119, 6, 0.25) !important;
+    }
+    table.governance-table th {
+      background: rgba(45, 27, 16, 0.95) !important;
+      color: #f59e0b !important;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.3) !important;
+    }
+    table.governance-table td {
+      border-bottom: 1px solid rgba(217, 119, 6, 0.1) !important;
+      color: #e5d5c5 !important;
+    }
+    .form-id-badge {
+      color: #34d399 !important;
+    }
+    .sod-box {
+      background: rgba(220, 38, 38, 0.08) !important;
+      border: 1px solid rgba(220, 38, 38, 0.35) !important;
+      color: #fca5a5 !important;
+    }
+    
+    /* Search Dropdown Jianghu Styling */
+    .search-dropdown-panel {
+      background: rgba(26, 16, 10, 0.98) !important;
+      border: 1px solid #f59e0b !important;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.9) !important;
+    }
+    .search-dropdown-header {
+      background: rgba(45, 27, 16, 0.95) !important;
+      color: #f59e0b !important;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.3) !important;
+    }
+    .search-result-item:hover, .search-result-item.selected {
+      background: rgba(217, 119, 6, 0.18) !important;
+      border-left: 4px solid #f59e0b !important;
+    }
+    .search-active-banner {
+      background: linear-gradient(135deg, rgba(194, 65, 12, 0.3) 0%, rgba(217, 119, 6, 0.2) 100%) !important;
+      border: 1px solid #f59e0b !important;
+    }
+    @keyframes pulseTargetHighlight {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.9); transform: scale(1); }
+      30% { box-shadow: 0 0 30px 8px rgba(245, 158, 11, 0.7); transform: scale(1.02); }
+      100% { box-shadow: none; transform: scale(1); }
+    }
+    .search-target-highlight {
+      border-color: #f59e0b !important;
+      background: rgba(245, 158, 11, 0.15) !important;
+    }
+
 </style>
 </head>
 <body>
@@ -854,10 +1005,10 @@
         <div class="brand-group">
           <span class="brand-logo">SX</span>
           <div>
-            <div class="brand-title">盛欣網絡股份有限公司</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">《鬥陣歡樂城》代理商房卡與俱樂部營運 內部控制九大交易循環四階全景手冊</div>
+            <div class="brand-title">盛欣網絡《鬥陣江湖》</div>
+            <div style="font-size:0.7rem; color:#f59e0b;">台味國風江湖武俠 內部控制九大交易循環四階全景手冊 (代理商房卡/推廣部/營運部)</div>
           </div>
-          <span class="brand-badge">✓ 棋牌代理商模式專屬版</span>
+          <span class="brand-badge">✓ 台味國風江湖武俠版 🐼</span>
         </div>
 
         <div class="header-actions">
@@ -903,9 +1054,9 @@
 
     <!-- Hero Banner -->
     <div class="hero-banner">
-      <div class="hero-title">《鬥陣歡樂城》代理商房卡分銷與俱樂部營運 內部控制全景治理手冊</div>
+      <div class="hero-title">《鬥陣江湖》代理商房卡分銷與俱樂部營運 內部控制全景治理手冊</div>
       <div class="hero-subtitle">
-        本手冊專門針對盛欣網絡旗艦休閒棋牌競技平台<strong>《鬥陣歡樂城》</strong>之商業模式全方位重構。平台以「俱樂部 (Club) 開桌」為核心玩法，核心商業變現透過<strong>「代理商多級分銷體系 ➔ 批發進卡/房卡儲值 ➔ 俱樂部內部消耗開桌」</strong>實現。手冊明確定義<strong>「推廣部門」</strong>（開拓代理商、加盟審查、階梯返利政策與社群公會輔導）與<strong>「營運部門」</strong>（AMS 代理後台維運、房卡庫存生成與劃撥管制、即時開桌對帳、防夥牌作弊與客訴仲裁）之核心權能與制衡機制，徹底落實四階文件治理。
+        本手冊專門針對盛欣網絡旗艦休閒棋牌競技平台<strong>《鬥陣江湖》</strong>之商業模式全方位重構。平台以「俱樂部 (Club) 開桌」為核心玩法，核心商業變現透過<strong>「代理商多級分銷體系 ➔ 批發進卡/房卡儲值 ➔ 俱樂部內部消耗開桌」</strong>實現。手冊明確定義<strong>「推廣部門」</strong>（開拓代理商、加盟審查、階梯返利政策與社群公會輔導）與<strong>「營運部門」</strong>（AMS 代理後台維運、房卡庫存生成與劃撥管制、即時開桌對帳、防夥牌作弊與客訴仲裁）之核心權能與制衡機制，徹底落實四階文件治理。
       </div>
     </div>
 
@@ -995,7 +1146,7 @@
             <div class="cycle-num-badge" style="background: linear-gradient(135deg, #0284c7 0%, #10b981 100%); font-size: 1.5rem;">🤖</div>
             <div>
               <div class="cycle-name-zh" style="background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                專題研究：AI 工具導入對《鬥陣歡樂城》各循環流程之根本性重構與質變分析
+                專題研究：AI 工具導入對《鬥陣江湖》各循環流程之根本性重構與質變分析
               </div>
               <div class="cycle-name-en">AI-Augmented Internal Control, AIOps, Anti-Collusion & LiveOps Transformation</div>
               <span class="cycle-dept-tag" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
@@ -1010,7 +1161,7 @@
 
         <div class="cycle-goal-box" style="border-left-color: #10b981;">
           <strong>🎯 專題核心主旨：</strong><br>
-          當生成式 AI（LLM）、機器學習預測模型與自主 AI Agent 深度融入盛欣網絡《鬥陣歡樂城》之營運架構後，<strong>不再只是「每個階段多了一個工具」，而是整個工作流的重構</strong>。許多原本必須序列（Sequential）執行、依賴大量人工肉眼比對（T+1 或月底結算）的步驟，演變為<strong>「毫秒級並行（Parallel）、即時自癒、預測性風控與人機協同 (Human-in-the-Loop)」</strong>之閉環。徹底根除內鬼私印房卡、人工抓作弊漏報、外包侵權及資金調度誤差。
+          當生成式 AI（LLM）、機器學習預測模型與自主 AI Agent 深度融入盛欣網絡《鬥陣江湖》之營運架構後，<strong>不再只是「每個階段多了一個工具」，而是整個工作流的重構</strong>。許多原本必須序列（Sequential）執行、依賴大量人工肉眼比對（T+1 或月底結算）的步驟，演變為<strong>「毫秒級並行（Parallel）、即時自癒、預測性風控與人機協同 (Human-in-the-Loop)」</strong>之閉環。徹底根除內鬼私印房卡、人工抓作弊漏報、外包侵權及資金調度誤差。
         </div>
 
         <!-- Four Key AI Impact Metrics Bento Grid -->
@@ -1146,7 +1297,7 @@
 
         <!-- AI Governance Guardrails & Human-in-the-Loop -->
         <div class="tier-block">
-          <div class="tier-header" style="color: #f43f5e;">🛡️ 盛欣網絡《鬥陣歡樂城》AI 治理底座與 人機協同 (Human-in-the-Loop) 規範</div>
+          <div class="tier-header" style="color: #f43f5e;">🛡️ 盛欣網絡《鬥陣江湖》AI 治理底座與 人機協同 (Human-in-the-Loop) 規範</div>
           <div class="sod-box" style="background: rgba(244, 63, 94, 0.08); border-color: rgba(244, 63, 94, 0.35); color: #fecdd3; padding: 18px 22px;">
             <div style="font-weight: 800; font-size: 1rem; margin-bottom: 10px; color: #fda4af;">
               ⚠️ 內部控制最高原則：AI 賦能防護，人類專家最終核決 (No Blackbox Governance)
@@ -1178,12 +1329,12 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-01 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-01 | 鬥陣江湖內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》總代理/俱樂部代理商加盟徵信、大額批發進卡折扣階梯、AMS 代理後台房卡劃撥、代理商階梯返利結算、俱樂部開桌消耗與 IFRS 15 遞延收入認列；嚴禁代理商線下涉賭與反向兌現，維護合規防火牆。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣江湖》總代理/俱樂部代理商加盟徵信、大額批發進卡折扣階梯、AMS 代理後台房卡劃撥、代理商階梯返利結算、俱樂部開桌消耗與 IFRS 15 遞延收入認列；嚴禁代理商線下涉賭與反向兌現，維護合規防火牆。
         </div>
 
         <!-- Flowchart Block for cycle-1 -->
@@ -1191,7 +1342,7 @@
           <div class="tier-header">🔄 核心端到端作業流程圖 (End-to-End Visual Process Flowchart)</div>
           <div class="flowchart-wrapper">
             <div class="flowchart-header-title">
-              <span>📌</span> 《鬥陣歡樂城》代理商進卡申請、款項核銷、AMS房卡劃撥與開桌消耗對帳流程圖
+              <span>📌</span> 《鬥陣江湖》代理商進卡申請、款項核銷、AMS房卡劃撥與開桌消耗對帳流程圖
             </div>
             <div class="flowchart-steps-row">
 
@@ -1299,9 +1450,9 @@
                 <span class="policy-code">SX-POL-SAL-001</span>
                 <span class="policy-level">董事會核定</span>
               </div>
-              <div class="policy-title">《鬥陣歡樂城》代理商房卡批銷、營收認列與反賭博治理準則</div>
+              <div class="policy-title">《鬥陣江湖》代理商房卡批銷、營收認列與反賭博治理準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、刑法第266/268條賭博罪防範、IFRS 15 客戶合約收入準則</div>
-              <div class="policy-desc">明定本公司《鬥陣歡樂城》為休閒娛樂棋牌平台，房卡僅為遊戲桌次服務費；嚴禁官方、推廣部與代理商從事任何房卡點數反向兌換現金 (Cash-out)；建立代理商嚴格准入、批發預收與合約負債遞延收入認列體系。</div>
+              <div class="policy-desc">明定本公司《鬥陣江湖》為休閒娛樂棋牌平台，房卡僅為遊戲桌次服務費；嚴禁官方、推廣部與代理商從事任何房卡點數反向兌換現金 (Cash-out)；建立代理商嚴格准入、批發預收與合約負債遞延收入認列體系。</div>
             </div>
 
           </div>
@@ -1401,7 +1552,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -1465,7 +1616,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 開拓代理商之推廣部人員嚴禁持有 AMS 劃撥充值權限；負責劃撥之營運部人員嚴禁接觸收款金流；未見財務正式收款憑條前系統嚴格禁止任何房卡注入。
           </div>
         </div>
@@ -1487,7 +1638,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-02 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-02 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -1710,7 +1861,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -1781,7 +1932,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 負責拓展代理商之推廣人員嚴禁兼任返利金額之計算與核銷；採購人員嚴禁兼任賽事活動與外包成果驗收；會計做帳人嚴禁持有出納網銀放款 Token。
           </div>
         </div>
@@ -1803,12 +1954,12 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-03 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-03 | 鬥陣江湖內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》核心棋牌算法、國際 RNG 洗牌認證 (GLI-19)、代理商管理系統 (AMS) 研發、防夥牌作弊 (同 IP/同 GPS 限制)、QA 真機測試與線上熱更新，確保遊戲公平性與零當機。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣江湖》核心棋牌算法、國際 RNG 洗牌認證 (GLI-19)、代理商管理系統 (AMS) 研發、防夥牌作弊 (同 IP/同 GPS 限制)、QA 真機測試與線上熱更新，確保遊戲公平性與零當機。
         </div>
 
         <!-- Flowchart Block for cycle-3 -->
@@ -2026,7 +2177,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2083,7 +2234,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 遊戲開發工程師嚴禁兼任 QA 測試簽核人；核心 RNG 洗牌算法未經審委會與外部認證嚴禁擅改；版本發布必須由製作人與技術總監共同核簽。
           </div>
         </div>
@@ -2105,7 +2256,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-04 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-04 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -2328,7 +2479,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2392,7 +2543,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 推廣人員嚴禁兼任提成核算與出納發放；提成發放必須以財務部實際入帳款項為依據；推廣離職員工之代理商移交必須由推廣總監親自指派接管。
           </div>
         </div>
@@ -2414,7 +2565,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-05 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-05 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -2628,7 +2779,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2685,7 +2836,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 公司大印與負責人私章必須分由兩人保管；加盟保證金專戶動撥必須經財務長核准；銀行存款調節表必須由非出納之專責會計獨立編制。
           </div>
         </div>
@@ -2707,7 +2858,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-06 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-06 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -2923,7 +3074,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -2987,7 +3138,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 投資案提案人嚴禁兼任價格合理性獨立專家審查；股票有價證券由專人雙人共管；被投資團隊收益評估由財務部獨立執行。
           </div>
         </div>
@@ -3009,7 +3160,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-07 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-07 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -3232,7 +3383,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -3289,7 +3440,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 設備實體保管人嚴禁兼任固定資產總帳會計；推廣外借機必須由總務專人列冊管理；報廢設備未取得 IT 硬碟消磁證明前嚴禁會計除帳。
           </div>
         </div>
@@ -3311,12 +3462,12 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-08 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-08 | 鬥陣江湖內控標準
           </div>
         </div>
 
         <div class="cycle-goal-box">
-          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣歡樂城》核心隨機洗牌演算法 (RNG) 研發、棋牌算番邏輯專利申請、軟體著作權商標全球註冊與自研遊戲費用資本化 (IAS 38)，構築核心技術壁壘。
+          <strong>🎯 業務循環治理目標：</strong> 規範《鬥陣江湖》核心隨機洗牌演算法 (RNG) 研發、棋牌算番邏輯專利申請、軟體著作權商標全球註冊與自研遊戲費用資本化 (IAS 38)，構築核心技術壁壘。
         </div>
 
         <!-- Flowchart Block for cycle-8 -->
@@ -3380,7 +3531,7 @@
                     <span class="flow-step-role">法務智財組</span>
                   </div>
                   <div class="flow-step-name">著作權登記與商標專利註冊</div>
-                  <div class="flow-step-action">「鬥陣歡樂城」主程式與 AMS 代碼向官方登記軟體著作權；商標於主要發行國送件註冊；防夥牌算法申請發明專利。</div>
+                  <div class="flow-step-action">「鬥陣江湖」主程式與 AMS 代碼向官方登記軟體著作權；商標於主要發行國送件註冊；防夥牌算法申請發明專利。</div>
                 </div>
                 <div>
                   <div class="flow-step-form">📋 FM-RD-04 軟體著作權與商標管制卡</div>
@@ -3459,8 +3610,8 @@
                 <span class="policy-code">SX-STD-RD-003</span>
                 <span class="policy-level" style="background:rgba(2,132,199,0.2); color:#38bdf8; border-color:rgba(2,132,199,0.4);">總經理核定</span>
               </div>
-              <div class="policy-title">《鬥陣歡樂城》軟體著作權、遊戲商標與專利佈局辦法</div>
-              <div class="policy-desc">遊戲主程式、後台 AMS 原始碼強制登記軟體著作權；「鬥陣歡樂城」字樣、吉祥物圖案於各大發行市場註冊商標；核心防夥牌演算提出發明專利申請。</div>
+              <div class="policy-title">《鬥陣江湖》軟體著作權、遊戲商標與專利佈局辦法</div>
+              <div class="policy-desc">遊戲主程式、後台 AMS 原始碼強制登記軟體著作權；「鬥陣江湖」字樣、吉祥物圖案於各大發行市場註冊商標；核心防夥牌演算提出發明專利申請。</div>
             </div>
 
             <div class="policy-box" style="border-top: 2px solid var(--primary);">
@@ -3510,7 +3661,7 @@
             <div class="sop-title"><span>▶</span> SOP-RD-03：軟體著作權登記、商標送件與智財維權程序</div>
             <ol class="sop-steps">
               <li>法務智財人員清點最新版遊戲客戶端與 AMS 後台原始碼，委請專利代理人向主管機關送件登記軟體著作權。</li>
-              <li>針對「鬥陣歡樂城」商標於主要發行國官方申請類別商標註冊。</li>
+              <li>針對「鬥陣江湖」商標於主要發行國官方申請類別商標註冊。</li>
               <li>市面上若發現盜版換皮或私服侵權，發出警告函並啟動雙平台下架投訴與司法訴訟。</li>
             </ol>
           </div>
@@ -3534,7 +3685,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -3591,7 +3742,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 研發專案進度審核人嚴禁兼任專案經辦工程師；研發支出資本化必須由技術副總與會計主管共同簽核，研發部門不得擅自決定資本化金額。
           </div>
         </div>
@@ -3613,7 +3764,7 @@
             </div>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
-            監管代碼：SX-DZ-09 | 鬥陣歡樂城內控標準
+            監管代碼：SX-DZ-09 | 鬥陣江湖內控標準
           </div>
         </div>
 
@@ -3736,7 +3887,7 @@
               </div>
               <div class="policy-title">AMS 代理系統資安、防私發房卡與全域 GameOps 治理準則</div>
               <div class="policy-law"><strong>法規母法：</strong>《證券交易法》第14條之1、ISO/IEC 27001 資安標準、ISO/IEC 42001 人工智慧治理標準</div>
-              <div class="policy-desc">明定《鬥陣歡樂城》伺服器 100% Zero Outage 維運承諾；確立開發環境與線上生產環境徹底物理隔離；建立「防私自印卡/虛增房卡」內部防弊紅線與全鏈路操作審計日誌。</div>
+              <div class="policy-desc">明定《鬥陣江湖》伺服器 100% Zero Outage 維運承諾；確立開發環境與線上生產環境徹底物理隔離；建立「防私自印卡/虛增房卡」內部防弊紅線與全鏈路操作審計日誌。</div>
             </div>
 
           </div>
@@ -3836,7 +3987,7 @@
               <thead>
                 <tr>
                   <th style="width:140px;">表單代碼</th>
-                  <th style="width:310px;">《鬥陣歡樂城》專屬表單與紀錄名稱</th>
+                  <th style="width:310px;">《鬥陣江湖》專屬表單與紀錄名稱</th>
                   <th>核心欄位與管控內容</th>
                   <th style="width:130px;">法定保存年限</th>
                 </tr>
@@ -3893,7 +4044,7 @@
         <!-- SoD & Key Control Block -->
         <div class="tier-block tier-section-sod">
           <div class="sod-box">
-            <strong>🛡️ 《鬥陣歡樂城》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
+            <strong>🛡️ 《鬥陣江湖》防弊關鍵點與職責分離 (SoD) 規定：</strong><br>
             ★ 軟體開發工程師嚴禁兼任線上正式生產環境 (Production) 管理員；嚴禁任何人員私自單獨劃撥房卡；AMS 特權日誌強制獨立存儲，管理員嚴禁自行刪改。
           </div>
         </div>
