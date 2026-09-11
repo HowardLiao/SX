@@ -1064,7 +1064,7 @@
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-7', this)">🖥️ 07. 固定資產循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-8', this)">🔬 08. 研究發展循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-9', this)">🛡️ 09. 電腦化資訊系統處理循環</button></li>
-        <li><button class="cycle-nav-btn special-ai-btn" onclick="jumpToCycle('ai-transformation', this)" style="background: linear-gradient(135deg, rgba(217, 119, 6, 0.25) 0%, rgba(194, 65, 12, 0.2) 100%); border-color: #f59e0b; color: #f59e0b; box-shadow: 0 0 12px rgba(217, 119, 6, 0.35);">🤖 專題：AI 工具導入與流程變革</button></li>
+        <li class="nav-ai-item" style="margin-left: auto; flex-shrink: 0;"><button class="cycle-nav-btn special-ai-btn" onclick="jumpToCycle('ai-transformation', this)" style="background: linear-gradient(135deg, rgba(217, 119, 6, 0.3) 0%, rgba(194, 65, 12, 0.25) 100%); border-color: #f59e0b; color: #f59e0b; font-weight: 800; box-shadow: 0 0 14px rgba(217, 119, 6, 0.45); white-space: nowrap;">🤖 專題研究：AI 工具導入</button></li>
       </ul>
     </div>
   </header>
@@ -1141,7 +1141,7 @@
       <button class="tier-pill" onclick="filterTier('tier3', this)">⚙️ 三階：SOP程序 (Procedures)</button>
       <button class="tier-pill" onclick="filterTier('tier4', this)">📋 四階：表單憑證 (Forms & Records)</button>
       <button class="tier-pill" onclick="filterTier('sod', this)">🛡️ 關鍵內控與職責分離 (SoD)</button>
-      <button class="tier-pill" onclick="jumpToCycle('ai-transformation', document.querySelector('.special-ai-btn'))" style="border-color:#f59e0b; color:#f59e0b;">🤖 AI 賦能專題</button>
+      <button class="tier-pill" onclick="jumpToCycle('ai-transformation', document.querySelector('.special-ai-btn'))" style="margin-left: auto; border-color:#f59e0b; color:#f59e0b; font-weight: 800; background: rgba(217, 119, 6, 0.15);">🤖 專題研究：AI 工具導入</button>
     </div>
 
     <!-- 9 Cycles Main Containers -->
@@ -3898,7 +3898,14 @@
 
       </section>
 
-<section id="ai-transformation" class="cycle-card" style="border: 2px solid #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.25); background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(2, 6, 23, 0.95) 100%); scroll-margin-top: 130px;">
+        <!-- Bottom Divider before AI Transformation Section -->
+        <div id="ai-section-divider" style="margin: 50px 0 26px 0; text-align: center; position: relative;">
+          <hr style="border: none; border-top: 1px dashed rgba(245, 158, 11, 0.4); margin-bottom: -13px;">
+          <span style="background: #120a05; color: #f59e0b; padding: 0 20px; font-weight: 800; font-size: 0.92rem; border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 20px; display: inline-block;">
+            🏮 盛欣網絡《鬥陣歡樂城》底端專案研究專區 🏮
+          </span>
+        </div>
+      <section id="ai-transformation" class="cycle-card" style="border: 2px solid #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.25); background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(2, 6, 23, 0.95) 100%); scroll-margin-top: 130px;">
         
         <div class="cycle-header" style="border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
           <div class="cycle-title-area">
@@ -4082,10 +4089,13 @@
       btn.classList.add('active');
 
       const cards = document.querySelectorAll('.cycle-card');
+      const aiDivider = document.getElementById('ai-section-divider');
       if (cycleId === 'all') {
         cards.forEach(c => c.style.display = 'block');
+        if (aiDivider) aiDivider.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
+        if (aiDivider) aiDivider.style.display = (cycleId === 'ai-transformation') ? 'block' : 'none';
         cards.forEach(c => {
           if (c.id === cycleId) {
             c.style.display = 'block';
