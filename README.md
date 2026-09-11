@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" width="120" height="120" alt="鬥陣" style="border-radius:24px; box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+</p>
+
 # 盛欣網絡股份有限公司 (SX / Shenxin Network Group)
 ## 《鬥陣歡樂城》代理商房卡分銷與俱樂部營運 內部控制九大交易循環四階全景手冊
 
