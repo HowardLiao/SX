@@ -1239,6 +1239,7 @@
       <!-- Scrollable Cycle Tabs -->
       <ul class="cycle-nav-scroll" id="cycle-nav-list">
         <li><button class="cycle-nav-btn active" onclick="jumpToCycle('all', this)">🌐 全部循環 (9)</button></li>
+        <li><button class="cycle-nav-btn special-dept-btn" onclick="jumpToCycle('dept-responsibilities', this)" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.25) 0%, rgba(180, 83, 9, 0.2) 100%); border-color: #dc2626; color: #fca5a5; font-weight: 800;">🏛️ 各部門核心職責與職權劃分</button></li>
                 <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-1', this)">🎴 01. 銷貨及收款循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-2', this)">🎪 02. 採購及付款循環</button></li>
         <li><button class="cycle-nav-btn" onclick="jumpToCycle('cycle-3', this)">🕹️ 03. 研發製作與版本交付循環</button></li>
@@ -1348,6 +1349,453 @@
       <!-- ========================================================================= -->
       <!-- CYCLE 01: 銷貨及收款循環 (代理商房卡批銷、俱樂部進卡、返利折讓與遞延收入) -->
       <!-- ========================================================================= -->
+      
+      <!-- ========================================================================= -->
+      <!-- DEDICATED TAB / SECTION: ALL DEPARTMENTS CORE RESPONSIBILITIES & SOD MATRIX -->
+      <!-- ========================================================================= -->
+      <section id="dept-responsibilities" class="cycle-card" style="border: 2px solid #dc2626; box-shadow: 0 0 25px rgba(220, 38, 38, 0.25); background: linear-gradient(180deg, rgba(31, 19, 11, 0.98) 0%, rgba(18, 10, 5, 0.96) 100%); scroll-margin-top: 130px;">
+        
+        <div class="cycle-header" style="border-bottom: 2px solid rgba(220, 38, 38, 0.35);">
+          <div class="cycle-title-area">
+            <div class="cycle-num-badge" style="background: linear-gradient(135deg, #c2410c 0%, #dc2626 100%); font-size: 1.5rem; color:#fff;">🏛️</div>
+            <div>
+              <div class="cycle-name-zh" style="background: linear-gradient(135deg, #f59e0b 0%, #f87171 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                盛欣網絡股份有限公司 各部門核心職責與職權劃分全景
+              </div>
+              <div class="cycle-name-en">Organizational Governance, Department Responsibilities & Segregation of Duties Matrix</div>
+              <span class="cycle-dept-tag" style="background: rgba(220, 38, 38, 0.15); color: #fca5a5; border-color: rgba(220, 38, 38, 0.4);">
+                🏛️ 涵蓋 11 大核心部門 ＆ 董事會核定組織架構 ＆ 100% 職責分離 (SoD)
+              </span>
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:#fca5a5; background:rgba(220,38,38,0.2); padding:6px 14px; border-radius:20px; border:1px solid #dc2626; font-weight:800;">
+            依據證交法與 COSO 內控五大架構編定
+          </div>
+        </div>
+
+        <div class="cycle-goal-box" style="border-left-color: #dc2626;">
+          <strong>🎯 組織治理核心宗旨：</strong><br>
+          為確保《鬥陣歡樂城》各項營運活動具備嚴密的<strong>「牽制制衡（Check and Balance）」</strong>與<strong>「四眼原則 (Four-Eyes Principle)」</strong>，本章節將盛欣網絡所有營運業務解構至 11 大職能部門。特別確立<strong>「🎯 推廣部門」</strong>（市場拓展/代理加盟/商務返利）與<strong>「⚙️ 營運部門」</strong>（AMS後台維運/房卡劃撥/開桌監控/防夥牌作弊）為雙核心支柱，徹底斬斷利益衝突與人為舞弊，構築資本市場審查無虞之公司治理基石。
+        </div>
+
+        <!-- Department Cards Grid (11 Departments) -->
+        <div class="tier-block">
+          <div class="tier-header" style="color: #f59e0b;">🏢 盛欣網絡 11 大部門核心職能與防弊紅線規格卡</div>
+          <div class="tier-items-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px;">
+            
+            <!-- 1. 推廣部門 -->
+            <div class="policy-box" style="border-top: 3px solid #f59e0b; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#f59e0b;">DEP-01 | 推廣部門 (Agency Promotion & BD)</span>
+                <span class="policy-level" style="background:rgba(245,158,11,0.2); color:#fbbf24; border-color:#f59e0b;">商務開拓核心</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🎯 推廣部門 (代理商拓展、階梯折扣與返利商務)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>代理商拓展與招募：</strong> 開拓各區總代理、二級代理與俱樂部會長，執行背景徵信調查 (Due Diligence)。<br>
+                2. <strong>商務階梯談判：</strong> 審定大額進卡階梯折扣矩陣，擬定代理商月度開桌達標返利 (Rebate) 方案。<br>
+                3. <strong>合規風控切結：</strong> 強制代理商親簽《合規營運承諾書》，嚴格監控反賭博與反洗錢 (AML) 防火牆。<br>
+                4. <strong>線下賽事行銷：</strong> 籌辦區域實體麻將與棋牌聯賽，對接網紅主播代言推廣與俱樂部社群拉新。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 嚴禁持有 AMS 房卡劃撥權限；嚴禁直接代收代理商貨款；提成發放以財務部實際入帳為準。
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 營運部門 -->
+            <div class="policy-box" style="border-top: 3px solid #38bdf8; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#38bdf8;">DEP-02 | 營運部門 (LiveOps & AMS Governance)</span>
+                <span class="policy-level" style="background:rgba(56,189,248,0.2); color:#38bdf8; border-color:#38bdf8;">平台資產守護</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">⚙️ 營運部門 (AMS後台、開桌監控與防夥牌作弊)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>AMS 系統專責管理：</strong> 專責管理代理商管理後台 (AMS)，嚴格依財務收款通知執行房卡劃撥，全鏈路日誌存證。<br>
+                2. <strong>即時開桌率監控：</strong> 每日監控全服萬桌同時在線局數、房卡消耗速率 (Burn Rate) 與掉單排查。<br>
+                3. <strong>防夥牌作弊與仲裁：</strong> 執行同 IP / 同 GPS 距離防作弊檢測，審查異常勝率與戰績回放 (Replay)。<br>
+                4. <strong>24/7 客服輪班：</strong> 提供全天候牌局斷線重連諮詢、客訴處理與違規作弊帳號停權處分。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 未見財務收款核訖憑證前，系統與營運人員嚴禁私發任何房卡；特權操作日誌不得刪改。
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. 研發技術中心 -->
+            <div class="policy-box" style="border-top: 3px solid #10b981; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#10b981;">DEP-03 | 研發技術中心 (Client / Server / Algorithm)</span>
+                <span class="policy-level" style="background:rgba(16,185,129,0.2); color:#34d399; border-color:#10b981;">核心技術壁壘</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🕹️ 研發技術中心 (棋牌引擎、RNG算法與後台研發)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>棋牌核心算法研發：</strong> 開發麻將算番與 CSPRNG 洗牌算法，取得國際 GLI-19 隨機公平性檢定認證。<br>
+                2. <strong>AMS 與防作弊模組：</strong> 敏捷衝刺開發代理商管理後台、俱樂部公會架構與同 IP/GPS 防夥牌攔截模組。<br>
+                3. <strong>微服務與代碼審查：</strong> 實施 GitLab 雙人代碼審查 (Peer Review)，CI/CD 自動打包與靜態 SAST 弱點掃描。<br>
+                4. <strong>開源代碼合規：</strong> 定期產出 SBOM 物料清單，阻斷 GPL 感染協議，保護自研代碼商業機密。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 研發工程師嚴禁持有正式生產環境 (Production) 資料庫直連或修改權限；嚴禁未經審查私推代碼。
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. 主美設計部 -->
+            <div class="policy-box" style="border-top: 3px solid #ec4899; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#ec4899;">DEP-04 | 主美設計部 (Art & Creative Design)</span>
+                <span class="policy-level" style="background:rgba(236,72,153,0.2); color:#f472b6; border-color:#ec4899;">視覺風格靈魂</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🎨 主美設計部 (牌面立繪、3D場景與吉祥物形象)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>國風視覺風格確立：</strong> 奠定沉香木黑、古典紅木茶几桌面、宣紙印章之台味茶館市井視覺語言。<br>
+                2. <strong>原創角色形象塑造：</strong> 原創設計熊貓大俠「潘達」、俠女「莉莉」、柳公子等吉祥物與動態表情包。<br>
+                3. <strong>美術外包品質審查：</strong> 制定美術 Style Guide，對外包交付之分層源檔 (PSD/FBX/Spine) 執行像素級驗收。<br>
+                4. <strong>全網無抄襲查重：</strong> 嚴格審核外包作品原創性，確認無拼接侵權或未授權素材後始得簽發 GRN。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 主美嚴禁兼任外包廠商詢比議價採購人員；未檢視無抄襲切結前不得簽發驗收單。
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. 品管測試部 (QA) -->
+            <div class="policy-box" style="border-top: 3px solid #a855f7; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#a855f7;">DEP-05 | 品管測試部 (Quality Assurance, QA)</span>
+                <span class="policy-level" style="background:rgba(168,85,247,0.2); color:#c084fc; border-color:#a855f7;">品質防禦關卡</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🧪 品管測試部 (黑白盒測試、真機機庫與發布門檻)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>全玩法黑白盒驗收：</strong> 依 GDD 執行台灣麻將算番邏輯、胡牌判定、超時託管與斷線重連極限測試。<br>
+                2. <strong>真機測試機庫 (Device Farm) 管制：</strong> 列冊管制上百支 iOS/Android 手機與平板，執行主流機型相容性測試。<br>
+                3. <strong>防作弊機制實體驗證：</strong> 模擬同 IP / 偽造 GPS 訊號測試防夥牌攔截機制，確認系統能即時踢出同桌。<br>
+                4. <strong>發布門檻嚴格卡控：</strong> 嚴格執行「Blocker / Critical Bug 必須歸零」門檻，出具 QA 測試總結報告。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> QA 測試人員嚴禁兼任代碼撰寫工程師（嚴禁自寫自測）；測試未達標嚴格禁止簽字發布。
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. 財務部 -->
+            <div class="policy-box" style="border-top: 3px solid #38bdf8; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#38bdf8;">DEP-06 | 財務部 (Finance, Accounting & Treasury)</span>
+                <span class="policy-level" style="background:rgba(56,189,248,0.2); color:#38bdf8; border-color:#38bdf8;">資本與金流樞紐</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">💰 財務部 (款項核銷、三單比對、IFRS 15與存款調節)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>代理商進卡核款開票：</strong> 核對電匯水單全額入帳後放行開票，系統立帳「預收房卡款（合約負債）」。<br>
+                2. <strong>IFRS 15 營收動態結轉：</strong> 依大數據全服實際開桌耗卡張數，精準自合約負債結轉營業收入，無道具攤銷。<br>
+                3. <strong>採購核銷三單比對：</strong> 嚴格執行 PO 採購單＝GRN 驗收單＝發票憑單比對，吻合後始得編制傳票。<br>
+                4. <strong>金流出納雙人授權：</strong> 執行網銀薪轉與外包放款（Maker-Checker）；每月非出納人員獨立編制銀行調節表。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 會計做帳人員與出納持有之網銀放款 Token 嚴格分立；出納不得兼任總帳會計。
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. 採購部 -->
+            <div class="policy-box" style="border-top: 3px solid #f59e0b; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#f59e0b;">DEP-07 | 採購部 (Procurement Department)</span>
+                <span class="policy-level" style="background:rgba(245,158,11,0.2); color:#fbbf24; border-color:#f59e0b;">商務採購防線</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🛒 採購部 (合格供應商、三家詢比價與合約發發單)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>合格供應商 (AVL) 評鑑：</strong> 定期考核賽事執行商、獎品供應商、美術外包團隊與雲端伺服器商。<br>
+                2. <strong>客觀詢價與三家比價：</strong> 採購金額 5 萬元以上一律嚴格執行三家報價並填報《比價議價記錄表》。<br>
+                3. <strong>商務談判與發放 PO：</strong> 爭取最優單價、保固與付款條件（如月結45天），正式核發採購單 (PO)。<br>
+                4. <strong>反貪腐與廉潔承諾：</strong> 強制要求全體合作廠商簽署反貪腐切結，杜絕採購收受回扣與不當利益。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 採購人員嚴禁兼任驗收與品管檢驗；嚴禁由請購單位私自指定單一供應商。
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. 人資部 -->
+            <div class="policy-box" style="border-top: 3px solid #ec4899; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#ec4899;">DEP-08 | 人資部 (Human Resources Department)</span>
+                <span class="policy-level" style="background:rgba(236,72,153,0.2); color:#f472b6; border-color:#ec4899;">組織與人才基石</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">👥 人資部 (人才甄選、智財協議、提成津貼與離職交接)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>專業人才招募甄選：</strong> 配合推廣部與研發部進行專業面試，執行從業者背景查核 (Reference Check)。<br>
+                2. <strong>智財讓與合約管理：</strong> 報到當日全員親簽《著作權讓與契約書》、《保密合約 (NDA)》與競業禁止規範。<br>
+                3. <strong>研發工時與提成核算：</strong> 彙整研發每週工時 Timesheet（供 IAS 38 資本化）、推廣提成與客服大夜津貼。<br>
+                4. <strong>離職權限當日撤銷：</strong> 離職日通知 IT 部門於當天 18:00 前即時註銷所有 AMS 後台、Git 與 VPN 存取權限。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 人事主檔建置與薪資計算人員嚴禁兼任出納撥款；提成計算必須經業務主管核認。
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. 法務風控部 -->
+            <div class="policy-box" style="border-top: 3px solid #f59e0b; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#f59e0b;">DEP-09 | 法務風控部 (Legal & Compliance Department)</span>
+                <span class="policy-level" style="background:rgba(245,158,11,0.2); color:#fbbf24; border-color:#f59e0b;">合規法律防火牆</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">⚖️ 法務風控部 (代理合約審定、反洗錢AML與專利商標維權)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>代理商合約法定審查：</strong> 審查代理商加盟條款，確保嚴格禁止反向現金回購之法律免責與求償機制。<br>
+                2. <strong>反洗錢 (AML) 風控規範：</strong> 建立大額異常房卡轉移監控通報流程，排查線下不法洗錢與地下賭局。<br>
+                3. <strong>商標著作權全球佈局：</strong> 負責「鬥陣歡樂城」字樣、吉祥物圖案於全球主要市場商標註冊與專利申請。<br>
+                4. <strong>侵權訴訟與下架維權：</strong> 針對市面盜版換皮、私服外掛或侵權素材，發布律師警告函並啟動司法訴訟。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 法務人員獨立行使合規否決權；未經法務審查核可之代理商特約條款一律無效。
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. 資安與維運中心 -->
+            <div class="policy-box" style="border-top: 3px solid #10b981; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#10b981;">DEP-10 | 資安與維運中心 (CISO, SRE & GameOps)</span>
+                <span class="policy-level" style="background:rgba(16,185,129,0.2); color:#34d399; border-color:#10b981;">技術防護盾牌</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🛡️ 資安與維運中心 (Zero Outage、抗DDoS與特權日誌)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>100% Zero Outage 維運：</strong> 多雲 Kubernetes (GKE) 架構自動擴縮容，保障春節連假開桌尖峰零停機。<br>
+                2. <strong>抗 1Tbps+ DDoS 清洗：</strong> 整合 Cloudflare/Akamai 邊緣高防線路，阻斷針對棋牌即時通訊之惡意攻擊。<br>
+                3. <strong>AMS 特權後台安全監控：</strong> 管理員強制 MFA 雙因子認證，部署 UEBA 異常行為偵測與 100ms Kill Switch。<br>
+                4. <strong>資料庫持續災備 (BCP)：</strong> MongoDB Atlas 實時 Oplog 備份，每年第四季實施跨雲無預警實兵災備演練。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 生產環境與研發環境徹底隔離；資安特權操作日誌由系統獨立存儲，管理員嚴禁自行修改。
+                </div>
+              </div>
+            </div>
+
+            <!-- 11. 內部稽核室 -->
+            <div class="policy-box" style="border-top: 3px solid #dc2626; background: rgba(38, 23, 15, 0.9);">
+              <div class="policy-meta">
+                <span class="policy-code" style="color:#f87171;">DEP-11 | 內部稽核室 (Internal Audit Office)</span>
+                <span class="policy-level" style="background:rgba(220,38,38,0.25); color:#f87171; border-color:#dc2626;">董事會獨立天眼</span>
+              </div>
+              <div class="policy-title" style="color:#fdfbf7;">🔍 內部稽核室 (獨立直報董事會與審委會)</div>
+              <div class="policy-desc" style="line-height:1.7;">
+                <strong>核心職掌：</strong><br>
+                1. <strong>AMS 房卡劃撥每週獨立對帳：</strong> 獨立導出後台劃撥日誌，逐筆核對銀行實際入帳憑單，杜絕內部私增房卡。<br>
+                2. <strong>九大循環穿行測試 (Walkthrough)：</strong> 抽查各循環執行樣品，驗證一階政策至四階表單留痕是否完全合規。<br>
+                3. <strong>實體資產與測試機監盤：</strong> 每年會同財務對研發工作站、展示平板與測試機庫進行 100% 盲盤與監盤。<br>
+                4. <strong>重大舞弊獨立專案調查：</strong> 針對疑似夥牌內鬼、未授權折扣或異常退款事件，出具獨立調查報告呈送董事會。<br>
+                <div style="margin-top:8px; padding:6px 10px; background:rgba(220,38,38,0.15); border-left:2px solid #dc2626; color:#fca5a5; font-size:0.76rem;">
+                  <strong>★ 內控紅線 (SoD)：</strong> 內部稽核主管任命由審計委員會同意並提報董事會；稽核人員超然獨立，不兼辦任何行政作業。
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Comprehensive Cross-Departmental RACI Matrix Table -->
+        <div class="tier-block">
+          <div class="tier-header" style="color: #f59e0b;">📋 盛欣網絡 12 項重大營運活動 跨部門 RACI 權責劃分矩陣表</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+            標示說明：<strong>R (Responsible 實際執行)</strong>、<strong>A (Accountable 最終審批/負責)</strong>、<strong>C (Consulted 諮詢會簽)</strong>、<strong>I (Informed 副本通知)</strong>
+          </div>
+          <div class="forms-table-wrapper">
+            <table class="governance-table" style="font-size:0.78rem;">
+              <thead>
+                <tr>
+                  <th style="width: 220px;">重大營運與治理業務活動</th>
+                  <th style="text-align:center;">推廣部</th>
+                  <th style="text-align:center;">營運部</th>
+                  <th style="text-align:center;">研發部</th>
+                  <th style="text-align:center;">主美部</th>
+                  <th style="text-align:center;">QA部</th>
+                  <th style="text-align:center;">財務部</th>
+                  <th style="text-align:center;">採購部</th>
+                  <th style="text-align:center;">人資部</th>
+                  <th style="text-align:center;">法務部</th>
+                  <th style="text-align:center;">資安部</th>
+                  <th style="text-align:center;">內稽室</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">1. 代理商招募、加盟審查與簽約</td>
+                  <td style="text-align:center; font-weight:800; color:#f59e0b;">R / A</td>
+                  <td style="text-align:center;">I</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#f87171;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">2. 房卡批發階梯折扣定價與特案核決</td>
+                  <td style="text-align:center; font-weight:800; color:#f59e0b;">R</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">A</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">3. 代理商進卡款項查驗與發票開立</td>
+                  <td style="text-align:center;">I</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">R / A</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">4. AMS 後台房卡充值劃撥指派</td>
+                  <td style="text-align:center; color:#f87171; font-weight:800;">禁止</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">R / A</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#10b981;">A (放行)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center; font-weight:800; color:#f87171;">I (稽核)</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">5. 每日開桌對帳與 IFRS 15 營收結轉</td>
+                  <td style="text-align:center;">I</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">R (日報)</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">R / A</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">6. 棋牌算法研發與 GLI-19 國際認證</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center; font-weight:800; color:#10b981;">R / A</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#c084fc;">R (驗證)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">7. 牌桌美術外包發包、比價與驗收</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#f472b6;">R (主驗)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center; font-weight:800; color:#f59e0b;">R (採購)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#f87171;">C (IP買斷)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">8. 代理商月度推廣佣金與返點結算</td>
+                  <td style="text-align:center; font-weight:800; color:#f59e0b;">R (初算)</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">C (審核)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">A (覆核)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">9. 防夥牌作弊監控與違規封號處置</td>
+                  <td style="text-align:center;">I</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">R / A</td>
+                  <td style="text-align:center;">C (算法)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#f87171;">A (裁決)</td>
+                  <td style="text-align:center; font-weight:800; color:#10b981;">R (鑑識)</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">10. 遊戲伺服器 100% 零停機營運</td>
+                  <td style="text-align:center;">I</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#10b981;">R / A</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">11. AMS 房卡劃撥日誌每週獨立稽核</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I (備查)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I (備查)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C</td>
+                  <td style="text-align:center; font-weight:800; color:#f87171;">R / A</td>
+                </tr>
+                <tr>
+                  <td style="font-weight:700; color:#f8fafc;">12. 研發工時 Timesheet 審查與資本化</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center; font-weight:800; color:#10b981;">R (填報)</td>
+                  <td style="text-align:center;">R (填報)</td>
+                  <td style="text-align:center;">R (填報)</td>
+                  <td style="text-align:center; font-weight:800; color:#38bdf8;">A (資本化)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">C (工時)</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">-</td>
+                  <td style="text-align:center;">I</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+
       <section id="cycle-1" class="cycle-card" data-cycle-num="01">
         
         <div class="cycle-header">
@@ -4436,6 +4884,28 @@
           cycleName: cycleName.trim(),
           targetElement: sb
         });
+      });
+
+      
+      // Index all Department Cards (DEP-01 ~ DEP-11)
+      document.querySelectorAll('#dept-responsibilities .policy-box').forEach(db => {
+        const metaEl = db.querySelector('.policy-code');
+        const titleEl = db.querySelector('.policy-title');
+        const descEl = db.querySelector('.policy-desc');
+
+        if (titleEl) {
+          searchIndex.push({
+            type: 'dept',
+            typeLabel: '🏛️ 部門職責',
+            badgeClass: 'badge-policy',
+            code: metaEl ? metaEl.textContent.trim() : '部門',
+            title: titleEl.textContent.trim(),
+            desc: descEl ? descEl.textContent.trim().slice(0, 150) + '...' : '',
+            cycleId: 'dept-responsibilities',
+            cycleName: '盛欣網絡各部門職責與SoD',
+            targetElement: db
+          });
+        }
       });
 
       console.log('Search Index Built Successfully. Total Items:', searchIndex.length);
