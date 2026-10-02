@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盛欣網絡 ChatGPT / 企業級 AI 工具採購與資安合規作業泳道圖</title>
+  <style>
+    :root {
+      --bg-base: #120a05;
+      --bg-card: #1f130b;
+      --bg-lane-alt: #170d07;
+      --border-color: rgba(217, 119, 6, 0.25);
+      --border-highlight: #f59e0b;
+      --primary: #c2410c;
+      --primary-light: #f59e0b;
+      --accent-teal: #10b981;
+      --accent-rose: #ef4444;
+      --text-main: #fdfbf7;
+      --text-muted: #b5a695;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg-base);
+      color: var(--text-main);
+      padding: 16px;
+      line-height: 1.5;
+    }
+
+    .widget-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .widget-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #f59e0b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .widget-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* Swimlane Table Grid */
+    .swimlane-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: rgba(18, 10, 5, 0.95);
+      margin-bottom: 24px;
+    }
+
+    .swimlane-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1050px;
+    }
+
+    .swimlane-table th {
+      background: #2a180d;
+      color: #f59e0b;
+      padding: 12px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+      border-bottom: 2px solid var(--border-highlight);
+    }
+
+    .swimlane-table th:last-child { border-right: none; }
+
+    .lane-row {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .lane-row:nth-child(even) {
+      background: var(--bg-lane-alt);
+    }
+
+    .lane-header-cell {
+      width: 130px;
+      padding: 14px 10px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #fdfbf7;
+      text-align: center;
+      background: rgba(45, 27, 16, 0.85);
+      border-right: 2px solid var(--border-highlight);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .lane-phase-cell {
+      padding: 12px 10px;
+      vertical-align: middle;
+      border-right: 1px solid rgba(217, 119, 6, 0.15);
+      position: relative;
+    }
+
+    .lane-phase-cell:last-child { border-right: none; }
+
+    /* Node Cards inside Swimlane */
+    .lane-node {
+      background: rgba(38, 23, 15, 0.9);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.76rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .lane-node:hover {
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.25);
+    }
+
+    .lane-node.node-start {
+      border-left: 3px solid #38bdf8;
+    }
+
+    .lane-node.node-security {
+      border-left: 3px solid #ef4444;
+      background: rgba(45, 15, 15, 0.85);
+    }
+
+    .lane-node.node-finance {
+      border-left: 3px solid #10b981;
+    }
+
+    .node-step-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #f59e0b;
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .node-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: #fdfbf7;
+      margin-bottom: 4px;
+    }
+
+    .node-desc {
+      color: #cbd5e1;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .node-form {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.68rem;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .node-gate {
+      font-size: 0.68rem;
+      color: #fca5a5;
+      margin-top: 4px;
+      border-top: 1px dashed rgba(239, 68, 68, 0.3);
+      padding-top: 3px;
+    }
+
+    /* Decision Diamond Box */
+    .decision-box {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid #f59e0b;
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      font-size: 0.72rem;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    /* Arrow Connector */
+    .arrow-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f59e0b;
+      font-weight: 900;
+      font-size: 0.9rem;
+      margin: 4px 0;
+      user-select: none;
+    }
+
+    /* RACI Matrix Table */
+    .raci-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #f59e0b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .raci-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      text-align: left;
+    }
+
+    .raci-table th {
+      background: #2a180d;
+      color: #f59e0b;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .raci-table td {
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      color: #cbd5e1;
+    }
+
+    .raci-table tr:hover td {
+      background: rgba(245, 158, 11, 0.08);
+    }
+
+    .tag-r { color: #f59e0b; font-weight: 900; background: rgba(245,158,11,0.2); padding: 1px 6px; border-radius: 4px; }
+    .tag-a { color: #ef4444; font-weight: 900; background: rgba(239,68,68,0.2); padding: 1px 6px; border-radius: 4px; }
+    .tag-c { color: #38bdf8; font-weight: 900; background: rgba(56,189,248,0.2); padding: 1px 6px; border-radius: 4px; }
+    .tag-i { color: #94a3b8; font-weight: 900; background: rgba(148,163,184,0.2); padding: 1px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <div class="widget-container">
+    
+    <div class="widget-header">
+      <div class="widget-title">
+        <span>🏊‍♂️</span> 盛欣網絡 採購 ChatGPT / 企業級 AI 工具 端到端作業泳道圖 (Swimlane)
+      </div>
+      <div class="widget-badge">✓ 採購及付款循環 ＆ ISO 42001 合規</div>
+    </div>
+
+    <!-- Swimlane Table Flowchart -->
+    <div class="swimlane-wrapper">
+      <table class="swimlane-table">
+        <thead>
+          <tr>
+            <th style="width: 130px;">權責單位 (Lane)</th>
+            <th style="width: 220px;">第一階段：需求與請購</th>
+            <th style="width: 220px;">第二階段：資安與商務審定</th>
+            <th style="width: 220px;">第三階段：採購下單與開通</th>
+            <th style="width: 220px;">第四階段：驗收與三單比對</th>
+            <th style="width: 220px;">第五階段：付款與稅務扣繳</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <!-- Lane 1: 技術單位 -->
+          <tr class="lane-row">
+            <td class="lane-header-cell">
+              <div>🕹️ 技術單位</div>
+              <div style="font-size:0.68rem; color:#f59e0b; margin-top:2px;">(需求發起人/PM)</div>
+            </td>
+            
+            <td class="lane-phase-cell">
+              <div class="lane-node node-start">
+                <div class="node-step-tag"><span>STEP 01</span> <span>發起</span></div>
+                <div class="node-title">提報請購與選型</div>
+                <div class="node-desc">確認方案 (Team/Enterprise/API)，填報預期效益與人數清冊。</div>
+                <span class="node-form">📋 FM-PUR-01 請購單</span>
+                <div class="node-gate">🛡️ 附：AI工具效益評估表</div>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="arrow-right">───▶</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node">
+                <div class="node-step-tag"><span>STEP 03-B</span> <span>開通</span></div>
+                <div class="node-title">公務帳號註冊與席位配置</div>
+                <div class="node-desc">以公務信箱註冊，綁定公司 SSO/MFA，配置工程師席位或設定 API 預算硬上限。</div>
+                <div class="node-gate">🛡️ 嚴禁用私帳；API設限額</div>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node">
+                <div class="node-step-tag"><span>STEP 04</span> <span>主驗</span></div>
+                <div class="node-title">功能測試與簽發驗收</div>
+                <div class="node-desc">測試功能無誤，檢附後台 Workspace 席位名冊截圖，簽發驗收單。</div>
+                <span class="node-form">📋 FM-PUR-06 驗收單 GRN</span>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(日常使用與Prompt合規)</div>
+            </td>
+          </tr>
+
+          <!-- Lane 2: 資安長 (CISO) & 法務部 -->
+          <tr class="lane-row">
+            <td class="lane-header-cell">
+              <div>🛡️ 資安與法務</div>
+              <div style="font-size:0.68rem; color:#ef4444; margin-top:2px;">(CISO / Legal)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(待請購送審)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node node-security">
+                <div class="node-step-tag"><span>STEP 02</span> <span>卡控</span></div>
+                <div class="node-title">資料主權審查 (ISO 42001)</div>
+                <div class="node-desc">審查條款：確認 OpenAI 承諾不使用商業資料訓練模型 (Zero Training)。</div>
+                <div class="decision-box">
+                  <strong>◆ 判定：承諾不訓練？</strong><br>
+                  <span style="color:#34d399;">✓ 是 ➔ 簽核放行</span><br>
+                  <span style="color:#ef4444;">✗ 否 ➔ 駁回(禁購個人版)</span>
+                </div>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(Enterprise年約審閱條款)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">-</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(離職帳號即時撤銷管制)</div>
+            </td>
+          </tr>
+
+          <!-- Lane 3: 採購部 -->
+          <tr class="lane-row">
+            <td class="lane-header-cell">
+              <div>🛒 採購部</div>
+              <div style="font-size:0.68rem; color:#f59e0b; margin-top:2px;">(Procurement)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(待單據分派)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="arrow-right">───▶</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node">
+                <div class="node-step-tag"><span>STEP 03-A</span> <span>下單</span></div>
+                <div class="node-title">單一來源立案與發單</div>
+                <div class="node-desc">以原廠專利立案，開立採購單 (PO)，授權綁定公司公務信用卡。</div>
+                <span class="node-form">📋 FM-PUR-04 採購單 PO</span>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="arrow-right">───▶</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">(採購結案歸檔)</div>
+            </td>
+          </tr>
+
+          <!-- Lane 4: 財務會計部 -->
+          <tr class="lane-row">
+            <td class="lane-header-cell">
+              <div>💰 財務會計部</div>
+              <div style="font-size:0.68rem; color:#38bdf8; margin-top:2px;">(Finance & AP)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node node-finance">
+                <div class="node-step-tag"><span>審查</span> <span>預算</span></div>
+                <div class="node-title">預算卡控勾稽</div>
+                <div class="node-desc">檢核軟體研發科目預算餘額。</div>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">-</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">-</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node node-finance">
+                <div class="node-step-tag"><span>STEP 05-A</span> <span>核銷</span></div>
+                <div class="node-title">★ 三單比對立帳</div>
+                <div class="node-desc">比對 PO＝GRN＝OpenAI Invoice，金額相符後開立應付憑單。</div>
+                <span class="node-form">📋 FM-PUR-08 應付憑單</span>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node node-finance">
+                <div class="node-step-tag"><span>STEP 05-B</span> <span>放款/稅務</span></div>
+                <div class="node-title">出納放款與海外扣繳</div>
+                <div class="node-desc">核銷信用卡帳單；次月10日前辦理跨境電子勞務 20% 扣繳申報。</div>
+                <div class="node-gate">🛡️ 國稅局非居住者申報聯</div>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Lane 5: 外部原廠 / 國稅局 -->
+          <tr class="lane-row">
+            <td class="lane-header-cell">
+              <div>☁️ 外部原廠/國稅局</div>
+              <div style="font-size:0.68rem; color:#94a3b8; margin-top:2px;">(OpenAI / Tax)</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">-</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div style="text-align:center; color:#64748b; font-size:0.75rem;">-</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node" style="background:#171d2b;">
+                <div class="node-title">OpenAI 扣款與開立發票</div>
+                <div class="node-desc">線上刷卡成功，自動產出載有公司 Tax ID 之官方 Invoice PDF。</div>
+              </div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="arrow-right">───▶</div>
+            </td>
+
+            <td class="lane-phase-cell">
+              <div class="lane-node" style="background:#171d2b;">
+                <div class="node-title">國稅局收受扣繳稅款</div>
+                <div class="node-desc">取得完稅證明回執，完成稅務合規閉環。</div>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RACI Responsibility Matrix Table -->
+    <div class="raci-title">
+      <span>📋</span> ChatGPT 採購專案 跨部門 RACI 權責劃分表
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="raci-table">
+        <thead>
+          <tr>
+            <th>採購作業環節</th>
+            <th style="text-align:center;">技術申請人 (Tech)</th>
+            <th style="text-align:center;">技術主管 (VP)</th>
+            <th style="text-align:center;">資安長 (CISO)</th>
+            <th style="text-align:center;">採購部 (Buyer)</th>
+            <th style="text-align:center;">會計部 (Accountant)</th>
+            <th style="text-align:center;">財務長 (CFO)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. 方案選型、席位清冊與請購發起</td>
+            <td style="text-align:center;"><span class="tag-r">R</span></td>
+            <td style="text-align:center;"><span class="tag-a">A</span></td>
+            <td style="text-align:center;"><span class="tag-c">C</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;"><span class="tag-c">C</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+          </tr>
+          <tr>
+            <td>2. AI 資料主權不訓練條款審查 (ISO 42001)</td>
+            <td style="text-align:center;"><span class="tag-c">C</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;"><span class="tag-r">R</span> / <span class="tag-a">A</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+          </tr>
+          <tr>
+            <td>3. 採購單 (PO) 核發與公務卡授權綁定</td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;"><span class="tag-r">R</span> / <span class="tag-a">A</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;"><span class="tag-c">C</span></td>
+          </tr>
+          <tr>
+            <td>4. 官方席位開通、SSO/MFA配置與驗收 (GRN)</td>
+            <td style="text-align:center;"><span class="tag-r">R</span></td>
+            <td style="text-align:center;"><span class="tag-a">A</span></td>
+            <td style="text-align:center;"><span class="tag-c">C</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;">-</td>
+          </tr>
+          <tr>
+            <td>5. 三單比對 (PO＝GRN＝Invoice) 與傳票編製</td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;"><span class="tag-i">I</span></td>
+            <td style="text-align:center;"><span class="tag-r">R</span></td>
+            <td style="text-align:center;"><span class="tag-a">A</span></td>
+          </tr>
+          <tr>
+            <td>6. 信用卡款項出納核銷與 20% 境外扣繳申報</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;"><span class="tag-r">R</span></td>
+            <td style="text-align:center;"><span class="tag-a">A</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>
