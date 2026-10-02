@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-02T12:00:00.000Z" agent="HermesAgent" version="24.0.0" type="device">
+  <diagram id="chatgpt-procurement-swimlane" name="盛欣網絡_ChatGPT採購與資安合規泳道圖">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1050" background="#120a05" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- POOL CONTAINER -->
+        <mxCell id="pool" value="盛欣網絡 採購 ChatGPT / 企業級 AI 工具 端到端作業泳道圖 (ISO 42001 &amp;amp; 內控採購循環)" 
+                style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=40;horizontal=1;fontColor=#ffffff;fontSize=18;fontStyle=1;strokeColor=#d97706;fillColor=#1f130b;collapsible=0;marginBottom=0;" 
+                vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1600" height="830" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 1: 技術單位 -->
+        <mxCell id="lane_tech" value="🕹️ 技術單位&#xa;(研發 / PM)" 
+                style="swimlane;html=1;horizontal=0;startSize=50;fontColor=#ffffff;fontSize=14;fontStyle=1;strokeColor=#f59e0b;fillColor=#241710;collapsible=0;" 
+                vertex="1" parent="pool">
+          <mxGeometry x="0" y="40" width="1600" height="155" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 2: 資安與法務 -->
+        <mxCell id="lane_sec" value="🛡️ 資安與法務&#xa;(CISO / Legal)" 
+                style="swimlane;html=1;horizontal=0;startSize=50;fontColor=#ffffff;fontSize=14;fontStyle=1;strokeColor=#ef4444;fillColor=#1f130b;collapsible=0;" 
+                vertex="1" parent="pool">
+          <mxGeometry x="0" y="195" width="1600" height="155" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 3: 採購部門 -->
+        <mxCell id="lane_pur" value="🛒 採購部門&#xa;(Procurement)" 
+                style="swimlane;html=1;horizontal=0;startSize=50;fontColor=#ffffff;fontSize=14;fontStyle=1;strokeColor=#f59e0b;fillColor=#241710;collapsible=0;" 
+                vertex="1" parent="pool">
+          <mxGeometry x="0" y="350" width="1600" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 4: 財務會計部 -->
+        <mxCell id="lane_fin" value="💰 財務會計部&#xa;(Finance / AP)" 
+                style="swimlane;html=1;horizontal=0;startSize=50;fontColor=#ffffff;fontSize=14;fontStyle=1;strokeColor=#10b981;fillColor=#1f130b;collapsible=0;" 
+                vertex="1" parent="pool">
+          <mxGeometry x="0" y="500" width="1600" height="175" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 5: 外部原廠與國稅局 -->
+        <mxCell id="lane_ext" value="☁️ 外部原廠與國稅&#xa;(OpenAI / Tax)" 
+                style="swimlane;html=1;horizontal=0;startSize=50;fontColor=#ffffff;fontSize=14;fontStyle=1;strokeColor=#94a3b8;fillColor=#241710;collapsible=0;" 
+                vertex="1" parent="pool">
+          <mxGeometry x="0" y="675" width="1600" height="155" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LANE 1 NODES (TECH) ==================== -->
+        <mxCell id="node_tech_1" value="&lt;b&gt;STEP 01: 提報請購與選型&lt;/b&gt;&lt;br&gt;• 確定方案 (Team / API)&lt;br&gt;• 評估研發效益與席位清冊&lt;br&gt;&lt;font color='#34d399'&gt;&lt;b&gt;[表單] FM-PUR-01 請購單&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color='#fca5a5'&gt;檢附：AI工具效益評估表&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#38bdf8;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_tech">
+          <mxGeometry x="120" y="25" width="240" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_tech_2" value="&lt;b&gt;STEP 03-B: 公務帳號註冊與席位開通&lt;/b&gt;&lt;br&gt;• 使用公司網域公務信箱註冊&lt;br&gt;• 強制啟用 SSO / MFA 雙因子認證&lt;br&gt;• 配置工程師席位 / API 預算硬上限&lt;br&gt;&lt;font color='#fca5a5'&gt;&lt;b&gt;★ 嚴禁用個人帳號／API設上限&lt;/b&gt;&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#38bdf8;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_tech">
+          <mxGeometry x="720" y="25" width="250" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_tech_3" value="&lt;b&gt;STEP 04: 功能測試與簽發驗收&lt;/b&gt;&lt;br&gt;• 測試代碼補全與API回應正常&lt;br&gt;• 檢附 Workspace 席位名冊截圖&lt;br&gt;&lt;font color='#34d399'&gt;&lt;b&gt;[表單] FM-PUR-06 驗收證明單 (GRN)&lt;/b&gt;&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#38bdf8;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_tech">
+          <mxGeometry x="1050" y="25" width="250" height="105" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LANE 2 NODES (SECURITY) ==================== -->
+        <mxCell id="node_sec_1" value="&lt;b&gt;STEP 02: 資料主權審查&lt;/b&gt;&lt;br&gt;(ISO 42001 合規)&lt;br&gt;&lt;b&gt;◆ 判定：承諾不訓練？&lt;/b&gt;&lt;br&gt;(Zero Data Training)" 
+                style="rhombus;whiteSpace=wrap;html=1;fillColor=#451a1a;strokeColor=#ef4444;strokeWidth=2;fontColor=#ffffff;fontSize=12;fontStyle=1;align=center;" 
+                vertex="1" parent="lane_sec">
+          <mxGeometry x="420" y="20" width="220" height="115" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_sec_reject" value="&lt;b&gt;【退件駁回】&lt;/b&gt;&lt;br&gt;嚴禁購買個人版&lt;br&gt;(ChatGPT Plus/Pro)&lt;br&gt;防止原始碼外洩！" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#581c1c;strokeColor=#ef4444;strokeWidth=2;fontColor=#fca5a5;fontSize=11;align=center;" 
+                vertex="1" parent="lane_sec">
+          <mxGeometry x="160" y="40" width="180" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LANE 3 NODES (PROCUREMENT) ==================== -->
+        <mxCell id="node_pur_1" value="&lt;b&gt;STEP 03-A: 單一來源立案與發單&lt;/b&gt;&lt;br&gt;• 原廠專有服務免三家比價&lt;br&gt;• 核發正式採購單 (PO)&lt;br&gt;• 授權綁定公務信用卡扣款&lt;br&gt;&lt;font color='#34d399'&gt;&lt;b&gt;[表單] FM-PUR-04 採購單 (PO)&lt;/b&gt;&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b2609;strokeColor=#f59e0b;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_pur">
+          <mxGeometry x="420" y="25" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LANE 4 NODES (FINANCE) ==================== -->
+        <mxCell id="node_fin_0" value="&lt;b&gt;【預算勾稽】&lt;/b&gt;&lt;br&gt;檢核年度軟體研發科目&lt;br&gt;確認預算餘額充足" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#064e3b;strokeColor=#10b981;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_fin">
+          <mxGeometry x="120" y="45" width="200" height="85" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_fin_1" value="&lt;b&gt;STEP 05-A: ★ 三單比對立帳&lt;/b&gt;&lt;br&gt;• 核對 PR/PO ＝ GRN ＝ Invoice&lt;br&gt;• 金額、席位數量、Tax ID 相符&lt;br&gt;&lt;font color='#34d399'&gt;&lt;b&gt;[表單] FM-PUR-08 應付憑單&lt;/b&gt;&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#064e3b;strokeColor=#10b981;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_fin">
+          <mxGeometry x="1050" y="35" width="250" height="105" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_fin_2" value="&lt;b&gt;STEP 05-B: 出納放款與海外扣繳&lt;/b&gt;&lt;br&gt;• 出納核銷信用卡帳單 / 網銀放款&lt;br&gt;• 次月 10 日前向國稅局申報&lt;br&gt;  &lt;b&gt;跨境電子勞務 20% 扣繳稅款&lt;/b&gt;&lt;br&gt;&lt;font color='#fca5a5'&gt;取得非居住者扣繳完稅回執&lt;/font&gt;" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#064e3b;strokeColor=#10b981;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_fin">
+          <mxGeometry x="1350" y="30" width="230" height="115" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LANE 5 NODES (EXTERNAL & TAX) ==================== -->
+        <mxCell id="node_ext_1" value="&lt;b&gt;【OpenAI 扣款與開立發票】&lt;/b&gt;&lt;br&gt;• 線上刷卡扣款成功&lt;br&gt;• 系統產出官方 Invoice PDF&lt;br&gt;  (含盛欣網絡英文抬頭與 Tax ID)" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#94a3b8;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_ext">
+          <mxGeometry x="720" y="30" width="240" height="95" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_ext_2" value="&lt;b&gt;【國稅局 稅務申報完成】&lt;/b&gt;&lt;br&gt;• 申報境外電子勞務所得&lt;br&gt;• 繳納 Withholding Tax 20%&lt;br&gt;• 達成稅務完全合規閉環" 
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#94a3b8;strokeWidth=2;fontColor=#ffffff;fontSize=12;align=left;spacing=10;" 
+                vertex="1" parent="lane_ext">
+          <mxGeometry x="1350" y="35" width="230" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== CONNECTING EDGES ==================== -->
+        <!-- Edge 1: Tech 1 -> Sec 1 -->
+        <mxCell id="edge_1" value="1. 送交資安審查" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#f59e0b;strokeWidth=2;fontColor=#fde68a;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_tech_1" target="node_sec_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 1-B: Tech 1 -> Fin 0 -->
+        <mxCell id="edge_1_b" value="會簽預算" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#38bdf8;strokeWidth=2;fontColor=#bae6fd;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_tech_1" target="node_fin_0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 2-No: Sec 1 -> Reject -->
+        <mxCell id="edge_2_no" value="【否】個人版不符" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#ef4444;strokeWidth=2;fontColor=#fca5a5;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_sec_1" target="node_sec_reject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 2-Yes: Sec 1 -> Pur 1 -->
+        <mxCell id="edge_2_yes" value="【是】承諾不訓練(放行)" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10b981;strokeWidth=2;fontColor=#34d399;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_sec_1" target="node_pur_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 3-A: Pur 1 -> Tech 2 -->
+        <mxCell id="edge_3_a" value="2. PO授權開通" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#f59e0b;strokeWidth=2;fontColor=#fde68a;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_pur_1" target="node_tech_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 3-B: Pur 1 -> Ext 1 -->
+        <mxCell id="edge_3_b" value="刷卡下單" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94a3b8;strokeWidth=2;fontColor=#e2e8f0;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_pur_1" target="node_ext_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 4: Ext 1 -> Tech 2 -->
+        <mxCell id="edge_4" value="服務就緒" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94a3b8;strokeWidth=2;fontColor=#e2e8f0;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_ext_1" target="node_tech_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 5: Tech 2 -> Tech 3 -->
+        <mxCell id="edge_5" value="3. 席位配置完畢" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#38bdf8;strokeWidth=2;fontColor=#bae6fd;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_tech_2" target="node_tech_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 6: Tech 3 -> Fin 1 -->
+        <mxCell id="edge_6" value="4. 檢附GRN驗收報帳" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#34d399;strokeWidth=2;fontColor=#34d399;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_tech_3" target="node_fin_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 7: Ext 1 -> Fin 1 -->
+        <mxCell id="edge_7" value="寄送官方 Invoice" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#94a3b8;strokeWidth=2;fontColor=#e2e8f0;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_ext_1" target="node_fin_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 8: Fin 1 -> Fin 2 -->
+        <mxCell id="edge_8" value="5. 三單比對無誤放款" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10b981;strokeWidth=2;fontColor=#34d399;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_fin_1" target="node_fin_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge 9: Fin 2 -> Ext 2 -->
+        <mxCell id="edge_9" value="次月10日前申報" 
+                style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10b981;strokeWidth=2;fontColor=#34d399;fontSize=11;labelBackgroundColor=#120a05;" 
+                edge="1" parent="1" source="node_fin_2" target="node_ext_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
