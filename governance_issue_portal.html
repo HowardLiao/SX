@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盛欣網絡 公司制度與協同服務中心 | 統一問題回報與閉環管理平台</title>
+  <style>
+    :root {
+      --bg-base: #120a05;
+      --bg-card: #1c1109;
+      --bg-card-hover: #26170d;
+      --border-color: rgba(217, 119, 6, 0.25);
+      --border-highlight: #f59e0b;
+      --primary: #c2410c;
+      --primary-light: #f59e0b;
+      --accent-teal: #10b981;
+      --accent-sky: #38bdf8;
+      --accent-rose: #ef4444;
+      --accent-purple: #a855f7;
+      --text-main: #fdfbf7;
+      --text-muted: #b5a695;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg-base);
+      color: var(--text-main);
+      padding: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .portal-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Top Hero Header */
+    .portal-header {
+      background: linear-gradient(135deg, rgba(38, 23, 15, 0.95) 0%, rgba(26, 16, 10, 0.98) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portal-header::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; width: 280px; height: 100%;
+      background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .badge-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-tag.teal {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .header-title-box h1 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fdfbf7;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+
+    /* Portal Nav Tabs */
+    .portal-nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+    }
+
+    .portal-nav::-webkit-scrollbar { height: 4px; }
+    .portal-nav::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 4px; }
+
+    .nav-btn {
+      background: rgba(31, 19, 11, 0.8);
+      border: 1px solid var(--border-color);
+      color: #cbd5e1;
+      padding: 10px 18px;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .nav-btn:hover {
+      background: rgba(45, 27, 16, 0.95);
+      color: #f59e0b;
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(180deg, rgba(58, 33, 18, 0.95) 0%, rgba(31, 19, 11, 0.98) 100%);
+      color: #f59e0b;
+      border-color: #f59e0b;
+      border-bottom: 2px solid #f59e0b;
+      box-shadow: 0 -4px 12px rgba(245, 158, 11, 0.15);
+    }
+
+    /* Main Tab Content Panels */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Form Layout Grid */
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-header-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--border-highlight);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 24px;
+      font-size: 0.84rem;
+      color: #e2e8f0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #fdfbf7;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .req-star { color: #ef4444; }
+
+    input, select, textarea {
+      background: rgba(18, 10, 5, 0.9);
+      border: 1px solid rgba(217, 119, 6, 0.35);
+      border-radius: var(--radius-sm);
+      color: #fdfbf7;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      outline: none;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #f59e0b;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+      background: rgba(26, 15, 8, 0.95);
+    }
+
+    /* Dynamic Category Selector Cards */
+    .type-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .type-card {
+      background: rgba(23, 13, 7, 0.9);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .type-card:hover {
+      border-color: rgba(245, 158, 11, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .type-card.selected {
+      border-color: #f59e0b;
+      background: rgba(58, 33, 18, 0.9);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+    }
+
+    .type-card-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #fdfbf7;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .type-card-desc {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .type-card .check-icon {
+      position: absolute;
+      top: 10px; right: 10px;
+      font-size: 0.85rem;
+      color: #f59e0b;
+      display: none;
+    }
+
+    .type-card.selected .check-icon { display: block; }
+
+    /* Conditional Expandable Sections */
+    .conditional-block {
+      display: none;
+      background: rgba(31, 18, 10, 0.8);
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-top: 10px;
+      grid-column: 1 / -1;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .conditional-block.active {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .conditional-block.active { grid-template-columns: 1fr; }
+    }
+
+    .block-title {
+      grid-column: 1 / -1;
+      font-size: 0.86rem;
+      font-weight: 900;
+      color: #f59e0b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      padding-bottom: 6px;
+    }
+
+    /* Warning / Critical Banner */
+    .critical-alert-box {
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid #ef4444;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      color: #fca5a5;
+      font-size: 0.82rem;
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    /* Action Buttons */
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      grid-column: 1 / -1;
+    }
+
+    .btn {
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-secondary {
+      background: rgba(45, 27, 16, 0.8);
+      color: #cbd5e1;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(58, 33, 18, 0.9);
+      color: #fdfbf7;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c2410c 0%, #ea580c 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(194, 65, 12, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Document Library Table */
+    .library-filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: rgba(18, 10, 5, 0.95);
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      text-align: left;
+    }
+
+    .custom-table th {
+      background: #28160b;
+      color: #f59e0b;
+      padding: 12px 14px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--border-highlight);
+      white-space: nowrap;
+    }
+
+    .custom-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.15);
+      color: #cbd5e1;
+    }
+
+    .custom-table tr:hover td {
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .badge-tier {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .tier-1 { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; }
+    .tier-2 { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid #f59e0b; }
+    .tier-3 { background: rgba(56, 189, 248, 0.2); color: #bae6fd; border: 1px solid #38bdf8; }
+    .tier-4 { background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid #10b981; }
+
+    /* Case Tracker Kanban / Table */
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .status-pending { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .status-investigating { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid #38bdf8; }
+    .status-approved { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .status-escalated { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+
+    .sla-pill {
+      font-size: 0.72rem;
+      font-family: monospace;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(30, 41, 59, 0.8);
+      color: #94a3b8;
+    }
+
+    .sla-pill.green { color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .sla-pill.yellow { color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .sla-pill.red { color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    /* Bento KPI Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--border-highlight);
+    }
+
+    .bento-val {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #f59e0b;
+      margin: 6px 0 2px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .bento-label {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    .bento-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #1c1109;
+      border: 2px solid #f59e0b;
+      border-radius: var(--radius-lg);
+      max-width: 580px;
+      width: 100%;
+      padding: 26px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+      animation: modalPop 0.25s ease-out;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #f59e0b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .modal-body {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .ticket-badge-display {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px dashed #f59e0b;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fbbf24;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal-container">
+
+    <!-- Header Section -->
+    <header class="portal-header">
+      <div class="header-badge-row">
+        <span class="badge-tag">🏛️ 盛欣網絡股份有限公司</span>
+        <span class="badge-tag teal">✓ 四階文件管理閉環 SOP</span>
+        <span class="badge-tag">SLA 服務水準協定列管</span>
+      </div>
+      <div class="header-title-box">
+        <h1><span>🛎️</span> 公司制度與協同服務中心 (Governance Service Portal)</h1>
+        <p>
+          落實<strong>「發布 ➔ 理解 ➔ 執行 ➔ 回報 ➔ 改善 ➔ 改版」</strong>制度閉環。同仁由統一入口查閱有效規範、提出疑義、回報流程阻礙與例外申請；後端專人負責、主管只管重大逾期，杜絕口頭私下處置。
+        </p>
+      </div>
+    </header>
+
+    <!-- Top Navigation Tabs (5 Core Functions) -->
+    <nav class="portal-nav">
+      <button class="nav-btn active" onclick="switchPortalTab('tab-submit', this)">
+        <span>📝</span> 填寫回報／申請單
+      </button>
+      <button class="nav-btn" onclick="switchPortalTab('tab-library', this)">
+        <span>📚</span> 查閱有效制度清冊 (四階)
+      </button>
+      <button class="nav-btn" onclick="switchPortalTab('tab-tracker', this)">
+        <span>📊</span> 案件進度與台帳追蹤
+      </button>
+      <button class="nav-btn" onclick="switchPortalTab('tab-dashboard', this)">
+        <span>📈</span> 制度管理五大核心指標
+      </button>
+      <button class="nav-btn" onclick="switchPortalTab('tab-confidential', this)" style="border-color:#ef4444; color:#fca5a5;">
+        <span>🔒</span> 敏感申訴與重大應變通道
+      </button>
+    </nav>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: 填寫回報／申請單 (DYNAMIC SMART FORM)                                 -->
+    <!-- ========================================================================= -->
+    <section id="tab-submit" class="tab-pane active">
+      <div class="form-card">
+        <div class="form-header-banner">
+          💡 <strong>填單指引：</strong> 本表單採<strong>「基本欄位 ＋ 依類型動態展開」</strong>。請先點選案件類型，系統將自動展開對應之專業審查欄位。每案均獲獨立編號與專責 Owner 追蹤，杜絕案件石沉大海。
+        </div>
+
+        <form id="issueReportForm" onsubmit="handleFormSubmit(event)">
+          
+          <!-- 1. 案件類型選型卡片 -->
+          <div class="form-group full-width">
+            <label><span class="req-star">*</span> 步驟一：選擇案件類型 (點選以展開對應欄位)</label>
+            <div class="type-selector-grid">
+              
+              <div class="type-card selected" onclick="selectIssueType('faq', this)">
+                <span class="check-icon">✓</span>
+                <div class="type-card-title"><span>💡</span> 制度條文疑問</div>
+                <div class="type-card-desc">詢問規範條文如何解讀、自己或業務是否適用。由制度 Owner 正式解釋並收錄 FAQ。</div>
+              </div>
+
+              <div class="type-card" onclick="selectIssueType('process', this)">
+                <span class="check-icon">✓</span>
+                <div class="type-card-title"><span>⚠️</span> 流程困難／改善建議</div>
+                <div class="type-card-desc">回報流程做不到、權責重疊衝突、表單不合理或軟體工時阻礙。列入制度修訂閉環。</div>
+              </div>
+
+              <div class="type-card" onclick="selectIssueType('exception', this)">
+                <span class="check-icon">✓</span>
+                <div class="type-card-title"><span>⚖️</span> 制度例外申請</div>
+                <div class="type-card-desc">在特定商業條件下申請不同做法。需指定核決主管、替代補償控制措施與適用期限。</div>
+              </div>
+
+              <div class="type-card" onclick="selectIssueType('critical', this)">
+                <span class="check-icon">✓</span>
+                <div class="type-card-title"><span>🚨</span> 資安／重大營運事件</div>
+                <div class="type-card-desc">線上 P0 當機、資料庫異常、潛在資安漏洞。走緊急應變通報，不排一般提問隊列。</div>
+              </div>
+
+            </div>
+            <input type="hidden" id="selectedCaseType" value="faq">
+          </div>
+
+          <!-- 2. 基本共同欄位 -->
+          <div class="form-grid" style="margin-top: 10px;">
+            
+            <div class="form-group">
+              <label for="reporterName"><span class="req-star">*</span> 提案同仁姓名 / 工號</label>
+              <input type="text" id="reporterName" placeholder="例如：林書宇 / EMP-0284" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reporterDept"><span class="req-star">*</span> 所屬部門</label>
+              <select id="reporterDept" required>
+                <option value="">請選擇部門...</option>
+                <option value="推廣部">🎯 推廣部門 (Agency Promotion & BD)</option>
+                <option value="營運部">⚙️ 營運部門 (LiveOps & AMS)</option>
+                <option value="研發部">🕹️ 研發技術中心 (Client/Server/Algorithm)</option>
+                <option value="主美部">🎨 主美設計部 (Art & Creative)</option>
+                <option value="QA部">🧪 品管測試部 (QA)</option>
+                <option value="財務部">💰 財務會計部 (Finance & AP)</option>
+                <option value="採購部">🛒 採購部 (Procurement)</option>
+                <option value="人資部">👥 人資部 (HR)</option>
+                <option value="法務部">⚖️ 法務風控部 (Legal)</option>
+                <option value="資安部">🛡️ 資安與維運中心 (CISO/SRE)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reporterEmail"><span class="req-star">*</span> 公務聯絡信箱 (接收進度通知)</label>
+              <input type="email" id="reporterEmail" placeholder="account@shengqigamers.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="relatedDoc"><span class="req-star">*</span> 關聯之有效制度／四階表單</label>
+              <select id="relatedDoc" required>
+                <option value="">請選擇制度或輸入編號...</option>
+                <option value="POL-GOV-01 公司治理與內部控制政策 (一階)">POL-GOV-01 公司治理與內部控制政策 (一階)</option>
+                <option value="SOP-PRO-01 代理商加盟與階梯折扣辦法 (二階)">SOP-PRO-01 代理商加盟與階梯折扣辦法 (二階)</option>
+                <option value="SOP-OPS-02 AMS房卡劃撥與開桌監控SOP (三階)">SOP-OPS-02 AMS房卡劃撥與開桌監控SOP (三階)</option>
+                <option value="SOP-PUR-01 請採驗付作業程序 (二階)">SOP-PUR-01 請採驗付作業程序 (二階)</option>
+                <option value="SOP-SEC-03 雲端AI工具與ChatGPT使用管理指引 (三階)">SOP-SEC-03 雲端AI工具與ChatGPT使用管理指引 (三階)</option>
+                <option value="SOP-HR-04 研發工時Timesheet資本化填報準則 (二階)">SOP-HR-04 研發工時Timesheet資本化填報準則 (二階)</option>
+                <option value="FM-PUR-01 專案採購請購單 (四階)">FM-PUR-01 專案採購請購單 (四階)</option>
+                <option value="FM-PRD-06 遊戲版本發布/線上熱更申請單 (四階)">FM-PRD-06 遊戲版本發布/線上熱更申請單 (四階)</option>
+                <option value="OTHER 其他未涵蓋事項">OTHER 其他未涵蓋/新制度建議</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="issueSubject"><span class="req-star">*</span> 案件主旨 (簡潔標明核心問題)</label>
+              <input type="text" id="issueSubject" placeholder="例如：SOP-PUR-01 關於 Claude/ChatGPT 國外線上刷卡免三家比價之條款疑義" required>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="issueDesc"><span class="req-star">*</span> 詳細事實陳述與背景脈絡</label>
+              <textarea id="issueDesc" rows="3" placeholder="請具體說明執行時遇到之情況、對應的條款或表單欄位、目前的瓶頸..." required></textarea>
+            </div>
+
+            <!-- ================= CONDITIONAL SECTIONS ================= -->
+
+            <!-- TYPE: 條文疑問 (FAQ) -->
+            <div id="block-faq" class="conditional-block active">
+              <div class="block-title"><span>💡</span> 條文疑問專屬填寫區</div>
+              <div class="form-group">
+                <label>具體疑義條款或章節編號</label>
+                <input type="text" id="faqClause" placeholder="例如：第三章第 4 條『小額採購認定』">
+              </div>
+              <div class="form-group">
+                <label>希望制度 Owner 澄清的業務作業情境</label>
+                <input type="text" id="faqScenario" placeholder="例如：專案加急時是否可先授權後補單？">
+              </div>
+            </div>
+
+            <!-- TYPE: 流程困難 / 改善建議 (PROCESS) -->
+            <div id="block-process" class="conditional-block">
+              <div class="block-title"><span>⚠️</span> 流程困難與改善建議分析</div>
+              <div class="form-group">
+                <label><span class="req-star">*</span> 發生頻率與影響範圍</label>
+                <select id="processFrequency">
+                  <option value="常態性瓶頸 (每週發生)">常態性瓶頸 (每週發生，嚴重影響交付速度)</option>
+                  <option value="偶發性窒礙 (每月或專案交付時)">偶發性窒礙 (每月或專案交付時)</option>
+                  <option value="特定極端情境 (特定假日或突發流量)">特定極端情境 (特定假日或突發流量)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label><span class="req-star">*</span> 具體阻礙原因與痛苦點 (Pain Point)</label>
+                <input type="text" id="processPainPoint" placeholder="例如：三單比對中因外商電子 Invoice 無統編欄位導致無法送審">
+              </div>
+              <div class="form-group full-width">
+                <label><span class="req-star">*</span> 建議改善方案 (由同仁視角提出可行解法)</label>
+                <textarea id="processSuggestion" rows="2" placeholder="建議修改 SOP 第二條，增列『國外 SaaS 原廠發票得以收據水單附統編替代』..."></textarea>
+              </div>
+            </div>
+
+            <!-- TYPE: 例外申請 (EXCEPTION) -->
+            <div id="block-exception" class="conditional-block">
+              <div class="block-title"><span>⚖️</span> 制度例外專案申請 (嚴格列管，不得視為永久修訂)</div>
+              <div class="form-group">
+                <label><span class="req-star">*</span> 例外申請有效期間 (起訖日)</label>
+                <div style="display: flex; gap: 8px;">
+                  <input type="date" id="exceptionStart" style="width: 50%;">
+                  <span style="align-self: center; color: #f59e0b;">至</span>
+                  <input type="date" id="exceptionEnd" style="width: 50%;">
+                </div>
+              </div>
+              <div class="form-group">
+                <label><span class="req-star">*</span> 指定核決主管 (依權限劃分核定)</label>
+                <select id="exceptionApprover">
+                  <option value="技術副總 (Tech VP)">技術副總 (Tech VP)</option>
+                  <option value="營運副總 (Ops VP)">營運副總 (Ops VP)</option>
+                  <option value="財務長 (CFO)">財務長 (CFO)</option>
+                  <option value="資安長 (CISO)">資安長 (CISO)</option>
+                  <option value="總經理 (CEO)">總經理 (CEO)</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label><span class="req-star">*</span> 替代控制措施 (Compensating Controls，如何防範風險？)</label>
+                <textarea id="exceptionMitigation" rows="2" placeholder="因緊急修復未經三階段QA，由主架構師親自雙人代碼審查並由 SRE 部署即時回滾腳本..."></textarea>
+              </div>
+            </div>
+
+            <!-- TYPE: 資安/重大營運 (CRITICAL) -->
+            <div id="block-critical" class="conditional-block">
+              <div class="critical-alert-box">
+                <div style="font-size: 1.5rem;">🚨</div>
+                <div>
+                  <strong>重大通報機制啟動提醒：</strong><br>
+                  涉及線上正式環境中斷 (P0/P1 Incident)、資料庫外洩或嚴重夥牌作弊外掛，除填寫此單以供留痕外，請立即同步於緊急應變 Telegram/Slack 群組通報值班 SRE 及資安官，嚴禁僅在此單靜態排隊等待！
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label><span class="req-star">*</span> 受影響之系統伺服器 / 玩家規模</label>
+                <input type="text" id="criticalImpact" placeholder="例如：全服第 3 區麻將房間斷線重連異常，約 1,200 桌受影響">
+              </div>
+            </div>
+
+            <!-- 附件上傳 -->
+            <div class="form-group full-width">
+              <label>佐證附件 (日誌截圖、原廠收據、簽呈草案，選填)</label>
+              <div style="border: 2px dashed rgba(245, 158, 11, 0.3); border-radius: var(--radius-sm); padding: 18px; text-align: center; color: var(--text-muted); cursor: pointer; background: rgba(18, 10, 5, 0.5);">
+                📁 拖曳檔案至此，或點擊選取檔案 (支援 PNG, PDF, DOCX, 最大 25MB)
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+              <button type="reset" class="btn btn-secondary">清空重新填寫</button>
+              <button type="submit" class="btn btn-primary">
+                <span>🚀</span> 確認送出並生成案件編號
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: 查閱有效制度清冊 (DOCUMENTS LIBRARY)                                -->
+    <!-- ========================================================================= -->
+    <section id="tab-library" class="tab-pane">
+      <div class="form-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="color:#f59e0b; font-size:1.15rem; font-weight:800;">📚 盛欣網絡 現行有效四階制度與 SOP 文件庫</h3>
+            <p style="font-size:0.78rem; color:var(--text-muted);">系統預設僅陳列<strong>現行有效版本</strong>。點擊右側快捷按鈕可自動將該制度帶入回報單。</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="searchDocInput" onkeyup="filterDocsTable()" placeholder="🔍 搜尋文件編號/名稱/Owner..." style="padding:6px 12px; font-size:0.8rem; width:220px;">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="custom-table" id="docsTable">
+            <thead>
+              <tr>
+                <th>文件編號</th>
+                <th>階層</th>
+                <th>制度/SOP 名稱</th>
+                <th>版本號</th>
+                <th>生效日期</th>
+                <th>制度 Owner</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>POL-GOV-01</strong></td>
+                <td><span class="badge-tier tier-1">一階 政策</span></td>
+                <td>公司治理與內部控制整體政策</td>
+                <td>V2.0</td>
+                <td>2026-01-01</td>
+                <td>總經理室 / 稽核室</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('POL-GOV-01 公司治理與內部控制整體政策')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>SOP-PRO-01</strong></td>
+                <td><span class="badge-tier tier-2">二階 辦法</span></td>
+                <td>代理商加盟審查與階梯折扣核決辦法</td>
+                <td>V2.1</td>
+                <td>2026-03-15</td>
+                <td>推廣部主管</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('SOP-PRO-01 代理商加盟審查與階梯折扣核決辦法')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>SOP-OPS-02</strong></td>
+                <td><span class="badge-tier tier-3">三階 指引</span></td>
+                <td>AMS 代理後台房卡劃撥與萬桌開桌監控 SOP</td>
+                <td>V1.8</td>
+                <td>2026-04-01</td>
+                <td>營運部主管</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('SOP-OPS-02 AMS 代理後台房卡劃撥與萬桌開桌監控 SOP')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>SOP-PUR-01</strong></td>
+                <td><span class="badge-tier tier-2">二階 辦法</span></td>
+                <td>採購與付款管理辦法 (請採驗付與三單比對)</td>
+                <td>V3.0</td>
+                <td>2026-02-10</td>
+                <td>採購部 / 財務部</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('SOP-PUR-01 採購與付款管理辦法')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>SOP-SEC-03</strong></td>
+                <td><span class="badge-tier tier-3">三階 指引</span></td>
+                <td>雲端 AI 工具 (ChatGPT/Claude) 採購與資安作業指引</td>
+                <td>V1.2</td>
+                <td>2026-06-01</td>
+                <td>資安長 (CISO)</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('SOP-SEC-03 雲端 AI 工具採購與資安作業指引')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>SOP-HR-04</strong></td>
+                <td><span class="badge-tier tier-2">二階 辦法</span></td>
+                <td>研發專案工時每週填報與資本化審認規範</td>
+                <td>V2.0</td>
+                <td>2026-01-15</td>
+                <td>研發部 / 會計部</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('SOP-HR-04 研發專案工時填報規範')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>FM-PUR-01</strong></td>
+                <td><span class="badge-tier tier-4">四階 表單</span></td>
+                <td>專案採購請購單 (PR)</td>
+                <td>V2.0</td>
+                <td>2026-01-01</td>
+                <td>採購部</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('FM-PUR-01 專案採購請購單')">提問/回報</button></td>
+              </tr>
+              <tr>
+                <td><strong>FM-PRD-06</strong></td>
+                <td><span class="badge-tier tier-4">四階 表單</span></td>
+                <td>遊戲版本發布/線上熱更申請單</td>
+                <td>V1.5</td>
+                <td>2026-05-12</td>
+                <td>專案經理 (PM)</td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="quickPickDoc('FM-PRD-06 遊戲版本發布申請單')">提問/回報</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: 案件進度與台帳追蹤 (CASE TRACKER)                                     -->
+    <!-- ========================================================================= -->
+    <section id="tab-tracker" class="tab-pane">
+      <div class="form-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="color:#f59e0b; font-size:1.15rem; font-weight:800;">📊 案件處理台帳與 SLA 服務水準追蹤</h3>
+            <p style="font-size:0.78rem; color:var(--text-muted);">
+              案件明確指定單一負責 Owner 與法定處置時效。逾期案件將自動升級警示，無需同仁反覆催辦。
+            </p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <select id="filterStatus" onchange="filterTrackerTable()" style="padding:6px 10px; font-size:0.8rem;">
+              <option value="all">全部狀態 (All)</option>
+              <option value="處理中">處理中 (Investigating)</option>
+              <option value="已答覆">已正式回覆 (Answered)</option>
+              <option value="例外生效中">例外生效中 (Approved)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="custom-table" id="trackerTable">
+            <thead>
+              <tr>
+                <th>案件編號</th>
+                <th>類型</th>
+                <th>案件主旨</th>
+                <th>提出人 / 部門</th>
+                <th>承辦 Owner</th>
+                <th>狀態</th>
+                <th>SLA 處置時效</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="trackerTableBody">
+              <tr>
+                <td><strong style="color:#38bdf8;">TKT-20261002-0012</strong></td>
+                <td><span class="badge-tag">條文疑問</span></td>
+                <td>國外 SaaS 刷卡採購免三家比價之核決權限確認</td>
+                <td>技術部 / 廖工程師</td>
+                <td>採購部 / 陳經理</td>
+                <td><span class="status-badge status-approved">已正式回覆</span></td>
+                <td><span class="sla-pill green">✓ 已結案 (耗時 1.2天)</span></td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="viewCaseDetail('TKT-20261002-0012')">檢視結果</button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:#38bdf8;">TKT-20261004-0019</strong></td>
+                <td><span class="badge-tag" style="background:rgba(245,158,11,0.2); color:#fbbf24;">流程困難</span></td>
+                <td>假日突發流量導致 AMS 房卡劃撥日誌匯出超時</td>
+                <td>營運部 / 王組長</td>
+                <td>研發中心 / 元翔</td>
+                <td><span class="status-badge status-investigating">處理中</span></td>
+                <td><span class="sla-pill yellow">⏳ 剩餘 1.5 天</span></td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="viewCaseDetail('TKT-20261004-0019')">檢視結果</button></td>
+              </tr>
+              <tr>
+                <td><strong style="color:#38bdf8;">TKT-20261005-0023</strong></td>
+                <td><span class="badge-tag" style="background:rgba(16,185,129,0.2); color:#34d399;">例外申請</span></td>
+                <td>國慶春節棋牌賽事加急外包合約款先行電匯申請</td>
+                <td>推廣部 / 張總監</td>
+                <td>財務長 / 李副總</td>
+                <td><span class="status-badge status-approved">例外生效中</span></td>
+                <td><span class="sla-pill green">有效至 2026-10-31</span></td>
+                <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="viewCaseDetail('TKT-20261005-0023')">檢視結果</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 制度管理五大核心指標 (EXECUTIVE DASHBOARD)                           -->
+    <!-- ========================================================================= -->
+    <section id="tab-dashboard" class="tab-pane">
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-label">有效制度 Owner 完整率</div>
+          <div class="bento-val" style="color:#34d399;">100%</div>
+          <div class="bento-sub">全公司 72 份四階文件均有唯一法定負責人</div>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-label">適用同仁宣導完成率</div>
+          <div class="bento-val" style="color:#38bdf8;">98.5%</div>
+          <div class="bento-sub">關鍵崗位均落實情境測驗與實體交接簽認</div>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-label">案件準時回應率 (SLA)</div>
+          <div class="bento-val" style="color:#f59e0b;">96.8%</div>
+          <div class="bento-sub">平均初步回應 0.8 天，正式結案 2.6 天</div>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-label">逾期未結案件數</div>
+          <div class="bento-val" style="color:#34d399;">0 <span style="font-size:0.9rem; font-weight:normal;">件</span></div>
+          <div class="bento-sub">超過 5 天未提計畫案自動呈報制度管理主席</div>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-label">同類問題再發率</div>
+          <div class="bento-val" style="color:#34d399;">1.8%</div>
+          <div class="bento-sub">遠低於 3.0% 控制門檻，改版後有效遏止摩擦</div>
+        </div>
+      </div>
+
+      <!-- Closed-loop Visual Card -->
+      <div class="form-card" style="margin-top:16px;">
+        <h4 style="color:#f59e0b; margin-bottom:12px; font-size:1.05rem;">🔄 公司制度管理六階段全生命週期閉環</h4>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:12px;">
+          
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">📢 1. 發布</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">唯一有效版入口發布，附一頁變更摘要表</div>
+          </div>
+
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">💡 2. 理解</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">高風險規範安排情境題，不流於形式簽署</div>
+          </div>
+
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">⚙️ 3. 執行</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">嚴格依四階表單留痕，日常檢驗合規證據</div>
+          </div>
+
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">🛎️ 4. 回報</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">統一入口填單，不究責主動回報缺陷同仁</div>
+          </div>
+
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">🛠️ 5. 改善</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">指派單一 Owner，提出處置計畫與留存證據</div>
+          </div>
+
+          <div style="background:rgba(23,13,7,0.9); border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:14px; text-align:center;">
+            <div style="font-size:1.3rem;">📝 6. 改版</div>
+            <div style="font-size:0.75rem; color:#cbd5e1; margin-top:4px;">由 FAQ 上升至法定文件修訂，舊版標廢止</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: 敏感申訴與重大應變通道 (CONFIDENTIAL CHANNEL)                         -->
+    <!-- ========================================================================= -->
+    <section id="tab-confidential" class="tab-pane">
+      <div class="form-card" style="border-color:#ef4444; background: linear-gradient(180deg, rgba(38,15,15,0.95) 0%, rgba(20,10,10,0.95) 100%);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <div style="font-size:1.8rem;">🔒</div>
+          <div>
+            <h3 style="color:#f87171; font-size:1.2rem; font-weight:800;">獨立保密檢舉、申訴與重大危機專用通道</h3>
+            <p style="font-size:0.8rem; color:#fca5a5;">本通道完全隔離於日常營運台帳，案件僅有獨立指派之專案調查小組可調閱，絕不洩漏提案者個資。</p>
+          </div>
+        </div>
+
+        <div style="font-size:0.84rem; color:#e2e8f0; line-height:1.7; margin-bottom:20px;">
+          <strong>適用範圍：</strong><br>
+          1. <strong>貪腐與回扣舞弊：</strong> 採購收受外包回扣、代理商私下折讓、私收現金開桌。<br>
+          2. <strong>利益衝突未申報：</strong> 主管與合作供應商存在親屬、持股或借貸關係。<br>
+          3. <strong>職場騷擾與重大不公：</strong> 權勢性騷擾、言語霸凌、惡意考績報復。<br>
+          4. <strong>重大資料竊密：</strong> 核心棋牌洗牌算法、原始碼或代理商名冊遭竊取。
+        </div>
+
+        <div style="background:rgba(0,0,0,0.4); border:1px solid rgba(239,68,68,0.4); border-radius:var(--radius-sm); padding:16px;">
+          <div style="font-weight:800; color:#fca5a5; margin-bottom:6px;">🛡️ 吹哨者 (Whistleblower) 法定保護原則：</div>
+          <ul style="font-size:0.78rem; color:#cbd5e1; padding-left:18px; line-height:1.6;">
+            <li>嚴格禁止對檢舉人進行任何解雇、降調、減薪或不利處分。</li>
+            <li>調查過程中被檢舉者全程迴避，不得參與案件查核。</li>
+            <li>直報管道：獨立稽核室專線 <code>audit@shengqigamers.com</code> 或直報獨立董事信箱。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span>🎉</span> 案件已成功受理並建立法定留痕！
+      </div>
+      <div class="modal-body">
+        感謝您的具體回報！系統已將案件正式納入盛欣網絡制度管理閉環，並指派權責制度 Owner 依照 SLA 時效進行調查與答覆。
+        <div class="ticket-badge-display" id="modalTicketId">TKT-20261007-0042</div>
+        <div style="font-size:0.78rem; color:#94a3b8; text-align:center;">
+          您可隨時至<strong>「我的案件與處理台帳」</strong>檢視進度，系統亦同步寄發進度追蹤信至您的公務信箱。
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <button class="btn btn-primary" onclick="closeModal()">前往案件台帳檢視</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div id="detailModal" class="modal-overlay">
+    <div class="modal-box" style="max-width:650px;">
+      <div class="modal-header">
+        <span>📋</span> 案件處置履歷與改善留痕
+      </div>
+      <div class="modal-body" id="detailModalContent">
+        <!-- Injected via JS -->
+      </div>
+      <div style="text-align:right;">
+        <button class="btn btn-secondary" onclick="closeDetailModal()">關閉視窗</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Logic -->
+  <script>
+    // Tab Switching
+    function switchPortalTab(tabId, btn) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    // Dynamic Issue Type Selection
+    function selectIssueType(type, cardEl) {
+      document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
+      cardEl.classList.add('selected');
+      document.getElementById('selectedCaseType').value = type;
+
+      // Hide all conditional blocks
+      document.querySelectorAll('.conditional-block').forEach(b => b.classList.remove('active'));
+
+      // Show relevant block
+      const targetBlock = document.getElementById('block-' + type);
+      if (targetBlock) {
+        targetBlock.classList.add('active');
+      }
+    }
+
+    // Quick pick from Document Library to Form
+    function quickPickDoc(docName) {
+      switchPortalTab('tab-submit', document.querySelector('.nav-btn'));
+      const select = document.getElementById('relatedDoc');
+      let found = false;
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(docName.split(' ')[0])) {
+          select.selectedIndex = i;
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        select.value = 'OTHER 其他未涵蓋事項';
+      }
+      document.getElementById('issueSubject').value = `【針對 ${docName}】執行疑義與流程探討`;
+      document.getElementById('issueSubject').focus();
+    }
+
+    // Filter Document Table
+    function filterDocsTable() {
+      const q = document.getElementById('searchDocInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#docsTable tbody tr');
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        r.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+
+    // Handle Form Submit
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const type = document.getElementById('selectedCaseType').value;
+      const reporter = document.getElementById('reporterName').value;
+      const dept = document.getElementById('reporterDept').value;
+      const subject = document.getElementById('issueSubject').value;
+
+      // Generate Ticket ID
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const today = new Date().toISOString().slice(0,10).replace(/-/g, '');
+      const ticketId = `TKT-${today}-${randomNum}`;
+
+      document.getElementById('modalTicketId').textContent = ticketId;
+
+      // Map Type Label
+      let typeLabel = '條文疑問';
+      let owner = '制度管理秘書';
+      let sla = '<span class="sla-pill green">⏳ 剩餘 3 天 (SLA)</span>';
+
+      if (type === 'process') {
+        typeLabel = '流程困難';
+        owner = '流程 Owner / 研發部';
+        sla = '<span class="sla-pill yellow">⏳ 剩餘 5 天 (計畫)</span>';
+      } else if (type === 'exception') {
+        typeLabel = '例外申請';
+        owner = document.getElementById('exceptionApprover').value;
+        sla = '<span class="sla-pill yellow">⏳ 待主管簽核 (1天內)</span>';
+      } else if (type === 'critical') {
+        typeLabel = '重大事件';
+        owner = '資安官 / 值班SRE';
+        sla = '<span class="sla-pill red">🚨 立即應變中</span>';
+      }
+
+      // Prepend to Tracker Table
+      const tbody = document.getElementById('trackerTableBody');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong style="color:#f59e0b;">${ticketId}</strong></td>
+        <td><span class="badge-tag">${typeLabel}</span></td>
+        <td>${escapeHtml(subject)}</td>
+        <td>${escapeHtml(dept)} / ${escapeHtml(reporter.split('/')[0])}</td>
+        <td>${escapeHtml(owner)}</td>
+        <td><span class="status-badge status-pending">已受理分派</span></td>
+        <td>${sla}</td>
+        <td><button class="btn btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="viewCaseDetail('${ticketId}', '${escapeHtml(subject)}', '${typeLabel}', '${escapeHtml(reporter)}')">檢視結果</button></td>
+      `;
+      tbody.insertBefore(tr, tbody.firstChild);
+
+      // Show Modal
+      document.getElementById('successModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').classList.remove('active');
+      document.getElementById('issueReportForm').reset();
+      selectIssueType('faq', document.querySelectorAll('.type-card')[0]);
+      switchPortalTab('tab-tracker', document.querySelectorAll('.nav-btn')[2]);
+    }
+
+    function viewCaseDetail(ticketId, subject, typeLabel, reporter) {
+      const modal = document.getElementById('detailModal');
+      const content = document.getElementById('detailModalContent');
+      
+      content.innerHTML = `
+        <div style="background:rgba(245,158,11,0.1); border-left:3px solid #f59e0b; padding:10px 14px; margin-bottom:14px;">
+          <div style="font-size:1.05rem; font-weight:800; color:#fbbf24;">${ticketId}</div>
+          <div style="font-size:0.85rem; color:#fdfbf7; margin-top:4px;">${subject || 'SOP條款執行疑義確認'}</div>
+        </div>
+        <div style="font-size:0.8rem; line-height:1.7; color:#cbd5e1;">
+          <strong>• 案件類型：</strong> ${typeLabel || '制度疑問'}<br>
+          <strong>• 受理時間：</strong> 2026-10-07 09:30 (系統自動留痕)<br>
+          <strong>• 指定處置 Owner：</strong> 制度主管 / 採購處長<br>
+          <strong>• 目前處置進度：</strong> <span style="color:#34d399;">已完成初部調查並出具正式解釋</span><br>
+          <strong>• 處置證據與結果：</strong><br>
+          <div style="background:#120a05; padding:10px; border-radius:6px; margin-top:6px; font-family:sans-serif; color:#e2e8f0; border:1px solid rgba(217,119,6,0.2);">
+            「經查核 SOP-PUR-01 第二章第4條，針對 Anthropic/OpenAI 等原廠直售 SaaS，確實得依單一來源立案免除實體三家比價。本案已正式將此解釋收錄進《雲端採購 FAQ-04》，並排定於 11 月份年度改版時增列正式但書。」
+          </div>
+        </div>
+      `;
+      modal.classList.add('active');
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.remove('active');
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text.replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+      });
+    }
+
+    function filterTrackerTable() {
+      const status = document.getElementById('filterStatus').value;
+      const rows = document.querySelectorAll('#trackerTableBody tr');
+      rows.forEach(r => {
+        if (status === 'all') {
+          r.style.display = '';
+        } else {
+          r.style.display = r.textContent.includes(status) ? '' : 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
