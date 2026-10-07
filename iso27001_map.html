@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO 27001:2022 資安治理全景地圖 ＆ 四階文件管理閉環與問題回報中心</title>
+  <style>
+    :root {
+      --bg-base: #090d16;
+      --bg-card: #0f172a;
+      --bg-card-hover: #1e293b;
+      --border-color: rgba(148, 163, 184, 0.15);
+      --border-highlight: #38bdf8;
+      --primary: #0284c7;
+      --accent-cyan: #38bdf8;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Hero Header */
+    .hero-header {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-header::after {
+      content: "";
+      position: absolute;
+      top: -50px; right: -50px; width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge-strip {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .tag.amber {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--accent-amber);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .tag.emerald {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .hero-title {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 1050px;
+    }
+
+    /* Navigation Bar */
+    .nav-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-bar::-webkit-scrollbar { height: 4px; }
+    .nav-bar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+    .nav-tab-btn {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .nav-tab-btn:hover {
+      background: rgba(30, 41, 59, 0.95);
+      color: var(--accent-cyan);
+    }
+
+    .nav-tab-btn.active {
+      background: #0f172a;
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+      border-bottom: 2px solid var(--accent-cyan);
+      box-shadow: 0 -4px 12px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Special Highlight for Dedicated Tab */
+    .nav-tab-btn.special-tab {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+      border-color: var(--accent-amber);
+      color: #fbbf24;
+      font-weight: 800;
+    }
+
+    .nav-tab-btn.special-tab.active {
+      border-color: #f59e0b;
+      border-bottom: 2px solid #f59e0b;
+      color: #f59e0b;
+      box-shadow: 0 -4px 15px rgba(245, 158, 11, 0.25);
+    }
+
+    /* Tab Panes */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Common Card */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 860px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: rgba(10, 15, 29, 0.8);
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      text-align: left;
+    }
+
+    th {
+      background: #1e293b;
+      color: var(--accent-cyan);
+      padding: 12px 14px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--accent-cyan);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      color: #cbd5e1;
+    }
+
+    tr:hover td {
+      background: rgba(56, 189, 248, 0.05);
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .badge-pill.new { background: rgba(244, 63, 94, 0.2); color: #fca5a5; border: 1px solid #f43f5e; }
+    .badge-pill.mod { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid #f59e0b; }
+    .badge-pill.str { background: rgba(56, 189, 248, 0.2); color: #bae6fd; border: 1px solid #38bdf8; }
+    .badge-pill.ret { background: rgba(16, 185, 129, 0.2); color: #a7f3d0; border: 1px solid #10b981; }
+
+    /* Bento KPI Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .bento-box {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bento-box::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent-cyan);
+    }
+
+    .bento-box.amber::before { background: var(--accent-amber); }
+    .bento-box.emerald::before { background: var(--accent-emerald); }
+
+    .bento-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 4px 0 2px 0;
+    }
+
+    .bento-lbl {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .bento-hint {
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+
+    /* Forms */
+    input, select, textarea {
+      background: #090d16;
+      border: 1px solid #334155;
+      border-radius: var(--radius-sm);
+      color: #f8fafc;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      outline: none;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      transform: translateY(-2px);
+    }
+
+    .btn-amber {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      color: #ffffff;
+    }
+
+    .btn-amber:hover {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 4px 10px;
+      font-size: 0.72rem;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-backdrop.active { display: flex; }
+
+    .modal-card {
+      background: #0f172a;
+      border: 2px solid var(--accent-amber);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      padding: 26px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+      animation: modalPop 0.25s ease-out;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="badge-strip">
+        <span class="tag">ISO/IEC 27001:2022 ISMS</span>
+        <span class="tag amber">★ 93 項控制 ＆ 11 項新增控制</span>
+        <span class="tag emerald">Amd 1:2024 氣候變遷修訂</span>
+        <span class="tag">四階文件管理閉環 SOP</span>
+      </div>
+      <div class="hero-title">
+        <span>🛡️</span> ISO 27001:2022 資安治理全景地圖 ＆ 四階制度管理閉環中心
+      </div>
+      <div class="hero-desc">
+        完整收錄 ISO 27001:2022 標準條文 4–10、附錄 A 93 項控制措施、新舊轉版對照與稽核驗證指引。並正式開闢<strong>「四階文件管理閉環與統一問題回報中心」</strong>，將 Clause 7.5 (文件化資訊)、Clause 10 (持續改善) 與 Control 5.36/5.37 (作業程序遵循) 轉化為同仁<strong>「查閱、提問、流程困難回報、例外申請與 SLA 追蹤」</strong>之可運作治理閉環。
+      </div>
+    </header>
+
+    <!-- Top Navigation Bar -->
+    <nav class="nav-bar">
+      <button class="nav-tab-btn active" onclick="switchTab('tab-roadmap', this)">
+        <span>🗺️</span> 學習與落地路線
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-clauses', this)">
+        <span>📜</span> 條文 4–10 與改版差異
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-annexa', this)">
+        <span>🛡️</span> 附錄 A (93項控制 & 11項新控制)
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-transition', this)">
+        <span>🔄</span> 2013 轉版 2022 對照
+      </button>
+      <button class="nav-tab-btn special-tab" onclick="switchTab('tab-governance-portal', this)">
+        <span>🏛️</span> 四階制度閉環與問題回報中心
+      </button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-audit', this)">
+        <span>🔍</span> 稽核驗證與主稽指引
+      </button>
+    </nav>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: 學習與落地路線 (ROADMAP)                                            -->
+    <!-- ========================================================================= -->
+    <section id="tab-roadmap" class="tab-pane active">
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>🗺️</span> ISMS 落地三條主線（依組織成熟度選擇）</div>
+          <span class="tag">PDCA 持續改善循環</span>
+        </div>
+
+        <div class="grid-3">
+          <!-- Route 1 -->
+          <div style="background:rgba(30,41,59,0.5); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="tag">路線 1</span>
+              <span style="color:var(--accent-cyan); font-weight:800; font-size:0.78rem;">從 0 到 1 取得證書</span>
+            </div>
+            <h4 style="color:#ffffff; margin-bottom:8px;">🐣 第一次導入 ISMS</h4>
+            <ol style="font-size:0.8rem; color:#cbd5e1; padding-left:18px; line-height:1.8;">
+              <li><strong>看懂骨架：</strong> 理解高階結構 (HLS) 與 PDCA 循環。</li>
+              <li><strong>範圍與領導：</strong> 確立 4.3 驗證範圍邊界與管理階層承諾。</li>
+              <li><strong>風險評鑑：</strong> 資產鑑別、威脅脆弱點與 6.1.3 SoA。</li>
+              <li><strong>文件與控制落地：</strong> 建立四階文件體系與落實管制。</li>
+              <li><strong>檢查與改善：</strong> 執行 9.2 內部稽核與 9.3 管理審查。</li>
+              <li><strong>迎接驗證：</strong> Stage 1 文件審查與 Stage 2 實體稽核。</li>
+            </ol>
+          </div>
+
+          <!-- Route 2 -->
+          <div style="background:rgba(30,41,59,0.5); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="tag amber">路線 2</span>
+              <span style="color:var(--accent-amber); font-weight:800; font-size:0.78rem;">轉版與長治久安</span>
+            </div>
+            <h4 style="color:#ffffff; margin-bottom:8px;">📈 已取得驗證：維運與精進</h4>
+            <ol style="font-size:0.8rem; color:#cbd5e1; padding-left:18px; line-height:1.8;">
+              <li><strong>2022 版落地檢查：</strong> 盤點 11 項新增控制與 SoA 93 項改寫。</li>
+              <li><strong>量測與管理審查：</strong> 追蹤可量化資安目標與持續改善。</li>
+              <li><strong>事件、供應商與雲端：</strong> 落實 5.23 雲端資安與 5.21 供應鏈。</li>
+              <li><strong>監督與重新驗證：</strong> 年度 Surveillance 追查與 3 年重新換證。</li>
+            </ol>
+          </div>
+
+          <!-- Route 3 -->
+          <div style="background:rgba(30,41,59,0.5); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="tag emerald">路線 3</span>
+              <span style="color:var(--accent-emerald); font-weight:800; font-size:0.78rem;">專家職涯與查核</span>
+            </div>
+            <h4 style="color:#ffffff; margin-bottom:8px;">🎓 稽核員與證照準備</h4>
+            <ol style="font-size:0.8rem; color:#cbd5e1; padding-left:18px; line-height:1.8;">
+              <li><strong>稽核基礎：</strong> ISO 19011 稽核指引與抽樣方法論。</li>
+              <li><strong>稽核實作：</strong> 開場會議、現場提問技巧與客觀證據查驗。</li>
+              <li><strong>發現與報告：</strong> 判定符合、觀察事項 (OFI) 或不符合 (NCR)。</li>
+              <li><strong>角色與證照：</strong> CQI IRCA 主任稽核員考證與 iPAS 資安工程師。</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: 條文 4–10 與改版差異 (CLAUSES 4-10)                                 -->
+    <!-- ========================================================================= -->
+    <section id="tab-clauses" class="tab-pane">
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>📜</span> ISO 27001:2022 核心條文 4–10 改版要求對照表</div>
+          <span class="tag">含 2024 氣候變遷 (Amd 1) 修訂</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:110px;">條號</th>
+                <th style="width:160px;">2013 版條文</th>
+                <th>2022 版實質變化</th>
+                <th style="width:90px;">類型</th>
+                <th>實務上組織必須做什麼</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>4.2 利害關係者</strong></td>
+                <td>決定利害關係者之資安要求</td>
+                <td>新增要求：需明確決定這些要求中，<strong>「哪些會透過 ISMS 來處理」</strong>。</td>
+                <td><span class="badge-pill mod">修改</span></td>
+                <td>利害關係者清單需多增一欄「是否由 ISMS 處理、如何對應處置」，稽核必查。</td>
+              </tr>
+              <tr>
+                <td><strong>4.4 ISMS 系統</strong></td>
+                <td>建立、實施、維持並持續改善</td>
+                <td>明確要求 ISMS 需包含所需的<strong>「過程及其交互作用 (Processes & Interactions)」</strong>。</td>
+                <td><span class="badge-pill mod">修改</span></td>
+                <td>以流程圖或過程清單，說清楚 ISMS 由哪些過程組成、彼此如何串接（如：風險評鑑流向 SoA）。</td>
+              </tr>
+              <tr>
+                <td><strong>6.1.3 風險處理</strong></td>
+                <td>附錄 A 包含控制目標與措施</td>
+                <td>附錄 A 不再列控制目標，改為「資訊安全控制清單 (93項)」，且註明非完整清單。</td>
+                <td><span class="badge-pill str">結構</span></td>
+                <td>重新編製 93 項適用性聲明書 (SoA)，逐項敘明納入/排除理由與實施狀態。</td>
+              </tr>
+              <tr>
+                <td><strong>6.2 資安目標</strong></td>
+                <td>訂定可量測資安目標</td>
+                <td>新增<strong>「目標要被監督 (monitored)」</strong>，並以文件化資訊形式保存。</td>
+                <td><span class="badge-pill mod">修改</span></td>
+                <td>每個資安目標要有追蹤記錄（誰在何時檢視進度、達成百分比），不能只在年初寫一次。</td>
+              </tr>
+              <tr>
+                <td><strong>6.3 變更規劃</strong></td>
+                <td>(2013 版無此條文)</td>
+                <td><strong>【全新條文】</strong>要求 ISMS 若有變更時，必須「有規劃地進行」。</td>
+                <td><span class="badge-pill new">新增</span></td>
+                <td>建立 ISMS 變更評估程序：組織架構調整、系統汰換、機房遷移前先評估對資安之影響並留痕。</td>
+              </tr>
+              <tr>
+                <td><strong>7.5 文件化資訊</strong></td>
+                <td>文件的建立、更新與管制</td>
+                <td>要求文件化資訊必須具備識別、格式、審查與核准，並妥善保護防止未授權存取。</td>
+                <td><span class="badge-pill ret">沿用</span></td>
+                <td>建立四階文件體系、有效版本控管，並落實問題回報與定期改版閉環。</td>
+              </tr>
+              <tr>
+                <td><strong>8.1 運作規劃</strong></td>
+                <td>規劃、實施並管制委外過程</td>
+                <td>新增訂定過程運作準則；「委外過程」擴大為<strong>「外部提供的過程、產品或服務」</strong>。</td>
+                <td><span class="badge-pill mod">修改</span></td>
+                <td>將所有雲端 SaaS (如 ChatGPT/Claude)、軟體採購與委外團隊全面納入管制範圍。</td>
+              </tr>
+              <tr>
+                <td><strong>9.3 管理審查</strong></td>
+                <td>管理審查輸入與輸出</td>
+                <td>審查輸入新增<strong>「利害關係者需要與期望的變化」</strong>。</td>
+                <td><span class="badge-pill mod">修改</span></td>
+                <td>每年管理審查會議紀錄必須列入此項討論，並審議同仁回報之制度疑義與改善結果。</td>
+              </tr>
+              <tr>
+                <td><strong>10 改善</strong></td>
+                <td>10.1 不符合 / 10.2 持續改善</td>
+                <td>順序對調：<strong>10.1 持續改善、10.2 不符合與矯正措施</strong>。</td>
+                <td><span class="badge-pill str">結構</span></td>
+                <td>修改程序書與表單上引用的條號編碼，強調主動持續改善優於被動矯正。</td>
+              </tr>
+              <tr>
+                <td><strong>Amd 1:2024</strong></td>
+                <td>(氣候變遷修訂)</td>
+                <td>4.1 判斷氣候變遷是否為相關議題；4.2 加註利害關係者可能有氣候相關要求。</td>
+                <td><span class="badge-pill mod">修訂</span></td>
+                <td>無需換證；但管理審查與背景分析需留存「已評估氣候變遷對機房/營運無重大衝擊」之紀錄。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: 附錄 A (93項控制 & 11項新控制)                                       -->
+    <!-- ========================================================================= -->
+    <section id="tab-annexa" class="tab-pane">
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>🛡️</span> 附錄 A 93 項控制措施架構 ＆ 11 項 2022 全新控制</div>
+          <span class="tag amber">四大主題分類</span>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-box">
+            <div class="bento-lbl">組織控制 (Organizational)</div>
+            <div class="bento-num" style="color:var(--accent-cyan);">37 <span style="font-size:0.9rem;">項</span></div>
+            <div class="bento-hint">政策、角色、SoD、雲端資安、威脅情資、合約</div>
+          </div>
+          <div class="bento-box emerald">
+            <div class="bento-lbl">人員控制 (People)</div>
+            <div class="bento-num" style="color:var(--accent-emerald);">8 <span style="font-size:0.9rem;">項</span></div>
+            <div class="bento-hint">任用前審查、認知教育訓練、保密合約、離職交接</div>
+          </div>
+          <div class="bento-box amber">
+            <div class="bento-lbl">實體控制 (Physical)</div>
+            <div class="bento-num" style="color:var(--accent-amber);">14 <span style="font-size:0.9rem;">項</span></div>
+            <div class="bento-hint">實體安全邊界、門禁、實體監視、安全作業區</div>
+          </div>
+          <div class="bento-box">
+            <div class="bento-lbl">技術控制 (Technological)</div>
+            <div class="bento-num" style="color:var(--accent-rose);">34 <span style="font-size:0.9rem;">項</span></div>
+            <div class="bento-hint">身分認證、存取權限、組態、DLP、安全編碼</div>
+          </div>
+        </div>
+
+        <h4 style="color:#ffffff; margin:16px 0 8px 0;">🌟 2022 版 11 項全新控制措施 (New Controls) 落地重點</h4>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:120px;">2022 條號</th>
+                <th style="width:180px;">控制名稱</th>
+                <th style="width:90px;">主題</th>
+                <th>核心意涵與落地要求</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>5.7</strong></td>
+                <td>威脅情資 (Threat intelligence)</td>
+                <td>組織</td>
+                <td>主動蒐集國內外資安威脅情資 (如 TWCERT/CC)，轉化為具體防禦行動與規則庫更新。</td>
+              </tr>
+              <tr>
+                <td><strong>5.23</strong></td>
+                <td>雲端服務資安 (Cloud services)</td>
+                <td>組織</td>
+                <td>對 AWS/GCP/SaaS (如 ChatGPT) 建立取得、使用至退出機制，明定共同責任模型 (Shared Responsibility)。</td>
+              </tr>
+              <tr>
+                <td><strong>5.30</strong></td>
+                <td>ICT 營運持續備妥 (ICT readiness)</td>
+                <td>組織</td>
+                <td>依 RTO/RPO 規劃並定期演練 ICT 災備復原能力，確保重大中斷時於期限內恢復上線。</td>
+              </tr>
+              <tr>
+                <td><strong>7.4</strong></td>
+                <td>實體安全監視 (Physical monitoring)</td>
+                <td>實體</td>
+                <td>以 CCTV、入侵警報等持續監看機房與重要辦公區域，防範未授權入侵。</td>
+              </tr>
+              <tr>
+                <td><strong>8.9</strong></td>
+                <td>組態管理 (Configuration management)</td>
+                <td>技術</td>
+                <td>為伺服器、網路設備與容器訂定標準安全基準 (Baseline)，建立防範未授權變更機制。</td>
+              </tr>
+              <tr>
+                <td><strong>8.10</strong></td>
+                <td>資訊刪除 (Information deletion)</td>
+                <td>技術</td>
+                <td>不再需要的資料必須依法規與隱私要求安全抹除，杜絕被逆向復原。</td>
+              </tr>
+              <tr>
+                <td><strong>8.11</strong></td>
+                <td>資料遮罩 (Data masking)</td>
+                <td>技術</td>
+                <td>依資訊分級對身分證字號、信用卡號、玩家個資進行遮罩或雜湊，保護測試環境。</td>
+              </tr>
+              <tr>
+                <td><strong>8.12</strong></td>
+                <td>資料外洩防護 (Data leakage prevention)</td>
+                <td>技術</td>
+                <td>部署 DLP 工具偵測並阻斷機密原始碼、玩家資料被複製至隨身碟或外發至個人雲端。</td>
+              </tr>
+              <tr>
+                <td><strong>8.16</strong></td>
+                <td>監控活動 (Monitoring activities)</td>
+                <td>技術</td>
+                <td>監控網路流量、主機日誌與特權帳號行為，偵測異常存取並觸發警報。</td>
+              </tr>
+              <tr>
+                <td><strong>8.23</strong></td>
+                <td>網頁過濾 (Web filtering)</td>
+                <td>技術</td>
+                <td>管制員工瀏覽惡意釣魚網頁、非法下載站或未核准之匿名代理網站。</td>
+              </tr>
+              <tr>
+                <td><strong>8.28</strong></td>
+                <td>安全程式碼撰寫 (Secure coding)</td>
+                <td>技術</td>
+                <td>將安全要求納入軟體開發 (DevSecOps)，落實 SAST 掃描、代碼審查與開源套件 SBOM 檢核。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 2013 轉版 2022 對照 (TRANSITION)                                    -->
+    <!-- ========================================================================= -->
+    <section id="tab-transition" class="tab-pane">
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>🔄</span> 2013 舊版 14 領域 到 2022 新版 4 主題 整合統計</div>
+          <span class="tag">114 項控制整併為 93 項</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>2013 領域 (Annex A)</th>
+                <th>舊控制數</th>
+                <th>組織 (37)</th>
+                <th>人員 (8)</th>
+                <th>實體 (14)</th>
+                <th>技術 (34)</th>
+                <th>整併重點說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A.5 資訊安全政策</td>
+                <td>2</td>
+                <td>2</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>合併為 5.1 資訊安全政策</td>
+              </tr>
+              <tr>
+                <td>A.6 資訊安全的組織</td>
+                <td>7</td>
+                <td>5</td>
+                <td>1</td>
+                <td>-</td>
+                <td>1</td>
+                <td>專案資安、專案職能整併</td>
+              </tr>
+              <tr>
+                <td>A.7 人力資源安全</td>
+                <td>6</td>
+                <td>1</td>
+                <td>5</td>
+                <td>-</td>
+                <td>-</td>
+                <td>任用條款與懲處程序整合</td>
+              </tr>
+              <tr>
+                <td>A.8 資產管理</td>
+                <td>10</td>
+                <td>7</td>
+                <td>-</td>
+                <td>3</td>
+                <td>-</td>
+                <td>資產清冊與分級標示整合</td>
+              </tr>
+              <tr>
+                <td>A.9 存取控制</td>
+                <td>14</td>
+                <td>9</td>
+                <td>-</td>
+                <td>-</td>
+                <td>5</td>
+                <td>身分管理、密碼驗證整併</td>
+              </tr>
+              <tr>
+                <td>A.10 密碼學</td>
+                <td>2</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2</td>
+                <td>整併至 8.24 密碼學使用</td>
+              </tr>
+              <tr>
+                <td>A.11 實體與環境安全</td>
+                <td>15</td>
+                <td>-</td>
+                <td>-</td>
+                <td>14</td>
+                <td>1</td>
+                <td>實體進出管制與設施保全整併</td>
+              </tr>
+              <tr>
+                <td>A.12 運作安全</td>
+                <td>14</td>
+                <td>1</td>
+                <td>-</td>
+                <td>-</td>
+                <td>13</td>
+                <td>惡意代碼、備份與日誌管理整合</td>
+              </tr>
+              <tr>
+                <td>A.13 通訊安全</td>
+                <td>7</td>
+                <td>3</td>
+                <td>1</td>
+                <td>-</td>
+                <td>3</td>
+                <td>網路隔離與資訊傳遞協議整合</td>
+              </tr>
+              <tr>
+                <td>A.14 系統獲取與開發</td>
+                <td>13</td>
+                <td>1</td>
+                <td>-</td>
+                <td>-</td>
+                <td>12</td>
+                <td>開發環境隔離與測試資料保護</td>
+              </tr>
+              <tr>
+                <td>A.15 供應商關係</td>
+                <td>5</td>
+                <td>5</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>整併為 5.19～5.22 供應商系列</td>
+              </tr>
+              <tr>
+                <td>A.16 事故管理</td>
+                <td>7</td>
+                <td>5</td>
+                <td>2</td>
+                <td>-</td>
+                <td>-</td>
+                <td>事件評估、通報與鑑識證據收集</td>
+              </tr>
+              <tr>
+                <td>A.17 營運持續管理</td>
+                <td>4</td>
+                <td>3</td>
+                <td>-</td>
+                <td>-</td>
+                <td>1</td>
+                <td>整合至 5.29 與 5.30 ICT備妥</td>
+              </tr>
+              <tr>
+                <td>A.18 遵循性</td>
+                <td>8</td>
+                <td>8</td>
+                <td>-</td>
+                <td>-</td>
+                <td>1</td>
+                <td>智財、法規與隱私 PII 保護整合</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: 四階文件管理閉環與統一問題回報中心 (THE DEDICATED TAB REQUESTED!)       -->
+    <!-- ========================================================================= -->
+    <section id="tab-governance-portal" class="tab-pane">
+      
+      <!-- Top Banner -->
+      <div class="card" style="border: 2px solid #f59e0b; background: linear-gradient(135deg, rgba(31,19,11,0.98) 0%, rgba(18,10,5,0.95) 100%); box-shadow: 0 0 25px rgba(245, 158, 11, 0.2);">
+        <div class="card-header-line" style="border-bottom-color: rgba(245, 158, 11, 0.3);">
+          <div>
+            <div style="font-size:0.75rem; color:#fbbf24; font-weight:800; letter-spacing:1px; margin-bottom:4px;">
+              ISO 27001 CLAUSE 7.5 (文件化資訊) ＆ CLAUSE 10 (持續改善) 實體閉環機制
+            </div>
+            <div class="card-title" style="color:#fbbf24; font-size:1.4rem;">
+              <span>🏛️</span> 公司制度入口 ＋ 統一問題回報 ＋ 分級處理與管理閉環中心
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:#fde68a; background:rgba(245,158,11,0.2); padding:6px 14px; border-radius:20px; border:1px solid #f59e0b; font-weight:800;">
+            ✓ 牽制制衡 ＆ 拒絕紙上談兵
+          </div>
+        </div>
+        
+        <p style="font-size:0.86rem; color:#e2e8f0; line-height:1.7;">
+          <strong>治理原則：</strong> 同仁從同一個入口查閱有效規範、提出疑問、回報執行困難及申請例外；後端則由制度負責人 (Owner) 依 SLA 時限處理。<strong>高階主管只接收重大、逾期及跨部門待決策事項，不必親自承接每一件問題。</strong><br>
+          把<strong>「發布 ➔ 理解 ➔ 執行 ➔ 回報 ➔ 改善 ➔ 改版」</strong>串成可運作的實體閉環，徹底解決「規章寫一套、同仁做一套、出事推不知道」的管理沉痾。
+        </p>
+      </div>
+
+      <!-- Part 1: Four-Tier Alignment with ISO 27001 -->
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>📚</span> 一、 四階文件架構與 ISO 27001:2022 控制措施對應鏈</div>
+          <span class="tag">雙向追溯控制鏈</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:130px;">文件階層</th>
+                <th style="width:180px;">文件名稱範例</th>
+                <th>應規範的重點與意涵</th>
+                <th style="width:220px;">對應 ISO 27001:2022 條文</th>
+                <th style="width:140px;">核准與維護權責</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong style="color:#fca5a5;">一階：政策方針</strong><br>(Policy)</td>
+                <td>公司資訊安全與制度管理政策</td>
+                <td>有效文件來源、適用對象、遵循原則、提出問題的權利、重大事項升級原則。</td>
+                <td>• <strong>Clause 5.2</strong> 資安政策<br>• <strong>Control 5.1</strong> 政策制定與檢討</td>
+                <td>董事會 / 總經理核准<br>制度秘書發布</td>
+              </tr>
+              <tr>
+                <td><strong style="color:#fde68a;">二階：管理程序</strong><br>(Procedure)</td>
+                <td>制度發布與問題回報管理辦法<br>採購與付款管理辦法</td>
+                <td>文件核准發布、教育宣導、案件分類、權責、處理期限、例外核准及改版流程。</td>
+                <td>• <strong>Clause 7.5</strong> 文件化資訊<br>• <strong>Clause 8.1</strong> 運作規劃管制<br>• <strong>Control 5.36</strong> 政策遵循</td>
+                <td>各業務主責主管起草<br>跨部門會簽核准</td>
+              </tr>
+              <tr>
+                <td><strong style="color:#bae6fd;">三階：作業指引</strong><br>(SOP / WI)</td>
+                <td>同仁提問與回報操作指引<br>雲端 AI 工具 (ChatGPT) 使用 SOP</td>
+                <td>如何找文件、選擇回報類型、填寫資料、分派案件、回覆、結案及更新 FAQ。</td>
+                <td>• <strong>Control 5.37</strong> 文件化作業程序<br>• <strong>Control 5.23</strong> 雲端資安<br>• <strong>Control 8.28</strong> 安全編碼</td>
+                <td>技術/營運單位主管核定<br>第一線同仁遵循</td>
+              </tr>
+              <tr>
+                <td><strong style="color:#a7f3d0;">四階：表單紀錄</strong><br>(Forms & Records)</td>
+                <td>制度問題回報單、例外申請單<br>案件追蹤台帳、改版記錄</td>
+                <td>留下誰提出、依據哪個版本、誰決定、如何處理及是否有效的不可篡改客觀證據。</td>
+                <td>• <strong>Clause 9.1</strong> 監視與量測<br>• <strong>Clause 10.2</strong> 矯正措施證據<br>• <strong>Control 5.33</strong> 紀錄保護</td>
+                <td>經辦與主管簽核<br>受控儲存 Shared Drive</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Part 2: Interactive Smart Problem Reporting Form -->
+      <div class="card" style="border: 1px solid rgba(56, 189, 248, 0.4);">
+        <div class="card-header-line">
+          <div class="card-title"><span>📝</span> 二、 統一問題回報與例外申請平台 (互動智慧表單)</div>
+          <span class="tag amber">基本欄位 ＋ 依類型動態展開</span>
+        </div>
+
+        <div style="background:rgba(56,189,248,0.08); border-left:4px solid var(--accent-cyan); padding:10px 14px; border-radius:4px; font-size:0.82rem; margin-bottom:18px;">
+          💡 <strong>動態表單防呆機制：</strong> 系統依您點選的「案件類型」自動展開專業審查欄位。完成送出後將即時生成案件追蹤編號 (Ticket ID)，並自動寫入下方的處理台帳與 SLA 倒數計時器。
+        </div>
+
+        <!-- Issue Form -->
+        <form id="isoIssueForm" onsubmit="handleIsoFormSubmit(event)">
+          
+          <!-- Category Selector -->
+          <div style="margin-bottom:16px;">
+            <label style="font-size:0.82rem; font-weight:800; color:#ffffff; display:block; margin-bottom:6px;">
+              <span style="color:#ef4444;">*</span> 步驟一：選擇案件回報類型 (點選以展開專屬欄位)
+            </label>
+            <div class="grid-4" style="margin-bottom:6px;">
+              
+              <div class="bento-box" style="cursor:pointer; border-color:#38bdf8;" id="cat-card-faq" onclick="selectIsoType('faq')">
+                <div style="font-weight:800; color:#38bdf8; font-size:0.88rem;">💡 條文疑問</div>
+                <div style="font-size:0.74rem; color:var(--text-muted); margin-top:4px;">詢問規範條文如何解讀、自己或專案是否適用。由制度 Owner 解釋並更新 FAQ。</div>
+              </div>
+
+              <div class="bento-box" style="cursor:pointer;" id="cat-card-process" onclick="selectIsoType('process')">
+                <div style="font-weight:800; color:#fbbf24; font-size:0.88rem;">⚠️ 流程困難／改善建議</div>
+                <div style="font-size:0.74rem; color:var(--text-muted); margin-top:4px;">回報流程做不到、權責重疊衝突、表單不合理。納入制度修訂改善閉環。</div>
+              </div>
+
+              <div class="bento-box" style="cursor:pointer;" id="cat-card-exception" onclick="selectIsoType('exception')">
+                <div style="font-weight:800; color:#34d399; font-size:0.88rem;">⚖️ 制度例外申請</div>
+                <div style="font-size:0.74rem; color:var(--text-muted); margin-top:4px;">申請特定條件下之暫行做法。必須具備替代控制措施、明確到期日與主管簽核。</div>
+              </div>
+
+              <div class="bento-box" style="cursor:pointer;" id="cat-card-critical" onclick="selectIsoType('critical')">
+                <div style="font-weight:800; color:#f87171; font-size:0.88rem;">🚨 資安／重大營運事件</div>
+                <div style="font-size:0.74rem; color:var(--text-muted); margin-top:4px;">重大資安漏洞、系統中斷、資料洩漏。啟動緊急應變程序，不排一般提問隊列。</div>
+              </div>
+
+            </div>
+            <input type="hidden" id="isoSelectedType" value="faq">
+          </div>
+
+          <!-- Base Fields Grid -->
+          <div class="grid-2">
+            <div>
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 提報同仁姓名 / 工號
+              </label>
+              <input type="text" id="isoName" placeholder="例如：張建銘 / TECH-0145" required>
+            </div>
+
+            <div>
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 所屬部門
+              </label>
+              <select id="isoDept" required>
+                <option value="">請選擇部門...</option>
+                <option value="研發技術中心">🕹️ 研發技術中心 (Client/Server/Algorithm)</option>
+                <option value="資安與維運中心">🛡️ 資安與維運中心 (CISO/SecOps/SRE)</option>
+                <option value="推廣部門">🎯 推廣部門 (Agency Promotion & BD)</option>
+                <option value="營運部門">⚙️ 營運部門 (LiveOps & AMS)</option>
+                <option value="品管測試部">🧪 品管測試部 (QA)</option>
+                <option value="財務會計部">💰 財務會計部 (Finance & AP)</option>
+                <option value="採購部">🛒 採購部 (Procurement)</option>
+                <option value="法務風控部">⚖️ 法務風控部 (Legal & Compliance)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 聯絡 Email (接收審查回覆)
+              </label>
+              <input type="email" id="isoEmail" placeholder="user@organization.com" required>
+            </div>
+
+            <div>
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 關聯之有效制度／條款
+              </label>
+              <select id="isoDocRef" required>
+                <option value="">請選擇制度或填寫編號...</option>
+                <option value="POL-SEC-01 資訊安全整體政策 (一階)">POL-SEC-01 資訊安全整體政策 (一階)</option>
+                <option value="SOP-DEV-02 DevSecOps 與代碼審查指引 (三階)">SOP-DEV-02 DevSecOps 與代碼審查指引 (三階)</option>
+                <option value="SOP-PUR-01 請採驗付與雲端工具採購程序 (二階)">SOP-PUR-01 請採驗付與雲端工具採購程序 (二階)</option>
+                <option value="SOP-ACC-03 存取權限審查與離職停權SOP (三階)">SOP-ACC-03 存取權限審查與離職停權SOP (三階)</option>
+                <option value="SOP-BCP-04 ICT營運持續與災難備援演練指引 (三階)">SOP-BCP-04 ICT營運持續與災難備援演練指引 (三階)</option>
+                <option value="FM-SEC-06 伺服器重大變更申請單 (四階)">FM-SEC-06 伺服器重大變更申請單 (四階)</option>
+                <option value="OTHER 其他未列入之新業務情境">OTHER 其他未列入之新業務情境</option>
+              </select>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 案件主旨 (請以一句話摘要核心問題)
+              </label>
+              <input type="text" id="isoSubject" placeholder="例如：SOP-DEV-02 關於緊急修復代碼跳過 PR 審查之例外規範疑義" required>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:4px; display:block;">
+                <span style="color:#ef4444;">*</span> 事實陳述與詳細說明
+              </label>
+              <textarea id="isoDesc" rows="3" placeholder="請詳細列明目前遇到之執行困難、條款衝突處或具體情境..." required></textarea>
+            </div>
+
+            <!-- Conditional Section: FAQ -->
+            <div id="iso-dyn-faq" style="grid-column: 1 / -1; background:rgba(30,41,59,0.4); border:1px dashed #38bdf8; border-radius:6px; padding:12px;">
+              <div style="font-size:0.82rem; font-weight:800; color:#38bdf8; margin-bottom:6px;">💡 條文疑問專屬資訊</div>
+              <input type="text" id="isoFaqClause" placeholder="具體疑義條款（如：第三章第2條『存取控制原則』）">
+            </div>
+
+            <!-- Conditional Section: Process -->
+            <div id="iso-dyn-process" style="grid-column: 1 / -1; display:none; background:rgba(30,41,59,0.4); border:1px dashed #f59e0b; border-radius:6px; padding:12px;">
+              <div style="font-size:0.82rem; font-weight:800; color:#f59e0b; margin-bottom:6px;">⚠️ 流程阻礙與建議改善解法</div>
+              <textarea id="isoProcessSuggestion" rows="2" placeholder="由第一線執行者提出建議解法（例如：修改表單欄位、將人工審查改為自動化檢測）..."></textarea>
+            </div>
+
+            <!-- Conditional Section: Exception -->
+            <div id="iso-dyn-exception" style="grid-column: 1 / -1; display:none; background:rgba(30,41,59,0.4); border:1px dashed #10b981; border-radius:6px; padding:12px;">
+              <div style="font-size:0.82rem; font-weight:800; color:#10b981; margin-bottom:6px;">⚖️ 制度例外核准要求 (有期限的暫行，非永久修改制度)</div>
+              <div class="grid-2">
+                <div>
+                  <label style="font-size:0.75rem; color:#cbd5e1;">例外有效迄日 (到期自動失效)</label>
+                  <input type="date" id="isoExceptionDate">
+                </div>
+                <div>
+                  <label style="font-size:0.75rem; color:#cbd5e1;">替代控制措施 (Compensating Controls)</label>
+                  <input type="text" id="isoExceptionMitigation" placeholder="如：由主架構師全程雙人監控並啟動日誌錄影">
+                </div>
+              </div>
+            </div>
+
+            <!-- Conditional Section: Critical -->
+            <div id="iso-dyn-critical" style="grid-column: 1 / -1; display:none; background:rgba(239,68,68,0.15); border:1px solid #ef4444; border-radius:6px; padding:12px; color:#fca5a5;">
+              <div style="font-size:0.82rem; font-weight:800; color:#f87171; margin-bottom:4px;">🚨 重大應變通知</div>
+              <div style="font-size:0.78rem;">線上突發事件請立即同步於緊急資安群組通報值班 SOC/SRE，本表單僅作審計事件留痕用途！</div>
+            </div>
+
+          </div>
+
+          <!-- Submit Buttons -->
+          <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+            <button type="reset" class="btn" style="background:#334155; color:#cbd5e1;">清空重填</button>
+            <button type="submit" class="btn btn-amber">
+              <span>🚀</span> 確認送出並生成案件編號 (SLA 列管)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Part 3: Live Case Tracking & SLA Kanban -->
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>📊</span> 三、 制度案件處置台帳與 SLA 服務水準追蹤</div>
+          <span class="tag emerald">逾期自動升級列管</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="isoTrackerTable">
+            <thead>
+              <tr>
+                <th>案件編號</th>
+                <th>類型</th>
+                <th>案件主旨</th>
+                <th>提報部門 / 同仁</th>
+                <th>指定承辦 Owner</th>
+                <th>狀態</th>
+                <th>SLA 處置目標</th>
+                <th>審查結果</th>
+              </tr>
+            </thead>
+            <tbody id="isoTrackerTbody">
+              <tr>
+                <td><strong style="color:var(--accent-cyan);">TKT-20261007-0031</strong></td>
+                <td><span class="badge-pill str">條文疑問</span></td>
+                <td>雲端工具採購是否強制落實 ISO 42001 資料不訓練審查？</td>
+                <td>研發中心 / 林架構師</td>
+                <td>資安長 (CISO)</td>
+                <td><span class="tag emerald">已正式答覆</span></td>
+                <td><span style="font-family:monospace; font-size:0.72rem; color:#34d399;">✓ 已結案 (1.1天)</span></td>
+                <td>已正式函覆並增列至《AI採購 FAQ-03》</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--accent-cyan);">TKT-20261006-0028</strong></td>
+                <td><span class="badge-pill mod">流程困難</span></td>
+                <td>離職當日 18:00 註銷 Google 帳號與交接資料之權限衝突</td>
+                <td>人資部 / 許專案經理</td>
+                <td>管理處長</td>
+                <td><span class="tag amber">計畫研議中</span></td>
+                <td><span style="font-family:monospace; font-size:0.72rem; color:#fbbf24;">⏳ 剩餘 1.8 天 (SLA)</span></td>
+                <td>預計修訂二階離職指引，增設 24hr 唯讀交接沙箱</td>
+              </tr>
+              <tr>
+                <td><strong style="color:var(--accent-cyan);">TKT-20261005-0019</strong></td>
+                <td><span class="badge-pill ret">例外申請</span></td>
+                <td>國慶春節伺服器零停機壓測跳過例行夜間備份之核准</td>
+                <td>SRE 維運組 / 陳組長</td>
+                <td>技術副總</td>
+                <td><span class="tag emerald">例外生效中</span></td>
+                <td><span style="font-family:monospace; font-size:0.72rem; color:#34d399;">有效至 2026-10-15</span></td>
+                <td>已備妥手動冷備份與即時 Oplog 快照替代方案</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Part 4: Executive Closed-loop Dashboard -->
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>📈</span> 四、 制度管理委員會 5 大核心指標（高階管理審查輸入）</div>
+          <span class="tag">管理審查 9.3 規定輸入項</span>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-box">
+            <div class="bento-lbl">有效制度 Owner 完整率</div>
+            <div class="bento-num" style="color:#34d399;">100%</div>
+            <div class="bento-hint">所有有效規範均有唯一專責主管</div>
+          </div>
+          <div class="bento-box emerald">
+            <div class="bento-lbl">適用同仁宣導完成率</div>
+            <div class="bento-num" style="color:var(--accent-cyan);">98.5%</div>
+            <div class="bento-hint">高風險規範具備情境測驗確認</div>
+          </div>
+          <div class="bento-box amber">
+            <div class="bento-lbl">案件準時回應率 (SLA)</div>
+            <div class="bento-num" style="color:#f59e0b;">96.8%</div>
+            <div class="bento-hint">1天內確認受理、3天內出具答覆</div>
+          </div>
+          <div class="bento-box">
+            <div class="bento-lbl">逾期待決案件數</div>
+            <div class="bento-num" style="color:#34d399;">0 <span style="font-size:0.9rem;">件</span></div>
+            <div class="bento-hint">無超過升級門檻之積壓案件</div>
+          </div>
+          <div class="bento-box">
+            <div class="bento-lbl">同類問題再發率</div>
+            <div class="bento-num" style="color:#34d399;">1.8%</div>
+            <div class="bento-hint">遠低於 3.0% 控制門檻</div>
+          </div>
+        </div>
+
+        <!-- 6-Stage Loop Visual -->
+        <h4 style="color:#ffffff; margin:14px 0 8px 0;">🔄 發布 ➔ 理解 ➔ 執行 ➔ 回報 ➔ 改善 ➔ 改版 閉環流轉機制</h4>
+        <div class="grid-3" style="font-size:0.8rem; color:#cbd5e1;">
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:var(--accent-cyan);">1. 發布 (Publish)：</strong> 統一由制度入口發布唯一有效版，舊版明確標記廢止，附一頁變更摘要表。
+          </div>
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:var(--accent-cyan);">2. 理解 (Understand)：</strong> 依職務指派適用文件，高風險流程搭配簡短講解或操作確認，不流於形式簽署。
+          </div>
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:var(--accent-cyan);">3. 執行 (Execute)：</strong> 日常作業嚴格依三階指引操作，並於四階表單留下不可篡改執行證據。
+          </div>
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:var(--accent-amber);">4. 回報 (Feedback)：</strong> 建立統一入口與保護機制，鼓勵主動提出盲點，嚴禁究責提出缺陷之同仁。
+          </div>
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:var(--accent-amber);">5. 改善 (Remediation)：</strong> 指定唯一 Owner 與限期處置計畫，未採納亦具名告知理由，不讓問題沉沒。
+          </div>
+          <div style="background:rgba(30,41,59,0.4); border:1px solid var(--border-color); border-radius:6px; padding:12px;">
+            <strong style="color:#34d399;">6. 改版 (Revision)：</strong> 由 FAQ 解釋累積為法定規章修訂，並納入年度管理審查報告，形成完整良性循環。
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: 稽核驗證與主稽指引 (AUDIT & CERTIFICATION)                           -->
+    <!-- ========================================================================= -->
+    <section id="tab-audit" class="tab-pane">
+      <div class="card">
+        <div class="card-header-line">
+          <div class="card-title"><span>🔍</span> ISO 27001 稽核驗證程序 ＆ 查驗重點實務</div>
+          <span class="tag emerald">Stage 1 & Stage 2</span>
+        </div>
+
+        <div class="grid-2">
+          <!-- Stage 1 -->
+          <div style="background:rgba(30,41,59,0.5); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
+            <h4 style="color:#38bdf8; margin-bottom:8px;">📄 第一階段：文件審查 (Stage 1 Audit)</h4>
+            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+              <strong>核心目的：</strong> 評估組織 ISMS 文件是否符合標準基本架構，確認是否具備進入第二階段之就緒度。<br>
+              <strong>主稽必查清單：</strong>
+              <ul style="padding-left:18px; margin-top:6px;">
+                <li>ISMS 驗證範圍書 (4.3) 與組織全景分析 (4.1/4.2)</li>
+                <li>資安政策 (5.2) 與適用性聲明書 (SoA 6.1.3，93項控制)</li>
+                <li>風險評鑑報告與風險處理計畫 (RTP 6.1.2/6.1.3)</li>
+                <li>至少一次完整的內部稽核報告 (9.2)</li>
+                <li>至少一次完整的管理審查會議紀錄 (9.3)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div style="background:rgba(30,41,59,0.5); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:18px;">
+            <h4 style="color:#10b981; margin-bottom:8px;">🧪 第二階段：現場實施查核 (Stage 2 Audit)</h4>
+            <div style="font-size:0.82rem; color:#cbd5e1; line-height:1.7;">
+              <strong>核心目的：</strong> 驗證文件所寫規範在組織日常營運中是否「真實落地、留有客觀證據」。<br>
+              <strong>現場抽樣查核重點：</strong>
+              <ul style="padding-left:18px; margin-top:6px;">
+                <li>抽查新進/離職員工權限申請單與離職當日停權日誌 (6.5/5.18)</li>
+                <li>現場抽驗伺服器標準組態基準與防毒更新 (8.9/8.7)</li>
+                <li>實地走訪機房門禁進出登記與 CCTV 監視器留存 (7.2/7.4)</li>
+                <li>抽查資安事件通報紀錄與事後檢討矯正措施 (5.24/10.2)</li>
+                <li>抽驗備份還原演練紀錄與復原成功率 (8.13/5.30)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Modal for Ticket Created -->
+  <div id="isoSuccessModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div style="font-size:1.25rem; font-weight:900; color:#fbbf24; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+        <span>🎉</span> 案件已受理並建立 ISO 27001 客觀證據留痕！
+      </div>
+      <div style="font-size:0.86rem; color:#cbd5e1; line-height:1.6; margin-bottom:18px;">
+        您的問題已成功送入組織制度管理閉環。系統已指派權責制度 Owner 依 SLA 目標展開調查，並將於時限內回覆。
+        <div style="background:rgba(245,158,11,0.15); border:1px dashed #f59e0b; padding:12px; border-radius:6px; text-align:center; font-family:monospace; font-size:1.2rem; font-weight:800; color:#fbbf24; margin:12px 0;" id="isoModalTkt">
+          TKT-20261007-0099
+        </div>
+        <div style="font-size:0.75rem; color:#94a3b8; text-align:center;">
+          可隨時在「案件處置台帳」檢視進度，或依此編號向制度秘書查詢。
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <button class="btn btn-amber" onclick="closeIsoModal()">返回台帳檢視</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-tab-btn').forEach(el => el.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    function selectIsoType(type) {
+      document.getElementById('isoSelectedType').value = type;
+
+      // Update card styles
+      ['faq', 'process', 'exception', 'critical'].forEach(t => {
+        const c = document.getElementById('cat-card-' + t);
+        if (c) c.style.borderColor = (t === type) ? '#38bdf8' : 'rgba(148, 163, 184, 0.15)';
+      });
+
+      // Toggle dynamic divs
+      document.getElementById('iso-dyn-faq').style.display = (type === 'faq') ? 'block' : 'none';
+      document.getElementById('iso-dyn-process').style.display = (type === 'process') ? 'block' : 'none';
+      document.getElementById('iso-dyn-exception').style.display = (type === 'exception') ? 'block' : 'none';
+      document.getElementById('iso-dyn-critical').style.display = (type === 'critical') ? 'block' : 'none';
+    }
+
+    function handleIsoFormSubmit(e) {
+      e.preventDefault();
+
+      const type = document.getElementById('isoSelectedType').value;
+      const name = document.getElementById('isoName').value;
+      const dept = document.getElementById('isoDept').value;
+      const subject = document.getElementById('isoSubject').value;
+
+      const rand = Math.floor(1000 + Math.random() * 9000);
+      const today = new Date().toISOString().slice(0,10).replace(/-/g, '');
+      const tktId = `TKT-${today}-${rand}`;
+
+      document.getElementById('isoModalTkt').textContent = tktId;
+
+      let typeBadge = '<span class="badge-pill str">條文疑問</span>';
+      let owner = '制度管理秘書';
+      let sla = '<span style="font-family:monospace; font-size:0.72rem; color:#38bdf8;">⏳ 剩餘 3 天 (SLA)</span>';
+
+      if (type === 'process') {
+        typeBadge = '<span class="badge-pill mod">流程困難</span>';
+        owner = '流程 Owner / 研發部';
+        sla = '<span style="font-family:monospace; font-size:0.72rem; color:#fbbf24;">⏳ 剩餘 5 天 (計畫)</span>';
+      } else if (type === 'exception') {
+        typeBadge = '<span class="badge-pill ret">例外申請</span>';
+        owner = '技術副總 (Tech VP)';
+        sla = '<span style="font-family:monospace; font-size:0.72rem; color:#34d399;">⏳ 待主管核簽 (1天內)</span>';
+      } else if (type === 'critical') {
+        typeBadge = '<span class="badge-pill new">重大事件</span>';
+        owner = '資安官 / 值班SOC';
+        sla = '<span style="font-family:monospace; font-size:0.72rem; color:#f87171;">🚨 立即應變中</span>';
+      }
+
+      const tbody = document.getElementById('isoTrackerTbody');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong style="color:var(--accent-amber);">${tktId}</strong></td>
+        <td>${typeBadge}</td>
+        <td>${escapeText(subject)}</td>
+        <td>${escapeText(dept)} / ${escapeText(name.split('/')[0])}</td>
+        <td>${escapeText(owner)}</td>
+        <td><span class="tag amber">已受理分派</span></td>
+        <td>${sla}</td>
+        <td>已分派權責主管進行評估中</td>
+      `;
+      tbody.insertBefore(tr, tbody.firstChild);
+
+      document.getElementById('isoSuccessModal').classList.add('active');
+    }
+
+    function closeIsoModal() {
+      document.getElementById('isoSuccessModal').classList.remove('active');
+      document.getElementById('isoIssueForm').reset();
+      selectIsoType('faq');
+    }
+
+    function escapeText(text) {
+      if (!text) return '';
+      return text.replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+      });
+    }
+  </script>
+</body>
+</html>
