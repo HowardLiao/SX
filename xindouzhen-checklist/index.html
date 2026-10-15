@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>鑫鬥陣設立建置待辦</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: 單欄任務帳本 — 頂部雙人進度、依階段分組的勾選列，每列標註負責人與地點 */
+:root, [data-theme="deep-obsidian"] {
+  --bg-primary:#020617; --bg-surface:#0F172A; --bg-card:#111c33; --border-color:#1e2b45;
+  --text-primary:#F8FAFC; --text-muted:#94A3B8; --accent-primary:#38BDF8; --accent-strong:#0284C7;
+  --owner-a:#F59E0B; --owner-b:#38BDF8; --owner-c:#A78BFA; --done:#34D399; --warn:#F59E0B;
+  --font-display:"Noto Serif TC", "PingFang TC", serif;
+  --font-body:"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+[data-theme="milan-amber"] {
+  --bg-primary:#FBFBFA; --bg-surface:#FFFFFF; --bg-card:#FFFFFF; --border-color:#E7E2DA;
+  --text-primary:#2D3748; --text-muted:#6B6F76; --accent-primary:#DE5814; --accent-strong:#A83212;
+  --owner-a:#A83212; --owner-b:#D97706; --owner-c:#4A5568; --done:#2F855A; --warn:#D97706; color-scheme: light;
+}
+[data-theme="egyptian-pharaoh"] {
+  --bg-primary:#FAF7F0; --bg-surface:#FFFDF8; --bg-card:#FFFDF8; --border-color:#E5DCC6;
+  --text-primary:#1C1917; --text-muted:#6B6253; --accent-primary:#1E3A8A; --accent-strong:#D97706;
+  --owner-a:#D97706; --owner-b:#0D9488; --owner-c:#1E3A8A; --done:#0D9488; --warn:#B45309; color-scheme: light;
+}
+[data-theme="gustav-klimt"] {
+  --bg-primary:#1A150D; --bg-surface:#241C10; --bg-card:#2B2214; --border-color:#4A3A1E;
+  --text-primary:#FEF3C7; --text-muted:#C9B68A; --accent-primary:#F59E0B; --accent-strong:#B45309;
+  --owner-a:#F59E0B; --owner-b:#FDE68A; --owner-c:#EA580C; --done:#A3E635; --warn:#F59E0B; color-scheme: dark;
+}
+[data-theme="mika-ninagawa"] {
+  --bg-primary:#0A0512; --bg-surface:#150A22; --bg-card:#1C0E2C; --border-color:#3A1B4F;
+  --text-primary:#FFF1F2; --text-muted:#D6A9BF; --accent-primary:#E11D48; --accent-strong:#06B6D4;
+  --owner-a:#E11D48; --owner-b:#06B6D4; --owner-c:#A855F7; --done:#06B6D4; --warn:#FB7185; color-scheme: dark;
+}
+[data-theme="joan-miro"] {
+  --bg-primary:#FAF9F6; --bg-surface:#FFFFFF; --bg-card:#FFFFFF; --border-color:#18181B;
+  --text-primary:#18181B; --text-muted:#52525B; --accent-primary:#2563EB; --accent-strong:#DC2626;
+  --owner-a:#DC2626; --owner-b:#2563EB; --owner-c:#CA8A04; --done:#2563EB; --warn:#B45309; color-scheme: light;
+}
+
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 28px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--accent-primary); text-transform: uppercase; }
+h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(26px, 5vw, 38px); line-height: 1.2; margin: 4px 0 6px; text-wrap: balance; }
+.sub { color: var(--text-muted); margin: 0; max-width: 62ch; }
+.theme-pick { display: grid; gap: 4px; font-size: 12px; color: var(--text-muted); }
+select, button { font: inherit; color: var(--text-primary); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 6px 10px; }
+select:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+
+.sites { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.site { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; display: grid; gap: 2px; }
+.site b { font-family: var(--font-display); font-size: 18px; }
+.site span { color: var(--text-muted); font-size: 13px; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.person { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; display: grid; gap: 10px; min-width: 0; }
+.person .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.person .name { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+.person .role { color: var(--text-muted); font-size: 13px; }
+.person .count { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 14px; }
+.bar { height: 8px; border-radius: 99px; background: var(--border-color); overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; border-radius: 99px; transition: width .4s ease; }
+.p-a .bar > i { background: var(--owner-a); } .p-b .bar > i { background: var(--owner-b); } .p-c .bar > i { background: var(--owner-c); }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { cursor: pointer; border-radius: 99px; padding: 5px 14px; }
+.filters button[aria-pressed="true"] { background: var(--accent-primary); border-color: var(--accent-primary); color: var(--bg-primary); font-weight: 700; }
+.status { font-size: 13px; color: var(--text-muted); }
+.status.warn { color: var(--warn); }
+label.hide-done { font-size: 13px; color: var(--text-muted); display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+
+section.phase { display: grid; gap: 8px; }
+.phase-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+.phase-head h2 { font-family: var(--font-display); font-size: 20px; margin: 0; }
+.phase-head .where { font-size: 12px; font-family: var(--font-mono); color: var(--accent-primary); }
+.phase-head .pc { margin-left: auto; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+ul.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+li.task { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; padding: 12px 14px; background: var(--bg-surface); border: 1px solid var(--border-color); border-left: 4px solid var(--owner-color, var(--border-color)); border-radius: 10px; }
+li.task.o-a { --owner-color: var(--owner-a); } li.task.o-b { --owner-color: var(--owner-b); } li.task.o-c { --owner-color: var(--owner-c); }
+li.task input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--done); cursor: pointer; }
+li.task input:disabled { cursor: not-allowed; }
+.t-body { min-width: 0; display: grid; gap: 3px; }
+.t-title { font-weight: 500; }
+.t-note { font-size: 13px; color: var(--text-muted); }
+.t-dep { font-size: 12px; color: var(--warn); }
+.t-meta { font-size: 13px; font-weight: 500; color: var(--done); font-variant-numeric: tabular-nums; }
+.tag { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--owner-color); color: var(--owner-color); white-space: nowrap; }
+li.task.done .t-title { text-decoration: line-through; color: var(--text-muted); }
+li.task.done { opacity: .78; }
+
+.advice { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; display: grid; gap: 6px; }
+.advice h3 { margin: 0; font-family: var(--font-display); font-size: 17px; }
+.advice ul { margin: 0; padding-left: 1.2em; color: var(--text-muted); }
+.advice b { color: var(--text-primary); }
+footer { font-size: 12px; color: var(--text-muted); }
+@media (max-width: 480px) { li.task { grid-template-columns: auto 1fr; } li.task .tag { grid-column: 2; justify-self: start; } }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+<style>html{color-scheme:dark}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">鑫鬥陣 · Company Setup · IT Build-out</div>
+      <h1>鑫鬥陣｜嘉義設立・台中建置待辦</h1>
+      <p class="sub">依《公司初期 IT 建置清單（精簡可執行版）》整理，補上公司設立與跨地點交接事項。勾選與完成時間記錄在你自己的瀏覽器。</p>
+    </div>
+    <label class="theme-pick" for="theme">主題風格
+      <select id="theme">
+        <option value="deep-obsidian">曜石黑高階戰情</option>
+        <option value="milan-amber">米蘭編排暖琥珀</option>
+        <option value="egyptian-pharaoh">埃及法老美學</option>
+        <option value="gustav-klimt">古斯塔夫·克林姆</option>
+        <option value="mika-ninagawa">蜷川實花</option>
+        <option value="joan-miro">胡安·米羅</option>
+      </select>
+    </label>
+  </header>
+
+  <div class="sites">
+    <div class="site"><span>公司登記地</span><b>嘉義</b><span>設立登記、稅籍、銀行、合約用印</span></div>
+    <div class="site"><span>資訊及網路安裝地</span><b>台中</b><span>企業專線、網通設備、電腦、內網</span></div>
+  </div>
+
+  <div class="people">
+    <div class="person p-a">
+      <div class="row"><span class="name">嘉祥</span><span class="count" id="cnt-a">0 / 0</span></div>
+      <div class="role">公司治理・設立申辦</div>
+      <div class="bar"><i id="bar-a"></i></div>
+    </div>
+    <div class="person p-b">
+      <div class="row"><span class="name">雅雅</span><span class="count" id="cnt-b">0 / 0</span></div>
+      <div class="role">營運・推廣・資通設備</div>
+      <div class="bar"><i id="bar-b"></i></div>
+    </div>
+    <div class="person p-c">
+      <div class="row"><span class="name">盛欣團隊</span><span class="count" id="cnt-c">0 / 0</span></div>
+      <div class="role">IT 建置技術：網通・內網・雲端・遠端</div>
+      <div class="bar"><i id="bar-c"></i></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="filters" role="group" aria-label="篩選負責人">
+      <button type="button" data-f="all" aria-pressed="true">全部</button>
+      <button type="button" data-f="a" aria-pressed="false">嘉祥</button>
+      <button type="button" data-f="b" aria-pressed="false">雅雅</button>
+      <button type="button" data-f="c" aria-pressed="false">盛欣團隊</button>
+    </div>
+    <label class="hide-done" for="hideDone"><input type="checkbox" id="hideDone"> 隱藏已完成</label>
+  </div>
+  <div class="status" id="status"></div>
+
+  <main id="list"></main>
+
+  <div class="advice">
+    <h3>原簡報的現實建議</h3>
+    <ul>
+      <li><b>網路</b>：直接 500M 起跳，不要省。</li>
+      <li><b>RAM</b>：32GB 是底線，不是選配。</li>
+      <li><b>Domain</b>：第一天就買，品牌就是信任。</li>
+    </ul>
+  </div>
+  <footer>標「補充」的項目不在原 IT 建置清單內，是依「嘉義登記、台中作業」的分工安排所加，請自行確認是否需要。</footer>
+</div>
+
+<script>
+const OWNERS = { a: "嘉祥", b: "雅雅", c: "盛欣團隊" };
+const PHASES = [
+  { id: "setup", name: "公司設立", where: "嘉義", tasks: [
+    { id: "s1", o: "a", t: "公司名稱及所營事業登記預查", n: "經濟部商工登記一站式服務線上申請，所營事業代碼需涵蓋資訊服務相關項目。", extra: true },
+    { id: "s2", o: "a", t: "確定嘉義登記地址並備妥證明文件", n: "租約或房屋使用同意書、房屋稅單影本。", extra: true },
+    { id: "s3", o: "a", t: "資本額匯入籌備處帳戶，委託會計師出具資本額查核報告", extra: true },
+    { id: "s4", o: "a", t: "備妥章程、股東同意書／董事會議事錄，刻公司大小章", extra: true },
+    { id: "s5", o: "a", t: "向嘉義主管機關申請公司設立登記", n: "依地址屬嘉義市或嘉義縣送件；取得核准函與設立登記表。", extra: true },
+    { id: "s6", o: "a", t: "國稅局辦理營業（稅籍）登記，取得統一編號", n: "同步申請統一發票購票證。", extra: true },
+    { id: "s7", o: "a", t: "籌備處帳戶轉為公司正式帳戶", extra: true },
+    { id: "s8", o: "a", t: "評估台中作業據點是否需辦分公司或營業場所登記", n: "人員與設備實際在台中運作，請與會計師確認稅籍與登記上的要求。", extra: true },
+    { id: "s9", o: "a", t: "將設立登記表、統編、大小章用印流程交接給雅雅與盛欣團隊", n: "後續企業專線、網域、協作工具申辦都需要公司文件。", extra: true },
+  ]},
+  { id: "net", name: "申請企業網路（對稱型）", where: "台中", tasks: [
+    { id: "n1", o: "b", t: "確認台中安裝地址可用的業者與企業方案並比價", n: "中華電信／台灣大／遠傳，優先選「企業專線」或「商用方案」。速率：300M/300M 基本、500M/500M 建議、1G/1G 多人＋雲服務密集。" },
+    { id: "n2", o: "a", t: "以公司名義簽署企業專線合約", n: "準備設立登記表、大小章；合約副本交雅雅存檔。", dep: "需先完成：公司設立登記、統一編號", extra: true },
+    { id: "n3", o: "b", t: "預約台中現場施工並驗收實測速率", n: "上下行都要測，確認為對稱速率。" },
+  ]},
+  { id: "hw", name: "設備採購", where: "台中", tasks: [
+    { id: "h1", o: "b", t: "購買工作用電腦", n: "RAM ≥ 32GB（遠端開發／多系統／VM 必備）、CPU i7 / Ryzen 7 以上、SSD ≥ 1TB。" },
+    { id: "h3", o: "b", t: "購買視訊協同設備", n: "視訊鏡頭（1080p 以上、廣角）、會議麥克風喇叭（全向收音、降噪）、會議用螢幕或電視；確認相容 Google Meet / Microsoft Teams。" },
+    { id: "h2", o: "b", t: "採購發票開立公司統編，單據交嘉祥入帳", dep: "需先取得統一編號", extra: true },
+  ]},
+  { id: "lan", name: "網路環境", where: "台中", tasks: [
+    { id: "l1", o: "c", t: "採購並安裝基本網通設備：Router + Firewall", n: "選可管理型設備，不用家用機。" },
+    { id: "l2", o: "c", t: "內網規劃：固定 IP / DHCP 範圍", n: "後續系統部署會用到，建議同時建立設備與 IP 清冊。" },
+  ]},
+  { id: "cloud", name: "雲端與識別", where: "線上", tasks: [
+    { id: "c1", o: "b", t: "第一天註冊鑫鬥陣品牌網域", n: ".com / .tw / .io；若要 .com.tw 需檢附公司文件。" },
+    { id: "c2", o: "c", t: "設定 DNS 管理", n: "原清單寫 Akamai（免費＋安全＋CDN）。Akamai 多為企業付費方案，常見的免費選項是 Cloudflare，下單前請再確認。" },
+    { id: "c3", o: "c", t: "開通協作工具並綁定網域", n: "Google Workspace 或 Microsoft 365：Email、文件、帳號整合；設定 MX、SPF、DKIM。" },
+    { id: "c4", o: "a", t: "協作工具與網域的帳單抬頭、管理員備援帳號由公司保管", n: "避免帳號綁在個人名下。", extra: true },
+  ]},
+  { id: "remote", name: "遠端工作", where: "線上", tasks: [
+    { id: "r1", o: "c", t: "建置遠端連線方案", n: "VPN 或 Zero Trust（如 Tailscale），不直接對外開 Port。" },
+  ]},
+  { id: "ops", name: "營運與推廣", where: "台中", tasks: [
+    { id: "o1", o: "b", t: "建立鑫鬥陣官網或品牌頁", extra: true },
+    { id: "o2", o: "b", t: "以公司 Email 註冊鑫鬥陣社群帳號與 Google 商家檔案", extra: true },
+  ]},
+];
+const ALL = PHASES.flatMap(p => p.tasks);
+
+let state = {};        // id -> {done, by, at}
+let names = {};        // userId -> name
+let canWrite = false;
+let filter = "all";
+let hideDone = false;
+
+const $ = s => document.querySelector(s);
+const themeSel = $("#theme");
+try { const t = localStorage.getItem("todo-theme"); if (t) themeSel.value = t; } catch (e) {}
+document.body.dataset.theme = themeSel.value;
+themeSel.addEventListener("change", () => {
+  document.body.dataset.theme = themeSel.value;
+  try { localStorage.setItem("todo-theme", themeSel.value); } catch (e) {}
+});
+try { hideDone = localStorage.getItem("todo-hide") === "1"; } catch (e) {}
+$("#hideDone").checked = hideDone;
+$("#hideDone").addEventListener("change", e => {
+  hideDone = e.target.checked;
+  try { localStorage.setItem("todo-hide", hideDone ? "1" : "0"); } catch (e) {}
+  render();
+});
+document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+}));
+
+function fmt(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const p = n => String(n).padStart(2, "0");
+  const wk = "日一二三四五六"[d.getDay()];
+  return `${d.getFullYear()}/${p(d.getMonth() + 1)}/${p(d.getDate())}（${wk}）${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+function render() {
+  const list = $("#list");
+  list.textContent = "";
+  for (const p of PHASES) {
+    const tasks = p.tasks.filter(t => (filter === "all" || t.o === filter) && !(hideDone && state[t.id]?.done));
+    if (!tasks.length) continue;
+    const sec = document.createElement("section");
+    sec.className = "phase";
+    const doneN = p.tasks.filter(t => state[t.id]?.done).length;
+    const head = document.createElement("div");
+    head.className = "phase-head";
+    head.innerHTML = `<h2></h2><span class="where"></span><span class="pc"></span>`;
+    head.querySelector("h2").textContent = p.name;
+    head.querySelector(".where").textContent = "📍 " + p.where;
+    head.querySelector(".pc").textContent = `${doneN} / ${p.tasks.length}`;
+    sec.appendChild(head);
+    const ul = document.createElement("ul");
+    ul.className = "tasks";
+    for (const t of tasks) {
+      const s = state[t.id] || {};
+      const li = document.createElement("li");
+      li.className = `task o-${t.o}` + (s.done ? " done" : "");
+      const cb = document.createElement("input");
+      cb.type = "checkbox"; cb.id = "cb-" + t.id; cb.checked = !!s.done; cb.disabled = !canWrite;
+      cb.setAttribute("aria-label", t.t);
+      cb.addEventListener("change", () => toggle(t.id, cb.checked));
+      const body = document.createElement("div");
+      body.className = "t-body";
+      const title = document.createElement("label");
+      title.className = "t-title"; title.htmlFor = cb.id;
+      title.textContent = t.t + (t.extra ? "（補充）" : "");
+      body.appendChild(title);
+      if (t.n) { const n = document.createElement("div"); n.className = "t-note"; n.textContent = t.n; body.appendChild(n); }
+      if (t.dep && !s.done) { const d = document.createElement("div"); d.className = "t-dep"; d.textContent = "⚠ " + t.dep; body.appendChild(d); }
+      if (s.done && s.at) {
+        const m = document.createElement("div"); m.className = "t-meta";
+        const who = s.by && names[s.by];
+        m.textContent = `✓ 完成於 ${fmt(s.at)}` + (who ? `・${who}` : "");
+        body.appendChild(m);
+      }
+      const tag = document.createElement("span");
+      tag.className = "tag"; tag.textContent = OWNERS[t.o];
+      li.append(cb, body, tag);
+      ul.appendChild(li);
+    }
+    sec.appendChild(ul);
+    list.appendChild(sec);
+  }
+  if (!list.children.length) {
+    const p = document.createElement("p"); p.className = "status"; p.textContent = "這個篩選下沒有待辦了。"; list.appendChild(p);
+  }
+  for (const k of ["a", "b", "c"]) {
+    const mine = ALL.filter(t => t.o === k);
+    const d = mine.filter(t => state[t.id]?.done).length;
+    $("#cnt-" + k).textContent = `${d} / ${mine.length}`;
+    $("#bar-" + k).style.width = (mine.length ? d / mine.length * 100 : 0) + "%";
+  }
+}
+
+function toggle(id, done) {
+  state = { ...state, [id]: done ? { done: true, at: new Date().toISOString() } : { done: false } };
+  try { localStorage.setItem("todo-state", JSON.stringify(state)); }
+  catch (e) { setStatus("這個瀏覽器無法儲存勾選，重新整理後會消失。", true); }
+  render();
+}
+
+function setStatus(msg, warn) { const s = $("#status"); s.textContent = msg; s.classList.toggle("warn", !!warn); }
+
+canWrite = true;
+try { state = JSON.parse(localStorage.getItem("todo-state") || "{}") || {}; } catch (e) { state = {}; }
+setStatus("勾選只存在這個瀏覽器。三方共享進度請用 claude.ai 上的共享頁面。");
+render();
+</script>
+
+</body>
+</html>
