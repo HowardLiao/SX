@@ -7,40 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: 單欄任務帳本 — 頂部雙人進度、依階段分組的勾選列，每列標註負責人與地點 */
-:root, [data-theme="deep-obsidian"] {
-  --bg-primary:#020617; --bg-surface:#0F172A; --bg-card:#111c33; --border-color:#1e2b45;
-  --text-primary:#F8FAFC; --text-muted:#94A3B8; --accent-primary:#38BDF8; --accent-strong:#0284C7;
-  --owner-a:#F59E0B; --owner-b:#38BDF8; --owner-c:#A78BFA; --done:#34D399; --warn:#F59E0B;
+/* Layout: 單欄任務帳本 — 埃及法老美學風格 */
+:root {
+  --bg-primary:#FAF7F0; --bg-surface:#FFFDF8; --bg-card:#FFFDF8; --border-color:#E5DCC6;
+  --text-primary:#1C1917; --text-muted:#6B6253; --accent-primary:#1E3A8A; --accent-strong:#D97706;
+  --owner-a:#D97706; --owner-b:#0D9488; --owner-c:#1E3A8A; --done:#0D9488; --warn:#B45309;
   --font-display:"Noto Serif TC", "PingFang TC", serif;
   --font-body:"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --font-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
-  color-scheme: dark;
-}
-[data-theme="milan-amber"] {
-  --bg-primary:#FBFBFA; --bg-surface:#FFFFFF; --bg-card:#FFFFFF; --border-color:#E7E2DA;
-  --text-primary:#2D3748; --text-muted:#6B6F76; --accent-primary:#DE5814; --accent-strong:#A83212;
-  --owner-a:#A83212; --owner-b:#D97706; --owner-c:#4A5568; --done:#2F855A; --warn:#D97706; color-scheme: light;
-}
-[data-theme="egyptian-pharaoh"] {
-  --bg-primary:#FAF7F0; --bg-surface:#FFFDF8; --bg-card:#FFFDF8; --border-color:#E5DCC6;
-  --text-primary:#1C1917; --text-muted:#6B6253; --accent-primary:#1E3A8A; --accent-strong:#D97706;
-  --owner-a:#D97706; --owner-b:#0D9488; --owner-c:#1E3A8A; --done:#0D9488; --warn:#B45309; color-scheme: light;
-}
-[data-theme="gustav-klimt"] {
-  --bg-primary:#1A150D; --bg-surface:#241C10; --bg-card:#2B2214; --border-color:#4A3A1E;
-  --text-primary:#FEF3C7; --text-muted:#C9B68A; --accent-primary:#F59E0B; --accent-strong:#B45309;
-  --owner-a:#F59E0B; --owner-b:#FDE68A; --owner-c:#EA580C; --done:#A3E635; --warn:#F59E0B; color-scheme: dark;
-}
-[data-theme="mika-ninagawa"] {
-  --bg-primary:#0A0512; --bg-surface:#150A22; --bg-card:#1C0E2C; --border-color:#3A1B4F;
-  --text-primary:#FFF1F2; --text-muted:#D6A9BF; --accent-primary:#E11D48; --accent-strong:#06B6D4;
-  --owner-a:#E11D48; --owner-b:#06B6D4; --owner-c:#A855F7; --done:#06B6D4; --warn:#FB7185; color-scheme: dark;
-}
-[data-theme="joan-miro"] {
-  --bg-primary:#FAF9F6; --bg-surface:#FFFFFF; --bg-card:#FFFFFF; --border-color:#18181B;
-  --text-primary:#18181B; --text-muted:#52525B; --accent-primary:#2563EB; --accent-strong:#DC2626;
-  --owner-a:#DC2626; --owner-b:#2563EB; --owner-c:#CA8A04; --done:#2563EB; --warn:#B45309; color-scheme: light;
+  color-scheme: light;
 }
 
 body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-size: 15px; line-height: 1.6; }
@@ -50,9 +25,8 @@ header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-cont
 .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--accent-primary); text-transform: uppercase; }
 h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(26px, 5vw, 38px); line-height: 1.2; margin: 4px 0 6px; text-wrap: balance; }
 .sub { color: var(--text-muted); margin: 0; max-width: 62ch; }
-.theme-pick { display: grid; gap: 4px; font-size: 12px; color: var(--text-muted); }
-select, button { font: inherit; color: var(--text-primary); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 6px 10px; }
-select:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+button { font: inherit; color: var(--text-primary); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 6px 10px; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
 
 .sites { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .site { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; display: grid; gap: 2px; }
@@ -105,7 +79,7 @@ footer { font-size: 12px; color: var(--text-muted); }
 @media (max-width: 480px) { li.task { grid-template-columns: auto 1fr; } li.task .tag { grid-column: 2; justify-self: start; } }
 @media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
 </style>
-<style>html{color-scheme:dark}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<style>html{color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
 <body>
 <div class="wrap">
@@ -115,16 +89,6 @@ footer { font-size: 12px; color: var(--text-muted); }
       <h1>鑫鬥陣｜嘉義設立・台中建置待辦</h1>
       <p class="sub">依《公司初期 IT 建置清單（精簡可執行版）》整理，補上公司設立與跨地點交接事項。勾選與完成時間記錄在你自己的瀏覽器。</p>
     </div>
-    <label class="theme-pick" for="theme">主題風格
-      <select id="theme">
-        <option value="deep-obsidian">曜石黑高階戰情</option>
-        <option value="milan-amber">米蘭編排暖琥珀</option>
-        <option value="egyptian-pharaoh">埃及法老美學</option>
-        <option value="gustav-klimt">古斯塔夫·克林姆</option>
-        <option value="mika-ninagawa">蜷川實花</option>
-        <option value="joan-miro">胡安·米羅</option>
-      </select>
-    </label>
   </header>
 
   <div class="sites">
@@ -225,13 +189,6 @@ let filter = "all";
 let hideDone = false;
 
 const $ = s => document.querySelector(s);
-const themeSel = $("#theme");
-try { const t = localStorage.getItem("todo-theme"); if (t) themeSel.value = t; } catch (e) {}
-document.body.dataset.theme = themeSel.value;
-themeSel.addEventListener("change", () => {
-  document.body.dataset.theme = themeSel.value;
-  try { localStorage.setItem("todo-theme", themeSel.value); } catch (e) {}
-});
 try { hideDone = localStorage.getItem("todo-hide") === "1"; } catch (e) {}
 $("#hideDone").checked = hideDone;
 $("#hideDone").addEventListener("change", e => {
