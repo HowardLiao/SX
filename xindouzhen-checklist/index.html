@@ -66,6 +66,8 @@ li.task input:disabled { cursor: not-allowed; }
 .t-title { font-weight: 500; }
 .t-note { font-size: 13px; color: var(--text-muted); }
 .t-dep { font-size: 12px; color: var(--warn); }
+.t-link { font-size: 13px; color: var(--accent-primary); text-decoration: underline; word-break: break-all; margin-top: 2px; }
+.t-link:hover { color: var(--accent-strong); }
 .t-meta { font-size: 13px; font-weight: 500; color: var(--done); font-variant-numeric: tabular-nums; }
 .tag { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--owner-color); color: var(--owner-color); white-space: nowrap; }
 li.task.done .t-title { text-decoration: line-through; color: var(--text-muted); }
@@ -158,7 +160,7 @@ const PHASES = [
     { id: "n3", o: "b", t: "預約台中現場施工並驗收實測速率", n: "上下行都要測，確認為對稱速率。" },
   ]},
   { id: "hw", name: "設備採購", where: "台中", tasks: [
-    { id: "h1", o: "b", t: "購買工作用電腦", n: "RAM ≥ 32GB（遠端開發／多系統／VM 必備）、CPU i7 / Ryzen 7 以上、SSD ≥ 1TB。" },
+    { id: "h1", o: "b", t: "購買工作用電腦：ASUS NUC 迷你電腦（Ultra 7 / 64G / 1TB SSD）", n: "型號：【ASUS 華碩】RNUC15CRHU70000{BHCM6330EP} Win11Pro迷你電腦（Intel Ultra 7 255H / 64GB DDR5 / 1TB SSD / 內建 Win11 Pro）。直攻 64G 記憶體，可應對多系統虛擬化與遠端重度協同。限時折後價約 $58,082 元。", url: "https://www.momoshop.com.tw/product/15006992?osm=Ad07&utm_source=googleshop&utm_medium=googleshop-pmax-all-mb-feed&content=personallist02&gad_source=1&gad_campaignid=20882989196", urlText: "momo 購物網採購連結（ASUS Ultra 7 / 64G / 1TB SSD / Win11 Pro）" },
     { id: "h3", o: "b", t: "購買視訊協同設備", n: "視訊鏡頭（1080p 以上、廣角）、會議麥克風喇叭（全向收音、降噪）、會議用螢幕或電視；確認相容 Google Meet / Microsoft Teams。" },
     { id: "h2", o: "b", t: "採購發票開立公司統編，單據交嘉祥入帳", dep: "需先取得統一編號", extra: true },
   ]},
@@ -243,6 +245,15 @@ function render() {
       title.textContent = t.t + (t.extra ? "（補充）" : "");
       body.appendChild(title);
       if (t.n) { const n = document.createElement("div"); n.className = "t-note"; n.textContent = t.n; body.appendChild(n); }
+      if (t.url) {
+        const a = document.createElement("a");
+        a.className = "t-link";
+        a.href = t.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = "🔗 " + (t.urlText || "參考購買連結");
+        body.appendChild(a);
+      }
       if (t.dep && !s.done) { const d = document.createElement("div"); d.className = "t-dep"; d.textContent = "⚠ " + t.dep; body.appendChild(d); }
       if (s.done && s.at) {
         const m = document.createElement("div"); m.className = "t-meta";
