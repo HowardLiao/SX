@@ -1,0 +1,214 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>產品線矩陣組織圖</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 公文式組織圖 — 上方依產品線分欄（兩款產品、共用研發、共用客服、管理中心），下方為產品線 × 職能矩陣 */
+:root{
+  --bg:#f6f7fa; --paper:#ffffff; --ink:#18233a; --muted:#5d6779; --line:#cfd5e0; --navy:#1f3864;
+  --chess:#a8372b; --chess-soft:#f8e7e4; --pet:#22705f; --pet-soft:#e1f1ec; --shared-soft:#eceff5; --warn:#9a6400; --warn-soft:#fff3d6; --admin-soft:#f1eee6;
+  --f-display:"Noto Serif TC","Songti TC",serif; --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11151d; --paper:#1a202b; --ink:#e7eaf1; --muted:#9aa3b4; --line:#333c4c; --navy:#8fb0e8;
+  --chess:#ef8a7c; --chess-soft:#3a2220; --pet:#6cc9b1; --pet-soft:#16312b; --shared-soft:#232a37; --warn:#f2c46b; --warn-soft:#3a2f17; --admin-soft:#2a2720; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11151d; --paper:#1a202b; --ink:#e7eaf1; --muted:#9aa3b4; --line:#333c4c; --navy:#8fb0e8;
+  --chess:#ef8a7c; --chess-soft:#3a2220; --pet:#6cc9b1; --pet-soft:#16312b; --shared-soft:#232a37; --warn:#f2c46b; --warn-soft:#3a2f17; --admin-soft:#2a2720; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+header{display:grid;gap:6px}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--f-display);font-size:clamp(26px,4vw,36px);line-height:1.25;margin:0;text-wrap:balance;color:var(--navy)}
+h2{font-family:var(--f-display);font-size:20px;margin:0 0 14px;color:var(--navy);text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:13px}
+.meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px 20px}
+/* tree */
+.tree{min-width:880px;display:grid;justify-items:center}
+.node{border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:8px 12px;text-align:center;min-width:112px}
+.node .dept{font-size:12px;color:var(--muted)}
+.node .name{font-weight:700;white-space:nowrap}
+.node.top{border:2px solid var(--navy)}
+.node.top .name{color:var(--navy)}
+.vline{width:1px;height:20px;background:var(--line)}
+.row,.sub{display:flex;justify-content:center;padding-top:20px}
+.row>.br,.sub>.br{display:grid;justify-items:center;align-content:start;position:relative;padding-inline:10px}
+.sub>.br{padding-inline:6px}
+.row>.br::before,.sub>.br::before{content:"";position:absolute;top:-20px;left:50%;width:1px;height:20px;background:var(--line)}
+.row>.br::after,.sub>.br::after{content:"";position:absolute;top:-20px;left:0;right:0;height:1px;background:var(--line)}
+.row>.br:first-child::after,.sub>.br:first-child::after{left:50%}
+.row>.br:last-child::after,.sub>.br:last-child::after{right:50%}
+.tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:3px;margin-top:4px;letter-spacing:.04em}
+.tag.c{background:var(--chess-soft);color:var(--chess)}
+.tag.p{background:var(--pet-soft);color:var(--pet)}
+.tag.s{background:var(--shared-soft);color:var(--muted)}
+/* product-line units */
+.tree.wide{min-width:1080px}
+.row.units{width:100%}
+.units>.br{flex:1 1 0;min-width:0;padding-inline:7px}
+.unit{border:1px solid var(--line);border-radius:6px;background:var(--paper);overflow:hidden;width:100%;display:grid;grid-template-rows:auto 1fr auto}
+.uhead{padding:12px 14px;border-bottom:1px solid var(--line)}
+.unit.c .uhead{background:var(--chess-soft)} .unit.c .utitle{color:var(--chess)}
+.unit.p .uhead{background:var(--pet-soft)} .unit.p .utitle{color:var(--pet)}
+.unit.s .uhead{background:var(--shared-soft)}
+.unit.a .uhead{background:var(--admin-soft)}
+.ueb{font-size:11px;letter-spacing:.12em;color:var(--muted)}
+.utitle{font-family:var(--f-display);font-size:19px;font-weight:700;color:var(--navy)}
+.uown{font-size:12px;color:var(--muted)}
+.ubody{padding:12px 14px;display:grid;gap:12px;align-content:start}
+.glabel{font-size:12px;color:var(--muted);border-bottom:1px dashed var(--line);margin-bottom:4px;padding-bottom:2px}
+.ucount{font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+/* matrix */
+table{border-collapse:collapse;min-width:960px;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}
+thead th{background:var(--navy);color:var(--paper);font-weight:500}
+thead th small{display:block;font-weight:400;opacity:.85;font-size:12px}
+tbody th{width:150px;font-weight:700}
+tbody th small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+tr.c th{background:var(--chess-soft);color:var(--chess)}
+tr.p th{background:var(--pet-soft);color:var(--pet)}
+tr.s th{background:var(--shared-soft)}
+td.shared{background:var(--shared-soft)}
+td.na{color:var(--muted);font-size:13px}
+.p-list{display:grid;gap:2px}
+.person{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.id{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.role{font-size:12px;color:var(--muted)}
+.lead{font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin-top:12px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid var(--line)}
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.notes{grid-template-columns:1fr}}
+.note{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
+.note h3{margin:0 0 6px;font-size:15px}
+.note p{margin:0;color:var(--muted);font-size:14px}
+.note.w{background:var(--warn-soft);border-color:transparent}
+.note.w h3{color:var(--warn)}
+.foot{font-size:12px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">組織架構　|　依產品線劃分．弱矩陣型</div>
+    <h1>產品線組織圖</h1>
+    <div class="meta">
+      <span>總人數 <b>25</b> 人</span>
+      <span>產品線 <b>2</b>：鬥陣歡樂城（棋牌）、寵物遊戲</span>
+      <span>資料來源：個人職能盤點總表．員工名單</span>
+      <span>版本：2026-10-28 草案</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>一、產品線組織圖</h2>
+    <div class="scroll">
+      <div class="tree wide">
+        <div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div>
+        <div class="vline"></div>
+        <div class="row units">
+          <div class="br"><div class="unit c"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">鬥陣歡樂城</div><div class="uown">棋牌類．營運負責：謝欣燁、陳建州</div></div><div class="ubody"><div class="grp"><div class="glabel">營運．行銷</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">兼客服主管</span></div><div class="person"><span class="lead">陳建州</span><span class="id">A002</span><span class="role">兼管理部主管</span></div></div></div><div class="grp"><div class="glabel">企劃</div><div class="p-list"><div class="person"><span class="role">目前未配置企劃人員</span></div></div></div></div><div class="ucount">專屬 0 人．營運由兩位主管兼任</div></div></div><div class="br"><div class="unit p"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">寵物遊戲</div><div class="uown">寵物類．產品負責人：張哲豪</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃．營運．推廣</div><div class="p-list"><div class="person"><span class="lead">張哲豪</span><span class="id">A060</span><span class="role">產品負責人</span></div><div class="person"><span>曾翊庭</span><span class="id">A033</span></div></div></div></div><div class="ucount">2 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">研發中心</div><div class="uown">副總經理：廖倫豪</div></div><div class="ubody"><div class="grp"><div class="glabel">技術</div><div class="p-list"><div class="person"><span class="lead">趙柏凱</span><span class="id">A022</span><span class="role">主管</span></div><div class="person"><span>林秉韶</span><span class="id">A051</span></div><div class="person"><span>鄭元翔</span><span class="id">A066</span><span class="role">兼數據分析</span></div><div class="person"><span>林琮緯</span><span class="id">B029</span></div></div></div><div class="grp"><div class="glabel">美術</div><div class="p-list"><div class="person"><span class="lead">魏淑禎</span><span class="id">A011</span><span class="role">主管</span></div><div class="person"><span>潘羿彰</span><span class="id">A012</span></div><div class="person"><span>陳俞任</span><span class="id">A057</span></div><div class="person"><span>張丞佑</span><span class="id">A068</span></div></div></div><div class="grp"><div class="glabel">測試</div><div class="p-list"><div class="person"><span class="lead">凃睿修</span><span class="id">A049</span><span class="role">主管</span></div><div class="person"><span>蕭智瑜</span><span class="id">B030</span></div></div></div></div><div class="ucount">11 人＋副總經理 1 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">客服部</div><div class="uown">主管：謝欣燁</div></div><div class="ubody"><div class="grp"><div class="glabel">玩家客服</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">主管</span></div><div class="person"><span>張晉杰</span><span class="id">A081</span></div><div class="person"><span>耿舜儀</span><span class="id">A086</span></div><div class="person"><span>吳玟儀</span><span class="id">A090</span></div></div></div></div><div class="ucount">4 人</div></div></div><div class="br"><div class="unit a"><div class="uhead"><div class="ueb">公司共用．行政支援</div><div class="utitle">管理中心</div><div class="uown">不分產品</div></div><div class="ubody"><div class="grp"><div class="glabel">管理部</div><div class="p-list"><div class="person"><span class="lead">陳建州</span><span class="id">A002</span><span class="role">主管</span></div><div class="person"><span>楊芮郗</span><span class="id">A076</span><span class="role">總務</span></div><div class="person"><span>王韻庭</span><span class="id">A088</span><span class="role">前台</span></div><div class="person"><span>印厚承</span><span class="id">A087</span><span class="role">司機</span></div></div></div><div class="grp"><div class="glabel">財務部</div><div class="p-list"><div class="person"><span class="lead">王慈汶</span><span class="id">A003</span><span class="role">主管</span></div><div class="person"><span>賴盈築</span><span class="id">A084</span></div><div class="person"><span>游玉霜</span><span class="id">A082</span></div></div></div></div><div class="ucount">7 人</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--chess-soft)"></span>鬥陣歡樂城</span>
+      <span><span class="sw" style="background:var(--pet-soft)"></span>寵物遊戲</span>
+      <span><span class="sw" style="background:var(--shared-soft)"></span>兩款共用</span>
+      <span><span class="sw" style="background:var(--admin-soft)"></span>公司共用</span>
+      <span><b style="color:var(--ink)">粗體</b>＝負責人；謝欣燁、陳建州因兼任而出現兩次</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>二、產品線 × 職能部門矩陣</h2>
+    <div class="scroll" style="padding:0">
+      <table>
+        <thead>
+          <tr>
+            <th>產品線</th>
+            <th>企劃<small>主管 張哲豪</small></th>
+            <th>營運．推廣</th>
+            <th>技術<small>主管 趙柏凱</small></th>
+            <th>美術<small>主管 魏淑禎</small></th>
+            <th>測試<small>主管 凃睿修</small></th>
+            <th>客服<small>主管 謝欣燁</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="c">
+            <th>鬥陣歡樂城<small>棋牌類．營運負責：謝欣燁、陳建州</small></th>
+            <td><div class="p-list">
+              <div class="person"><span class="role">未配置</span></div></div></td>
+            <td><div class="p-list">
+              <div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span></div>
+              <div class="person"><span class="lead">陳建州</span><span class="id">A002</span></div></div></td>
+            <td class="shared" rowspan="2"><div class="p-list">
+              <div class="person"><span class="lead">趙柏凱</span><span class="id">A022</span></div>
+              <div class="person"><span>林秉韶</span><span class="id">A051</span></div>
+              <div class="person"><span>鄭元翔</span><span class="id">A066</span><span class="role">兼數據分析</span></div>
+              <div class="person"><span>林琮緯</span><span class="id">B029</span></div>
+              <span class="tag s">兩款共用</span></div></td>
+            <td class="shared" rowspan="2"><div class="p-list">
+              <div class="person"><span class="lead">魏淑禎</span><span class="id">A011</span></div>
+              <div class="person"><span>潘羿彰</span><span class="id">A012</span></div>
+              <div class="person"><span>陳俞任</span><span class="id">A057</span></div>
+              <div class="person"><span>張丞佑</span><span class="id">A068</span></div>
+              <span class="tag s">兩款共用</span></div></td>
+            <td class="shared" rowspan="2"><div class="p-list">
+              <div class="person"><span class="lead">凃睿修</span><span class="id">A049</span></div>
+              <div class="person"><span>蕭智瑜</span><span class="id">B030</span></div>
+              <span class="tag s">兩款共用</span></div></td>
+            <td class="shared" rowspan="2"><div class="p-list">
+              <div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span></div>
+              <div class="person"><span>張晉杰</span><span class="id">A081</span></div>
+              <div class="person"><span>耿舜儀</span><span class="id">A086</span></div>
+              <div class="person"><span>吳玟儀</span><span class="id">A090</span></div>
+              <span class="tag s">兩款共用</span></div></td>
+          </tr>
+          <tr class="p">
+            <th>寵物遊戲<small>寵物類．產品負責人：張哲豪</small></th>
+            <td><div class="p-list">
+              <div class="person"><span class="lead">張哲豪</span><span class="id">A060</span><span class="role">主責</span></div>
+              <div class="person"><span>曾翊庭</span><span class="id">A033</span></div></div></td>
+            <td><div class="p-list">
+              <div class="person"><span class="lead">張哲豪</span><span class="role">兼營運、推廣</span></div>
+              <div class="person"><span>曾翊庭</span><span class="role">兼營運、推廣</span></div></div></td>
+          </tr>
+          <tr class="s">
+            <th>公司共用<small>行政支援．不分產品</small></th>
+            <td colspan="6"><div class="person" style="gap:6px 24px">
+              <span><span class="lead">管理部 陳建州</span>：楊芮郗 <span class="role">總務</span>．王韻庭 <span class="role">前台</span>．印厚承 <span class="role">司機</span></span>
+              <span><span class="lead">財務部 王慈汶</span>：賴盈築 <span class="id">A084</span>．游玉霜 <span class="id">A082</span></span>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--chess-soft)"></span>鬥陣歡樂城專屬</span>
+      <span><span class="sw" style="background:var(--pet-soft)"></span>寵物遊戲專屬</span>
+      <span><span class="sw" style="background:var(--shared-soft)"></span>兩款共用或公司共用</span>
+      <span><b style="color:var(--ink)">粗體</b>＝該格負責人</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>三、運作規則與待決事項</h2>
+    <div class="notes">
+      <div class="note"><h3>雙線報告</h3><p>研發同仁的人事、考核由職能主管負責；工作內容與排程依產品負責人提出的需求，由廖倫豪定優先順序。</p></div>
+      <div class="note"><h3>研發排程會議</h3><p>建議每週或每雙週一次，兩款產品負責人提需求，技術、美術、測試主管確認人力後排定版本內容。</p></div>
+      <div class="note"><h3>客服共用</h3><p>客服案件依產品分類並訂處理時效，定期把客訴摘要分別回報兩款產品負責人。</p></div>
+      <div class="note w"><h3>待決：鬥陣歡樂城產品負責人</h3><p>目前由謝欣燁與陳建州共管，兩人分屬廖倫豪與總經理底下。建議指定一人為產品負責人。</p></div>
+      <div class="note w"><h3>待決：鬥陣歡樂城企劃</h3><p>鬥陣歡樂城目前沒有企劃人員，玩法、數值與活動設計無人負責；寵物遊戲的企劃部 2 人同時負責企劃、營運、推廣。建議為鬥陣歡樂城補企劃，或明確指定由誰兼任。</p></div>
+      <div class="note w"><h3>待決：廖倫豪管理幅度</h3><p>現有 3 位工程師直屬廖倫豪。若改由技術主管趙柏凱帶領，可減輕副總經理負擔。</p></div>
+    </div>
+  </section>
+
+  <p class="foot">說明：本圖依員工名單「直屬主管」「負責產品」欄位與實際分工繪製；產品歸屬與待決事項為建議，請依實際分工確認。</p>
+</div>
+
+</body></html>
