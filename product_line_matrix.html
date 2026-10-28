@@ -47,6 +47,10 @@ h2{font-family:var(--f-display);font-size:20px;margin:0 0 14px;color:var(--navy)
 .tag.s{background:var(--shared-soft);color:var(--muted)}
 /* product-line units */
 .tree.wide{min-width:1080px}
+.gmrow{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;width:100%}
+.staffwrap{display:flex;align-items:center;justify-self:start}
+.staffline{width:40px;border-top:1px dashed var(--muted)}
+.node.staff{border-style:dashed}
 .row.units{width:100%}
 .units>.br{flex:1 1 0;min-width:0;padding-inline:7px}
 .unit{border:1px solid var(--line);border-radius:6px;background:var(--paper);overflow:hidden;width:100%;display:grid;grid-template-rows:auto 1fr auto}
@@ -96,7 +100,7 @@ td.na{color:var(--muted);font-size:13px}
     <div class="eyebrow">組織架構　|　依產品線劃分．弱矩陣型</div>
     <h1>產品線組織圖</h1>
     <div class="meta">
-      <span>總人數 <b>25</b> 人</span>
+      <span>總人數 <b>25</b> 人（法務委外不計）</span>
       <span>產品線 <b>2</b>：鬥陣歡樂城（棋牌）、寵物遊戲</span>
       <span>資料來源：個人職能盤點總表．員工名單</span>
       <span>版本：2026-10-28 草案</span>
@@ -107,10 +111,10 @@ td.na{color:var(--muted);font-size:13px}
     <h2>一、產品線組織圖</h2>
     <div class="scroll">
       <div class="tree wide">
-        <div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div>
+        <div class="gmrow"><span></span><div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div><div class="staffwrap"><span class="staffline"></span><div class="node staff"><div class="dept">法務</div><div class="name">委外</div><span class="tag s">直屬總經理</span></div></div></div>
         <div class="vline"></div>
         <div class="row units">
-          <div class="br"><div class="unit c"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">鬥陣歡樂城</div><div class="uown">棋牌類．營運負責：謝欣燁、陳建州</div></div><div class="ubody"><div class="grp"><div class="glabel">營運．行銷</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">兼客服主管</span></div><div class="person"><span class="lead">陳建州</span><span class="id">A002</span><span class="role">兼管理部主管</span></div></div></div><div class="grp"><div class="glabel">企劃</div><div class="p-list"><div class="person"><span class="role">目前未配置企劃人員</span></div></div></div></div><div class="ucount">專屬 0 人．營運由兩位主管兼任</div></div></div><div class="br"><div class="unit p"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">寵物遊戲</div><div class="uown">寵物類．產品負責人：張哲豪</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃．營運．推廣</div><div class="p-list"><div class="person"><span class="lead">張哲豪</span><span class="id">A060</span><span class="role">產品負責人</span></div><div class="person"><span>曾翊庭</span><span class="id">A033</span></div></div></div></div><div class="ucount">2 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">研發中心</div><div class="uown">副總經理：廖倫豪</div></div><div class="ubody"><div class="grp"><div class="glabel">技術</div><div class="p-list"><div class="person"><span class="lead">趙柏凱</span><span class="id">A022</span><span class="role">主管</span></div><div class="person"><span>林秉韶</span><span class="id">A051</span></div><div class="person"><span>鄭元翔</span><span class="id">A066</span><span class="role">兼數據分析</span></div><div class="person"><span>林琮緯</span><span class="id">B029</span></div></div></div><div class="grp"><div class="glabel">美術</div><div class="p-list"><div class="person"><span class="lead">魏淑禎</span><span class="id">A011</span><span class="role">主管</span></div><div class="person"><span>潘羿彰</span><span class="id">A012</span></div><div class="person"><span>陳俞任</span><span class="id">A057</span></div><div class="person"><span>張丞佑</span><span class="id">A068</span></div></div></div><div class="grp"><div class="glabel">測試</div><div class="p-list"><div class="person"><span class="lead">凃睿修</span><span class="id">A049</span><span class="role">主管</span></div><div class="person"><span>蕭智瑜</span><span class="id">B030</span></div></div></div></div><div class="ucount">11 人＋副總經理 1 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">客服部</div><div class="uown">主管：謝欣燁</div></div><div class="ubody"><div class="grp"><div class="glabel">玩家客服</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">主管</span></div><div class="person"><span>張晉杰</span><span class="id">A081</span></div><div class="person"><span>耿舜儀</span><span class="id">A086</span></div><div class="person"><span>吳玟儀</span><span class="id">A090</span></div></div></div></div><div class="ucount">4 人</div></div></div><div class="br"><div class="unit a"><div class="uhead"><div class="ueb">公司共用．行政支援</div><div class="utitle">管理中心</div><div class="uown">不分產品</div></div><div class="ubody"><div class="grp"><div class="glabel">管理部</div><div class="p-list"><div class="person"><span class="lead">陳建州</span><span class="id">A002</span><span class="role">主管</span></div><div class="person"><span>楊芮郗</span><span class="id">A076</span><span class="role">總務</span></div><div class="person"><span>王韻庭</span><span class="id">A088</span><span class="role">前台</span></div><div class="person"><span>印厚承</span><span class="id">A087</span><span class="role">司機</span></div></div></div><div class="grp"><div class="glabel">財務部</div><div class="p-list"><div class="person"><span class="lead">王慈汶</span><span class="id">A003</span><span class="role">主管</span></div><div class="person"><span>賴盈築</span><span class="id">A084</span></div><div class="person"><span>游玉霜</span><span class="id">A082</span></div></div></div></div><div class="ucount">7 人</div></div></div>
+          <div class="br"><div class="unit c"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">鬥陣歡樂城</div><div class="uown">棋牌類．產品負責人：謝欣燁</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">主責</span></div><div class="person"><span>陳建州</span><span class="id">A002</span></div></div></div><div class="grp"><div class="glabel">營運．推廣</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">兼營運、推廣</span></div><div class="person"><span>陳建州</span><span class="id">A002</span><span class="role">兼營運、推廣</span></div></div></div></div><div class="ucount">專屬 0 人．企劃與營運由兩位主管兼任</div></div></div><div class="br"><div class="unit p"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">寵物遊戲</div><div class="uown">寵物類．產品負責人：張哲豪</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃．營運．推廣</div><div class="p-list"><div class="person"><span class="lead">張哲豪</span><span class="id">A060</span><span class="role">產品負責人</span></div><div class="person"><span>曾翊庭</span><span class="id">A033</span></div></div></div></div><div class="ucount">2 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">研發中心</div><div class="uown">副總經理：廖倫豪</div></div><div class="ubody"><div class="grp"><div class="glabel">技術</div><div class="p-list"><div class="person"><span class="lead">趙柏凱</span><span class="id">A022</span><span class="role">主管</span></div><div class="person"><span>林秉韶</span><span class="id">A051</span></div><div class="person"><span>鄭元翔</span><span class="id">A066</span><span class="role">兼數據分析</span></div><div class="person"><span>林琮緯</span><span class="id">B029</span></div></div></div><div class="grp"><div class="glabel">美術</div><div class="p-list"><div class="person"><span class="lead">魏淑禎</span><span class="id">A011</span><span class="role">主管</span></div><div class="person"><span>潘羿彰</span><span class="id">A012</span></div><div class="person"><span>陳俞任</span><span class="id">A057</span></div><div class="person"><span>張丞佑</span><span class="id">A068</span></div></div></div><div class="grp"><div class="glabel">測試</div><div class="p-list"><div class="person"><span class="lead">凃睿修</span><span class="id">A049</span><span class="role">主管</span></div><div class="person"><span>蕭智瑜</span><span class="id">B030</span></div></div></div></div><div class="ucount">11 人＋副總經理 1 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">客服部</div><div class="uown">主管：謝欣燁</div></div><div class="ubody"><div class="grp"><div class="glabel">玩家客服</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">主管</span></div><div class="person"><span>張晉杰</span><span class="id">A081</span></div><div class="person"><span>耿舜儀</span><span class="id">A086</span></div><div class="person"><span>吳玟儀</span><span class="id">A090</span></div></div></div></div><div class="ucount">4 人</div></div></div><div class="br"><div class="unit a"><div class="uhead"><div class="ueb">公司共用．行政支援</div><div class="utitle">管理中心</div><div class="uown">直屬總經理．副總經理廖倫豪審簽</div></div><div class="ubody"><div class="grp"><div class="glabel">管理部</div><div class="p-list"><div class="person"><span class="lead">陳建州</span><span class="id">A002</span><span class="role">主管</span></div><div class="person"><span>楊芮郗</span><span class="id">A076</span><span class="role">總務</span></div><div class="person"><span>王韻庭</span><span class="id">A088</span><span class="role">前台</span></div><div class="person"><span>印厚承</span><span class="id">A087</span><span class="role">司機</span></div></div></div><div class="grp"><div class="glabel">財務部</div><div class="p-list"><div class="person"><span class="lead">王慈汶</span><span class="id">A003</span><span class="role">主管</span></div><div class="person"><span>賴盈築</span><span class="id">A084</span></div><div class="person"><span>游玉霜</span><span class="id">A082</span></div></div></div></div><div class="ucount">7 人</div></div></div>
         </div>
       </div>
     </div>
@@ -119,7 +123,7 @@ td.na{color:var(--muted);font-size:13px}
       <span><span class="sw" style="background:var(--pet-soft)"></span>寵物遊戲</span>
       <span><span class="sw" style="background:var(--shared-soft)"></span>兩款共用</span>
       <span><span class="sw" style="background:var(--admin-soft)"></span>公司共用</span>
-      <span><b style="color:var(--ink)">粗體</b>＝負責人；謝欣燁、陳建州因兼任而出現兩次</span>
+      <span><b style="color:var(--ink)">粗體</b>＝負責人；謝欣燁、陳建州因兼任而重複出現</span>
     </div>
   </section>
 
@@ -130,7 +134,7 @@ td.na{color:var(--muted);font-size:13px}
         <thead>
           <tr>
             <th>產品線</th>
-            <th>企劃<small>主管 張哲豪</small></th>
+            <th>企劃</th>
             <th>營運．推廣</th>
             <th>技術<small>主管 趙柏凱</small></th>
             <th>美術<small>主管 魏淑禎</small></th>
@@ -140,12 +144,13 @@ td.na{color:var(--muted);font-size:13px}
         </thead>
         <tbody>
           <tr class="c">
-            <th>鬥陣歡樂城<small>棋牌類．營運負責：謝欣燁、陳建州</small></th>
+            <th>鬥陣歡樂城<small>棋牌類．產品負責人：謝欣燁</small></th>
             <td><div class="p-list">
-              <div class="person"><span class="role">未配置</span></div></div></td>
+              <div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">主責</span></div>
+              <div class="person"><span>陳建州</span><span class="id">A002</span></div></div></td>
             <td><div class="p-list">
-              <div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span></div>
-              <div class="person"><span class="lead">陳建州</span><span class="id">A002</span></div></div></td>
+              <div class="person"><span class="lead">謝欣燁</span><span class="id">A071</span><span class="role">兼營運、推廣</span></div>
+              <div class="person"><span>陳建州</span><span class="id">A002</span><span class="role">兼營運、推廣</span></div></div></td>
             <td class="shared" rowspan="2"><div class="p-list">
               <div class="person"><span class="lead">趙柏凱</span><span class="id">A022</span></div>
               <div class="person"><span>林秉韶</span><span class="id">A051</span></div>
@@ -179,10 +184,11 @@ td.na{color:var(--muted);font-size:13px}
               <div class="person"><span>曾翊庭</span><span class="role">兼營運、推廣</span></div></div></td>
           </tr>
           <tr class="s">
-            <th>公司共用<small>行政支援．不分產品</small></th>
+            <th>公司共用<small>直屬總經理．副總經理審簽</small></th>
             <td colspan="6"><div class="person" style="gap:6px 24px">
               <span><span class="lead">管理部 陳建州</span>：楊芮郗 <span class="role">總務</span>．王韻庭 <span class="role">前台</span>．印厚承 <span class="role">司機</span></span>
               <span><span class="lead">財務部 王慈汶</span>：賴盈築 <span class="id">A084</span>．游玉霜 <span class="id">A082</span></span>
+              <span><span class="lead">法務</span>：委外，直屬總經理</span>
             </div></td>
           </tr>
         </tbody>
@@ -197,18 +203,15 @@ td.na{color:var(--muted);font-size:13px}
   </section>
 
   <section>
-    <h2>三、運作規則與待決事項</h2>
+    <h2>三、運作規則</h2>
     <div class="notes">
-      <div class="note"><h3>雙線報告</h3><p>研發同仁的人事、考核由職能主管負責；工作內容與排程依產品負責人提出的需求，由廖倫豪定優先順序。</p></div>
-      <div class="note"><h3>研發排程會議</h3><p>建議每週或每雙週一次，兩款產品負責人提需求，技術、美術、測試主管確認人力後排定版本內容。</p></div>
+      <div class="note"><h3>雙線報告與研發排程</h3><p>研發同仁的人事、考核由職能主管負責；工作內容依兩款產品的需求，在每週或每雙週的排程會議上由廖倫豪定優先順序。</p></div>
+      <div class="note"><h3>簽核流程</h3><p>管理部、財務部直屬總經理，簽核文件先經副總經理廖倫豪審簽，再呈總經理核決。法務委外，由總經理直接委任。</p></div>
       <div class="note"><h3>客服共用</h3><p>客服案件依產品分類並訂處理時效，定期把客訴摘要分別回報兩款產品負責人。</p></div>
-      <div class="note w"><h3>待決：鬥陣歡樂城產品負責人</h3><p>目前由謝欣燁與陳建州共管，兩人分屬廖倫豪與總經理底下。建議指定一人為產品負責人。</p></div>
-      <div class="note w"><h3>待決：鬥陣歡樂城企劃</h3><p>鬥陣歡樂城目前沒有企劃人員，玩法、數值與活動設計無人負責；寵物遊戲的企劃部 2 人同時負責企劃、營運、推廣。建議為鬥陣歡樂城補企劃，或明確指定由誰兼任。</p></div>
-      <div class="note w"><h3>待決：廖倫豪管理幅度</h3><p>現有 3 位工程師直屬廖倫豪。若改由技術主管趙柏凱帶領，可減輕副總經理負擔。</p></div>
-    </div>
+          </div>
   </section>
 
-  <p class="foot">說明：本圖依員工名單「直屬主管」「負責產品」欄位與實際分工繪製；產品歸屬與待決事項為建議，請依實際分工確認。</p>
+  <p class="foot">說明：本圖依員工名單「直屬主管」「負責產品」欄位與實際分工繪製；運作規則為建議，請依實際分工確認。</p>
 </div>
 
 </body></html>
