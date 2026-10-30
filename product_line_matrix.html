@@ -270,6 +270,10 @@ h2{font-family:var(--f-display);font-size:20px;margin:0 0 14px;color:var(--navy)
 .tree.wide{min-width:1120px}
 .gmrow{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;width:100%}
 .staffwrap{display:flex;align-items:center;justify-self:start}
+.mid-staff-row{position:relative;display:flex;justify-content:center;align-items:center;width:100%;height:36px}
+.mid-staff-row .vline{height:36px}
+.mid-staff-row .staffwrap{position:absolute;left:calc(50% + 0px);display:flex;align-items:center;z-index:2}
+.mid-staff-row .staffline{width:50px;border-top:1.5px dashed var(--muted)}
 .staffline{width:40px;border-top:1px dashed var(--muted)}
 .node.staff{border-style:dashed}
 .row.units{width:100%}
@@ -349,8 +353,11 @@ td.na{color:var(--muted);font-size:13px}
     <h2>一、產品線組織圖</h2>
     <div class="scroll">
       <div class="tree wide">
-        <div class="gmrow"><span></span><div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div><div class="staffwrap"><span class="staffline"></span><div class="node staff"><div class="dept">法務</div><div class="name">委外</div><span class="tag s">直屬總經理</span></div></div></div>
-        <div class="vline"></div>
+        <div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div>
+        <div class="mid-staff-row">
+          <div class="vline"></div>
+          <div class="staffwrap"><span class="staffline"></span><div class="node staff"><div class="dept">法務</div><div class="name">委外</div><span class="tag s">直屬總經理</span></div></div>
+        </div>
         <div class="row top2"><div class="br vp"><div class="node top"><div class="dept">副總經理</div><div class="name">廖倫豪</div></div><div class="vline"></div><div class="row units">
           <div class="br"><div class="unit c"><div class="uhead"><div class="ueb">產品線．棋牌類</div><div class="utitle">鬥陣歡樂城．鑫鬥陣</div><div class="uown">產品負責人：謝欣燁 ｜ 代理人：陳建州</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃．營運．推廣</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="role">產品負責人</span></div><div class="person"><span>陳建州</span><span class="role">代理人</span></div></div></div></div><div class="ucount">2 人</div></div></div><div class="br"><div class="unit p"><div class="uhead"><div class="ueb">產品線</div><div class="utitle">寵物遊戲</div><div class="uown">產品負責人：張哲豪 ｜ 代理人：曾翊庭</div></div><div class="ubody"><div class="grp"><div class="glabel">企劃．營運．推廣</div><div class="p-list"><div class="person"><span class="lead">張哲豪</span><span class="role">產品負責人</span></div><div class="person"><span>曾翊庭</span><span class="role">兼任研發測試組 為代理人</span></div></div></div></div><div class="ucount">2 人</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">研發部</div></div><div class="ubody"><div class="grp"><div class="glabel">技術組</div><div class="p-list"><div class="person"><span class="lead">趙柏凱</span><span class="role">主管</span></div><div class="person"><span>林秉韶</span><span class="role">代理人</span></div><div class="person"><span>林琮緯</span><span class="role">兼任後端工程師．新遊戲平台底層負責人</span></div></div></div><div class="grp"><div class="glabel">資訊維運組（MIS／SRE／數據）</div><div class="p-list"><div class="person"><span class="lead">鄭元翔</span><span class="role">主管．大數據暨 AI．資安負責人．新遊戲平台底層負責人</span></div><div class="person"><span>林琮緯</span><span class="role">代理人 ． 新遊戲平台底層負責人</span></div></div></div><div class="grp"><div class="glabel">美術組</div><div class="p-list"><div class="person"><span class="lead">魏淑禎</span><span class="role">主管</span></div><div class="person"><span>潘羿彰</span><span class="role">代理人</span></div><div class="person"><span>陳俞任</span></div><div class="person"><span>張丞佑</span></div></div></div><div class="grp"><div class="glabel">測試組</div><div class="p-list"><div class="person"><span class="lead">凃睿修</span><span class="role">主管</span></div><div class="person"><span>蕭智瑜</span><span class="role">代理人</span></div><div class="person"><span>曾翊庭</span><span class="role">企劃部同仁．兼任測試組</span></div></div></div></div><div class="ucount">10 人（另 1 人兼任）</div></div></div><div class="br"><div class="unit s"><div class="uhead"><div class="ueb">共用單位．服務兩款</div><div class="utitle">客服部</div><div class="uown">主管：謝欣燁 ｜ 代理人：張晉杰</div></div><div class="ubody"><div class="grp"><div class="glabel">玩家客服</div><div class="p-list"><div class="person"><span class="lead">謝欣燁</span><span class="role">主管</span></div><div class="person"><span>張晉杰</span><span class="role">代理人</span></div><div class="person"><span>耿舜儀</span></div><div class="person"><span>吳玟儀</span></div></div></div></div><div class="ucount">4 人</div></div></div><div class="br"><div class="unit a"><div class="uhead"><div class="ueb">公司共用．行政支援</div><div class="utitle">管理部</div><div class="uown">主管：陳建州 ｜ 代理人：楊芮郗</div></div><div class="ubody"><div class="grp"><div class="glabel">人資總務組</div><div class="p-list"><div class="person"><span class="lead">陳建州</span><span class="role">主管</span></div><div class="person"><span>楊芮郗</span><span class="role">代理人</span></div><div class="person"><span>王韻庭</span><span class="role">前台</span></div><div class="person"><span>印厚承</span><span class="role">司機</span></div></div></div></div><div class="ucount">4 人</div></div></div><div class="br"><div class="unit a"><div class="uhead"><div class="ueb">公司共用．財務金流</div><div class="utitle">財務部</div><div class="uown">主管：王慈汶 ｜ 代理人：游玉霜</div></div><div class="ubody"><div class="grp"><div class="glabel">財務會計</div><div class="p-list"><div class="person"><span class="lead">王慈汶</span><span class="role">主管</span></div><div class="person"><span>游玉霜</span><span class="role">代理人</span></div><div class="person"><span>賴盈築</span></div></div></div></div><div class="ucount">3 人</div></div></div>
         </div></div></div>
@@ -446,8 +453,11 @@ td.na{color:var(--muted);font-size:13px}
     <p class="lede">依專業職能劃分，每位同仁只出現在所屬部門一次。產品線角色以色標標示，不另設單位。</p>
     <div class="scroll">
       <div class="tree func">
-        <div class="gmrow"><span></span><div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div><div class="staffwrap"><span class="staffline"></span><div class="node staff"><div class="dept">法務</div><div class="name">委外</div><span class="tag s">直屬總經理</span></div></div></div>
-        <div class="vline"></div>
+        <div class="node top"><div class="dept">總經理</div><div class="name">吳怡慶</div></div>
+        <div class="mid-staff-row">
+          <div class="vline"></div>
+          <div class="staffwrap"><span class="staffline"></span><div class="node staff"><div class="dept">法務</div><div class="name">委外</div><span class="tag s">直屬總經理</span></div></div>
+        </div>
         <div class="node top"><div class="dept">副總經理</div><div class="name">廖倫豪</div></div>
         <div class="vline"></div>
         <div class="row units">
