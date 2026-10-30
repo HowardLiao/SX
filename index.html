@@ -1409,31 +1409,7 @@
   line-height: 1.4;
 }
 
-/* Clickable Badge Trigger */
-.liao-trigger {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  border-bottom: 1.5px dashed #C8A96A;
-  transition: all 0.2s ease;
-  position: relative;
-}
-.liao-trigger:hover {
-  color: #9a6400;
-  background: rgba(200, 169, 106, 0.15);
-  border-radius: 3px;
-  border-bottom-style: solid;
-}
-.liao-trigger::after {
-  content: "🔍";
-  font-size: 10px;
-  opacity: 0.7;
-}
-.node .name.liao-trigger {
-  border-bottom: 2px solid #C8A96A;
-  padding-bottom: 1px;
-}
+
 
 </style>
 </head>
@@ -1910,7 +1886,7 @@
 
               <!-- VP -->
               <div style="background: #2F4538; border: 2px solid #C8A96A; border-radius: 8px; padding: 10px 24px; text-align: center; width: 300px; box-shadow: 0 0 15px rgba(200, 169, 106, 0.25);">
-                <div style="font-size: 1.1rem; font-weight: 800; color: #FAF7F2;">副總經理　<span class="liao-trigger" onclick="openExecModal(event)" style="cursor:pointer; color:#fbbf24; text-decoration:underline;" title="點擊檢視 廖倫豪 博士之學經歷與技術／管理職能">廖倫豪 博士</span></div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #FAF7F2;">副總經理　廖倫豪 博士</div>
               </div>
 
               <div style="width: 2px; height: 16px; background: #C8A96A;"></div>
@@ -2141,7 +2117,7 @@
               </thead>
               <tbody>
                 <tr><td style="text-align:center;">1</td><td style="text-align:center; font-weight:700; color:#dc2626;">A001</td><td><strong>吳怡慶</strong></td><td>總經理室</td><td><span style="background:#dc2626; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">經理/副理</span></td><td style="text-align:center;">2018/05/01</td><td>— (董事會)</td><td style="text-align:center; color:#9aa3b4;">公司共用</td><td style="text-align:center;">經營</td><td>總經理，綜理全公司營運方針、制度委員會主委、L3最高核決、網銀付款第二放行</td></tr>
-                <tr><td style="text-align:center;">2</td><td style="text-align:center; font-weight:700; color:#fbbf24;">B026</td><td><strong><span class="liao-trigger" onclick="openExecModal(event)" style="cursor:pointer; color:#fbbf24; text-decoration:underline;" title="點擊檢視 廖倫豪 博士之學經歷與技術／管理職能">廖倫豪 博士</span></strong></td><td>副總經理室</td><td><span style="background:#d97706; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">經理/副理</span></td><td style="text-align:center;">2025/05/09</td><td>吳怡慶</td><td style="text-align:center; color:#8fb0e8;">兩款共用</td><td style="text-align:center;">技術</td><td>副總經理 / 技術長，統籌研發部、兼資安主管、L2核決、排定跨產品研發優先順序</td></tr>
+                <tr><td style="text-align:center;">2</td><td style="text-align:center; font-weight:700; color:#fbbf24;">B026</td><td><strong>廖倫豪 博士</strong></td><td>副總經理室</td><td><span style="background:#d97706; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">經理/副理</span></td><td style="text-align:center;">2025/05/09</td><td>吳怡慶</td><td style="text-align:center; color:#8fb0e8;">兩款共用</td><td style="text-align:center;">技術</td><td>副總經理 / 技術長，統籌研發部、兼資安主管、L2核決、排定跨產品研發優先順序</td></tr>
                 <tr><td style="text-align:center;">3</td><td style="text-align:center; font-weight:700; color:#38bdf8;">A002</td><td><strong>陳建州</strong></td><td>管理部／人資總務組</td><td><span style="background:#0284c7; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">部門主管</span></td><td style="text-align:center;">2018/05/01</td><td>吳怡慶</td><td style="text-align:center; color:#ef8a7c; font-weight:700;">鬥陣歡樂城</td><td style="text-align:center;">營運、管理</td><td>管理部主管，鬥陣商務管理、代理人資總務主管、公務採購審核、資產印鑑管理</td></tr>
                 <tr><td style="text-align:center;">4</td><td style="text-align:center; font-weight:700; color:#fbbf24;">A003</td><td><strong>王慈汶</strong></td><td>財務部</td><td><span style="background:#0284c7; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">部門主管</span></td><td style="text-align:center;">2018/06/11</td><td>吳怡慶</td><td style="text-align:center; color:#9aa3b4;">公司共用</td><td style="text-align:center;">財務</td><td>財務部主管，網銀放行Checker、主檔覆核、稅務申報、制度委員會執行秘書</td></tr>
                 <tr><td style="text-align:center;">5</td><td style="text-align:center; font-weight:700; color:#f472b6;">A011</td><td><strong>魏淑禎</strong></td><td>研發部／美術組</td><td><span style="background:#0284c7; color:#fff; padding:2px 6px; border-radius:3px; font-size:0.7rem;">部門主管</span></td><td style="text-align:center;">2019/10/01</td><td>廖倫豪</td><td style="text-align:center; color:#8fb0e8;">兩款共用</td><td style="text-align:center;">美術</td><td>美術部主管，全專案視覺總監、兩款產品風格適配審查、外包驗收簽核、排程管控</td></tr>
@@ -6212,241 +6188,6 @@
       }, 150);
     }
 
-</script>
-
-<!-- Executive Dossier Modal for Howard Liao Ph.D. -->
-<div id="exec-modal-howard" class="exec-modal-backdrop" onclick="closeExecModal(event)">
-  <div class="exec-modal-card" onclick="event.stopPropagation()">
-    <div class="exec-modal-header">
-      <button class="exec-modal-close" onclick="closeExecModal()" title="關閉">×</button>
-      <div class="exec-title-row">
-        <span class="exec-name">廖倫豪 博士</span>
-        <span style="font-size:16px; color:#C8A96A; font-weight:600;">Howard Liao Ph.D.</span>
-        <span class="exec-title-tag">資訊科技管理博士 (Ph.D. in IT Management)</span>
-      </div>
-      <div class="exec-subtitle">
-        盛欣、盛碁科技網絡 ｜ 副總經理 / 技術長 (VP / CTO) 兼資安主管 (CISO)<br>
-        <span style="color:#f2c46b; font-size:12px;">★ Player-Coach C-Level 前線部署型 AI 戰略架構師 ｜ 4 大 C-Level 商業衝擊指標實戰高管</span>
-      </div>
-    </div>
-
-    <div class="exec-modal-body">
-      
-      <!-- 4 大 C-Level 商業衝擊指標 (Bento Impact Grid) -->
-      <div>
-        <div class="exec-sec-title">🏆 C-Level 商業衝擊與實績指標 (Bento Impact Metrics)</div>
-        <div class="bento-grid">
-          <div class="bento-card gold">
-            <div class="bento-metric">$10M+</div>
-            <div class="bento-label">資本治理規模</div>
-          </div>
-          <div class="bento-card green">
-            <div class="bento-metric">100%</div>
-            <div class="bento-label">Zero Outage 營運韌性</div>
-          </div>
-          <div class="bento-card">
-            <div class="bento-metric">-30%</div>
-            <div class="bento-label">TCO 基礎設施精省</div>
-          </div>
-          <div class="bento-card red">
-            <div class="bento-metric">+100%</div>
-            <div class="bento-label">部署速度提升</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 學歷與核心高管歷練 -->
-      <div>
-        <div class="exec-sec-title">🎓 學歷與核心高管歷練 (Education & Executive Experience)</div>
-        <div class="exec-exp-item">
-          <div class="exec-exp-head">
-            <span class="exec-exp-org">資訊科技管理博士 (Ph.D. in IT Management, 2014)</span>
-            <span class="exec-exp-role">博士學位</span>
-          </div>
-          <div class="exec-exp-desc">
-            論文《整合系統的商業自助式入口網站植基於調適性服務導向架構資訊科技治理之研究》，結合 ITIL V3 與 SOA 建立企業入口網站 IT 治理模型，典藏於國家圖書館臺灣博碩士論文知識加值系統；並於 Springer 發表 SCI 頂級國際期刊論文《Reversible secret-image sharing with high visual quality》。
-          </div>
-        </div>
-        <div class="exec-exp-item">
-          <div class="exec-exp-head">
-            <span class="exec-exp-org">國立中興大學 (NCHU)</span>
-            <span class="exec-exp-role">資訊科技管理碩士 (Master in IT Management, 2006)</span>
-          </div>
-          <div class="exec-exp-desc">
-            主修資料探勘 (Data Mining)、決策支援系統 (DSS)、密碼學與資料治理；擔任衛生署台中醫院「醫療雲端照護」計畫協同主持人。
-          </div>
-        </div>
-        <div class="exec-exp-item">
-          <div class="exec-exp-head">
-            <span class="exec-exp-org">盛欣網絡 ＆ 盛碁科技網絡</span>
-            <span class="exec-exp-role">副總經理 / 技術長 (VP / CTO) 兼資安主管 (CISO)</span>
-          </div>
-          <div class="exec-exp-desc">
-            統籌研發部（技術組、資訊維運組、美術組、測試組）、企劃部、客服部；督導研發/營運/財務二元制衡架構，主導 ISO 9001/27001 四階制度手冊制定、雙週研發排程會議與資安採購審簽。
-          </div>
-        </div>
-        <div class="exec-exp-item">
-          <div class="exec-exp-head">
-            <span class="exec-exp-org">上市櫃數位科技與娛樂集團 (6542.TWO)</span>
-            <span class="exec-exp-role">資訊長 (CIO / CISO / CDAIO)</span>
-          </div>
-          <div class="exec-exp-desc">
-            直報 Global CIO，全面主導集團數位技術架構、高併發遊戲與數位娛樂平台維運、大數據與 AI 賦能落地，建立合規資安與內控治理體系。
-          </div>
-        </div>
-        <div class="exec-exp-item">
-          <div class="exec-exp-head">
-            <span class="exec-exp-org">鴻海科技集團 (Foxconn)</span>
-            <span class="exec-exp-role">中央資訊 技術處長</span>
-          </div>
-          <div class="exec-exp-desc">
-            執掌跨國企業架構 (Enterprise Architecture) 決策、SWOT 差距分析、商業戰略轉譯與集團全球數位轉型藍圖規劃。
-          </div>
-        </div>
-      </div>
-
-      <!-- 管理職能 (L4/L5 專家級) -->
-      <div>
-        <div class="exec-sec-title">👑 管理職能評鑑 (Management Competencies — 專家級標竿)</div>
-        <div class="comp-badge-grid">
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">M01 領導統御</span>
-              <span class="comp-lvl-tag gold">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              制定組織技術遠景與演進路線圖，敏捷激勵並引領 20+ 人跨領域研發與營運團隊達成企業戰略目標。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">M02 決策判斷</span>
-              <span class="comp-lvl-tag gold">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              主導重大架構技術選型與資本支出決策，在高風險與不確定環境下精準權衡成本、效能、擴展性與合規。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">M03 目標管理</span>
-              <span class="comp-lvl-tag gold">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              將公司高階商業指標分解為可落地的研發 OKR/KPI，主持研發排程會議，實施里程碑監控與閉環修正。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">M04 人才培育</span>
-              <span class="comp-lvl-tag gold">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              設計職能評鑑階梯，推動 Peer Review 代碼審查文化，指導各組主管，建立高韌性工程技術接班梯隊。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">M05 溝通協調</span>
-              <span class="comp-lvl-tag gold">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              擔任研發/營運/財務二元制衡協調中樞，轉譯董事會戰略方針，跨部門排除交付瓶頸促成高管共識。
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 技術與專業職能 (L5 專家級) -->
-      <div>
-        <div class="exec-sec-title">⚙️ 技術與專業職能 (Technical & Professional Competencies — 專家級標竿)</div>
-        <div class="comp-badge-grid">
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P01 專業知識 (架構與資安)</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              精通分散式微服務、高併發 WebSocket 叢集、GLI-19 認證隨機洗牌算法、ISO 27001 資安規範與多雲架構。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P02 專業技術／工具應用</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              熟練運用 Kubernetes 容器化、GitOps CI/CD 流水線、SAST/DAST 資安掃描、Unity/Cocos 與企業級 AI Agent 落地。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P03 問題分析與解決</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              具備跨層系統性除錯與重大故障根因分析能力，突破極端高併發流量突增與資料庫分散式交易瓶頸。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P04 品質與流程管理</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              主筆制定 ISO 四階治理手冊，確立 SoD 職責分離底線、網銀雙重放行授權與版本 Blocker 歸零發版鐵律。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P05 數位與資訊應用</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              構建現代化大數據 BI 即時監控看板、建立 AMS 營運後台日誌全鏈路存證，導入 AI 研發工作流。
-            </div>
-          </div>
-          <div class="comp-card">
-            <div class="comp-card-head">
-              <span class="comp-code-name">P10 棋牌合規與風控</span>
-              <span class="comp-lvl-tag">L5 專家 (Master)</span>
-            </div>
-            <div class="comp-desc-text">
-              主導 CSPRNG 公平洗牌算法合規性，建立同 IP / 同 GPS 夥牌作弊即時監控與仲裁審查防線，阻斷外掛與洗分。
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Portfolio Attribution -->
-      <div style="background:#FAF7F2; border-top:1px solid #cfd5e0; padding-top:12px; display:flex; justify-content:flex-end; align-items:center; flex-wrap:wrap; font-size:12px; color:#5d6779;">
-        
-        <span style="font-family:'Cormorant Garamond', Georgia, serif; font-size:15px; font-style:italic; color:#1f3864; font-weight:700;">Howard Liao Ph.D.</span>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-function openExecModal(e) {
-  if (e) e.preventDefault();
-  const modal = document.getElementById('exec-modal-howard');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-}
-function closeExecModal(e) {
-  const modal = document.getElementById('exec-modal-howard');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeExecModal();
-});
 </script>
 
 </body>
